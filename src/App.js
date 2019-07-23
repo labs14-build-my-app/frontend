@@ -2,12 +2,8 @@ import React, { useEffect, useReducer, useState } from "react";
 import store from "./store";
 import { withRouter } from "react-router";
 import { locationRestore, fetchUser } from "./store/actions";
-import NavContainer from "./components/NavContainer";
-import RouteContainer from "./components/RouteContainer";
-import ModalContainer from "./components/ModalContainer";
-import { Background } from "./custom-styles";
 
-import "./App.css";
+// import "./App.css";
 
 const App = ({ history, match }) => {
   // step 1 set initial state
@@ -124,26 +120,7 @@ const App = ({ history, match }) => {
 
   return (
     <div className="App">
-      <NavContainer
-        {...state}
-        displayNav={displayNav}
-        setDisplayNav={setDisplayNav}
-      />
-
-      <Background displayNav={displayNav}>
-        <RouteContainer {...{ ...state, dispatch, reload }} />
-        {modal ? (
-          <ModalContainer
-            {...{
-              ...state,
-              ...history.location.state,
-              dispatch,
-              history,
-              match
-            }}
-          />
-        ) : null}
-      </Background>
+      <p>this is sparta</p>
     </div>
   );
 };
