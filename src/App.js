@@ -8,7 +8,9 @@ import { locationRestore, fetchUser } from "./store/actions";
 const App = ({ history, match }) => {
   // step 1 set initial state
   const [state, dispatch] = useReducer(store.usersReducer, store.initialState);
+
   const { modal, reload } = history.location.state || false;
+
   const {
     role,
     userID,
@@ -21,11 +23,11 @@ const App = ({ history, match }) => {
   } = state;
   const { pathname } = history.location;
 
-  const [displayNav, setDisplayNav] = useState({
-    nav: false,
-    width: "75%",
-    marginLeft: "25%"
-  });
+  // const [displayNav, setDisplayNav] = useState({
+  //   nav: false,
+  //   width: "75%",
+  //   marginLeft: "25%"
+  // });
 
   useEffect(() => {
     if (
