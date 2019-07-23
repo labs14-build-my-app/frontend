@@ -135,6 +135,9 @@ body {
 body h2 {
   font-size: 3.5rem;
 }
+body p {
+  font-size: 1.8rem;
+}
 .home-header {
   background: linear-gradient(90deg, #efefef, purple);
   display: flex;
