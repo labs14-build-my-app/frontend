@@ -133,7 +133,7 @@ body img {
   height: 50px;
 }
 .home-header {
-  background: linear-gradient(90deg, #fff, #da5ada);
+  background: linear-gradient(90deg, #efefef, #da5ada);
   display: flex;
   justify-content: space-between;
   padding: 3.15em 6.25em;
@@ -159,6 +159,7 @@ body img {
   font-size: 1.8rem;
   font-family: "Source Sans Pro";
   font-weight: 400;
+  color: #efefef;
 }
 .getting-started .gs-header {
   font-family: "Source Sans Pro";
@@ -194,7 +195,7 @@ body img {
   font-family: "Source Sans Pro";
   text-align: left;
   font-size: 1.8rem;
-  color: #58577b;
+  font-weight: 300;
 }
 .safety-first img {
   width: 600px;

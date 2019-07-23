@@ -6,14 +6,14 @@ body {
 }
 
 .home-header{
-    background: linear-gradient(90deg,#fff, rgb(218, 90, 218)); // temporary
+    background: linear-gradient(90deg,#efefef, rgb(218, 90, 218)); // temporary
     display: flex;
     justify-content: space-between;
     padding: 3.15em 6.25em;
     h1{
      font-size: 3.5rem; 
      font-family: "Source Sans Pro";
-     color: @midnightSummerPurple;
+     color: @font-color;
     }
 
     .home-navigation-bar{//displays on click
@@ -31,7 +31,9 @@ body {
             padding: 0 1.4375em;
             font-size: 1.8rem; 
             font-family: "Source Sans Pro";
-            font-weight: 400;           
+            font-weight: 400;
+            color: #efefef;       
+                
         }
     }
 }
@@ -65,7 +67,7 @@ body {
         line-height: 30px;
 
         h2{
-            color: @midnightSummerPurple;
+            color: @font-color;
             font-size: 3.5rem;
             font-family: "Source Sans Pro";
             font-weight: bold;
@@ -77,7 +79,7 @@ body {
             font-family: "Source Sans Pro";
             text-align: left;
             font-size: 1.8rem;
-            color: lighten(@midnightSummerPurple, 10);
+            font-weight: 300;
         }
     }
     
@@ -87,6 +89,12 @@ body {
     }
 
 }
+
+// section-4
+.reviews {
+    
+}
+// section-4-end
 
 .section-5{
     border: 1px solid red;
