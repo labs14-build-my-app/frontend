@@ -86,7 +86,7 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
+  font-size: 1.6rem;
   font: inherit;
   vertical-align: baseline;
 }
@@ -125,4 +125,87 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+html {
+  font-size: 62.5%;
+}
+body img {
+  height: 50px;
+}
+.home-header {
+  background: linear-gradient(90deg, #fff, #da5ada);
+  display: flex;
+  justify-content: space-between;
+  padding: 3.15em 6.25em;
+}
+.home-header h1 {
+  font-size: 3.5rem;
+  font-family: "Source Sans Pro";
+  color: #43425D;
+}
+.home-header .home-navigation-bar {
+  display: none;
+}
+.home-header .hamburger-menu-section {
+  display: flex;
+  align-items: center;
+}
+.home-header .hamburger-menu-section .hamburger-svg {
+  width: 40px;
+  height: 35px;
+}
+.home-header .hamburger-menu-section h3 {
+  padding: 0 1.4375em;
+  font-size: 1.8rem;
+  font-family: "Source Sans Pro";
+  font-weight: 400;
+}
+.getting-started .gs-header {
+  font-family: "Source Sans Pro";
+}
+.getting-started .gs-header h1 {
+  font-size: 3.5rem;
+}
+.getting-started .gs-header p {
+  font-size: 1.8rem;
+}
+.safety-first {
+  display: flex;
+  width: 1436px;
+  height: 536px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+.safety-first .text-section {
+  width: 722px;
+  height: 214px;
+  line-height: 30px;
+}
+.safety-first .text-section h2 {
+  color: #43425D;
+  font-size: 3.5rem;
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  text-align: left;
+}
+.safety-first .text-section p {
+  padding-top: 27px;
+  font-family: "Source Sans Pro";
+  text-align: left;
+  font-size: 1.8rem;
+  color: #58577b;
+}
+.safety-first img {
+  width: 600px;
+  height: 536px;
+}
+.section-5 {
+  border: 1px solid red;
+}
+.section-5 .section-5-cta {
+  border: 1px solid green;
+}
+.section-5 .section-5-footer {
+  border: 1px solid pink;
 }
