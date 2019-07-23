@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Card, Button } from "../custom-styles";
 import Expand from "./Expand";
 import { images } from "./Images";
+
 const HomeComponent = () => {
   const setTutorial = () => {
     !localStorage.getItem("ProjectOwnerTutorial") &&
