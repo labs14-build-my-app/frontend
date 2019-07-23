@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="216.74" height="162.961" viewBox="0 0 216.74 162.961">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#6e23b7"/>
+      <stop offset="1" stop-color="#452092"/>
+    </linearGradient>
+    <filter id="Path_1258" x="0" y="0" width="216.74" height="162.961" filterUnits="userSpaceOnUse">
+      <feOffset dx="6" dy="8" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feFlood flood-opacity="0.09"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Blob_CTA" data-name="Blob CTA" transform="translate(17.996 16.002)">
+    <g id="Layer_5" data-name="Layer 5">
+      <g transform="matrix(1, 0, 0, 1, -18, -16)" filter="url(#Path_1258)">
+        <path id="Path_1258-2" data-name="Path 1258" d="M21,89.53c6,.71,12,.22,18,.74,14.06,1.23,26.95,8,39.86,13.65,11.92,5.27,24.39,9.79,37.38,10.83s26.68-1.73,36.92-9.8a41.84,41.84,0,0,0,15.35-37A41.84,41.84,0,0,0,145,35.49c-13.92-6.48-31.27-5.11-43.34-14.61C93.17,14.18,87.81,2.47,77.2.32,70.39-1.06,63.42,2.18,58,6.54S48.2,16.4,42.78,20.75c-6.6,5.3-14.48,8.73-21.88,12.85C7.34,41.17-1.44,50.84.2,66.94,1.47,79.5,7.69,87.94,21,89.53Z" transform="translate(18 16)" fill="url(#linear-gradient)"/>
+      </g>
+    </g>
+  </g>
+</svg>
