@@ -129,14 +129,22 @@ table {
 html {
   font-size: 62.5%;
 }
+body {
+  background: ##F2F2F2;
+}
 body img {
   height: 50px;
+}
+body h2 {
+  font-size: 3.5rem;
 }
 .home-header {
   background: linear-gradient(90deg, #efefef, #da5ada);
   display: flex;
   justify-content: space-between;
   padding: 3.15em 6.25em;
+  background: #F2F2F2;
+  height: 1183px;
 }
 .home-header h1 {
   font-size: 3.5rem;
@@ -159,13 +167,10 @@ body img {
   font-size: 1.8rem;
   font-family: "Source Sans Pro";
   font-weight: 400;
-  color: #efefef;
+  color: #fff;
 }
 .getting-started .gs-header {
   font-family: "Source Sans Pro";
-}
-.getting-started .gs-header h1 {
-  font-size: 3.5rem;
 }
 .getting-started .gs-header p {
   font-size: 1.8rem;
@@ -185,7 +190,6 @@ body img {
 }
 .safety-first .text-section h2 {
   color: #43425D;
-  font-size: 3.5rem;
   font-family: "Source Sans Pro";
   font-weight: bold;
   text-align: left;
@@ -200,6 +204,16 @@ body img {
 .safety-first img {
   width: 600px;
   height: 536px;
+}
+.reviews {
+  display: flex;
+}
+.reviews .user-reviews h2 {
+  color: #43425D;
+  font-size: 3.5rem;
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  text-align: left;
 }
 .section-5 {
   border: 1px solid red;
