@@ -11,6 +11,10 @@ body {
     color: @font-color;
     line-height: @font-height;
   }
+
+  ul li {
+    font-size: @fontsize-p;
+  }
 }
 
 // .home-header-container{
@@ -31,9 +35,9 @@ body {
   // height: 1182px;
 
   max-width: 50%;
-  // @media (max-width: 1440px) {
-  //   width: 50%;
-  // }
+  @media (max-width: 1440px) {
+    width: 50%;
+  }
 }
 
 .home-header {
@@ -49,7 +53,7 @@ body {
     font-size: 3.5rem;
     font-family: @fontFamily;
     color: @font-color;
-    font-weight: bold;
+    font-weight: normal;
   }
 
   .home-navigation-bar {
@@ -69,7 +73,7 @@ body {
       padding: 0 1.4375em;
       font-size: 1.8rem;
       font-family: @fontFamily;
-      font-weight: 400;
+      font-weight: normal;
       color: #fff;
     }
   }
@@ -81,15 +85,15 @@ body {
   img {
     max-width: 50%;
     z-index: 420;
-    // @media (max-width: 1440px) {
-    //     width: 41%;
+    // @media (max-// width: 1440px) {
+    //     // width: 41%;
     //     }
   }
   section {
-    width: 41%;
+    // width: 41%;
     padding-left: 6.25em;
     padding-right: 3.3125em;
-    // @media (max-width: 1440px) {
+    // @media (max-// width: 1440px) {
     //     padding-right: 14.3125em;
     // }
     font-family: @fontFamily;
@@ -141,7 +145,7 @@ body {
   /* bottom, image */
   // height: 0;
   // border: 1px solid red;
-  width: 1313px;
+  // width: 1313px;
   margin: 0 auto;
 
   .gs-header {
@@ -263,15 +267,13 @@ body {
   }
 }
 
-// section-4
+// section-4-Anatoly
 .reviews {
   position: relative;
-  width: 1920px;
   height: 1048px;
   background: url("../assets/svgs/Blob User Reviews.svg") no-repeat;
   background-size: cover;
   background-size: contain;
-  // background-attachment: fixed;
   .user-reviews {
     h2 {
       color: @font-color;
@@ -317,10 +319,13 @@ body {
       flex-direction: column;
       justify-content: space-between;
       padding-bottom: 30px;
+      border-radius: 5px;
+
       .dev-review-text-p {
         margin-top: 10px;
         padding: 10px;
         background: #f2f2f2;
+        border-radius: 5px;
       }
     }
   }
@@ -348,6 +353,10 @@ body {
       padding: 0 0 1rem 0;
     }
 
+    .buttons {
+      padding: 5rem 0 0 0;
+    }
+
     .blobs {
       border: 1px solid blue;
       display: flex;
@@ -357,7 +366,10 @@ body {
         border: 1px solid green;
 
         img:first-child {
+          position: relative;
           border: 1px solid red;
+          top: +7rem;
+          left: +14rem;
         }
       }
 
@@ -375,5 +387,39 @@ body {
 // section-5-end
 
 // Section 6 - footer start
+footer {
+  padding-top: 10.9rem;
+  background: @veryLightGrey;
 
+  .lists-of-links {
+    width: 1394px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 16.7rem;
+
+    ul {
+      li {
+        padding: 1rem;
+        font-weight: 300;
+      }
+    }
+
+    ul li:first-child {
+      font-size: 1.5rem;
+      font-weight: 200;
+      color: lighten(@font-color, 10);
+    }
+  }
+
+  .copyright {
+    font-weight: bold;
+    display: flex;
+    width: 308px;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 6.2rem;
+    padding-left: 10rem;
+  }
+}
 // Section 6 - footer-end

@@ -142,6 +142,9 @@ body p {
   color: #43425d;
   line-height: 30px;
 }
+body ul li {
+  font-size: 1.8rem;
+}
 .rubens-section {
   padding-bottom: 163px;
   background: #f2f2f2;
@@ -152,6 +155,11 @@ body p {
   top: 0;
   right: 0;
   max-width: 50%;
+}
+@media (max-width: 1440px) {
+  .header-blobber {
+    width: 50%;
+  }
 }
 .home-header {
   z-index: -2;
@@ -165,7 +173,7 @@ body p {
   font-size: 3.5rem;
   font-family: "Source Sans Pro";
   color: #43425d;
-  font-weight: bold;
+  font-weight: normal;
 }
 .home-header .home-navigation-bar {
   display: none;
@@ -183,7 +191,7 @@ body p {
   padding: 0 1.4375em;
   font-size: 1.8rem;
   font-family: "Source Sans Pro";
-  font-weight: 400;
+  font-weight: normal;
   color: #fff;
 }
 .cta-getstarted-section {
@@ -195,7 +203,6 @@ body p {
   z-index: 420;
 }
 .cta-getstarted-section section {
-  width: 41%;
   padding-left: 6.25em;
   padding-right: 3.3125em;
   font-family: "Source Sans Pro";
@@ -233,7 +240,6 @@ body p {
 .getting-started {
   padding-top: 112px;
   /* bottom, image */
-  width: 1313px;
   margin: 0 auto;
 }
 .getting-started .gs-header {
@@ -333,7 +339,6 @@ body p {
 }
 .reviews {
   position: relative;
-  width: 1920px;
   height: 1048px;
   background: url("../assets/svgs/Blob User Reviews.svg") no-repeat;
   background-size: cover;
@@ -383,11 +388,13 @@ body p {
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 30px;
+  border-radius: 5px;
 }
 .reviews .dev-review .dev-review-text .dev-review-text-p {
   margin-top: 10px;
   padding: 10px;
   background: #f2f2f2;
+  border-radius: 5px;
 }
 .reviews .img-person {
   height: 684px;
@@ -407,6 +414,9 @@ body p {
 .section-5 .section-5-cta p {
   padding: 0 0 1rem 0;
 }
+.section-5 .section-5-cta .buttons {
+  padding: 5rem 0 0 0;
+}
 .section-5 .section-5-cta .blobs {
   border: 1px solid blue;
   display: flex;
@@ -416,11 +426,43 @@ body p {
   border: 1px solid green;
 }
 .section-5 .section-5-cta .blobs .left img:first-child {
+  position: relative;
   border: 1px solid red;
+  top: 7rem;
+  left: 14rem;
 }
 .section-5 .section-5-cta .blobs .right {
   border: 1px solid red;
 }
 .section-5 .section-5-cta .blobs .right img:first-child {
   border: 1px solid red;
+}
+footer {
+  padding-top: 10.9rem;
+  background: #f2f2f2;
+}
+footer .lists-of-links {
+  width: 1394px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16.7rem;
+}
+footer .lists-of-links ul li {
+  padding: 1rem;
+  font-weight: 300;
+}
+footer .lists-of-links ul li:first-child {
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: #58577b;
+}
+footer .copyright {
+  font-weight: bold;
+  display: flex;
+  width: 308px;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 6.2rem;
+  padding-left: 10rem;
 }
