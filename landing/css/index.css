@@ -280,7 +280,8 @@ body p {
 }
 .section-5 .section-5-cta {
   background: white;
+  text-align: center;
 }
 .section-5 .section-5-footer {
-  border: 1px solid pink;
+  background-color: #F2F2F2;
 }
