@@ -165,6 +165,7 @@ body p {
   font-size: 3.5rem;
   font-family: "Source Sans Pro";
   color: #43425d;
+  font-weight: bold;
 }
 .home-header .home-navigation-bar {
   display: none;
@@ -207,7 +208,7 @@ body p {
 }
 .cta-getstarted-section section p {
   color: #43425d;
-  line-height: 1.2;
+  line-height: 30px;
 }
 .cta-getstarted-section section button {
   margin: 25px 0;
@@ -306,6 +307,7 @@ body p {
   align-items: center;
   justify-content: space-between;
   margin-top: 284px;
+  margin-bottom: 186px;
 }
 .safety-first .text-section {
   width: 722px;
@@ -330,7 +332,12 @@ body p {
   height: 536px;
 }
 .reviews {
-  display: flex;
+  position: relative;
+  width: 1920px;
+  height: 1048px;
+  background: url("../assets/svgs/Blob User Reviews.svg") no-repeat;
+  background-size: cover;
+  background-size: contain;
 }
 .reviews .user-reviews h2 {
   color: #43425d;
@@ -341,9 +348,53 @@ body p {
 }
 .reviews .user-reviews p {
   font-family: "Source SansPro";
-  text-align: left;
+  text-align: right;
   font-size: 1.8rem;
-  color: lighten;
+}
+.reviews .user-reviews .user-reviews-h {
+  width: 206;
+  height: 44;
+  position: absolute;
+  top: 232px;
+  right: 252px;
+}
+.reviews .user-reviews .user-reviews-p {
+  width: 356px;
+  height: 53px;
+  position: absolute;
+  top: 301px;
+  right: 252px;
+}
+.reviews .dev-review {
+  display: flex;
+  position: absolute;
+  height: 288px;
+  width: 860px;
+  bottom: 316px;
+  left: 530px;
+  background: white;
+}
+.reviews .dev-review .dev-review-img {
+  margin: 35px;
+}
+.reviews .dev-review .dev-review-text {
+  margin: 35px 35px 35px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+.reviews .dev-review .dev-review-text .dev-review-text-p {
+  margin-top: 10px;
+  padding: 10px;
+  background: #f2f2f2;
+}
+.reviews .img-person {
+  height: 684px;
+  width: 918.57;
+  margin-top: 134px;
+  margin-left: 100px;
+  display: inline-block;
 }
 .section-5 {
   border: 1px solid red;
@@ -358,21 +409,18 @@ body p {
 }
 .section-5 .section-5-cta .blobs {
   border: 1px solid blue;
+  display: flex;
+  justify-content: space-between;
 }
-.section-5 .section-5-cta .blobs img:first-child {
-  border: 1px solid green;
-  position: relative;
-  bottom: -5rem;
-}
-.section-5 .section-5-cta .blobs img:nth-child(2) {
+.section-5 .section-5-cta .blobs .left {
   border: 1px solid green;
 }
-.section-5 .section-5-cta .blobs img:nth-child(3) {
-  border: 1px solid green;
+.section-5 .section-5-cta .blobs .left img:first-child {
+  border: 1px solid red;
 }
-.section-5 .section-5-cta .blobs img:nth-child(4) {
-  border: 1px solid green;
+.section-5 .section-5-cta .blobs .right {
+  border: 1px solid red;
 }
-.section-5 .section-5-cta .blobs img:nth-child(5) {
-  border: 1px solid green;
+.section-5 .section-5-cta .blobs .right img:first-child {
+  border: 1px solid red;
 }

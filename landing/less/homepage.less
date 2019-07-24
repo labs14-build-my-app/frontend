@@ -49,6 +49,7 @@ body {
     font-size: 3.5rem;
     font-family: @fontFamily;
     color: @font-color;
+    font-weight: bold;
   }
 
   .home-navigation-bar {
@@ -102,7 +103,7 @@ body {
 
     p {
       color: @font-color;
-      line-height: 1.2;
+      line-height: 30px;
     }
 
     button {
@@ -232,6 +233,7 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-top: 284px;
+  margin-bottom: 186px;
   // border: 1px solid red;
 
   .text-section {
@@ -263,7 +265,13 @@ body {
 
 // section-4
 .reviews {
-  display: flex;
+  position: relative;
+  width: 1920px;
+  height: 1048px;
+  background: url("../assets/svgs/Blob User Reviews.svg") no-repeat;
+  background-size: cover;
+  background-size: contain;
+  // background-attachment: fixed;
   .user-reviews {
     h2 {
       color: @font-color;
@@ -274,10 +282,54 @@ body {
     }
     p {
       font-family: "Source SansPro";
-      text-align: left;
+      text-align: right;
       font-size: 1.8rem;
-      color: lighten;
     }
+    .user-reviews-h {
+      width: 206;
+      height: 44;
+      position: absolute;
+      top: 232px;
+      right: 252px;
+    }
+    .user-reviews-p {
+      width: 356px;
+      height: 53px;
+      position: absolute;
+      top: 301px;
+      right: 252px;
+    }
+  }
+  .dev-review {
+    display: flex;
+    position: absolute;
+    height: 288px;
+    width: 860px;
+    bottom: 316px;
+    left: 530px;
+    background: white;
+    .dev-review-img {
+      margin: 35px;
+    }
+    .dev-review-text {
+      margin: 35px 35px 35px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 30px;
+      .dev-review-text-p {
+        margin-top: 10px;
+        padding: 10px;
+        background: #f2f2f2;
+      }
+    }
+  }
+  .img-person {
+    height: 684px;
+    width: 918.57;
+    margin-top: 134px;
+    margin-left: 100px;
+    display: inline-block;
   }
 }
 // section-4-end
@@ -298,27 +350,23 @@ body {
 
     .blobs {
       border: 1px solid blue;
+      display: flex;
+      justify-content: space-between;
 
-      img:first-child {
+      .left {
         border: 1px solid green;
-        position: relative;
-        bottom: -5rem;
+
+        img:first-child {
+          border: 1px solid red;
+        }
       }
 
-      img:nth-child(2) {
-        border: 1px solid green;
-      }
+      .right {
+        border: 1px solid red;
 
-      img:nth-child(3) {
-        border: 1px solid green;
-      }
-
-      img:nth-child(4) {
-        border: 1px solid green;
-      }
-
-      img:nth-child(5) {
-        border: 1px solid green;
+        img:first-child {
+          border: 1px solid red;
+        }
       }
     }
   }
