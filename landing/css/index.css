@@ -212,9 +212,15 @@ body p {
 }
 .getting-started .gs-header {
   font-family: "Source Sans Pro";
+  text-align: center;
 }
 .getting-started .gs-header p {
   font-size: 1.8rem;
+  width: 724px;
+  text-align: center;
+}
+.getting-started .gs-cards {
+  display: flex;
 }
 .getting-started .gs-signupimg {
   width: 250px;
@@ -222,12 +228,23 @@ body p {
 }
 .getting-started .gs-signuptxt p {
   font-size: 1.8rem;
+  width: 368px;
+}
+.getting-started .gs-projectprepimg {
+  width: 342.66px;
+  height: 250px;
 }
 .getting-started .gs-projectpreptxt p {
   font-size: 1.8rem;
+  width: 368px;
+}
+.getting-started .gs-deliveryimg {
+  width: 337.26;
+  height: 250px;
 }
 .getting-started .gs-deliverytxt p {
   font-size: 1.8rem;
+  width: 368px;
 }
 .safety-first {
   display: flex;
@@ -282,6 +299,21 @@ body p {
   background: white;
   text-align: center;
 }
-.section-5 .section-5-footer {
-  background-color: #F2F2F2;
+.section-5 .section-5-cta .blobs img:first-child {
+  background-color: red;
+  position: relative;
+  bottom: -50px;
+}
+footer {
+  width: 1557px;
+  height: 347px;
+  margin: 0 auto;
+}
+footer h1 {
+  font-size: 3.5rem;
+  font-family: "Source Sans Pro";
+}
+footer p {
+  font-size: 1.8rem;
+  font-family: "Source Sans Pro";
 }

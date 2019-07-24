@@ -111,12 +111,16 @@ body {
 .getting-started {
   .gs-header {
     font-family: @fontFamily;
-
+    text-align: center;
     p {
       font-size: @fontsize-p;
+      width: 724px;
+      text-align: center;
     }
   }
-
+  .gs-cards {
+    display: flex;
+  }
   .gs-signupimg {
     width: 250px;
     height: 283.83px;
@@ -124,17 +128,29 @@ body {
   .gs-signuptxt {
     p {
       font-size: @fontsize-p;
+      width: 368px;
     }
+  }
+
+  .gs-projectprepimg {
+    width: 342.66px;
+    height: 250px;
   }
   .gs-projectpreptxt {
     p {
       font-size: @fontsize-p;
+      width: 368px;
     }
   }
 
+  .gs-deliveryimg {
+    width: 337.26;
+    height: 250px;
+  }
   .gs-deliverytxt {
     p {
       font-size: @fontsize-p;
+      width: 368px;
     }
   }
 }
@@ -203,9 +219,40 @@ body {
   .section-5-cta {
     background: white;
     text-align: center;
-  }
 
-  .section-5-footer {
-    background-color: @veryLightGrey;
+    .blobs {
+      img:first-child {
+        background-color: red;
+        position: relative;
+        bottom: -50px;
+      }
+
+      img:second-child {
+      }
+    }
   }
 }
+
+// section-5-end
+
+// footer
+footer {
+  width: 1557px;
+  height: 347px;
+  margin: 0 auto;
+  h1 {
+    font-size: @fontsize-header;
+    font-family: @fontFamily;
+  }
+
+  p {
+    font-size: @fontsize-p;
+    font-family: @fontFamily;
+  }
+  .footer-section-1 {
+  }
+
+  .footer-section-2 {
+  }
+}
+// footer-end
