@@ -25,7 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "less": "less-watch-compiler css less index.less"
   },
   "eslintConfig": {
     "extends": "react-app"
