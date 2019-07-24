@@ -21,9 +21,10 @@ body {
     top: 0;
     right: 0;
     // max-width: 50%;
-    @media (min-width: 1440px) {
+    @media (max-width: 1440px) {
     width: 50%;
     }
+    
 }
 .home-header{//Ruben's CSS
     display: flex;
@@ -62,16 +63,19 @@ body {
     align-items: center;
 
     img{
-        width: 59%;
+
         max-width: 50%;
-        @media (min-width: 1440px) {
-            width: 50%;
-            }
+        // @media (max-width: 1440px) {
+        //     width: 41%;
+        //     }
     }    
     section{
         width: 41%;
         padding-left: 6.25em;
         padding-right: 3.3125em;
+        @media (max-width: 1440px) {
+            padding-right: 14.3125em;
+        }
         font-family: @fontFamily;
 
         h2{

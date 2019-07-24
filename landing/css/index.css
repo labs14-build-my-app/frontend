@@ -144,7 +144,7 @@ body p {
   top: 0;
   right: 0;
 }
-@media (min-width: 1440px) {
+@media (max-width: 1440px) {
   .hi {
     width: 50%;
   }
@@ -182,19 +182,18 @@ body p {
   align-items: center;
 }
 .cta-getstarted-section img {
-  width: 59%;
   max-width: 50%;
-}
-@media (min-width: 1440px) {
-  .cta-getstarted-section img {
-    width: 50%;
-  }
 }
 .cta-getstarted-section section {
   width: 41%;
   padding-left: 6.25em;
   padding-right: 3.3125em;
   font-family: "Source Sans Pro";
+}
+@media (max-width: 1440px) {
+  .cta-getstarted-section section {
+    padding-right: 14.3125em;
+  }
 }
 .cta-getstarted-section section h2 {
   color: #43425D;
