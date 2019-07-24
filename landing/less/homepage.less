@@ -1,5 +1,6 @@
 body {
   background: @veryLightGrey;
+  font-family: @fontFamily;
 
   h2 {
     font-size: @fontsize-header;
@@ -112,14 +113,19 @@ body {
   .gs-header {
     font-family: @fontFamily;
     text-align: center;
+    margin-top: 500px;
     p {
       font-size: @fontsize-p;
       width: 724px;
       text-align: center;
+      margin-left: 550px;
+      padding: 20px;
+      margin-bottom: 40px;
     }
   }
   .gs-cards {
     display: flex;
+    justify-content: space-around;
   }
   .gs-signupimg {
     width: 250px;
@@ -220,14 +226,33 @@ body {
     background: white;
     text-align: center;
 
+    p {
+      padding: 150px 0 0 0;
+    }
+
     .blobs {
+      border: 1px solid blue;
+
       img:first-child {
-        background-color: red;
+        border: 1px solid green;
         position: relative;
         bottom: -50px;
       }
 
-      img:second-child {
+      img:nth-child(2) {
+        border: 1px solid green;
+      }
+
+      img:nth-child(3) {
+        border: 1px solid green;
+      }
+
+      img:nth-child(4) {
+        border: 1px solid green;
+      }
+
+      img:nth-child(5) {
+        border: 1px solid green;
       }
     }
   }
@@ -240,6 +265,7 @@ footer {
   width: 1557px;
   height: 347px;
   margin: 0 auto;
+  font-family: @fontFamily;
   h1 {
     font-size: @fontsize-header;
     font-family: @fontFamily;
@@ -249,7 +275,27 @@ footer {
     font-size: @fontsize-p;
     font-family: @fontFamily;
   }
+
+  a {
+    font-size: @fontsize-p;
+    font-family: @fontFamily;
+  }
   .footer-section-1 {
+    display: flex;
+    border: 1px solid red;
+    justify-content: space-between;
+
+    ul {
+      li {
+        font-size: 1.5rem;
+
+        a {
+          text-decoration: none;
+          color: @font-color;
+          font-family: @fontsize-p;
+        }
+      }
+    }
   }
 
   .footer-section-2 {

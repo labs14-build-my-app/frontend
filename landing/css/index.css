@@ -131,6 +131,7 @@ html {
 }
 body {
   background: #F2F2F2;
+  font-family: "Source Sans Pro";
 }
 body h2 {
   font-size: 3.5rem;
@@ -213,14 +214,19 @@ body p {
 .getting-started .gs-header {
   font-family: "Source Sans Pro";
   text-align: center;
+  margin-top: 500px;
 }
 .getting-started .gs-header p {
   font-size: 1.8rem;
   width: 724px;
   text-align: center;
+  margin-left: 550px;
+  padding: 20px;
+  margin-bottom: 40px;
 }
 .getting-started .gs-cards {
   display: flex;
+  justify-content: space-around;
 }
 .getting-started .gs-signupimg {
   width: 250px;
@@ -299,15 +305,34 @@ body p {
   background: white;
   text-align: center;
 }
+.section-5 .section-5-cta p {
+  padding: 150px 0 0 0;
+}
+.section-5 .section-5-cta .blobs {
+  border: 1px solid blue;
+}
 .section-5 .section-5-cta .blobs img:first-child {
-  background-color: red;
+  border: 1px solid green;
   position: relative;
   bottom: -50px;
+}
+.section-5 .section-5-cta .blobs img:nth-child(2) {
+  border: 1px solid green;
+}
+.section-5 .section-5-cta .blobs img:nth-child(3) {
+  border: 1px solid green;
+}
+.section-5 .section-5-cta .blobs img:nth-child(4) {
+  border: 1px solid green;
+}
+.section-5 .section-5-cta .blobs img:nth-child(5) {
+  border: 1px solid green;
 }
 footer {
   width: 1557px;
   height: 347px;
   margin: 0 auto;
+  font-family: "Source Sans Pro";
 }
 footer h1 {
   font-size: 3.5rem;
@@ -316,4 +341,21 @@ footer h1 {
 footer p {
   font-size: 1.8rem;
   font-family: "Source Sans Pro";
+}
+footer a {
+  font-size: 1.8rem;
+  font-family: "Source Sans Pro";
+}
+footer .footer-section-1 {
+  display: flex;
+  border: 1px solid red;
+  justify-content: space-between;
+}
+footer .footer-section-1 ul li {
+  font-size: 1.5rem;
+}
+footer .footer-section-1 ul li a {
+  text-decoration: none;
+  color: #43425D;
+  font-family: 1.8rem;
 }
