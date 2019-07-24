@@ -138,8 +138,18 @@ body h2 {
 body p {
   font-size: 1.8rem;
 }
+.hi {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+@media (min-width: 1440px) {
+  .hi {
+    width: 50%;
+  }
+}
 .home-header {
-  background: linear-gradient(90deg, #efefef, purple);
   display: flex;
   justify-content: space-between;
   padding: 3.15em 6.25em;
@@ -169,9 +179,47 @@ body p {
 }
 .cta-getstarted-section {
   display: flex;
+  align-items: center;
 }
 .cta-getstarted-section img {
-  width: 1048px;
+  width: 59%;
+  max-width: 50%;
+}
+@media (min-width: 1440px) {
+  .cta-getstarted-section img {
+    width: 50%;
+  }
+}
+.cta-getstarted-section section {
+  width: 41%;
+  padding-left: 6.25em;
+  padding-right: 3.3125em;
+  font-family: "Source Sans Pro";
+}
+.cta-getstarted-section section h2 {
+  color: #43425D;
+  font-weight: 600;
+  padding-bottom: 25px;
+  line-height: 1.5;
+}
+.cta-getstarted-section section p {
+  color: #43425D;
+  line-height: 1.2;
+}
+.cta-getstarted-section section button {
+  margin: 25px 0;
+  border: none;
+  background: #9519E8;
+  border-radius: 6px;
+  width: 186px;
+  height: 55px;
+  box-sizing: border-box;
+}
+.cta-getstarted-section section button a {
+  text-decoration: none;
+  text-emphasis: none;
+  color: #fff;
+  font-size: 2.1rem;
 }
 .getting-started .gs-header {
   font-family: "Source Sans Pro";
