@@ -221,10 +221,16 @@ body p {
   color: #fff;
   font-size: 2.1rem;
 }
+.getting-started {
+  /* bottom, image */
+  background-image: url("../assets/svgs/Blob\ Getting\ Started.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
 .getting-started .gs-header {
   font-family: "Source Sans Pro";
   text-align: center;
-  margin-top: 500px;
 }
 .getting-started .gs-header p {
   font-size: 1.8rem;
@@ -316,7 +322,7 @@ body p {
   text-align: center;
 }
 .section-5 .section-5-cta p {
-  padding: 150px 0 0 0;
+  padding: 15rem 0 1rem 0;
 }
 .section-5 .section-5-cta .blobs {
   border: 1px solid blue;
