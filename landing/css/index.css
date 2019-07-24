@@ -239,7 +239,7 @@ body ul li {
 }
 .getting-started {
   padding-top: 112px;
-  /* bottom, image */
+  width: 1313px;
   margin: 0 auto;
 }
 .getting-started .gs-header {
@@ -251,6 +251,7 @@ body ul li {
   font-weight: bold;
   color: #43425d;
   margin-bottom: 22px;
+  text-align: center;
 }
 .getting-started .gs-header p {
   font-size: 1.8rem;
@@ -427,12 +428,15 @@ body ul li {
 }
 .section-5 .section-5-cta .blobs .left img:first-child {
   position: relative;
+  border: 1px solid purple;
+  top: 6.5rem;
+  left: 14.5rem;
+}
+.section-5 .section-5-cta .blobs .left img:nth-child(2) {
   border: 1px solid red;
-  top: 7rem;
-  left: 14rem;
 }
 .section-5 .section-5-cta .blobs .right {
-  border: 1px solid red;
+  border: 1px solid green;
 }
 .section-5 .section-5-cta .blobs .right img:first-child {
   border: 1px solid red;
