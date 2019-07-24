@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="110.859" height="101.97" viewBox="0 0 110.859 101.97">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#6e23b7"/>
+      <stop offset="1" stop-color="#452092"/>
+    </linearGradient>
+    <filter id="Path_1257" x="0" y="0" width="110.859" height="101.97" filterUnits="userSpaceOnUse">
+      <feOffset dx="6" dy="8" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feFlood flood-opacity="0.09"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Blob_CTA" data-name="Blob CTA" transform="translate(18.003 15.997)">
+    <g id="Layer_5" data-name="Layer 5" transform="translate(-0.001 0.003)">
+      <g transform="matrix(1, 0, 0, 1, -18, -16)" filter="url(#Path_1257)">
+        <path id="Path_1257-2" data-name="Path 1257" d="M0,28.467C.175,38.548,8.367,47.2,17.734,51.1a35.427,35.427,0,0,0,32.382-2.274C67.464,37.642,68.1,7.361,45.8,1,29.087-3.761-.307,9.038,0,28.467Z" transform="translate(18 16)" fill="url(#linear-gradient)"/>
+      </g>
+    </g>
+  </g>
+</svg>
