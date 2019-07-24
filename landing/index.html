@@ -95,16 +95,18 @@
 
     <!--
       Section(blob background image)
-        div.getting-started
-          shit here
-        div.safety-first
-          shit here
+        div.getting-started(sub section)
+          div.gs-content
+            div.gs-header
+            div.gs-cards
+        div.safety-first(sub section)
+          Shit here
     -->
 
     <!-- Section 2: Getting Started - Benjamin lopez -->
     <!-- You need to add a media query at 1440px to get the stuff big af purple blob to work -->
 
-    <div class="grey-blob">
+    <section class="grey-blob">
       <section class="getting-started">
         <div class="gs-header">
           <h2>Getting Started</h2>
@@ -179,7 +181,7 @@
           </p>
         </div>
       </section>
-    </div>
+    </section>
     <!-- Section 3 end -->
 
     <!-- Section 4: user reviews - Anatoly -->
@@ -227,10 +229,14 @@
     <!-- Section 5: Cta & Footer - Jacob Tonna -->
     <section class="section-5">
       <div class="section-5-cta">
-        <p>TRY DEVFINDR NOW</p>
-        <h2>Start Finding Developers Today</h2>
-        <button>Start For Free</button>
-        <button>See Product Demo</button>
+        <div class="text-section">
+          <p>TRY DEVFINDR NOW</p>
+          <h2>Start Finding Developers Today</h2>
+        </div>
+        <div class="buttons">
+          <button>Start For Free</button>
+          <button>See Product Demo</button>
+        </div>
         <div class="blobs">
           <img src="./assets/svgs/Blob CTA-2.svg" alt="Blob" />
           <img src="./assets/svgs/Blob CTA.svg" alt="Blob" />

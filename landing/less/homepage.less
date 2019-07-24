@@ -121,16 +121,24 @@ body {
   }
 }
 
+.grey-blob {
+  background-image: url("../assets/svgs/Blob\ Getting\ Started.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  // height: 1775px;
+  border: 1px solid red;
+}
+
 //Section 2 Benjamin Lopez Start
 .getting-started {
+  // margin-top: 200px;
+  padding-top: 112px;
   // background-color: red;
   /* bottom, image */
-  background-image: url("../assets/svgs/Blob\ Getting\ Started.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
   // height: 0;
   // border: 1px solid red;
+  width: 1313px;
+  margin: 0 auto;
 
   .gs-header {
     font-family: @fontFamily;
@@ -141,14 +149,14 @@ body {
       font-size: @fontsize-p;
       width: 724px;
       text-align: center;
-      margin-left: 550px;
       padding: 20px;
       margin-bottom: 40px;
+      margin-left: 250px;
     }
   }
   .gs-cards {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
   .gs-signupimg {
     width: 250px;
@@ -192,6 +200,7 @@ body {
   margin: 0 auto;
   align-items: center;
   justify-content: space-between;
+  margin-top: 284px;
   // border: 1px solid red;
 
   .text-section {
@@ -250,9 +259,10 @@ body {
   .section-5-cta {
     background: white;
     text-align: center;
+    padding: 15rem 0 0 0;
 
     p {
-      padding: 15rem 0 1rem 0;
+      padding: 0 0 1rem 0;
     }
 
     .blobs {
