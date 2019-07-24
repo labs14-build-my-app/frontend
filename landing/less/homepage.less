@@ -1,5 +1,5 @@
 body {
-  background: @veryLightGrey;
+  background: white;
   font-family: @fontFamily;
 
   h2 {
@@ -15,22 +15,33 @@ body {
 
 //     background-size: 50%;
 // }
-.hi {
-  z-index: -1;
+.rubens-section {
+  padding-bottom: 163px;
+  background: @veryLightGrey;
+}
+
+.header-blobber {
+  z-index: 0;
   position: absolute;
   top: 0;
   right: 0;
+  // height: 1182px;
 
-  // max-width: 50%;
+  max-width: 50%;
   // @media (max-width: 1440px) {
-  // width: 50%;
+  //   width: 50%;
   // }
 }
+
 .home-header {
   //Ruben's CSS
+  z-index: -2;
   display: flex;
   justify-content: space-between;
   padding: 3.15em 6.25em;
+  background: transparent;
+  bottom: -50px;
+
   h2 {
     font-size: 3.5rem;
     font-family: @fontFamily;
@@ -45,7 +56,7 @@ body {
   .hamburger-menu-section {
     display: flex;
     align-items: center;
-
+    z-index: 2;
     .hamburger-svg {
       width: 40px;
       height: 35px;
@@ -65,6 +76,7 @@ body {
 
   img {
     max-width: 50%;
+    z-index: 420;
     // @media (max-width: 1440px) {
     //     width: 41%;
     //     }
@@ -109,6 +121,7 @@ body {
   }
 }
 
+//Section 2 Benjamin Lopez Start
 .getting-started {
   .gs-header {
     font-family: @fontFamily;
@@ -160,7 +173,7 @@ body {
     }
   }
 }
-
+//Section 2 end
 .safety-first {
   display: flex;
   width: 1436px;
@@ -218,7 +231,7 @@ body {
 }
 // section-4-end
 
-// section-5
+// section-5 Jacob T
 .section-5 {
   border: 1px solid red;
 
@@ -260,45 +273,6 @@ body {
 
 // section-5-end
 
-// footer
-footer {
-  width: 1557px;
-  height: 347px;
-  margin: 0 auto;
-  font-family: @fontFamily;
-  h1 {
-    font-size: @fontsize-header;
-    font-family: @fontFamily;
-  }
+// Section 6 - footer start
 
-  p {
-    font-size: @fontsize-p;
-    font-family: @fontFamily;
-  }
-
-  a {
-    font-size: @fontsize-p;
-    font-family: @fontFamily;
-  }
-  .footer-section-1 {
-    display: flex;
-    border: 1px solid red;
-    justify-content: space-between;
-
-    ul {
-      li {
-        font-size: 1.5rem;
-
-        a {
-          text-decoration: none;
-          color: @font-color;
-          font-family: @fontsize-p;
-        }
-      }
-    }
-  }
-
-  .footer-section-2 {
-  }
-}
-// footer-end
+// Section 6 - footer-end

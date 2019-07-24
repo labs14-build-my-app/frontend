@@ -130,7 +130,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  background: #F2F2F2;
+  background: white;
   font-family: "Source Sans Pro";
 }
 body h2 {
@@ -139,16 +139,24 @@ body h2 {
 body p {
   font-size: 1.8rem;
 }
-.hi {
-  z-index: -1;
+.rubens-section {
+  padding-bottom: 163px;
+  background: #F2F2F2;
+}
+.header-blobber {
+  z-index: 0;
   position: absolute;
   top: 0;
   right: 0;
+  max-width: 50%;
 }
 .home-header {
+  z-index: -2;
   display: flex;
   justify-content: space-between;
   padding: 3.15em 6.25em;
+  background: transparent;
+  bottom: -50px;
 }
 .home-header h2 {
   font-size: 3.5rem;
@@ -161,6 +169,7 @@ body p {
 .home-header .hamburger-menu-section {
   display: flex;
   align-items: center;
+  z-index: 2;
 }
 .home-header .hamburger-menu-section .hamburger-svg {
   width: 40px;
@@ -179,6 +188,7 @@ body p {
 }
 .cta-getstarted-section img {
   max-width: 50%;
+  z-index: 420;
 }
 .cta-getstarted-section section {
   width: 41%;
@@ -327,35 +337,4 @@ body p {
 }
 .section-5 .section-5-cta .blobs img:nth-child(5) {
   border: 1px solid green;
-}
-footer {
-  width: 1557px;
-  height: 347px;
-  margin: 0 auto;
-  font-family: "Source Sans Pro";
-}
-footer h1 {
-  font-size: 3.5rem;
-  font-family: "Source Sans Pro";
-}
-footer p {
-  font-size: 1.8rem;
-  font-family: "Source Sans Pro";
-}
-footer a {
-  font-size: 1.8rem;
-  font-family: "Source Sans Pro";
-}
-footer .footer-section-1 {
-  display: flex;
-  border: 1px solid red;
-  justify-content: space-between;
-}
-footer .footer-section-1 ul li {
-  font-size: 1.5rem;
-}
-footer .footer-section-1 ul li a {
-  text-decoration: none;
-  color: #43425D;
-  font-family: 1.8rem;
 }
