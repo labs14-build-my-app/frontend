@@ -135,13 +135,16 @@ body {
 }
 body h2 {
   font-size: 3.5rem;
+  color: #43425d;
 }
 body p {
   font-size: 1.8rem;
+  color: #43425d;
+  line-height: 30px;
 }
 .rubens-section {
   padding-bottom: 163px;
-  background: #F2F2F2;
+  background: #f2f2f2;
 }
 .header-blobber {
   z-index: 0;
@@ -161,7 +164,7 @@ body p {
 .home-header h2 {
   font-size: 3.5rem;
   font-family: "Source Sans Pro";
-  color: #43425D;
+  color: #43425d;
 }
 .home-header .home-navigation-bar {
   display: none;
@@ -197,13 +200,13 @@ body p {
   font-family: "Source Sans Pro";
 }
 .cta-getstarted-section section h2 {
-  color: #43425D;
+  color: #43425d;
   font-weight: 600;
   padding-bottom: 25px;
   line-height: 1.5;
 }
 .cta-getstarted-section section p {
-  color: #43425D;
+  color: #43425d;
   line-height: 1.2;
 }
 .cta-getstarted-section section button {
@@ -225,7 +228,6 @@ body p {
   background-image: url("../assets/svgs/Blob\ Getting\ Started.svg");
   background-size: contain;
   background-repeat: no-repeat;
-  border: 1px solid red;
 }
 .getting-started {
   padding-top: 112px;
@@ -237,17 +239,40 @@ body p {
   font-family: "Source Sans Pro";
   text-align: center;
 }
+.getting-started .gs-header h2 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #43425d;
+  margin-bottom: 22px;
+}
 .getting-started .gs-header p {
   font-size: 1.8rem;
   width: 724px;
   text-align: center;
   padding: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 81px;
   margin-left: 250px;
+  line-height: 30px;
 }
 .getting-started .gs-cards {
   display: flex;
   justify-content: space-evenly;
+}
+.getting-started .gs-cards h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+.getting-started .gs-cards p {
+  line-height: 23px;
+  margin-top: 23px;
+  color: #58577b;
+  text-align: center;
+}
+.getting-started .gs-signupcard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 .getting-started .gs-signupimg {
   width: 250px;
@@ -288,7 +313,7 @@ body p {
   line-height: 30px;
 }
 .safety-first .text-section h2 {
-  color: #43425D;
+  color: #43425d;
   font-family: "Source Sans Pro";
   font-weight: bold;
   text-align: left;
@@ -308,7 +333,7 @@ body p {
   display: flex;
 }
 .reviews .user-reviews h2 {
-  color: #43425D;
+  color: #43425d;
   font-size: 3.5rem;
   font-family: "Source SansPro";
   font-weight: bold;
@@ -337,7 +362,7 @@ body p {
 .section-5 .section-5-cta .blobs img:first-child {
   border: 1px solid green;
   position: relative;
-  bottom: -50px;
+  bottom: -5rem;
 }
 .section-5 .section-5-cta .blobs img:nth-child(2) {
   border: 1px solid green;

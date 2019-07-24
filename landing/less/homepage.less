@@ -4,9 +4,12 @@ body {
 
   h2 {
     font-size: @fontsize-header;
+    color: @font-color;
   }
   p {
     font-size: @fontsize-p;
+    color: @font-color;
+    line-height: @font-height;
   }
 }
 
@@ -126,7 +129,7 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   // height: 1775px;
-  border: 1px solid red;
+  //   border: 1px solid red;
 }
 
 //Section 2 Benjamin Lopez Start
@@ -145,18 +148,46 @@ body {
     text-align: center;
     // border: 1px solid red;
 
+    h2 {
+      font-size: @fontsize-header;
+      font-weight: bold;
+      color: @font-color;
+      margin-bottom: 22px;
+    }
+
     p {
       font-size: @fontsize-p;
       width: 724px;
       text-align: center;
       padding: 20px;
-      margin-bottom: 40px;
+      margin-bottom: 81px;
       margin-left: 250px;
+      line-height: @font-height;
     }
   }
   .gs-cards {
     display: flex;
     justify-content: space-evenly;
+
+    h2 {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    p {
+      line-height: 23px;
+      margin-top: 23px;
+      color: lighten(@font-color, 10);
+      text-align: center;
+    }
+  }
+
+  .gs-signupcard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    // border: 1px solid red;
   }
   .gs-signupimg {
     width: 250px;
@@ -206,7 +237,7 @@ body {
   .text-section {
     width: 722px;
     height: 214px;
-    line-height: 30px;
+    line-height: @font-height;
 
     h2 {
       color: @font-color;
@@ -271,7 +302,7 @@ body {
       img:first-child {
         border: 1px solid green;
         position: relative;
-        bottom: -50px;
+        bottom: -5rem;
       }
 
       img:nth-child(2) {
