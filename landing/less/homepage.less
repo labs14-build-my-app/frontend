@@ -20,14 +20,30 @@ body {
     font-size: @fontsize-p;
   }
 
-  // primary & secondary button's (change them in mixins)
+  // primary & secondary button's
 
   .button-primary{
     .button-primary();
+
+    svg{
+      padding: 0 0 0 1.5rem;
+
+      path{
+        fill: @white;
+      }
+    }
   }
 
   .button-secondary{
     .button-secondary();
+
+    svg{
+      padding: 0 0 0 1.5rem;
+
+      path{
+        fill: @electricViolet
+      }
+    }
   }
    
 }
@@ -37,18 +53,17 @@ body {
 
 //     background-size: 50%;
 // }
-.rubens-section {
+
+//Ruben's jotaroEnergy ? false : <DIO energy={true} />; 
+.intro-container { 
   padding-bottom: 163px;
-  background: @veryLightGrey;
-}
+  background: @whiteSmoke;
 
 .header-blobber {
   z-index: 0;
   position: absolute;
   top: 0;
   right: 0;
-  // height: 1182px;
-
   max-width: 50%;
   @media (max-width: 1440px) {
     width: 50%;
@@ -61,6 +76,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 3.15em 6.25em;
+  padding-top: 3.125rem;
   background: transparent;
   bottom: -50px;
 
@@ -96,21 +112,22 @@ body {
 .cta-getstarted-section {
   display: flex;
   align-items: center;
-
+  
   img {
     max-width: 50%;
     z-index: 420;
-    // @media (max-// width: 1440px) {
-    //     // width: 41%;
-    //     }
+    @media (max-width: 1450px) {
+        width: 41%;
+        }
+
   }
   section {
     // width: 41%;
     padding-left: 6.25em;
     padding-right: 3.3125em;
-    // @media (max-// width: 1440px) {
-    //     padding-right: 14.3125em;
-    // }
+    @media (max-width: 1450px) {
+        padding-top: 13.3125em;
+    }
     font-family: @fontFamily;
 
     h2 {
@@ -124,26 +141,20 @@ body {
       color: @font-color;
       line-height: 30px;
     }
-
-    button {
-      margin: 25px 0;
-      border: none;
-      background: #9519e8;
-      border-radius: 6px;
-      width: 186px;
-      height: 55px;
-      //
-      box-sizing: border-box;
-      a {
-        text-decoration: none;
-        text-emphasis: none;
-        color: #fff;
-        font-size: 2.1rem;
-      }
+    button{
+      margin: 3.15em 0px;
+    }
+    button a{
+      color: white;
+      font-size: 1.8rem;
+      text-decoration: none;
+      
+    }
+   
     }
   }
-}
 
+}
 .grey-blob {
   background-image: url("../assets/svgs/Blob\ Getting\ Started.svg");
   background-size: contain;
@@ -152,7 +163,7 @@ body {
   //   border: 1px solid red;
 }
 
-//Section 2 Benjamin Lopez Start
+//Section 2 Benjamin Lopez Start // Optimized: N/A
 .getting-started {
   padding-top: 112px;
   width: 1313px;
@@ -161,7 +172,6 @@ body {
   .gs-header {
     font-family: @fontFamily;
     text-align: center;
-    // border: 1px solid red;
 
     h2 {
       font-size: @fontsize-header;
@@ -203,7 +213,6 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    // border: 1px solid red;
   }
   .gs-signupimg {
     width: 250px;
@@ -278,7 +287,7 @@ body {
   }
 }
 
-// section-4-Anatoly
+// section-4-Anatoly // Optimized: N/A
 .reviews {
   position: relative;
   height: 1048px;
@@ -299,8 +308,8 @@ body {
       font-size: 1.8rem;
     }
     .user-reviews-h {
-      width: 206;
-      height: 44;
+      width: 206px;
+      height: 44px;
       position: absolute;
       top: 232px;
       right: 252px;
@@ -350,70 +359,91 @@ body {
 }
 // section-4-end
 
-// section-5 Jacob T
+// section-5 Jacob T // Optimized : True
 
 .section-5 {
-  border: 1px solid red;
-
   .section-5-cta {
-    background: white;
+    background: @white;
     text-align: center;
     padding: 15rem 0 0 0;
 
-    p {
-      padding: 0 0 1rem 0;
+    text-section{
+
+      p {
+        padding: 0 0 1rem 0;
+        color: @veryLightGrey;
+      }
+
+      h1{
+        color: @lightSlateBlue;
+      }
+
     }
 
     .buttons{
-      margin: 5rem 0 14rem 0;
+      // this defins the margin between buttons and text, as well as the bottom of the parent container.
+      margin: 5rem 0 10rem 0;
+
+      .button-primary{
+        .button-primary(@height: 8rem, @padding: 0 6rem 0);
+      }
+
+      .button-secondary{
+       .button-secondary(@height: 8rem, @padding: 0 4rem 0);
+      }
+      }
+
     }
 
     .blobs {
-      border: 1px solid blue;
       display: flex;
       justify-content: space-between;
-
-      box-sizing: border-box;
-      height: 1px;
+      
       // by default the .blobs container will have its own box model, this adds too much spacing at the bottom
       // setting it to border box with 1px height solves this issue, and the images being offset still work as its position relative to its parent container.
-
+      box-sizing: border-box;
+      height: 1px;
+      
+      // blobs on the left side of the screen
       .left {
-        border: 1px solid green;
-
+        // blob 1
         img:first-child {
-          position: relative;
-          border: 1px solid red;
-          top: +6.5rem;
-          left: +14.5rem;
+          .blob-offset( @x: -17.5rem, @y: 16rem);
         }
 
+        // blob 2
         img:nth-child(2) {
-          border: 1px solid purple;
-          position: relative;
-          top: -39rem;
-          left: +14.5rem;
+          .blob-offset( @x: -55rem, @y: +14.5rem);
         }
       }
 
+      // blobs on the right side of the screen
       .right {
-        border: 1px solid green;
-
+        // blob 1
         img:first-child {
-          border: 1px solid red;
+          .blob-offset( @x: -53rem, @y: -10rem);
+          
+        }
+
+        img:nth-child(2){
+          .blob-offset( @x: -29.5rem, @y: -11rem);
+        }
+
+        img:nth-child(3){
+          .blob-offset( @x: -44rem, @y: -10.5rem);
         }
       }
 
     }
   }
-}
 
 // section-5-end
 
-// Section 6 - footer start
+// Section 6 - footer start - Alfonso // Optimized : N/A
+
 footer {
   padding-top: 10.9rem;
-  background: @veryLightGrey;
+  background: @whiteSmoke;
 
   .lists-of-links {
     width: 1394px;

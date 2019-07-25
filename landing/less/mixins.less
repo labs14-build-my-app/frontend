@@ -1,6 +1,6 @@
-// button mixin
+// These mixins are for primary and secondary buttons.
 
-.button-primary(){
+.button-primary( @height: 5.5rem, @padding: 0 2.5rem 0 ){
 
 	color: @white;
 	background: @electricViolet;
@@ -8,11 +8,11 @@
 	border: none;
 	border-radius: 6px;
 
-	width: 186px;
-	height: 55px;
+	height: @height;
+	padding: @padding;
 }
 
-.button-secondary(){
+.button-secondary(@height: 5.5rem, @padding: 0 2.5rem 0){
 
 	color: @black;
 	background-color: rgba(0,0,0, 0);
@@ -20,7 +20,14 @@
 	border: 2px solid @electricViolet;
 	border-radius: 6px;
 
-	width: 186px;
-	height: 55px;
+	height: @height;
+	padding: @padding;
 
 }
+
+// blob offsets (landing page CTA)
+ .blob-offset(@x: 1rem, @y: 1rem ){
+	position: relative;
+	top: @x;
+	left: @y;
+ }
