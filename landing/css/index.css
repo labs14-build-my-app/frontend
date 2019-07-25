@@ -230,6 +230,11 @@ body .button-secondary svg path {
   display: flex;
   align-items: center;
 }
+@media (max-width: 1250px) {
+  .intro-container .cta-getstarted-section {
+    flex-direction: column-reverse;
+  }
+}
 .intro-container .cta-getstarted-section img {
   max-width: 50%;
   z-index: 420;
@@ -290,7 +295,7 @@ body .button-secondary svg path {
 }
 .getting-started .gs-header p {
   font-size: 1.8rem;
-  width: 724px;
+  width: 72.4rem;
   text-align: center;
   padding: 20px;
   margin-bottom: 81px;
@@ -318,7 +323,7 @@ body .button-secondary svg path {
   text-align: center;
 }
 .getting-started .gs-signupimg {
-  width: 250px;
+  width: 25rem;
   height: 283.83px;
 }
 .getting-started .gs-signuptxt p {
@@ -326,47 +331,42 @@ body .button-secondary svg path {
   width: 368px;
 }
 .getting-started .gs-projectprepimg {
-  width: 342.66px;
+  width: 34.266rem;
   height: 250px;
 }
 .getting-started .gs-projectpreptxt p {
   font-size: 1.8rem;
-  width: 368px;
+  width: 36.8rem;
 }
 .getting-started .gs-deliveryimg {
-  width: 337.26;
+  width: 33.726rem;
   height: 250px;
 }
 .getting-started .gs-deliverytxt p {
   font-size: 1.8rem;
-  width: 368px;
+  width: 36.8rem;
 }
 .safety-first {
   display: flex;
-  width: 1436px;
-  height: 536px;
+  width: 143.6rem;
+  height: 53.6rem;
   margin: 0 auto;
   align-items: center;
   justify-content: space-between;
-  margin-top: 284px;
-  margin-bottom: 186px;
+  margin-top: 28.4rem;
+  margin-bottom: 18.6rem;
 }
 .safety-first .text-section {
-  width: 722px;
-  height: 214px;
-  line-height: 30px;
+  width: 72.2rem;
+  height: 21.4rem;
 }
 .safety-first .text-section h2 {
-  color: #43425d;
-  font-family: "Source Sans Pro";
   font-weight: bold;
   text-align: left;
 }
 .safety-first .text-section p {
-  padding-top: 27px;
-  font-family: "Source Sans Pro";
+  padding-top: 2.7rem;
   text-align: left;
-  font-size: 1.8rem;
   font-weight: 300;
 }
 .safety-first img {
@@ -375,7 +375,7 @@ body .button-secondary svg path {
 }
 .reviews {
   position: relative;
-  height: 1048px;
+  height: 104.8rem;
   background: url("../assets/svgs/Blob User Reviews.svg") no-repeat;
   background-size: cover;
   background-size: contain;
@@ -393,50 +393,50 @@ body .button-secondary svg path {
   font-size: 1.8rem;
 }
 .reviews .user-reviews .user-reviews-h {
-  width: 206px;
-  height: 44px;
+  width: 20.6rem;
+  height: 4.4rem;
   position: absolute;
-  top: 232px;
-  right: 252px;
+  top: 23.2rem;
+  right: 25.2rem;
 }
 .reviews .user-reviews .user-reviews-p {
-  width: 356px;
-  height: 53px;
+  width: 35.6rem;
+  height: 5.3rem;
   position: absolute;
-  top: 301px;
-  right: 252px;
+  top: 30.1rem;
+  right: 25.2rem;
 }
 .reviews .dev-review {
   display: flex;
   position: absolute;
-  height: 288px;
-  width: 860px;
-  bottom: 316px;
-  left: 530px;
+  height: 28.8rem;
+  width: 86rem;
+  bottom: 31.6rem;
+  left: 53rem;
   background: white;
 }
 .reviews .dev-review .dev-review-img {
-  margin: 35px;
+  margin: 3.5rem;
 }
 .reviews .dev-review .dev-review-text {
-  margin: 35px 35px 35px 0;
+  margin: 3.5rem 3.5rem 3.5rem 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-bottom: 30px;
-  border-radius: 5px;
+  padding-bottom: 3rem;
+  border-radius: 6px;
 }
 .reviews .dev-review .dev-review-text .dev-review-text-p {
-  margin-top: 10px;
-  padding: 10px;
+  margin-top: 1rem;
+  padding: 1rem;
   background: #f2f2f2;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 .reviews .img-person {
   height: 684px;
   width: 918.57;
-  margin-top: 134px;
-  margin-left: 100px;
+  margin-top: 13.4rem;
+  margin-left: 10rem;
   display: inline-block;
 }
 .section-5 .section-5-cta {
