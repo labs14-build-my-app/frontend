@@ -1,479 +1,215 @@
 body {
-  background: white;
-  font-family: @fontFamily;
+    background: @veryLightGrey;
 
-  h1 {
-    font-size: @fontsize-cta;
-  }
-
-  h2 {
-    font-size: @fontsize-header;
-    color: @font-color;
-  }
-  p {
-    font-size: @fontsize-p;
-    color: @font-color;
-    line-height: @font-height;
-  }
-
-  ul li {
-    font-size: @fontsize-p;
-  }
-
-  // primary & secondary button's
-
-  .button-primary{
-    .button-primary();
-
-    svg{
-      padding: 0 0 0 1.5rem;
-
-      path{
-        fill: @white;
-      }
+    h2{
+        font-size: @fontsize-header;
     }
-  }
-
-  .button-secondary{
-    .button-secondary();
-
-    svg{
-      padding: 0 0 0 1.5rem;
-
-      path{
-        fill: @electricViolet
-      }
+    p{
+        font-size: @fontsize-p;
     }
-  }
-   
 }
+
 
 // .home-header-container{
 //     background: url("../assets/svgs/Blob\ Header.svg");
 
 //     background-size: 50%;
 // }
-
-//Ruben's jotaroEnergy ? false : <DIO energy={true} />; 
-.intro-container { 
-  padding-bottom: 163px;
-  background: @whiteSmoke;
-
-.header-blobber {
-  z-index: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  max-width: 50%;
-  @media (max-width: 1440px) {
-    width: 50%;
-  }
+.hi{
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    // max-width: 50%;
+    // @media (max-width: 1440px) {
+    // width: 50%;
+    // }
+    
 }
+.home-header{//Ruben's CSS
+    display: flex;
+    justify-content: space-between;
+    padding: 3.15em 6.25em;
+    h2{
+     font-size: 3.5rem; 
+     font-family: @fontFamily;
+     color: @font-color;
+    }
 
-.home-header {
-  //Ruben's CSS
-  z-index: -2;
-  display: flex;
-  justify-content: space-between;
-  padding: 3.15em 6.25em;
-  padding-top: 3.125rem;
-  background: transparent;
-  bottom: -50px;
+    .home-navigation-bar{//displays on click
+        display: none;
+    }
 
-  h2 {
-    font-size: 3.5rem;
-    font-family: @fontFamily;
-    color: @font-color;
-    font-weight: normal;
-  }
-
-  .home-navigation-bar {
-    //displays on click
-    display: none;
-  }
-
-  .hamburger-menu-section {
+    .hamburger-menu-section{
+        display: flex;
+        align-items: center;
+        
+        .hamburger-svg{
+            width: 40px;
+            height: 35px;
+        }
+        h3{
+            padding: 0 1.4375em;
+            font-size: 1.8rem; 
+            font-family: @fontFamily;
+            font-weight: 400;
+            color: #fff;       
+                
+        }
+    }
+}
+.cta-getstarted-section{
     display: flex;
     align-items: center;
-    z-index: 2;
-    .hamburger-svg {
-      width: 40px;
-      height: 35px;
-    }
-    h3 {
-      padding: 0 1.4375em;
-      font-size: 1.8rem;
-      font-family: @fontFamily;
-      font-weight: normal;
-      color: #fff;
-    }
-  }
-}
-.cta-getstarted-section {
-  display: flex;
-  align-items: center;
-  
-  img {
-    max-width: 50%;
-    z-index: 420;
-    @media (max-width: 1450px) {
+
+    img{
+
+        max-width: 50%;
+        // @media (max-width: 1440px) {
+        //     width: 41%;
+        //     }
+    }    
+    section{
         width: 41%;
+        padding-left: 6.25em;
+        padding-right: 3.3125em;
+        // @media (max-width: 1440px) {
+        //     padding-right: 14.3125em;
+        // }
+        font-family: @fontFamily;
+
+        h2{
+        color: @font-color;
+        font-weight: 600;
+        padding-bottom:25px;
+        line-height: 1.5;
         }
 
-  }
-  section {
-    // width: 41%;
-    padding-left: 6.25em;
-    padding-right: 3.3125em;
-    @media (max-width: 1450px) {
-        padding-top: 13.3125em;
+        p{
+        color: @font-color;
+        line-height: 1.2;
+        }
+        
+        button{
+           
+        margin:25px 0;
+        border: none;
+        background: #9519E8;
+        border-radius: 6px;
+        width: 186px;
+        height: 55px;
+    //   
+        box-sizing: border-box;
+        a{
+            text-decoration: none;
+            text-emphasis: none;
+            color: #fff;
+            font-size: 2.1rem;
+ 
+        }
+        }
+       
     }
-    font-family: @fontFamily;
-
-    h2 {
-      color: @font-color;
-      font-weight: 600;
-      padding-bottom: 25px;
-      line-height: 1.5;
-    }
-
-    p {
-      color: @font-color;
-      line-height: 30px;
-    }
-    button{
-      margin: 3.15em 0px;
-    }
-    button a{
-      color: white;
-      font-size: 1.8rem;
-      text-decoration: none;
-      
-    }
-   
-    }
-  }
-
-}
-.grey-blob {
-  background-image: url("../assets/svgs/Blob\ Getting\ Started.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  // height: 1775px;
-  //   border: 1px solid red;
 }
 
-//Section 2 Benjamin Lopez Start // Optimized: N/A
 .getting-started {
-  padding-top: 112px;
-  width: 1313px;
-  margin: 0 auto;
-
-  .gs-header {
-    font-family: @fontFamily;
-    text-align: center;
-
-    h2 {
-      font-size: @fontsize-header;
-      font-weight: bold;
-      color: @font-color;
-      margin-bottom: 22px;
-      text-align: center;
+    .gs-header {
+        font-family: @fontFamily;
+        
+        p {
+            font-size: @fontsize-p;
+        }
     }
 
-    p {
-      font-size: @fontsize-p;
-      width: 724px;
-      text-align: center;
-      padding: 20px;
-      margin-bottom: 81px;
-      margin-left: 250px;
-      line-height: @font-height;
+    .gs-signupimg{
+        width: 250px;
+        height: 283.83px;
     }
-  }
-  .gs-cards {
-    display: flex;
-    justify-content: space-evenly;
-
-    h2 {
-      text-align: center;
-      margin-top: 20px;
+    .gs-signuptxt{
+        p {
+            font-size: @fontsize-p;
+        }
+    }
+    .gs-projectpreptxt{
+        p {
+            font-size: @fontsize-p;
+        }
     }
 
-    p {
-      line-height: 23px;
-      margin-top: 23px;
-      color: lighten(@font-color, 10);
-      text-align: center;
+    .gs-deliverytxt{
+        p {
+            font-size: @fontsize-p;
+        }
     }
-  }
-
-  .gs-signupcard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
-  .gs-signupimg {
-    width: 250px;
-    height: 283.83px;
-  }
-  .gs-signuptxt {
-    p {
-      font-size: @fontsize-p;
-      width: 368px;
-    }
-  }
-
-  .gs-projectprepimg {
-    width: 342.66px;
-    height: 250px;
-  }
-  .gs-projectpreptxt {
-    p {
-      font-size: @fontsize-p;
-      width: 368px;
-    }
-  }
-
-  .gs-deliveryimg {
-    width: 337.26;
-    height: 250px;
-  }
-  .gs-deliverytxt {
-    p {
-      font-size: @fontsize-p;
-      width: 368px;
-    }
-  }
 }
-//Section 2 end
 
 .safety-first {
-  display: flex;
-  width: 1436px;
-  height: 536px;
-  margin: 0 auto;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 284px;
-  margin-bottom: 186px;
-  // border: 1px solid red;
-
-  .text-section {
-    width: 722px;
-    height: 214px;
-    line-height: @font-height;
-
-    h2 {
-      color: @font-color;
-      font-family: @fontFamily;
-      font-weight: bold;
-      text-align: left;
-    }
-
-    p {
-      padding-top: 27px;
-      font-family: @fontFamily;
-      text-align: left;
-      font-size: @fontsize-p;
-      font-weight: 300;
-    }
-  }
-
-  img {
-    width: 600px;
+    display: flex;
+    width: 1436px;
     height: 536px;
-  }
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    // border: 1px solid red; 
+
+    .text-section {
+        width: 722px;
+        height: 214px;
+        line-height: 30px;
+
+        h2{
+            color: @font-color;
+            font-family: @fontFamily;
+            font-weight: bold;
+            text-align: left;
+        }
+    
+        p {
+            padding-top: 27px;
+            font-family: @fontFamily;
+            text-align: left;
+            font-size: @fontsize-p;
+            font-weight: 300;
+        }
+    }
+    
+    img {
+        width: 600px;
+        height: 536px;
+    }
+
 }
 
-// section-4-Anatoly // Optimized: N/A
+// section-4
 .reviews {
-  position: relative;
-  height: 1048px;
-  background: url("../assets/svgs/Blob User Reviews.svg") no-repeat;
-  background-size: cover;
-  background-size: contain;
-  .user-reviews {
-    h2 {
-      color: @font-color;
-      font-size: 3.5rem;
-      font-family: "Source SansPro";
-      font-weight: bold;
-      text-align: left;
-    }
-    p {
-      font-family: "Source SansPro";
-      text-align: right;
-      font-size: 1.8rem;
-    }
-    .user-reviews-h {
-      width: 206px;
-      height: 44px;
-      position: absolute;
-      top: 232px;
-      right: 252px;
-    }
-    .user-reviews-p {
-      width: 356px;
-      height: 53px;
-      position: absolute;
-      top: 301px;
-      right: 252px;
-    }
-  }
-  .dev-review {
     display: flex;
-    position: absolute;
-    height: 288px;
-    width: 860px;
-    bottom: 316px;
-    left: 530px;
-    background: white;
-    .dev-review-img {
-      margin: 35px;
+    .user-reviews {
+        h2 {
+            color: @font-color;
+            font-size: 3.5rem;
+            font-family: "Source SansPro";
+            font-weight: bold;
+            text-align: left;
+        }
+        p {
+            font-family: "Source SansPro";
+            text-align: left;
+            font-size: 1.8rem;
+            color: lighten;
+        }
     }
-    .dev-review-text {
-      margin: 35px 35px 35px 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding-bottom: 30px;
-      border-radius: 5px;
-
-      .dev-review-text-p {
-        margin-top: 10px;
-        padding: 10px;
-        background: #f2f2f2;
-        border-radius: 5px;
-      }
-    }
-  }
-  .img-person {
-    height: 684px;
-    width: 918.57;
-    margin-top: 134px;
-    margin-left: 100px;
-    display: inline-block;
-  }
 }
 // section-4-end
 
-// section-5 Jacob T // Optimized : True
+// section-5 
+.section-5{
+    border: 1px solid red;
 
-.section-5 {
-  .section-5-cta {
-    background: @white;
-    text-align: center;
-    padding: 15rem 0 0 0;
-
-    text-section{
-
-      p {
-        padding: 0 0 1rem 0;
-        color: @veryLightGrey;
-      }
-
-      h1{
-        color: @lightSlateBlue;
-      }
-
+    .section-5-cta{
+        background: white;
     }
 
-    .buttons{
-      // this defins the margin between buttons and text, as well as the bottom of the parent container.
-      margin: 5rem 0 10rem 0;
-
-      .button-primary{
-        .button-primary(@height: 8rem, @padding: 0 6rem 0);
-      }
-
-      .button-secondary{
-       .button-secondary(@height: 8rem, @padding: 0 4rem 0);
-      }
-      }
-
+    .section-5-footer{
+        border: 1px solid pink;
     }
-
-    .blobs {
-      display: flex;
-      justify-content: space-between;
-      
-      // by default the .blobs container will have its own box model, this adds too much spacing at the bottom
-      // setting it to border box with 1px height solves this issue, and the images being offset still work as its position relative to its parent container.
-      box-sizing: border-box;
-      height: 1px;
-      
-      // blobs on the left side of the screen
-      .left {
-        // blob 1
-        img:first-child {
-          .blob-offset( @x: -17.5rem, @y: 16rem);
-        }
-
-        // blob 2
-        img:nth-child(2) {
-          .blob-offset( @x: -55rem, @y: +14.5rem);
-        }
-      }
-
-      // blobs on the right side of the screen
-      .right {
-        // blob 1
-        img:first-child {
-          .blob-offset( @x: -53rem, @y: -10rem);
-          
-        }
-
-        img:nth-child(2){
-          .blob-offset( @x: -29.5rem, @y: -11rem);
-        }
-
-        img:nth-child(3){
-          .blob-offset( @x: -44rem, @y: -10.5rem);
-        }
-      }
-
-    }
-  }
-
-// section-5-end
-
-// Section 6 - footer start - Alfonso // Optimized : N/A
-
-footer {
-  padding-top: 10.9rem;
-  background: @whiteSmoke;
-
-  .lists-of-links {
-    width: 1394px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 16.7rem;
-
-    ul {
-      li {
-        padding: 1rem;
-        font-weight: 300;
-      }
-    }
-
-    ul li:first-child {
-      font-size: 1.5rem;
-      font-weight: 200;
-      color: lighten(@font-color, 10);
-    }
-  }
-
-  .copyright {
-    font-weight: bold;
-    display: flex;
-    width: 308px;
-    justify-content: space-between;
-    align-items: baseline;
-    padding-bottom: 6.2rem;
-    padding-left: 10rem;
-  }
 }
-// Section 6 - footer-end
