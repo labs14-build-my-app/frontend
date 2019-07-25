@@ -145,6 +145,24 @@ body p {
 body ul li {
   font-size: 1.8rem;
 }
+body .button-primary {
+  color: #ffffff;
+  background: #9519e8;
+  margin: 25px 0;
+  border: none;
+  border-radius: 6px;
+  width: 186px;
+  height: 55px;
+}
+body .button-secondary {
+  color: #000000;
+  background-color: rgba(0, 0, 0, 0);
+  margin: 25px 0;
+  border: 2px solid #9519e8;
+  border-radius: 6px;
+  width: 186px;
+  height: 55px;
+}
 .rubens-section {
   padding-bottom: 163px;
   background: #f2f2f2;
@@ -415,25 +433,27 @@ body ul li {
 .section-5 .section-5-cta p {
   padding: 0 0 1rem 0;
 }
-.section-5 .section-5-cta .buttons {
-  padding: 5rem 0 0 0;
-}
 .section-5 .section-5-cta .blobs {
   border: 1px solid blue;
   display: flex;
   justify-content: space-between;
+  box-sizing: border-box;
+  height: 1px;
 }
 .section-5 .section-5-cta .blobs .left {
   border: 1px solid green;
 }
 .section-5 .section-5-cta .blobs .left img:first-child {
   position: relative;
-  border: 1px solid purple;
+  border: 1px solid red;
   top: 6.5rem;
   left: 14.5rem;
 }
 .section-5 .section-5-cta .blobs .left img:nth-child(2) {
-  border: 1px solid red;
+  border: 1px solid purple;
+  position: relative;
+  top: -39rem;
+  left: 14.5rem;
 }
 .section-5 .section-5-cta .blobs .right {
   border: 1px solid green;

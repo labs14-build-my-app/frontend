@@ -15,6 +15,17 @@ body {
   ul li {
     font-size: @fontsize-p;
   }
+
+  // primary & secondary button's (change them in mixins)
+
+  .button-primary{
+    .button-primary();
+  }
+
+  .button-secondary{
+    .button-secondary();
+  }
+   
 }
 
 // .home-header-container{
@@ -349,8 +360,8 @@ body {
       padding: 0 0 1rem 0;
     }
 
-    .buttons {
-      padding: 5rem 0 0 0;
+    .buttons{
+
     }
 
     .blobs {
@@ -358,18 +369,26 @@ body {
       display: flex;
       justify-content: space-between;
 
+      box-sizing: border-box;
+      height: 1px;
+      // by default the .blobs container will have its own box model, this adds too much spacing at the bottom
+      // setting it to border box with 1px height solves this issue, and the images being offset still work as its position relative to its parent container.
+
       .left {
         border: 1px solid green;
 
         img:first-child {
           position: relative;
-          border: 1px solid purple;
+          border: 1px solid red;
           top: +6.5rem;
           left: +14.5rem;
         }
 
         img:nth-child(2) {
-          border: 1px solid red;
+          border: 1px solid purple;
+          position: relative;
+          top: -39rem;
+          left: +14.5rem;
         }
       }
 
