@@ -130,91 +130,192 @@ html {
   font-size: 62.5%;
 }
 body {
-  background: #F2F2F2;
+  background: white;
+  font-family: "Source Sans Pro";
+}
+body h1 {
+  font-size: 4.5rem;
 }
 body h2 {
   font-size: 3.5rem;
+  color: #43425d;
 }
 body p {
   font-size: 1.8rem;
+  color: #43425d;
+  line-height: 30px;
 }
-.hi {
-  z-index: -1;
+body ul li {
+  font-size: 1.8rem;
+}
+body .button-primary {
+  color: #fff;
+  background: #9519e8;
+  border: none;
+  border-radius: 6px;
+  height: 5.5rem;
+  padding: 0 2.5rem 0;
+}
+body .button-primary svg {
+  padding: 0 0 0 1.5rem;
+}
+body .button-primary svg path {
+  fill: #fff;
+}
+body .button-secondary {
+  color: #000;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid #9519e8;
+  border-radius: 6px;
+  height: 5.5rem;
+  padding: 0 2.5rem 0;
+}
+body .button-secondary svg {
+  padding: 0 0 0 1.5rem;
+}
+body .button-secondary svg path {
+  fill: #9519e8;
+}
+.intro-container {
+  padding-bottom: 163px;
+  background: #f2f2f2;
+}
+.intro-container .header-blobber {
+  z-index: 0;
   position: absolute;
   top: 0;
   right: 0;
+  max-width: 50%;
 }
-.home-header {
+@media (max-width: 1440px) {
+  .intro-container .header-blobber {
+    width: 50%;
+  }
+}
+.intro-container .home-header {
+  z-index: -2;
   display: flex;
   justify-content: space-between;
   padding: 3.15em 6.25em;
+  padding-top: 3.125rem;
+  background: transparent;
+  bottom: -50px;
 }
-.home-header h2 {
+.intro-container .home-header h2 {
   font-size: 3.5rem;
   font-family: "Source Sans Pro";
-  color: #43425D;
+  color: #43425d;
+  font-weight: normal;
 }
-.home-header .home-navigation-bar {
+.intro-container .home-header .home-navigation-bar {
   display: none;
 }
-.home-header .hamburger-menu-section {
+.intro-container .home-header .hamburger-menu-section {
   display: flex;
   align-items: center;
+  z-index: 2;
 }
-.home-header .hamburger-menu-section .hamburger-svg {
+.intro-container .home-header .hamburger-menu-section .hamburger-svg {
   width: 40px;
   height: 35px;
 }
-.home-header .hamburger-menu-section h3 {
+.intro-container .home-header .hamburger-menu-section h3 {
   padding: 0 1.4375em;
   font-size: 1.8rem;
   font-family: "Source Sans Pro";
-  font-weight: 400;
+  font-weight: normal;
   color: #fff;
 }
-.cta-getstarted-section {
+.intro-container .cta-getstarted-section {
   display: flex;
   align-items: center;
 }
-.cta-getstarted-section img {
+.intro-container .cta-getstarted-section img {
   max-width: 50%;
+  z-index: 420;
 }
-.cta-getstarted-section section {
-  width: 41%;
+@media (max-width: 1450px) {
+  .intro-container .cta-getstarted-section img {
+    width: 41%;
+  }
+}
+.intro-container .cta-getstarted-section section {
   padding-left: 6.25em;
   padding-right: 3.3125em;
   font-family: "Source Sans Pro";
 }
-.cta-getstarted-section section h2 {
-  color: #43425D;
+@media (max-width: 1450px) {
+  .intro-container .cta-getstarted-section section {
+    padding-top: 13.3125em;
+  }
+}
+.intro-container .cta-getstarted-section section h2 {
+  color: #43425d;
   font-weight: 600;
   padding-bottom: 25px;
   line-height: 1.5;
 }
-.cta-getstarted-section section p {
-  color: #43425D;
-  line-height: 1.2;
+.intro-container .cta-getstarted-section section p {
+  color: #43425d;
+  line-height: 30px;
 }
-.cta-getstarted-section section button {
-  margin: 25px 0;
-  border: none;
-  background: #9519E8;
-  border-radius: 6px;
-  width: 186px;
-  height: 55px;
-  box-sizing: border-box;
+.intro-container .cta-getstarted-section section button {
+  margin: 3.15em 0px;
 }
-.cta-getstarted-section section button a {
+.intro-container .cta-getstarted-section section button a {
+  color: white;
+  font-size: 1.8rem;
   text-decoration: none;
-  text-emphasis: none;
-  color: #fff;
-  font-size: 2.1rem;
+}
+.grey-blob {
+  background-image: url("../assets/svgs/Blob\ Getting\ Started.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.getting-started {
+  padding-top: 112px;
+  width: 1313px;
+  margin: 0 auto;
 }
 .getting-started .gs-header {
   font-family: "Source Sans Pro";
+  text-align: center;
+}
+.getting-started .gs-header h2 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #43425d;
+  margin-bottom: 22px;
+  text-align: center;
 }
 .getting-started .gs-header p {
   font-size: 1.8rem;
+  width: 724px;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 81px;
+  margin-left: 250px;
+  line-height: 30px;
+}
+.getting-started .gs-cards {
+  display: flex;
+  justify-content: space-evenly;
+}
+.getting-started .gs-cards h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+.getting-started .gs-cards p {
+  line-height: 23px;
+  margin-top: 23px;
+  color: #58577b;
+  text-align: center;
+}
+.getting-started .gs-signupcard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 .getting-started .gs-signupimg {
   width: 250px;
@@ -222,12 +323,23 @@ body p {
 }
 .getting-started .gs-signuptxt p {
   font-size: 1.8rem;
+  width: 368px;
+}
+.getting-started .gs-projectprepimg {
+  width: 342.66px;
+  height: 250px;
 }
 .getting-started .gs-projectpreptxt p {
   font-size: 1.8rem;
+  width: 368px;
+}
+.getting-started .gs-deliveryimg {
+  width: 337.26;
+  height: 250px;
 }
 .getting-started .gs-deliverytxt p {
   font-size: 1.8rem;
+  width: 368px;
 }
 .safety-first {
   display: flex;
@@ -236,6 +348,8 @@ body p {
   margin: 0 auto;
   align-items: center;
   justify-content: space-between;
+  margin-top: 284px;
+  margin-bottom: 186px;
 }
 .safety-first .text-section {
   width: 722px;
@@ -243,7 +357,7 @@ body p {
   line-height: 30px;
 }
 .safety-first .text-section h2 {
-  color: #43425D;
+  color: #43425d;
   font-family: "Source Sans Pro";
   font-weight: bold;
   text-align: left;
@@ -260,10 +374,14 @@ body p {
   height: 536px;
 }
 .reviews {
-  display: flex;
+  position: relative;
+  height: 1048px;
+  background: url("../assets/svgs/Blob User Reviews.svg") no-repeat;
+  background-size: cover;
+  background-size: contain;
 }
 .reviews .user-reviews h2 {
-  color: #43425D;
+  color: #43425d;
   font-size: 3.5rem;
   font-family: "Source SansPro";
   font-weight: bold;
@@ -271,16 +389,144 @@ body p {
 }
 .reviews .user-reviews p {
   font-family: "Source SansPro";
-  text-align: left;
+  text-align: right;
   font-size: 1.8rem;
-  color: lighten;
 }
-.section-5 {
-  border: 1px solid red;
+.reviews .user-reviews .user-reviews-h {
+  width: 206px;
+  height: 44px;
+  position: absolute;
+  top: 232px;
+  right: 252px;
 }
-.section-5 .section-5-cta {
+.reviews .user-reviews .user-reviews-p {
+  width: 356px;
+  height: 53px;
+  position: absolute;
+  top: 301px;
+  right: 252px;
+}
+.reviews .dev-review {
+  display: flex;
+  position: absolute;
+  height: 288px;
+  width: 860px;
+  bottom: 316px;
+  left: 530px;
   background: white;
 }
-.section-5 .section-5-footer {
-  border: 1px solid pink;
+.reviews .dev-review .dev-review-img {
+  margin: 35px;
+}
+.reviews .dev-review .dev-review-text {
+  margin: 35px 35px 35px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  border-radius: 5px;
+}
+.reviews .dev-review .dev-review-text .dev-review-text-p {
+  margin-top: 10px;
+  padding: 10px;
+  background: #f2f2f2;
+  border-radius: 5px;
+}
+.reviews .img-person {
+  height: 684px;
+  width: 918.57;
+  margin-top: 134px;
+  margin-left: 100px;
+  display: inline-block;
+}
+.section-5 .section-5-cta {
+  background: #fff;
+  text-align: center;
+  padding: 15rem 0 0 0;
+}
+.section-5 .section-5-cta text-section p {
+  padding: 0 0 1rem 0;
+  color: #ccc;
+}
+.section-5 .section-5-cta text-section h1 {
+  color: #6c63ff;
+}
+.section-5 .section-5-cta .buttons {
+  margin: 5rem 0 10rem 0;
+}
+.section-5 .section-5-cta .buttons .button-primary {
+  color: #fff;
+  background: #9519e8;
+  border: none;
+  border-radius: 6px;
+  height: 8rem;
+  padding: 0 6rem 0;
+}
+.section-5 .section-5-cta .buttons .button-secondary {
+  color: #000;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid #9519e8;
+  border-radius: 6px;
+  height: 8rem;
+  padding: 0 4rem 0;
+}
+.section-5 .blobs {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 1px;
+}
+.section-5 .blobs .left img:first-child {
+  position: relative;
+  top: -17.5rem;
+  left: 16rem;
+}
+.section-5 .blobs .left img:nth-child(2) {
+  position: relative;
+  top: -55rem;
+  left: 14.5rem;
+}
+.section-5 .blobs .right img:first-child {
+  position: relative;
+  top: -53rem;
+  left: -10rem;
+}
+.section-5 .blobs .right img:nth-child(2) {
+  position: relative;
+  top: -29.5rem;
+  left: -11rem;
+}
+.section-5 .blobs .right img:nth-child(3) {
+  position: relative;
+  top: -44rem;
+  left: -10.5rem;
+}
+footer {
+  padding-top: 10.9rem;
+  background: #f2f2f2;
+}
+footer .lists-of-links {
+  width: 1394px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16.7rem;
+}
+footer .lists-of-links ul li {
+  padding: 1rem;
+  font-weight: 300;
+}
+footer .lists-of-links ul li:first-child {
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: #58577b;
+}
+footer .copyright {
+  font-weight: bold;
+  display: flex;
+  width: 308px;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 6.2rem;
+  padding-left: 10rem;
 }
