@@ -133,6 +133,9 @@ body {
   background: white;
   font-family: "Source Sans Pro";
 }
+body h1 {
+  font-size: 4.5rem;
+}
 body h2 {
   font-size: 3.5rem;
   color: #43425d;
@@ -148,7 +151,6 @@ body ul li {
 body .button-primary {
   color: #ffffff;
   background: #9519e8;
-  margin: 25px 0;
   border: none;
   border-radius: 6px;
   width: 186px;
@@ -157,7 +159,6 @@ body .button-primary {
 body .button-secondary {
   color: #000000;
   background-color: rgba(0, 0, 0, 0);
-  margin: 25px 0;
   border: 2px solid #9519e8;
   border-radius: 6px;
   width: 186px;
@@ -432,6 +433,9 @@ body .button-secondary {
 }
 .section-5 .section-5-cta p {
   padding: 0 0 1rem 0;
+}
+.section-5 .section-5-cta .buttons {
+  margin: 5rem 0 14rem 0;
 }
 .section-5 .section-5-cta .blobs {
   border: 1px solid blue;
