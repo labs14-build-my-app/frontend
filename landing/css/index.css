@@ -192,6 +192,11 @@ body .button-secondary svg path {
     width: 50%;
   }
 }
+@media (max-width: 1250px) {
+  .intro-container .header-blobber {
+    width: 65%;
+  }
+}
 .intro-container .home-header {
   z-index: -2;
   display: flex;
@@ -231,8 +236,11 @@ body .button-secondary svg path {
   align-items: center;
 }
 @media (max-width: 1250px) {
-  .intro-container .cta-getstarted-section {
-    flex-direction: column-reverse;
+  .intro-container .cta-getstarted-section img {
+    width: 45%;
+  }
+  .intro-container .cta-getstarted-section section {
+    padding-top: 17.3125em;
   }
 }
 .intro-container .cta-getstarted-section img {
@@ -279,7 +287,7 @@ body .button-secondary svg path {
 }
 .getting-started {
   padding-top: 112px;
-  width: 1313px;
+  width: 131.3rem;
   margin: 0 auto;
 }
 .getting-started .gs-header {
@@ -434,7 +442,7 @@ body .button-secondary svg path {
 }
 .reviews .img-person {
   height: 684px;
-  width: 918.57;
+  width: 918.57px;
   margin-top: 13.4rem;
   margin-left: 10rem;
   display: inline-block;
