@@ -130,6 +130,8 @@ html {
   font-size: 62.5%;
 }
 body {
+  box-sizing: border-box;
+  margin: 0 auto;
   background: white;
   font-family: "Source Sans Pro";
 }
@@ -231,17 +233,17 @@ body .button-secondary svg path {
   font-weight: normal;
   color: #fff;
 }
+@media (max-width: 1250px) {
+  .intro-container .home-header img {
+    width: 45%;
+  }
+  .intro-container .home-header section {
+    padding-top: 17.3125em;
+  }
+}
 .intro-container .cta-getstarted-section {
   display: flex;
   align-items: center;
-}
-@media (max-width: 1250px) {
-  .intro-container .cta-getstarted-section img {
-    width: 45%;
-  }
-  .intro-container .cta-getstarted-section section {
-    padding-top: 17.3125em;
-  }
 }
 .intro-container .cta-getstarted-section img {
   max-width: 50%;
@@ -280,15 +282,26 @@ body .button-secondary svg path {
   font-size: 1.8rem;
   text-decoration: none;
 }
+@media (max-width: 375px) {
+  .intro-container .cta-getstarted-section section {
+    padding: 13.3125em 0 0 0;
+  }
+}
 .grey-blob {
   background-image: url("../assets/svgs/Blob\ Getting\ Started.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }
 .getting-started {
-  padding-top: 112px;
+  padding-top: 11.2rem;
   width: 131.3rem;
   margin: 0 auto;
+  border: 1px solid red;
+}
+@media (max-width: 375px) {
+  .getting-started {
+    width: 37rem;
+  }
 }
 .getting-started .gs-header {
   font-family: "Source Sans Pro";
@@ -310,6 +323,12 @@ body .button-secondary svg path {
   margin-left: 250px;
   line-height: 30px;
 }
+@media (max-width: 375px) {
+  .getting-started .gs-header p {
+    margin-left: 6rem;
+    width: 20rem;
+  }
+}
 .getting-started .gs-cards {
   display: flex;
   justify-content: space-evenly;
@@ -319,8 +338,8 @@ body .button-secondary svg path {
   margin-top: 20px;
 }
 .getting-started .gs-cards p {
-  line-height: 23px;
-  margin-top: 23px;
+  line-height: 2.3rem;
+  margin-top: 2.3rem;
   color: #58577b;
   text-align: center;
 }
@@ -332,15 +351,15 @@ body .button-secondary svg path {
 }
 .getting-started .gs-signupimg {
   width: 25rem;
-  height: 283.83px;
+  height: 28.383rem;
 }
 .getting-started .gs-signuptxt p {
   font-size: 1.8rem;
-  width: 368px;
+  width: 36.8rem;
 }
 .getting-started .gs-projectprepimg {
   width: 34.266rem;
-  height: 250px;
+  height: 25rem;
 }
 .getting-started .gs-projectpreptxt p {
   font-size: 1.8rem;
@@ -348,7 +367,7 @@ body .button-secondary svg path {
 }
 .getting-started .gs-deliveryimg {
   width: 33.726rem;
-  height: 250px;
+  height: 25rem;
 }
 .getting-started .gs-deliverytxt p {
   font-size: 1.8rem;
@@ -364,24 +383,78 @@ body .button-secondary svg path {
   margin-top: 28.4rem;
   margin-bottom: 18.6rem;
 }
+@media (max-width: 375px) {
+  .safety-first {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 32.3rem;
+    height: 43.9rem;
+    margin-left: 2rem;
+    margin-right: 3.2rem;
+    margin-top: 8.6rem;
+  }
+}
 .safety-first .text-section {
   width: 72.2rem;
   height: 21.4rem;
 }
+.safety-first .text-section .short-text {
+  display: none;
+}
+@media (max-width: 375px) {
+  .safety-first .text-section {
+    width: 100%;
+    height: auto;
+  }
+  .safety-first .text-section .short-text {
+    display: block;
+  }
+  .safety-first .text-section .full-text {
+    display: none;
+  }
+}
 .safety-first .text-section h2 {
   font-weight: bold;
   text-align: left;
+}
+@media (max-width: 375px) {
+  .safety-first .text-section h2 {
+    font-size: 2.3rem;
+    font-weight: bold;
+  }
 }
 .safety-first .text-section p {
   padding-top: 2.7rem;
   text-align: left;
   font-weight: 300;
 }
-.safety-first img {
+@media (max-width: 375px) {
+  .safety-first .text-section p {
+    margin-top: 1rem;
+    padding: 0;
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+}
+.safety-first .safety-svg {
   width: 600px;
   height: 536px;
+  object-fit: cover;
+}
+.safety-first .safety-svg img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 375px) {
+  .safety-first .safety-svg {
+    width: 159px;
+    height: 200px;
+  }
 }
 .reviews {
+  border: 3px solid green;
   position: relative;
   height: 104.8rem;
   background: url("../assets/svgs/Blob User Reviews.svg") no-repeat;
@@ -447,6 +520,15 @@ body .button-secondary svg path {
   margin-left: 10rem;
   display: inline-block;
 }
+.section-5 {
+  margin: 0 auto;
+  width: 100%;
+}
+@media (max-width: 375px) {
+  .section-5 {
+    border: 1px solid red;
+  }
+}
 .section-5 .section-5-cta {
   background: #fff;
   text-align: center;
@@ -489,25 +571,25 @@ body .button-secondary svg path {
   top: -17.5rem;
   left: 16rem;
 }
+@media (max-width: 375px) {
+  .section-5 .blobs .left img:first-child {
+    height: 7rem;
+    position: relative;
+    top: -5rem;
+    left: 0;
+  }
+}
 .section-5 .blobs .left img:nth-child(2) {
   position: relative;
   top: -55rem;
   left: 14.5rem;
 }
-.section-5 .blobs .right img:first-child {
-  position: relative;
-  top: -53rem;
-  left: -10rem;
-}
-.section-5 .blobs .right img:nth-child(2) {
-  position: relative;
-  top: -29.5rem;
-  left: -11rem;
-}
-.section-5 .blobs .right img:nth-child(3) {
-  position: relative;
-  top: -44rem;
-  left: -10.5rem;
+@media (max-width: 375px) {
+  .section-5 .blobs .left img:nth-child(2) {
+    position: relative;
+    top: -50rem;
+    left: 0;
+  }
 }
 footer {
   padding-top: 10.9rem;

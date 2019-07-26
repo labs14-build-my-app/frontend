@@ -1,4 +1,7 @@
 body {
+  box-sizing: border-box;
+  margin: 0 auto;
+
   background: white;
   font-family: @fontFamily;
 
@@ -57,7 +60,7 @@ body {
 .intro-container {
   padding-bottom: 163px;
   background: @whiteSmoke;
-
+  
   .header-blobber {
     z-index: 0;
     position: absolute;
@@ -80,7 +83,7 @@ body {
     padding-top: 3.125rem;
     background: transparent;
     bottom: -50px;
-
+  
     h2 {
       font-size: 3.5rem;
       font-family: @fontFamily;
@@ -109,10 +112,6 @@ body {
         color: #fff;
       }
     }
-  }
-  .cta-getstarted-section {
-    display: flex;
-    align-items: center;
     @media (max-width: 1250px) {
       img {
         width: 45%;
@@ -121,7 +120,11 @@ body {
         padding-top: 17.3125em;
       }
     }
-
+  }
+  .cta-getstarted-section {
+    display: flex;
+    align-items: center;
+ 
     img {
       max-width: 50%;
       z-index: 420;
@@ -129,6 +132,7 @@ body {
         width: 41%;
       }
     }
+
     section {
       // width: 41%;
       padding-left: 6.25em;
@@ -158,7 +162,13 @@ body {
         text-decoration: none;
       }
     }
+    @media @phone {
+      section {
+        padding: 13.3125em 0 0 0;
+      }
+    }
   }
+
 }
 .grey-blob {
   background-image: url("../assets/svgs/Blob\ Getting\ Started.svg");
@@ -170,9 +180,14 @@ body {
 
 //Section 2 Benjamin Lopez Start // Optimized: N/A
 .getting-started {
-  padding-top: 112px;
+  padding-top: 11.2rem;
   width: 131.3rem;
   margin: 0 auto;
+  border: 1px solid red;
+
+  @media @phone {
+    width: 37rem;
+  }
 
   .gs-header {
     font-family: @fontFamily;
@@ -194,8 +209,13 @@ body {
       margin-bottom: 81px;
       margin-left: 250px;
       line-height: @font-height;
+      @media @phone {
+        margin-left: 6rem;
+        width: 20rem;
+      }
     }
   }
+
   .gs-cards {
     display: flex;
     justify-content: space-evenly;
@@ -206,8 +226,8 @@ body {
     }
 
     p {
-      line-height: 23px;
-      margin-top: 23px;
+      line-height: 2.3rem;
+      margin-top: 2.3rem;
       color: lighten(@font-color, 10);
       text-align: center;
     }
@@ -221,18 +241,18 @@ body {
   }
   .gs-signupimg {
     width: 25rem;
-    height: 283.83px;
+    height: 28.383rem;
   }
   .gs-signuptxt {
     p {
       font-size: @fontsize-p;
-      width: 368px;
+      width: 36.8rem;
     }
   }
 
   .gs-projectprepimg {
     width: 34.266rem;
-    height: 250px;
+    height: 25rem;
   }
   .gs-projectpreptxt {
     p {
@@ -243,7 +263,7 @@ body {
 
   .gs-deliveryimg {
     width: 33.726rem;
-    height: 250px;
+    height: 25rem;
   }
   .gs-deliverytxt {
     p {
@@ -266,36 +286,91 @@ body {
   margin-bottom: 18.6rem;
   // border: 1px solid red;
 
+  @media @phone {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 32.3rem;
+    height: 43.9rem;
+    margin-left: 2rem;
+    margin-right: 3.2rem;
+    margin-top: 8.6rem;
+  }
+
   .text-section {
     width: 72.2rem;
     height: 21.4rem;
-    // border: 1px solid red;
+
+    .short-text {
+      display: none;
+    }
+
+    @media @phone {
+      width: 100%;
+      height: auto;
+      // border: 1px solid red;
+
+      .short-text {
+        display: block;
+        // border: 1px solid red;
+      }
+
+      .full-text {
+        display: none;
+      }
+    }
 
     h2 {
       font-weight: bold;
       text-align: left;
+
+      @media @phone {
+        font-size: 2.3rem;
+        font-weight: bold;
+      }
     }
 
     p {
       padding-top: 2.7rem;
       text-align: left;
       font-weight: 300;
+
+      @media @phone {
+        margin-top: 1rem;
+        padding: 0;
+        font-size: 1.8rem;
+        line-height: 1.3;
+      }
     }
   }
 
-  img {
+  .safety-svg {
     width: 600px;
     height: 536px;
+    object-fit: cover;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    @media @phone {
+      width: 159px;
+      height: 200px;
+      // border: 1px solid green;
+    }
   }
 }
 
-// section-4-Anatoly // Optimized: true
 .reviews {
+  border: 3px solid green;
   position: relative;
   height: 104.8rem;
   background: url("../assets/svgs/Blob User Reviews.svg") no-repeat;
   background-size: cover;
   background-size: contain;
+
   .user-reviews {
     h2 {
       color: @font-color;
@@ -364,6 +439,13 @@ body {
 // section-5 Jacob T // Optimized : True
 
 .section-5 {
+  @media @phone {
+    border: 1px solid red;
+  }
+
+  margin: 0 auto;
+  width: 100%;
+
   .section-5-cta {
     background: @white;
     text-align: center;
@@ -408,29 +490,40 @@ body {
       // blob 1
       img:first-child {
         .blob-offset(-17.5rem, 16rem);
+
+        @media @phone {
+
+          height: 7rem;
+          .blob-offset( -5rem , 0);
+        }
+
       }
 
       // blob 2
       img:nth-child(2) {
         .blob-offset(-55rem, 14.5rem);
+
+        @media @phone {
+          .blob-offset( -50rem, 0)
+        }
       }
     }
 
     // blobs on the right side of the screen
-    .right {
-      // blob 1
-      img:first-child {
-        .blob-offset(-53rem, -10rem);
-      }
+    // .right {
+    //   // blob 1
+    //   img:first-child {
+    //     .blob-offset(-53rem, -10rem);
+    //   }
 
-      img:nth-child(2) {
-        .blob-offset(-29.5rem, -11rem);
-      }
+    //   img:nth-child(2) {
+    //     .blob-offset(-29.5rem, -11rem);
+    //   }
 
-      img:nth-child(3) {
-        .blob-offset(-44rem, -10.5rem);
-      }
-    }
+    //   img:nth-child(3) {
+    //     .blob-offset(-44rem, -10.5rem);
+    //   }
+    // }
   }
 }
 
@@ -473,4 +566,5 @@ footer {
     padding-left: 10rem;
   }
 }
+
 // Section 6 - footer-end
