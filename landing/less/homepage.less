@@ -7,16 +7,25 @@ body {
 
   h1 {
     font-size: @fontsize-cta;
+
+    @media @phone {
+      font-size: 2.3rem;
+    }
   }
 
   h2 {
     font-size: @fontsize-header;
     color: @font-color;
   }
+
   p {
     font-size: @fontsize-p;
     color: @font-color;
     line-height: @font-height;
+
+    @media @phone {
+      font-size: 1.5rem;
+    }
   }
 
   ul li {
@@ -34,6 +43,10 @@ body {
       path {
         fill: @white;
       }
+
+      @media @phone {
+        display: none;
+      }
     }
   }
 
@@ -45,6 +58,10 @@ body {
 
       path {
         fill: @electricViolet;
+      }
+
+      @media @phone {
+        display: none;
       }
     }
   }
@@ -60,7 +77,7 @@ body {
 .intro-container {
   padding-bottom: 163px;
   background: @whiteSmoke;
-  
+
   .header-blobber {
     z-index: 0;
     position: absolute;
@@ -83,7 +100,7 @@ body {
     padding-top: 3.125rem;
     background: transparent;
     bottom: -50px;
-  
+
     h2 {
       font-size: 3.5rem;
       font-family: @fontFamily;
@@ -119,12 +136,18 @@ body {
       section {
         padding-top: 17.3125em;
       }
+      @media @phone {
+        padding: 1em;
+        h2 {
+          font-size: 2rem;
+        }
+      }
     }
   }
   .cta-getstarted-section {
     display: flex;
     align-items: center;
- 
+
     img {
       max-width: 50%;
       z-index: 420;
@@ -163,8 +186,57 @@ body {
       }
     }
     @media @phone {
+      //ruben's phone
+      flex-direction: column-reverse;
+      justify-content: center;
       section {
-        padding: 13.3125em 0 0 0;
+        padding: 0;
+        // width: 100%;
+        width: 90%;
+        // margin: 0 20px;
+        padding-top: 10rem;
+        h2 {
+          font-size: 2.3rem;
+        }
+        p {
+          font-size: 1;
+        }
+        button{
+          width: 95%;
+        }
+      }
+      img {
+        padding-top: 3em;
+        max-width: 100%;
+        width: 95%;
+        align-self: flex-end;
+      }
+    }
+  }
+//media queries
+  @media @phone {
+    .header-blobber {
+      max-width: 150%;
+      width: 150%;
+      top: -198px;
+      right:-40px
+    }
+    .home-header{
+      padding: 20px 34px 0 20px;
+      align-items: center;
+
+      h2{
+        z-index: 420;
+        color: #fff;
+        
+      }
+      img{
+        width: 150%;
+      }
+      .hamburger-menu-section{
+        h3{
+          display: none;
+        }
       }
     }
   }
@@ -219,6 +291,9 @@ body {
   .gs-cards {
     display: flex;
     justify-content: space-evenly;
+    @media @phone {
+      //code needed for carousel
+    }
 
     h2 {
       text-align: center;
@@ -436,7 +511,7 @@ body {
 }
 // section-4-end
 
-// section-5 Jacob T // Optimized : True
+// section-5 Job T // Optimized : True
 
 .section-5 {
   @media @phone {
@@ -451,7 +526,7 @@ body {
     text-align: center;
     padding: 15rem 0 0 0;
 
-    text-section {
+    .text-section {
       p {
         padding: 0 0 1rem 0;
         color: @veryLightGrey;
@@ -492,11 +567,9 @@ body {
         .blob-offset(-17.5rem, 16rem);
 
         @media @phone {
-
-          height: 7rem;
-          .blob-offset( -5rem , 0);
+          height: 7.5rem;
+          .blob-offset(-5rem, 3rem);
         }
-
       }
 
       // blob 2
@@ -504,26 +577,32 @@ body {
         .blob-offset(-55rem, 14.5rem);
 
         @media @phone {
-          .blob-offset( -50rem, 0)
+          height: 1.8rem;
+          .blob-offset(-60rem, -6rem);
         }
       }
     }
 
     // blobs on the right side of the screen
-    // .right {
-    //   // blob 1
-    //   img:first-child {
-    //     .blob-offset(-53rem, -10rem);
-    //   }
+    .right {
+      // blob 1
+      img:first-child {
+        .blob-offset(-53rem, -10rem);
 
-    //   img:nth-child(2) {
-    //     .blob-offset(-29.5rem, -11rem);
-    //   }
+        @media @phone {
+          height: 7rem;
+          .blob-offset(-63rem, 17rem);
+        }
+      }
 
-    //   img:nth-child(3) {
-    //     .blob-offset(-44rem, -10.5rem);
-    //   }
-    // }
+      //   img:nth-child(2) {
+      //     .blob-offset(-29.5rem, -11rem);
+      //   }
+
+      //   img:nth-child(3) {
+      //     .blob-offset(-44rem, -10.5rem);
+      //   }
+    }
   }
 }
 

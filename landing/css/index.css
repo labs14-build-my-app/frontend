@@ -138,6 +138,11 @@ body {
 body h1 {
   font-size: 4.5rem;
 }
+@media (max-width: 375px) {
+  body h1 {
+    font-size: 2.3rem;
+  }
+}
 body h2 {
   font-size: 3.5rem;
   color: #43425d;
@@ -146,6 +151,11 @@ body p {
   font-size: 1.8rem;
   color: #43425d;
   line-height: 30px;
+}
+@media (max-width: 375px) {
+  body p {
+    font-size: 1.5rem;
+  }
 }
 body ul li {
   font-size: 1.8rem;
@@ -164,6 +174,11 @@ body .button-primary svg {
 body .button-primary svg path {
   fill: #fff;
 }
+@media (max-width: 375px) {
+  body .button-primary svg {
+    display: none;
+  }
+}
 body .button-secondary {
   color: #000;
   background-color: rgba(0, 0, 0, 0);
@@ -177,6 +192,11 @@ body .button-secondary svg {
 }
 body .button-secondary svg path {
   fill: #9519e8;
+}
+@media (max-width: 375px) {
+  body .button-secondary svg {
+    display: none;
+  }
 }
 .intro-container {
   padding-bottom: 163px;
@@ -241,6 +261,14 @@ body .button-secondary svg path {
     padding-top: 17.3125em;
   }
 }
+@media (max-width: 1250px) and (max-width: 375px) {
+  .intro-container .home-header {
+    padding: 1em;
+  }
+  .intro-container .home-header h2 {
+    font-size: 2rem;
+  }
+}
 .intro-container .cta-getstarted-section {
   display: flex;
   align-items: center;
@@ -283,8 +311,51 @@ body .button-secondary svg path {
   text-decoration: none;
 }
 @media (max-width: 375px) {
+  .intro-container .cta-getstarted-section {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
   .intro-container .cta-getstarted-section section {
-    padding: 13.3125em 0 0 0;
+    padding: 0;
+    width: 90%;
+    padding-top: 10rem;
+  }
+  .intro-container .cta-getstarted-section section h2 {
+    font-size: 2.3rem;
+  }
+  .intro-container .cta-getstarted-section section p {
+    font-size: 1;
+  }
+  .intro-container .cta-getstarted-section section button {
+    width: 95%;
+  }
+  .intro-container .cta-getstarted-section img {
+    padding-top: 3em;
+    max-width: 100%;
+    width: 95%;
+    align-self: flex-end;
+  }
+}
+@media (max-width: 375px) {
+  .intro-container .header-blobber {
+    max-width: 150%;
+    width: 150%;
+    top: -198px;
+    right: -40px;
+  }
+  .intro-container .home-header {
+    padding: 20px 34px 0 20px;
+    align-items: center;
+  }
+  .intro-container .home-header h2 {
+    z-index: 420;
+    color: #fff;
+  }
+  .intro-container .home-header img {
+    width: 150%;
+  }
+  .intro-container .home-header .hamburger-menu-section h3 {
+    display: none;
   }
 }
 .grey-blob {
@@ -332,6 +403,8 @@ body .button-secondary svg path {
 .getting-started .gs-cards {
   display: flex;
   justify-content: space-evenly;
+}
+@media (max-width: 375px) {
 }
 .getting-started .gs-cards h2 {
   text-align: center;
@@ -534,11 +607,11 @@ body .button-secondary svg path {
   text-align: center;
   padding: 15rem 0 0 0;
 }
-.section-5 .section-5-cta text-section p {
+.section-5 .section-5-cta .text-section p {
   padding: 0 0 1rem 0;
   color: #ccc;
 }
-.section-5 .section-5-cta text-section h1 {
+.section-5 .section-5-cta .text-section h1 {
   color: #6c63ff;
 }
 .section-5 .section-5-cta .buttons {
@@ -573,10 +646,10 @@ body .button-secondary svg path {
 }
 @media (max-width: 375px) {
   .section-5 .blobs .left img:first-child {
-    height: 7rem;
+    height: 7.5rem;
     position: relative;
     top: -5rem;
-    left: 0;
+    left: 3rem;
   }
 }
 .section-5 .blobs .left img:nth-child(2) {
@@ -586,9 +659,23 @@ body .button-secondary svg path {
 }
 @media (max-width: 375px) {
   .section-5 .blobs .left img:nth-child(2) {
+    height: 1.8rem;
     position: relative;
-    top: -50rem;
-    left: 0;
+    top: -60rem;
+    left: -6rem;
+  }
+}
+.section-5 .blobs .right img:first-child {
+  position: relative;
+  top: -53rem;
+  left: -10rem;
+}
+@media (max-width: 375px) {
+  .section-5 .blobs .right img:first-child {
+    height: 7rem;
+    position: relative;
+    top: -63rem;
+    left: 17rem;
   }
 }
 footer {
