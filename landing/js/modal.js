@@ -8,8 +8,6 @@ const modalCSS = ["blur(3px) brightness(35%)", ""]
 const navCSS = ["none", "flex"]
 
 const displayModal = (e) => {
-console.log(e.target);
-console.log(hamburger.style);
 modal.style.filter =  modalCSS[0];
 
 nav.style.display = navCSS[1];
@@ -23,7 +21,7 @@ const removeModal = (e) =>{
     modal.style.filter = modalCSS[1];
     nav.style.display = navCSS[0];
     hamburger.style.display = navCSS[1];
-    
+
     navCSS.removeEventListener("click");
 }
 
