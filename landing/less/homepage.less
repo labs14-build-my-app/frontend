@@ -74,6 +74,36 @@ body {
 // }
 
 //Ruben's jotaroEnergy ? false : <DIO energy={true} />;
+.hamburger-modal{
+
+  // filter: blur(3px) brightness(35%);
+}
+.modal-nav-elements{
+  //displays on click
+  display: none;
+  z-index: 420;
+  color: white;
+  filter: blur(0px);
+  position: absolute;
+  top: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 1.56em 1.25em 0 0;
+  img{
+    width: 22px;
+    height: 22px;
+    padding-bottom: 3.19em;
+  }
+  div{
+    ul{
+      li{
+        text-align: right;
+        padding-bottom: 1.72em;
+      }
+    }
+  }
+}
 .intro-container {
   padding-bottom: 163px;
   background: @whiteSmoke;
@@ -108,10 +138,13 @@ body {
       font-weight: normal;
     }
 
-    .home-navigation-bar {
-      //displays on click
-      display: none;
-    }
+    // .home-navigation-bar {
+    //   //displays on click
+    //   display: none;
+    //   z-index: 420;
+    //   color: white;
+    //   filter: blur(0px);
+    // }
 
     .hamburger-menu-section {
       display: flex;
@@ -224,7 +257,7 @@ body {
       
     }
     .home-header{
-      padding: 20px 34px 0 20px;
+      padding: 20px 20px 0 20px;
       align-items: center;
 
       h2{
