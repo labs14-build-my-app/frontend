@@ -14,7 +14,7 @@ nav.style.display = navCSS[1];
 hamburger.style.display = navCSS[0]
 
 nav.addEventListener("click", removeModal);
-hamburger.removeEventListener("click")
+
 
 }
 const removeModal = (e) =>{
@@ -22,7 +22,7 @@ const removeModal = (e) =>{
     nav.style.display = navCSS[0];
     hamburger.style.display = navCSS[1];
 
-    navCSS.removeEventListener("click");
+  
 }
 
 hamburger.addEventListener("click", displayModal);
