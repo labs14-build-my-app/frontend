@@ -164,6 +164,7 @@ body p {
 .home-header .hamburger-menu-section .hamburger-svg {
   width: 40px;
   height: 35px;
+  cursor: pointer;
 }
 .home-header .hamburger-menu-section h3 {
   padding: 0 1.4375em;
