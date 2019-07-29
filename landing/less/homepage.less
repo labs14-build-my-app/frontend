@@ -1,0 +1,716 @@
+body {
+  box-sizing: border-box;
+  margin: 0 auto;
+
+  background: white;
+  font-family: @fontFamily;
+
+  h1 {
+    font-size: @fontsize-cta;
+
+    @media @phone {
+      font-size: 2.3rem;
+    }
+  }
+
+  h2 {
+    font-size: @fontsize-header;
+    color: @font-color;
+  }
+
+  p {
+    font-size: @fontsize-p;
+    color: @font-color;
+    line-height: @font-height;
+
+    @media @phone {
+      font-size: 1.5rem;
+    }
+  }
+
+  ul li {
+    font-size: @fontsize-p;
+  }
+
+  // primary & secondary button's
+
+  .button-primary {
+    .button-primary();
+
+    svg {
+      padding: 0 0 0 1.5rem;
+
+      path {
+        fill: @white;
+      }
+
+      @media @phone {
+        display: none;
+      }
+    }
+  }
+
+  .button-secondary {
+    .button-secondary();
+
+    svg {
+      padding: 0 0 0 1.5rem;
+
+      path {
+        fill: @electricViolet;
+      }
+
+      @media @phone {
+        display: none;
+      }
+    }
+  }
+}
+
+// .home-header-container{
+//     background: url("../assets/svgs/Blob\ Header.svg");
+
+//     background-size: 50%;
+// }
+
+//Ruben's jotaroEnergy ? false : <DIO energy={true} />;
+
+.displayNavAnime {
+  animation: displayNavOpacityAnimation 0.4s ease-out;
+}
+@keyframes displayNavOpacityAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hamburger-modal {
+  // filter: blur(3px) brightness(35%);
+}
+.modal-nav-elements {
+  //displays on click
+  display: none;
+  z-index: 420;
+  color: white;
+  filter: blur(0px);
+  position: absolute;
+  top: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 1.56em 1.25em 0 0;
+  img {
+    width: 22px;
+    height: 22px;
+    padding-bottom: 3.19em;
+  }
+  div {
+    ul {
+      li {
+        text-align: right;
+        padding-bottom: 1.72em;
+      }
+    }
+  }
+}
+.intro-container {
+  padding-bottom: 163px;
+  background: @whiteSmoke;
+
+  .header-blobber {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 50%;
+    @media (max-width: 1440px) {
+      width: 50%;
+    }
+    @media (max-width: 1250px) {
+      width: 65%;
+    }
+  }
+  .home-header {
+    //Ruben's CSS
+    z-index: -2;
+    display: flex;
+    justify-content: space-between;
+    padding: 3.15em 6.25em;
+    padding-top: 3.125rem;
+    background: transparent;
+    bottom: -50px;
+
+    h2 {
+      font-size: 3.5rem;
+      font-family: @fontFamily;
+      color: @font-color;
+      font-weight: normal;
+    }
+
+    // .home-navigation-bar {
+    //   //displays on click
+    //   display: none;
+    //   z-index: 420;
+    //   color: white;
+    //   filter: blur(0px);
+    // }
+
+    .hamburger-menu-section {
+      display: flex; //remove -- to none
+      align-items: center;
+      z-index: 2;
+      .nav-section {
+        display: flex;
+        img {
+          width: 22px;
+          height: 22px;
+        }
+        ul {
+          display: flex;
+          li {
+            margin-left: 4.87em;
+          }
+        }
+
+        color: @white;
+      }
+      .hamburger-svg {
+        width: 40px;
+        height: 35px;
+        cursor: pointer;
+      }
+      h3 {
+        padding: 4px 6px;
+        margin-right: 1.4375em;
+        margin-left: 4.87em;
+        font-size: 1.8rem;
+        font-family: "Source Sans Pro";
+        font-weight: normal;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+    @media (max-width: 1250px) {
+      img {
+        width: 45%;
+      }
+      section {
+        padding-top: 17.3125em;
+      }
+      @media @phone {
+        padding: 1em;
+        h2 {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+  .cta-getstarted-section {
+    display: flex;
+    align-items: center;
+
+    img {
+      max-width: 50%;
+      z-index: 420;
+      @media (max-width: 1450px) {
+        width: 41%;
+      }
+    }
+
+    section {
+      // width: 41%;
+      padding-left: 6.25em;
+      padding-right: 3.3125em;
+      @media (max-width: 1450px) {
+        padding-top: 13.3125em;
+      }
+      font-family: @fontFamily;
+
+      h2 {
+        color: @font-color;
+        font-weight: 600;
+        padding-bottom: 25px;
+        line-height: 1.5;
+      }
+
+      p {
+        color: @font-color;
+        line-height: 30px;
+      }
+      a {
+        margin: 3.15em 0px;
+        cursor: pointer;
+        display: inline-block;
+      }
+      a button {
+        color: white;
+        font-size: 1.8rem;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+    @media @phone {
+      //ruben's phone
+      flex-direction: column-reverse;
+      justify-content: center;
+      section {
+        padding: 0;
+        // width: 100%;
+        width: 90%;
+        // margin: 0 20px;
+        padding-top: 10rem;
+        h2 {
+          font-size: 2.3rem;
+        }
+        p {
+          font-size: 1;
+        }
+        a,
+        button {
+          width: 100%;
+        }
+      }
+      img {
+        padding-top: 3em;
+        max-width: 100%;
+        width: 95%;
+        align-self: flex-end;
+      }
+    }
+  }
+  //media queries
+  @media @phone {
+    .header-blobber {
+      max-width: 150%;
+      width: 150%;
+      top: -198px;
+      right: -40px;
+    }
+    .home-header {
+      padding: 20px 20px 0 20px;
+      align-items: center;
+
+      h2 {
+        z-index: 420;
+        color: #fff;
+      }
+      img {
+        width: 150%;
+      }
+      .hamburger-menu-section {
+        h3 {
+          display: none;
+        }
+      }
+    }
+  }
+}
+.grey-blob {
+  background-image: url("../assets/svgs/Blob\ Getting\ Started.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  // height: 1775px;
+  //   border: 1px solid red;
+}
+
+//Section 2 Benjamin Lopez Start // Optimized: N/A
+.getting-started {
+  padding-top: 11.2rem;
+  width: 131.3rem;
+  margin: 0 auto;
+  border: 1px solid red;
+
+  @media @phone {
+    width: 37rem;
+  }
+
+  .gs-header {
+    font-family: @fontFamily;
+    text-align: center;
+
+    h2 {
+      font-size: @fontsize-header;
+      font-weight: bold;
+      color: @font-color;
+      margin-bottom: 22px;
+      text-align: center;
+    }
+
+    p {
+      font-size: @fontsize-p;
+      width: 72.4rem;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 81px;
+      margin-left: 250px;
+      line-height: @font-height;
+      @media @phone {
+        margin-left: 6rem;
+        width: 20rem;
+      }
+    }
+  }
+
+  .gs-cards {
+    display: flex;
+    justify-content: space-evenly;
+    @media @phone {
+      //code needed for carousel
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    p {
+      line-height: 2.3rem;
+      margin-top: 2.3rem;
+      color: lighten(@font-color, 10);
+      text-align: center;
+    }
+  }
+
+  .gs-signupcard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .gs-signupimg {
+    width: 25rem;
+    height: 28.383rem;
+  }
+  .gs-signuptxt {
+    p {
+      font-size: @fontsize-p;
+      width: 36.8rem;
+    }
+  }
+
+  .gs-projectprepimg {
+    width: 34.266rem;
+    height: 25rem;
+  }
+  .gs-projectpreptxt {
+    p {
+      font-size: @fontsize-p;
+      width: 36.8rem;
+    }
+  }
+
+  .gs-deliveryimg {
+    width: 33.726rem;
+    height: 25rem;
+  }
+  .gs-deliverytxt {
+    p {
+      font-size: @fontsize-p;
+      width: 36.8rem;
+    }
+  }
+}
+//Section 2 end
+
+// Section 3 - Safety (Alfonso) -- Pretty optimized, removed properties that were already declared in body
+.safety-first {
+  display: flex;
+  width: 143.6rem;
+  height: 53.6rem;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 28.4rem;
+  margin-bottom: 18.6rem;
+  // border: 1px solid red;
+
+  @media @phone {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 32.3rem;
+    height: 43.9rem;
+    margin-left: 2rem;
+    margin-right: 3.2rem;
+    margin-top: 8.6rem;
+  }
+
+  .text-section {
+    width: 72.2rem;
+    height: 21.4rem;
+
+    .short-text {
+      display: none;
+    }
+
+    @media @phone {
+      width: 100%;
+      height: auto;
+      // border: 1px solid red;
+
+      .short-text {
+        display: block;
+        // border: 1px solid red;
+      }
+
+      .full-text {
+        display: none;
+      }
+    }
+
+    h2 {
+      font-weight: bold;
+      text-align: left;
+
+      @media @phone {
+        font-size: 2.3rem;
+        font-weight: bold;
+      }
+    }
+
+    p {
+      padding-top: 2.7rem;
+      text-align: left;
+      font-weight: 300;
+
+      @media @phone {
+        margin-top: 1rem;
+        padding: 0;
+        font-size: 1.8rem;
+        line-height: 1.3;
+      }
+    }
+  }
+
+  .safety-svg {
+    width: 600px;
+    height: 536px;
+    object-fit: cover;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    @media @phone {
+      width: 159px;
+      height: 200px;
+      // border: 1px solid green;
+    }
+  }
+}
+
+.reviews {
+  border: 3px solid green;
+  position: relative;
+  height: 104.8rem;
+  background: url("../assets/svgs/Blob User Reviews.svg") no-repeat;
+  background-size: cover;
+  background-size: contain;
+
+  .user-reviews {
+    h2 {
+      color: @font-color;
+      font-size: 3.5rem;
+      font-family: "Source SansPro";
+      font-weight: bold;
+      text-align: left;
+    }
+    p {
+      font-family: "Source SansPro";
+      text-align: right;
+      font-size: 1.8rem;
+    }
+    .user-reviews-h {
+      width: 20.6rem;
+      height: 4.4rem;
+      position: absolute;
+      top: 23.2rem;
+      right: 25.2rem;
+    }
+    .user-reviews-p {
+      width: 35.6rem;
+      height: 5.3rem;
+      position: absolute;
+      top: 30.1rem;
+      right: 25.2rem;
+    }
+  }
+  .dev-review {
+    display: flex;
+    position: absolute;
+    height: 28.8rem;
+    width: 86rem;
+    bottom: 31.6rem;
+    left: 53rem;
+    background: white;
+    .dev-review-img {
+      margin: 3.5rem;
+    }
+    .dev-review-text {
+      margin: 3.5rem 3.5rem 3.5rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 3rem;
+      border-radius: 6px;
+
+      .dev-review-text-p {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: #f2f2f2;
+        border-radius: 6px;
+      }
+    }
+  }
+  .img-person {
+    height: 684px;
+    width: 918.57px;
+    margin-top: 13.4rem;
+    margin-left: 10rem;
+    display: inline-block;
+  }
+}
+// section-4-end
+
+// section-5 Job T // Optimized : True
+
+.section-5 {
+  @media @phone {
+    border: 1px solid red;
+  }
+
+  margin: 0 auto;
+  width: 100%;
+
+  .section-5-cta {
+    background: @white;
+    text-align: center;
+    padding: 15rem 0 0 0;
+
+    .text-section {
+      p {
+        padding: 0 0 1rem 0;
+        color: @veryLightGrey;
+      }
+
+      h1 {
+        color: @lightSlateBlue;
+      }
+    }
+
+    .buttons {
+      // this defins the margin between buttons and text, as well as the bottom of the parent container.
+      margin: 5rem 0 10rem 0;
+
+      .button-primary {
+        .button-primary(@height: 8rem, @padding: 0 6rem 0);
+      }
+
+      .button-secondary {
+        .button-secondary(@height: 8rem, @padding: 0 4rem 0);
+      }
+    }
+  }
+
+  .blobs {
+    display: flex;
+    justify-content: space-between;
+
+    // by default the .blobs container will have its own box model, this adds too much spacing at the bottom
+    // setting it to border box with 1px height solves this issue, and the images being offset still work as its position relative to its parent container.
+    box-sizing: border-box;
+    height: 1px;
+
+    // blobs on the left side of the screen
+    .left {
+      // blob 1
+      img:first-child {
+        .blob-offset(-17.5rem, 16rem);
+
+        @media @phone {
+          height: 7.5rem;
+          .blob-offset(-5rem, 3rem);
+        }
+      }
+
+      // blob 2
+      img:nth-child(2) {
+        .blob-offset(-55rem, 14.5rem);
+
+        @media @phone {
+          height: 1.8rem;
+          .blob-offset(-60rem, -6rem);
+        }
+      }
+    }
+
+    // blobs on the right side of the screen
+    .right {
+      // blob 1
+      img:first-child {
+        .blob-offset(-53rem, -10rem);
+
+        @media @phone {
+          height: 7rem;
+          .blob-offset(-63rem, 17rem);
+        }
+      }
+
+      //   img:nth-child(2) {
+      //     .blob-offset(-29.5rem, -11rem);
+      //   }
+
+      //   img:nth-child(3) {
+      //     .blob-offset(-44rem, -10.5rem);
+      //   }
+    }
+  }
+}
+
+// section-5-end
+
+// Section 6 - footer start - Alfonso // Optimized : N/A
+
+footer {
+  padding-top: 10.9rem;
+  background: @whiteSmoke;
+
+  .lists-of-links {
+    width: 1394px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 16.7rem;
+
+    ul {
+      li {
+        padding: 1rem;
+        font-weight: 300;
+      }
+    }
+
+    ul li:first-child {
+      font-size: 1.5rem;
+      font-weight: 200;
+      color: lighten(@font-color, 10);
+    }
+  }
+
+  .copyright {
+    font-weight: bold;
+    display: flex;
+    width: 308px;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 6.2rem;
+    padding-left: 10rem;
+  }
+}
+
+// Section 6 - footer-end
+// homepage.less
