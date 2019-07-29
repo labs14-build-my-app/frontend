@@ -1,11 +1,18 @@
 import React from "react";
 import styled from "styled-components";
+import NotificationList from "./NotificationList";
 
 const ContainerDiv = styled.div`
   background: #cccccc;
   border-radius: 12px;
   width: 470px;
   height: 499px;
+`;
+
+const NotificationContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 `;
 
 const NotificationH2 = styled.h2`
@@ -41,7 +48,25 @@ const mockUpState = {
     },
 
     {
-      month: "July 17"
+      month: "July",
+      date: "17",
+      author: "eSports Event Planner",
+      action: "completed",
+      project: "ProMatches"
+    },
+    {
+      month: "July",
+      date: "17",
+      author: "eSports Event Planner",
+      action: "completed",
+      project: "ProMatches"
+    },
+    {
+      month: "July",
+      date: "17",
+      author: "eSports Event Planner",
+      action: "completed",
+      project: "ProMatches"
     }
   ]
 };
@@ -53,6 +78,10 @@ const NotificationCenter = props => {
         <NotificationH2>Notifications</NotificationH2>
         <NotificationP>All notifications</NotificationP>
       </FlexDiv>
+
+      <NotificationContainer>
+        <NotificationList notifications={mockUpState.notifications} />
+      </NotificationContainer>
     </ContainerDiv>
   );
 };
