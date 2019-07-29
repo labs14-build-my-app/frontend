@@ -22,6 +22,30 @@ const FlexDiv = styled.div`
   align-items: baseline;
 `;
 
+const mockUpState = {
+  notifications: [
+    {
+      month: "July",
+      date: "22",
+      author: "Irene",
+      action: "updated",
+      project: "You Neek, Clothing Store"
+    },
+
+    {
+      month: "July",
+      date: "18",
+      author: "Gerald",
+      action: "accepted",
+      project: "Meat Cutters, Employee Tracker"
+    },
+
+    {
+      month: "July 17"
+    }
+  ]
+};
+
 const NotificationCenter = props => {
   return (
     <ContainerDiv>
