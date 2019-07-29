@@ -198,6 +198,17 @@ body .button-secondary svg path {
     display: none;
   }
 }
+.displayNavAnime {
+  animation: displayNavOpacityAnimation 0.4s ease-out;
+}
+@keyframes displayNavOpacityAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .modal-nav-elements {
   display: none;
   z-index: 420;
@@ -260,16 +271,34 @@ body .button-secondary svg path {
   align-items: center;
   z-index: 2;
 }
+.intro-container .home-header .hamburger-menu-section .nav-section {
+  display: flex;
+  color: #fff;
+}
+.intro-container .home-header .hamburger-menu-section .nav-section img {
+  width: 22px;
+  height: 22px;
+}
+.intro-container .home-header .hamburger-menu-section .nav-section ul {
+  display: flex;
+}
+.intro-container .home-header .hamburger-menu-section .nav-section ul li {
+  margin-left: 4.87em;
+}
 .intro-container .home-header .hamburger-menu-section .hamburger-svg {
   width: 40px;
   height: 35px;
+  cursor: pointer;
 }
 .intro-container .home-header .hamburger-menu-section h3 {
-  padding: 0 1.4375em;
+  padding: 4px 6px;
+  margin-right: 1.4375em;
+  margin-left: 4.87em;
   font-size: 1.8rem;
   font-family: "Source Sans Pro";
   font-weight: normal;
   color: #fff;
+  cursor: pointer;
 }
 @media (max-width: 1250px) {
   .intro-container .home-header img {
@@ -320,13 +349,16 @@ body .button-secondary svg path {
   color: #43425d;
   line-height: 30px;
 }
-.intro-container .cta-getstarted-section section button {
+.intro-container .cta-getstarted-section section a {
   margin: 3.15em 0px;
+  cursor: pointer;
+  display: inline-block;
 }
-.intro-container .cta-getstarted-section section button a {
+.intro-container .cta-getstarted-section section a button {
   color: white;
   font-size: 1.8rem;
   text-decoration: none;
+  cursor: pointer;
 }
 @media (max-width: 375px) {
   .intro-container .cta-getstarted-section {
@@ -344,6 +376,7 @@ body .button-secondary svg path {
   .intro-container .cta-getstarted-section section p {
     font-size: 1;
   }
+  .intro-container .cta-getstarted-section section a,
   .intro-container .cta-getstarted-section section button {
     width: 100%;
   }
