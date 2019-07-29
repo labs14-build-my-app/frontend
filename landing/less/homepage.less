@@ -75,24 +75,22 @@ body {
 
 //Ruben's jotaroEnergy ? false : <DIO energy={true} />;
 
-.displayNavAnime{
-    animation: displayNavOpacityAnimation .4s ease-out;
-
+.displayNavAnime {
+  animation: displayNavOpacityAnimation 0.4s ease-out;
 }
 @keyframes displayNavOpacityAnimation {
   0% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }
 
-.hamburger-modal{
-
+.hamburger-modal {
   // filter: blur(3px) brightness(35%);
 }
-.modal-nav-elements{
+.modal-nav-elements {
   //displays on click
   display: none;
   z-index: 420;
@@ -104,14 +102,14 @@ body {
   flex-direction: column;
   align-items: flex-end;
   margin: 1.56em 1.25em 0 0;
-  img{
+  img {
     width: 22px;
     height: 22px;
     padding-bottom: 3.19em;
   }
-  div{
-    ul{
-      li{
+  div {
+    ul {
+      li {
         text-align: right;
         padding-bottom: 1.72em;
       }
@@ -161,23 +159,22 @@ body {
     // }
 
     .hamburger-menu-section {
-      display: flex;//remove -- to none
+      display: flex; //remove -- to none
       align-items: center;
       z-index: 2;
-      .nav-section{
+      .nav-section {
         display: flex;
-        img{
+        img {
           width: 22px;
           height: 22px;
-         
         }
-        ul{
+        ul {
           display: flex;
-          li{
+          li {
             margin-left: 4.87em;
           }
         }
-        
+
         color: @white;
       }
       .hamburger-svg {
@@ -194,7 +191,6 @@ body {
         font-weight: normal;
         color: #fff;
         cursor: pointer;
-
       }
     }
     @media (max-width: 1250px) {
@@ -249,13 +245,12 @@ body {
         cursor: pointer;
         display: inline-block;
       }
-      a button  {
+      a button {
         color: white;
         font-size: 1.8rem;
         text-decoration: none;
         cursor: pointer;
       }
-    
     }
     @media @phone {
       //ruben's phone
@@ -273,7 +268,8 @@ body {
         p {
           font-size: 1;
         }
-        a, button{
+        a,
+        button {
           width: 100%;
         }
       }
@@ -285,35 +281,32 @@ body {
       }
     }
   }
-//media queries
+  //media queries
   @media @phone {
     .header-blobber {
       max-width: 150%;
       width: 150%;
       top: -198px;
-      right:-40px;
-      
+      right: -40px;
     }
-    .home-header{
+    .home-header {
       padding: 20px 20px 0 20px;
       align-items: center;
 
-      h2{
+      h2 {
         z-index: 420;
         color: #fff;
-        
       }
-      img{
+      img {
         width: 150%;
       }
-      .hamburger-menu-section{
-        h3{
+      .hamburger-menu-section {
+        h3 {
           display: none;
         }
       }
     }
   }
-
 }
 .grey-blob {
   background-image: url("../assets/svgs/Blob\ Getting\ Started.svg");
@@ -720,3 +713,4 @@ footer {
 }
 
 // Section 6 - footer-end
+// homepage.less
