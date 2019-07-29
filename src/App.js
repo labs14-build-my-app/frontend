@@ -1,7 +1,11 @@
 import React from "react";
+import styled from "styled-components";
 
+const Abc = styled.div`
+  background: red;
+`;
 function App() {
-  return <div>cool story dude</div>;
+  return <Abc>cool story dude</Abc>;
 }
 
 export default App;
