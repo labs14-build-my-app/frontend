@@ -23,7 +23,7 @@ export default function ProjectIntroduction() {
     <section className="proj-title" >
     <h1>Projects </h1>
     <div>
-    <button>All Projects <img src={process.env.PUBLIC_URL +"/images/chevron-right.svg"} /></button>
+    <button>All Projects <img src={process.env.PUBLIC_URL +"/images/chevron-right.svg"} alt="view all projects" /></button>
     </div>
     </section>
     <section className="proj-detail">
