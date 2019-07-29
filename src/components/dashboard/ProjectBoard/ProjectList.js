@@ -1,14 +1,22 @@
 import React, { Component } from "react";
 import Project from "./Project";
-export class ProjectList extends Component {
+import styled from "styled-components";
+const List = styled.div`
+background: red;
+`;
+export default class ProjectList extends Component {
   render() {
+
+    
     return (
-      <div>
+      <List>
+      <h1>projectz</h1>
         <ul>
           <Project />
-          {/* //map over projects */}
+          <Project />
+          <Project />
         </ul>
-      </div>
+      </List>
     );
   }
 }
