@@ -272,7 +272,7 @@ body .button-secondary svg path {
   z-index: 2;
 }
 .intro-container .home-header .hamburger-menu-section .nav-section {
-  display: flex;
+  display: none;
   color: #fff;
 }
 .intro-container .home-header .hamburger-menu-section .nav-section img {
