@@ -1,6 +1,6 @@
 import React from "react";
 import NotificationCenter from "./components/dashboard/NotificationCenter/NotificationContainer";
-import ProjectBoard from "./components/dashboard/ProjectBoard/ProjectIntroduction";
+import ProjectBoard from "./components/dashboard/ProjectBoard/ProjectBoard";
 import QuarterlyStatement from "./components/dashboard/QuarterlyStatement/QuarterlyStatement.js";
 
 function App() {
