@@ -1,11 +1,16 @@
 import React from "react";
-import styled from "styled-components";
+import NotificationCenter from "./components/dashboard/NotificationCenter/NotificationContainer";
+import ProjectBoard from "./components/dashboard/ProjectBoard/ProjectIntroduction";
+import QuarterlyStatement from "./components/dashboard/QuarterlyStatement/QuarterlyStatement.js";
 
-const Abc = styled.div`
-  background: red;
-`;
 function App() {
-  return <Abc>cool story dude</Abc>;
+  return (
+    <div>
+      <QuarterlyStatement />
+      <NotificationCenter />
+      <ProjectBoard />
+    </div>
+  );
 }
 
 export default App;
