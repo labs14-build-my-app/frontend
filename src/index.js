@@ -12,7 +12,7 @@ import { rootReducer } from './reducers';
 //TODO: DO CONDITIONAL MAGIC TO MAKE THIS ENABLE DURING PRODUCTION AND DEVELOPMENT
 
 //REMOVE DURING PRODUCTION
-const store = createStore(rootReducer, compose(applyMiddleware(thunk, logger),window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) ); 
+const store = createStore(rootReducer, compose(applyMiddleware(thunk, logger), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) ); 
 
 //ENABLE DURING PRODUCTION
 // const store = createStore(rootReducer, applyMiddleware(thunk));

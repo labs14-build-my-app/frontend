@@ -10,40 +10,40 @@ const colorArray = [electricViolet,sunglow,shamrock]; //remove when backend upda
 // Change Background property to reflect progress from actual backend
  class Project extends Component {
   render() {
-const ProjectStyle = styled.li`
-margin-bottom: 1.25em;
 
-.proj-head{
-  display: flex;
-  ${'' /* position: relative; */}
-  justify-content: space-between;
-  .status-and-chevron{
-    ${'' /* position: absolute;
-    top: 0;
-    right: 0; */}
-    display: inline-flex;
+  const ProjectStyle = styled.li`
+  margin-bottom: 1.25em;
+  background: #ccc;
+  box-shadow: 5px 5px 8px rgba(0,0,0,.16);
+  border-radius: 10px;
+  
+  .proj-head{
+    display: flex;
+    ${'' /* position: relative; */}
+    justify-content: space-between;
+    .status-and-chevron{
+      ${'' /* position: absolute;
+      top: 0;
+      right: 0; */}
+      display: inline-flex;
 
-    .progress-circle{
-    background: ${colorArray[this.props.color]};
-    ${console.log(this.props.color)}
-    padding: 15px;
-    border: 0;
-    border-radius: 50%;
-    max-width: 0;
-    max-height: 0;
-  }
-  .chevron-up{
-    
-    background: white;
-    padding: 15px;
-    ${'' /* padding needs to be this to match the width of the progress circle */}
+      .progress-circle{
+      background: ${colorArray[this.props.color]};
+      padding: 15px;
+      border: 0;
+      border-radius: 50%;
+      max-width: 0;
+      max-height: 0;
+    }
+    .chevron-up{
+      background: white;
+      padding: 15px;
+      transform: rotate(-90deg);
+      border: 0;
+      border-radius: 50%;
 
-    transform: rotate(-90deg);
-    border: 0;
-    border-radius: 50%;
-
-  }
- 
+    }
+  
   }
 
   h3{
@@ -53,11 +53,12 @@ margin-bottom: 1.25em;
     font-weight: ${headerFontWeight};
   }
   h4{
-    ${'' /* project owner */}
-  font-size: ${projectFontSubtext}
+  ${'' /* project owner */}
+  font-size: ${projectFontSubtext};
   color: ${trout}
   }
   p{
+    ${'' /* project description */}
     font-size: ${projectParagraphFont};
   }
   
@@ -75,6 +76,7 @@ margin-bottom: 1.25em;
     return (
       <ProjectStyle>
       <div className="proj-head">
+    
         <h1>face of gurl</h1>
         <div>
         <h3>Project Title</h3>

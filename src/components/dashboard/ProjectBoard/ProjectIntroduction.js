@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { sunglow,shamrock,electricViolet } from "../cssVariables";
+import { sunglow,shamrock,electricViolet, headerFontFamily } from "../cssVariables";
 
 const ProjectIntroContainer = styled.div`
-display: flex;
-flex-direction: column;
-max-width: 800px;
+
 .proj-title{
  display: flex;
  justify-content: space-between;
+ font-family: ${headerFontFamily}
 }
 .proj-detail{
   display: flex;
