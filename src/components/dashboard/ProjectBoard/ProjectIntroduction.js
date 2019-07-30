@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { sunglow,shamrock,electricViolet, headerFontFamily } from "../cssVariables";
+import { sunglow,shamrock,electricViolet } from "../cssVariables";
 
 const ProjectIntroContainer = styled.div`
 
