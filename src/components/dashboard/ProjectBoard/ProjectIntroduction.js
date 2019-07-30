@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { sunglow,shamrock,electricViolet } from "../cssVariables";
 
 const ProjectIntroContainer = styled.div`
 display: flex;
@@ -8,11 +9,22 @@ max-width: 800px;
 .proj-title{
  display: flex;
  justify-content: space-between;
-background: red;
 }
 .proj-detail{
   display: flex;
   justify-content: space-between;
+  ul{
+    li{
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+      border-radius: 2px;
+      span{
+        padding: 20px;
+        display: block;
+      }
+    }
+  }
 }
 `
 //stateful component
@@ -34,9 +46,9 @@ export default function ProjectIntroduction() {
         project proposals to the client.
       </p>
       <ul>
-      <li>SQUAREIMG Proposal Stage</li>
-      <li>SQUAREIMG In Progress</li>
-      <li>SQUAREIMG Completed / Canceled</li>
+      <li><span style={{background:`${sunglow}`}}/> Proposal Stage</li>
+      <li><span style={{background:`${shamrock}`}}/>  In Progress</li>
+      <li><span style={{background:`${electricViolet}`}}/>  Completed / Canceled</li>
     </ul>
     </section> 
 
