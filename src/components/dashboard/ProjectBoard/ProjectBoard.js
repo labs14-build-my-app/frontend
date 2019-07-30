@@ -5,19 +5,8 @@ import styled from "styled-components";
 const maxWidth = 900;
 
 export class ProjectBoard extends Component {
-  state = {
-    backgroundHeight: null
-  }
-  componentDidMount(){
-    const container = document.querySelector(".background-projects").parentElement;
-    const height = window.getComputedStyle(container, null).getPropertyValue("height");
-    const heightNum = parseInt(height.split('px')[0]) + 50;
-    this.setState({
-      backgroundHeight: `${heightNum/2}px`
-    })
-  }
+  
 
- 
   render() {
   const ProjectBoardContainer = styled.div`
   display: flex;
