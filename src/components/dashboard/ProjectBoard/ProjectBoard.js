@@ -24,27 +24,50 @@ export class ProjectBoard extends Component {
   flex-direction: column;
   max-width: ${maxWidth}px;
   margin: 4em 35em;
-  box-shadow: 5px 5px 8px rgba(255,255,255,.16);
+  padding: 2.5em;
+  box-shadow: 5px 5px 8px 0px rgba(255,255,255,0.16);
+  border-radius: 10px;
+border: none;
   position: relative;
-  backdrop-filter: blur(5px);
-  overflow: hidden;
-.background-projects{
+ ::before{
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: white;
+  filter: blur(0px) brightness(150%) opacity(25%);
+  border-radius: 10px;
+ }
+ .background-projects{
+  position: relative;
+ }
+ 
+
+
+}
+
+  }
+${'' /* .background-projects{
     position: absolute;
-    padding: ${true && this.state.backgroundHeight} ${maxWidth/2}px;
-    -webkit-filter: blur(7px) brightness(95%) opacity(25%);
-    filter: blur(7px) brightness(95%) opacity(25%);
+    padding: 2.5em;
+    width: 100%;
+    height: 100%;
     background: white;
-    z-index: -1;
-  
-}
-}
+    background-size: cover;
+    content: ' ';
+    opacity: 0.4;
+} */}
+} 
 `  
     return (
+
       <ProjectBoardContainer>
-          <div className="background-projects"/>
+          <div className="background-projects">
           <ProjectIntroduction />
           <ProjectList />
+          </div>
       </ProjectBoardContainer>
+   
     );
   }
 }

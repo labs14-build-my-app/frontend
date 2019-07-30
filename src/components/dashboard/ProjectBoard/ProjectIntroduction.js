@@ -1,18 +1,30 @@
 import React from "react";
 import styled from "styled-components";
-import { sunglow,shamrock,electricViolet } from "../cssVariables";
+import { sunglow,shamrock,electricViolet, headerFontDesktop } from "../cssVariables";
 
 const ProjectIntroContainer = styled.div`
-
+display: flex;
+align-items: center;
+flex-direction: column;
+h1{
+font-size: ${headerFontDesktop}
+margin-bottom: .9375em;
+}
+p{
+  font-size: 1.5rem;
+  align-self: center;
+}
 .proj-title{
  display: flex;
  justify-content: space-between;
+ align-self: stretch;
  
  
 }
 .proj-detail{
   display: flex;
   justify-content: space-between;
+
   ul{
     li{
       display: flex;
@@ -32,6 +44,7 @@ export default function ProjectIntroduction() {
 
   return (
     <ProjectIntroContainer>
+  
     <section className="proj-title" >
     <h1>Projects </h1>
     <div>
@@ -50,7 +63,8 @@ export default function ProjectIntroduction() {
       <li><span style={{background:`${shamrock}`}}/>  In Progress</li>
       <li><span style={{background:`${electricViolet}`}}/>  Completed / Canceled</li>
     </ul>
-    </section> 
+    </section>
+ 
 
     </ProjectIntroContainer>
   );
