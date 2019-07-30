@@ -7,7 +7,8 @@ const ProjectIntroContainer = styled.div`
 .proj-title{
  display: flex;
  justify-content: space-between;
- font-family: ${headerFontFamily}
+ 
+ 
 }
 .proj-detail{
   display: flex;
