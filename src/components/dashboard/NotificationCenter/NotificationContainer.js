@@ -17,6 +17,7 @@ const NotificationContainer = styled.div`
 
 const NotificationH2 = styled.h2`
   font-size: 18px;
+  margin-top: 30px;
 `;
 
 const NotificationP = styled.p`
@@ -25,8 +26,10 @@ const NotificationP = styled.p`
 
 const FlexDiv = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: baseline;
+  width: 80%;
+  margin: 0 auto;
 `;
 
 const mockUpState = {
