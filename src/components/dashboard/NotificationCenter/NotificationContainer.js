@@ -74,7 +74,7 @@ const mockUpState = {
   ]
 };
 
-const NotificationCenter = props => {
+const NotificationCenter = () => {
   return (
     <ContainerDiv>
       <FlexDiv>
