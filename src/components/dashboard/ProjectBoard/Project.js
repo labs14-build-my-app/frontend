@@ -1,9 +1,21 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { electricViolet } from "../cssVariables";
 const ProjectStyle = styled.li`
+margin-bottom: 1.25em;
 .proj-head{
   display: flex;
-  margin-bottom: 1.25em;
+
+  position: relative;
+  .progress-circle{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 30px;
+    background: ${electricViolet};
+    border-radius: 50%;
+    
+  }
 }
 `
 export default class Project extends Component {
@@ -16,6 +28,7 @@ export default class Project extends Component {
         <h3>Project Title</h3>
         <h4>project owner name</h4>
         </div>
+        <h1 className="progress-circle"></h1>
       </div>
         <p> project description</p>
       </ProjectStyle>
