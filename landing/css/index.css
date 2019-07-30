@@ -578,12 +578,20 @@ body .button-secondary svg path {
   }
 }
 .reviews {
-  border: 3px solid green;
   position: relative;
   height: 104.8rem;
   background: url("../assets/svgs/Blob User Reviews.svg") no-repeat;
   background-size: cover;
   background-size: contain;
+}
+@media (max-width: 375px) {
+  .reviews {
+    height: 43.1rem;
+    background: url("../assets/svgs/Blob User Reviews (person).svg") no-repeat;
+    background-size: 100%;
+    border-left: 20px solid white;
+    border-right: 20px solid white;
+  }
 }
 .reviews .user-reviews h2 {
   color: #43425d;
@@ -592,10 +600,23 @@ body .button-secondary svg path {
   font-weight: bold;
   text-align: left;
 }
+@media (max-width: 375px) {
+  .reviews .user-reviews h2 {
+    font-size: 2.3rem;
+  }
+}
 .reviews .user-reviews p {
   font-family: "Source SansPro";
   text-align: right;
   font-size: 1.8rem;
+}
+@media (max-width: 375px) {
+  .reviews .user-reviews p {
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    padding-left: 3rem;
+    text-align: center;
+  }
 }
 .reviews .user-reviews .user-reviews-h {
   width: 20.6rem;
@@ -604,12 +625,28 @@ body .button-secondary svg path {
   top: 23.2rem;
   right: 25.2rem;
 }
+@media (max-width: 375px) {
+  .reviews .user-reviews .user-reviews-h {
+    width: 13.4rem;
+    height: 2.9rem;
+    top: 0rem;
+    right: 3rem;
+  }
+}
 .reviews .user-reviews .user-reviews-p {
   width: 35.6rem;
   height: 5.3rem;
   position: absolute;
   top: 30.1rem;
   right: 25.2rem;
+}
+@media (max-width: 375px) {
+  .reviews .user-reviews .user-reviews-p {
+    width: 23.6rem;
+    height: 6.7rem;
+    top: 2.3rem;
+    right: 0rem;
+  }
 }
 .reviews .dev-review {
   display: flex;
@@ -619,6 +656,14 @@ body .button-secondary svg path {
   bottom: 31.6rem;
   left: 53rem;
   background: white;
+}
+@media (max-width: 375px) {
+  .reviews .dev-review {
+    height: 20.5rem;
+    width: 33.4rem;
+    bottom: 11.3rem;
+    left: 0rem;
+  }
 }
 .reviews .dev-review .dev-review-img {
   margin: 3.5rem;
@@ -631,11 +676,24 @@ body .button-secondary svg path {
   padding-bottom: 3rem;
   border-radius: 6px;
 }
+@media (max-width: 375px) {
+  .reviews .dev-review .dev-review-text {
+    margin: 1rem 0 0 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
 .reviews .dev-review .dev-review-text .dev-review-text-p {
   margin-top: 1rem;
   padding: 1rem;
   background: #f2f2f2;
   border-radius: 6px;
+}
+@media (max-width: 375px) {
+  .reviews .dev-review .dev-review-text .dev-review-text-p {
+    overflow-y: scroll;
+  }
 }
 .reviews .img-person {
   height: 684px;
@@ -643,6 +701,27 @@ body .button-secondary svg path {
   margin-top: 13.4rem;
   margin-left: 10rem;
   display: inline-block;
+}
+@media (max-width: 375px) {
+  .reviews .dev-review .dev-review-img-mob {
+    margin-right: 1rem;
+    width: 9rem;
+  }
+}
+@media (max-width: 375px) {
+  .mob-block {
+    width: 20rem;
+  }
+}
+@media (max-width: 375px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+@media (min-width: 375.1px) {
+  .hide-desk {
+    display: none;
+  }
 }
 .section-5 {
   margin: 0 auto;
