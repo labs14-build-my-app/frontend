@@ -9,6 +9,7 @@ background: linear-gradient(225deg, #2BFFAE,#34806A);
 border-radius: 10px;
 color: #fff;
 padding: 1.25em;
+margin-bottom: 2.5em;
 h3{
   font-size: 1.8rem;
   margin-bottom: .8125em;
