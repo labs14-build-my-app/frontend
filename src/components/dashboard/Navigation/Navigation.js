@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from "styled-components" 
 import { headerFontDesktop } from '../cssVariables';
+import {NavLink} from "react-router-dom";
 const NavigationElements = styled.nav`
 
   .menu-nav{
@@ -65,11 +66,11 @@ export default function Navigation() {
         </div>
         <nav className="alt-menu-nav">
             <ul>
-                <li>Dashboard</li>
-                <li>Find Projects</li>
-                <li>Statements</li>
-                <li>Notifications</li>
-                <li>Settings</li>
+            <li> <NavLink to="/dashboard">Dashboard</NavLink></li>
+                <li><NavLink >Find Projects</NavLink></li>
+                <li><NavLink >Statements</NavLink></li>
+                <li><NavLink >Notifications</NavLink></li>
+                <li><NavLink >Settings</NavLink></li>
             </ul>
         </nav>
           </NavigationElements>

@@ -5,6 +5,8 @@ import QuarterlyStatement from "./components/dashboard/QuarterlyStatement/Quarte
 import styled from "styled-components";
 import "./index.css";
 import Navigation from "./components/dashboard/Navigation/Navigation";
+import {Route} from "react-router-dom";
+import Login from "./components/dashboard/Login/Login";
 const SideContent = styled.div`
 display: flex;
 justify-content: evenly;
@@ -26,14 +28,20 @@ margin-top: 4em;
 function App() {
   return (
     <div>
+
     <Navigation />
-    <SideContent>
-      <ProjectBoard />
-      <div className="side-notif-and-statement-container">
-      <QuarterlyStatement />
-      <NotificationCenter />
-    </div>
-    </SideContent>
+    <Route path="/dashboard" render={()=>{
+      return (
+      <SideContent>
+        <ProjectBoard />
+        <div className="side-notif-and-statement-container">
+          <QuarterlyStatement />
+          <NotificationCenter />
+        </div>
+      </SideContent>)
+    }}/>
+
+    <Route path="/login" component={Login}/>
     </div>
   );
 }
