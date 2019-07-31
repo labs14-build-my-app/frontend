@@ -10,8 +10,13 @@ display: flex;
 justify-content: evenly;
 align-items: center;
 margin-bottom: 7.25em;
+margin-top: 4em;
 .side-notif-and-statement-container{
-  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: normal;
+  margin-top: 4em;
 }
 `;
 

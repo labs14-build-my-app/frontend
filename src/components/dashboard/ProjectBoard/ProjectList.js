@@ -3,7 +3,7 @@ import Project from "./Project";
 import styled from 'styled-components'
 const ProjectListContainer = styled.ul`
 max-width: 800px;
-
+margin: 0 2.5em;
 `
 const getRandomInt = () =>{
 

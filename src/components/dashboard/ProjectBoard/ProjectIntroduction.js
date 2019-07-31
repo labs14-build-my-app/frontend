@@ -6,6 +6,7 @@ const ProjectIntroContainer = styled.div`
 display: flex;
 align-items: center;
 flex-direction: column;
+margin: 0 2.5em;
 h1{
 font-size: ${headerFontDesktop}
 margin-bottom: .9375em;
@@ -13,6 +14,7 @@ margin-bottom: .9375em;
 p{
   font-size: 1.5rem;
   align-self: center;
+  width: 80%;
 }
 .proj-title{
  display: flex;
@@ -25,7 +27,9 @@ p{
   display: flex;
   justify-content: space-between;
 
-  ul{
+  .progress-square-container{
+    width: 20%;
+    padding-left:1.4375em;
     li{
       display: flex;
       align-items: center;
@@ -58,7 +62,7 @@ export default function ProjectIntroduction() {
         information about it or to access the project's page and or submit
         project proposals to the client.
       </p>
-      <ul>
+      <ul className="progress-square-container">
       <li><span style={{background:`${sunglow}`}}/> Proposal Stage</li>
       <li><span style={{background:`${shamrock}`}}/>  In Progress</li>
       <li><span style={{background:`${electricViolet}`}}/>  Completed / Canceled</li>
