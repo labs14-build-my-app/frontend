@@ -21,20 +21,25 @@ class Login extends Component {
   handleSubmit = e => {
     e.preventDefault();
     // this.props.login({ ...this.state }).then(() => {
-    //   this.props.history.push('/');
+    //     this.props.history.push('/');
     // });
+    //if user.type === dev
+    this.props.history.push('/dev/dashboard');
+    
+    //if user.type === entrepreneur 
+    // this.props.history.push('/entrepreneur/dashboard');
   };
 
   render() {
     return (
       <div className="login-container">
         <div className="cta-content">
-          <h1>Let's get back to trading.</h1>
+          <h1>Merge into DevFindr. Commit for free.</h1>
         </div>
         <div className="login-main">
           <h1
             className="login-title" >
-            Sign in.
+            GET IN HERE.
           </h1>
           
           <form
@@ -60,7 +65,7 @@ class Login extends Component {
               {this.props.isLoggingIn ? <BeatLoader /> : 'Sign In'}
             </button>
             <div className="alternative-cta">
-              <p>Not a member yet? </p>
+              <p>Don't have a localStorage.getItem('token') yet? </p>
               <Link to="/register">Register</Link>
             </div>
           </form>

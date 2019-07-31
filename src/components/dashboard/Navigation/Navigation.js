@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from "styled-components" 
-import { headerFontDesktop } from '../cssVariables';
 import {NavLink} from "react-router-dom";
 const NavigationElements = styled.nav`
 
@@ -49,7 +48,7 @@ export default function Navigation() {
     <NavigationElements >
     <div className="menu-nav">
         <h2>DevFindr</h2>
-        <img src={process.env.PUBLIC_URL + "/images/icon_Menu.svg"} />
+        <img src={process.env.PUBLIC_URL + "/images/icon_Menu.svg"} alt="menu" />
         <div className="nav-section">
                 <ul>
                 <li>
@@ -66,7 +65,7 @@ export default function Navigation() {
         </div>
         <nav className="alt-menu-nav">
             <ul>
-            <li> <NavLink to="/dashboard">Dashboard</NavLink></li>
+                <li><NavLink to="/dev/dashboard">Dashboard</NavLink></li>
                 <li><NavLink >Find Projects</NavLink></li>
                 <li><NavLink >Statements</NavLink></li>
                 <li><NavLink >Notifications</NavLink></li>

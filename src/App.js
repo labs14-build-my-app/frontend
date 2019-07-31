@@ -1,47 +1,21 @@
 import React from "react";
-import NotificationCenter from "./components/dashboard/NotificationCenter/NotificationContainer";
-import ProjectBoard from "./components/dashboard/ProjectBoard/ProjectBoard";
-import QuarterlyStatement from "./components/dashboard/QuarterlyStatement/QuarterlyStatement.js";
-import styled from "styled-components";
 import "./index.css";
-import Navigation from "./components/dashboard/Navigation/Navigation";
 import {Route} from "react-router-dom";
 import Login from "./components/dashboard/Login/Login";
-const SideContent = styled.div`
-display: flex;
-justify-content: evenly;
-align-items: center;
-justify-content: center;
-align-items: center;
-margin-bottom: 7.25em;
-margin-top: 4em;
-.side-notif-and-statement-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-self: normal;
-  margin-top: 4em;
-}
-`;
+import DashboardDev from "./components/dashboard/index";
+import PrivateRoute from "./components/auth/PrivateRoute"
+
 
 
 function App() {
   return (
     <div>
 
-    <Navigation />
-    <Route path="/dashboard" render={()=>{
-      return (
-      <SideContent>
-        <ProjectBoard />
-        <div className="side-notif-and-statement-container">
-          <QuarterlyStatement />
-          <NotificationCenter />
-        </div>
-      </SideContent>)
-    }}/>
-
+    {/* <Navigation /> */}
+    
     <Route path="/login" component={Login}/>
+    <PrivateRoute exact path="/dev/dashboard" component={DashboardDev} />
+    {/* <PrivateRoute exact path="/entrepreneur/dashboard" component={DashboardEntrepreneur} /> */}
     </div>
   );
 }
