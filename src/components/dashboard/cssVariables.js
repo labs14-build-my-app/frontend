@@ -10,7 +10,9 @@ export const electricViolet = "#9519E8";
 export const trout = "#4D4F5C";
 export const gunPowder = "#43425D";
 
-//
+//MEDIA QUERIES
+export const phone = "(max-width: 375px)";
+export const tablet = "(max-width: 900px)";//idk what this is i need to google it
 
 //GENERAL FONT SIZES
 export const headerFontDesktop = "1.8rem";
