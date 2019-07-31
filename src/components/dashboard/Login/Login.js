@@ -32,6 +32,14 @@ const LoginContainer = styled.div`
     }
   }
 
+  .cta-content{
+    font-size: 3.5rem;
+    line-height: 2;
+    width: 90%;
+    margin: 0 auto;
+    algin-self: center;
+    
+  }
 
 
   display: flex;
@@ -55,7 +63,13 @@ const LoginContainer = styled.div`
     width: 90%;
     box-shadow: none;
     .cta-content {
-      display: none;
+     ${'' /* display: none; */}
+    h1{
+    font-size: 3.5rem;
+    line-height: 2;
+    width: 90%;
+
+    }
     }
   }
   .cta-content {
@@ -137,7 +151,8 @@ class Login extends Component {
     return (
       <LoginContainer className="login-container">
         <div className="cta-content">
-          <h1>Merge into DevFindr. Commit for free.</h1>
+          <h1>Merge into DevFindr.<br/> Commit for free.</h1>
+          
         </div>
         <div className="login-main">
           <h1
