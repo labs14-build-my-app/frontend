@@ -30,6 +30,6 @@ position: relative;
  top: 0; left: 0;
  width: 100%; height: 100%;
  background: white;
- filter: blur(0px) brightness(150%) opacity(25%);
+ filter: blur(0px) brightness(150%) opacity(35%);
  border-radius: 10px;
 }`
