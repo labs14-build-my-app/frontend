@@ -20,3 +20,16 @@ export const headerFontWeight = "normal";
 //<ProjectBoard /> specific fonts
 export const projectFontSubtext = "1.3rem";
 export const projectParagraphFont = "1.5rem";
+
+//Transparent Backdrop
+export const transparentBackdrop = `
+position: relative;
+::before{
+ content: "";
+ position: absolute;
+ top: 0; left: 0;
+ width: 100%; height: 100%;
+ background: white;
+ filter: blur(0px) brightness(150%) opacity(25%);
+ border-radius: 10px;
+}`
