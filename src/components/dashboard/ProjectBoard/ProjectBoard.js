@@ -13,11 +13,12 @@ export class ProjectBoard extends Component {
   display: flex;
   flex-direction: column;
   max-width: ${maxWidth}px;
-  margin: 4em 35em;
+  margin: 4em 2.5em 0 2.5em;
   padding: 2.5em;
   box-shadow: 5px 5px 8px 0px rgba(255,255,255,0.16);
   border-radius: 10px;
   border: none;
+  
   ${transparentBackdrop}
 }
 

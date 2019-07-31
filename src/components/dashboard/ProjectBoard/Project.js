@@ -16,7 +16,8 @@ const colorArray = [electricViolet,sunglow,shamrock]; //remove when backend upda
   background: #ccc;
   box-shadow: 5px 5px 8px rgba(0,0,0,.16);
   border-radius: 10px;
-  
+  background: linear-gradient( 74deg, rgba(255,255,255,1) 0%, rgba(239,239,239,1) 100% );
+  border-left: 15px solid ${colorArray[this.props.color]};
   .proj-head{
     display: flex;
     ${'' /* position: relative; */}
@@ -46,17 +47,29 @@ const colorArray = [electricViolet,sunglow,shamrock]; //remove when backend upda
   
   }
 
-  h3{
-    ${'' /* project title */}
-    font-size: ${headerFontDesktop};
-    font-family: ${headerFontFamily};
-    font-weight: ${headerFontWeight};
+  .owner-img-and-name{
+    display: flex;
+    align-items: center;
+    margin: 2.5em;
+      div{
+        margin-left: 1.3em;
+        h3{
+      ${'' /* project title */}
+      font-size: ${headerFontDesktop};
+      font-family: ${headerFontFamily};
+      font-weight: ${headerFontWeight};
+      margin-bottom: .3125em;
+    }
+    h4{
+    ${'' /* project owner */}
+    font-size: ${projectFontSubtext};
+    color: ${trout}
+    margin-bottom: .625em;
+ 
+    }
+      }
   }
-  h4{
-  ${'' /* project owner */}
-  font-size: ${projectFontSubtext};
-  color: ${trout}
-  }
+  
   p{
     ${'' /* project description */}
     font-size: ${projectParagraphFont};
@@ -64,23 +77,29 @@ const colorArray = [electricViolet,sunglow,shamrock]; //remove when backend upda
   
  
 }
-.description-and-cta{
+.allprojects-cta{
     display: block;
     flex-direction: column;
     justify-content: space-between;
     button{
      display: inline-block;
     }
+    p{
+      margin-left: 3.8em;
+      margin-bottom: 3.75em;
+    }
   }
 `
     return (
       <ProjectStyle>
       <div className="proj-head">
-    
+      <div className="owner-img-and-name">
         <h1>face of gurl</h1>
         <div>
         <h3>Project Title</h3>
         <h4>project owner name</h4>
+        <p> project description</p>
+        </div>
         </div>
         <div>
         <div className="status-and-chevron">
@@ -89,8 +108,8 @@ const colorArray = [electricViolet,sunglow,shamrock]; //remove when backend upda
         </div>
         </div>
       </div>
-      <div className="description-and-cta">
-        <p> project description</p>
+      <div className="allprojects-cta">
+    
         <button>All Projects <img src={process.env.PUBLIC_URL +"/images/chevron-right.svg"} alt="view all projects" /></button>
         </div>
       </ProjectStyle>
