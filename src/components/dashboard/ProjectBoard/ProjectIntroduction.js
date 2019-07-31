@@ -7,6 +7,7 @@ display: flex;
 align-items: center;
 flex-direction: column;
 margin: 0 2.5em;
+margin-bottom: 1.875em;
 h1{
 font-size: ${headerFontDesktop}
 margin-bottom: .9375em;
@@ -36,8 +37,9 @@ p{
       margin-bottom: 5px;
       border-radius: 2px;
       span{
-        padding: 20px;
+        padding: 10px;
         display: block;
+        margin-right: 0.9375em;
       }
     }
   }
