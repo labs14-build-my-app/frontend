@@ -9,6 +9,10 @@ const SideContent = styled.div`
 display: flex;
 justify-content: evenly;
 align-items: center;
+margin-bottom: 7.25em;
+.side-notif-and-statement-container{
+  align-self: flex-end;
+}
 `;
 
 
@@ -18,7 +22,7 @@ function App() {
     <Navigation />
     <SideContent>
       <ProjectBoard />
-      <div>
+      <div className="side-notif-and-statement-container">
       <QuarterlyStatement />
       <NotificationCenter />
     </div>
