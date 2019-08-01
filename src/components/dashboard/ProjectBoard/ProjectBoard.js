@@ -19,8 +19,10 @@ ${transparentBackdrop}
 `;
 export class ProjectBoard extends Component {
   render() {
+    
     return (
       <ProjectBoardContainer>
+      
         <ProjectIntroduction />
         <ProjectList />
       </ProjectBoardContainer>

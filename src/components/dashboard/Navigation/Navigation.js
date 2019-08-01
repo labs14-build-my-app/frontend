@@ -66,10 +66,10 @@ export default function Navigation() {
         <nav className="alt-menu-nav">
             <ul>
                 <li><NavLink to="/dev/dashboard">Dashboard</NavLink></li>
-                <li><NavLink >Find Projects</NavLink></li>
-                <li><NavLink >Statements</NavLink></li>
-                <li><NavLink >Notifications</NavLink></li>
-                <li><NavLink >Settings</NavLink></li>
+                <li><NavLink to="/dev/find/projects">Find Projects</NavLink></li>
+                <li><NavLink to="/dev/statements">Statements</NavLink></li>
+                <li><NavLink to="/dev/notifications">Notifications</NavLink></li>
+                <li><NavLink to="/dev/settings">Settings</NavLink></li>
             </ul>
         </nav>
           </NavigationElements>

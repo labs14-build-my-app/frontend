@@ -42,7 +42,7 @@ const QuarterlyStatement = props => {
     <StatementContainer>
       <h3> Quarterly Statement Overview(Q3) </h3>
       <div className="statement-quarter">
-      <div class="statement-incoming">
+      <div className="statement-incoming">
       <p> $4,250 Paid this quarter </p>
       <p> $1520 coming due </p>
       </div>

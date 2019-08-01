@@ -13,18 +13,14 @@ const ContainerDiv = styled.div`
 `;
 
 export default function NotificationList({ notifications }) {
-  console.log(notifications);
-
   return (
     <ContainerDiv>
-      {notifications.map(note => {
+      {notifications.map((note,i) => {
         return (
           <Notification
-            month={note.month}
-            date={note.date}
-            author={note.author}
-            action={note.action}
-            project={note.project}
+            {...note}
+            key={i}
+            // change key to notification id
           />
         );
       })}
