@@ -3,9 +3,9 @@ import styled from "styled-components"
 const StatementContainer = styled.div` 
 width: 100%;
 height: 100%;
-background: green;
 align-self: flex-start;
 background: linear-gradient(225deg, #2BFFAE,#34806A);
+box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.16);
 border-radius: 10px;
 color: #fff;
 padding: 1.25em;

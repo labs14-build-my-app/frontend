@@ -26,6 +26,7 @@ export const projectParagraphFont = "1.5rem";
 //Transparent Backdrop
 export const transparentBackdrop = `
 position: relative;
+box-shadow: 5px 5px 8px 0px rgba(255,255,255,0.16);
 ::before{
  content: "";
  position: absolute;

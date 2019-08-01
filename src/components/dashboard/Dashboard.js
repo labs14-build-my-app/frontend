@@ -9,9 +9,8 @@ import { withRouter } from "react-router-dom";
 const SideContent = styled.div`
   display: flex;
   justify-content: evenly;
-  align-items: center;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   margin-bottom: 7.25em;
   margin-top: 4em;
   .side-notif-and-statement-container {
