@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components"
 const StatementContainer = styled.div` 
-width: 100%;
 height: 100%;
 align-self: flex-start;
 background: linear-gradient(225deg, #2BFFAE,#34806A);
