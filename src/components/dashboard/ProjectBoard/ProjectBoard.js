@@ -5,26 +5,26 @@ import styled from "styled-components";
 import { transparentBackdrop } from "../cssVariables";
 const maxWidth = 900;
 const ProjectBoardContainer = styled.div`
-display: flex;
-flex-direction: column;
-max-width: ${maxWidth}px;
-margin: 4em 2.5em 0 2.5em;
-padding: 2.5em;
+  display: flex;
+  flex-direction: column;
+  max-width: ${maxWidth}px;
+  margin: 4em 2.5em 0 2.5em;
+  padding: 2.5em;
 
-border-radius: 10px;
-border: none;
+  border-radius: 10px;
+  border: none;
 
-${transparentBackdrop}
-
+  ${transparentBackdrop}
 `;
 export class ProjectBoard extends Component {
   render() {
-    
     return (
       <ProjectBoardContainer>
-      
-        <ProjectIntroduction />
-        <ProjectList />
+        {/* render the dev dashboard with description of projects*/}
+        {this.props.history.location.pathname === "/dev/dashboard" && <ProjectIntroduction /> }
+        <ProjectList {...this.props} />
+        
+        
       </ProjectBoardContainer>
     );
   }

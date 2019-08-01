@@ -27,7 +27,7 @@ class Dashboard extends Component {
   render() {
     return (
         <SideContent>
-          <ProjectBoard />
+          <ProjectBoard {...this.props} />{/* passing history object */}
           <div className="side-notif-and-statement-container">
             <QuarterlyStatement />
             <NotificationCenter />
