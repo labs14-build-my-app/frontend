@@ -4,16 +4,15 @@ import {
     EXAMPLE_FAILURE, 
     LOGIN_START,
     LOGIN_SUCCESS, 
-    LOGIN_FAILURE 
+    LOGIN_FAILURE, 
+    FIND_PROJECTS_START
   } from '../actions';
 
 const initialState = {
     isLoggingIn: false,
-    isEXAMPLEing: false,
     token: localStorage.getItem('token'),
-    watchList: [],
-    error: '',
-    selectedStock: null
+    projectList: []
+    
   };
   
   export const rootReducer = (state = initialState, action) => {
@@ -52,6 +51,11 @@ const initialState = {
         error: `*${action.payload}`
       };
   
+      case FIND_PROJECTS_START: 
+      return{
+          ...state,
+          projects: action.payload
+      }
       default:
         return state;
     }

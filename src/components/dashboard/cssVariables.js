@@ -35,4 +35,5 @@ box-shadow: 5px 5px 8px 0px rgba(255,255,255,0.16);
  background: white;
  filter: blur(0px) brightness(150%) opacity(35%);
  border-radius: 10px;
+ z-index: -10;
 }`;

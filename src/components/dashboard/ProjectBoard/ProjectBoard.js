@@ -22,12 +22,11 @@ export class ProjectBoard extends Component {
       <ProjectBoardContainer>
         {/* render the dev dashboard with description of projects*/}
         {this.props.history.location.pathname === "/dev/dashboard" && <ProjectIntroduction /> }
-        <ProjectList {...this.props} />
-        
-        
+        <ProjectList {...this.props} />  
       </ProjectBoardContainer>
     );
   }
 }
+
 
 export default ProjectBoard;

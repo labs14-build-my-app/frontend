@@ -39,4 +39,22 @@ export const login = creds => dispatch => {
         dispatch({ type: LOGIN_FAILURE, payload: err.response.data.message });
       });
   };
+
+ 
+  
+  export const FIND_PROJECTS_START = 'FIND_PROJECTS_START';
+  export const FIND_PROJECTS_SUCCESS = 'FIND_PROJECTS_SUCCESS';
+  export const FIND_PROJECTS_FAILURE = 'FIND_PROJECTS_FAILURE';
+  export const findProjects = dispatch =>{
+
+        return new Promise().then(res=>{
+            console.log(res.data);
+            dispatch({type: FIND_PROJECTS_START, payload: res.data});
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+    
+
+  }
   
