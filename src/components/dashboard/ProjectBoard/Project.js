@@ -94,22 +94,23 @@ p{
 
 }
 .allprojects-cta{
-  display: block;
-  flex-direction: column;
-  justify-content: space-between;
-  button{
-   display: inline-block;
-  }
+  display: flex;
+  justify-content: flex-end;
+  ${'' /* justify-content: space-between; */}
+  margin: 0 ${40/16}em;
   p{
-    margin-left: 3.8em;
-    margin-bottom: 3.75em;
+    font-size: 1.5rem;
+  }
+  i{
+    margin-left: ${10/16}em;
+    margin-bottom: ${20/16}em;
   }
 }
 `;
 
 const Project = (props) => {
   const [isActiveChevron, setActiveChevron] = useState(false);
-console.log(isActiveChevron)
+
     return (
       <ThemeProvider theme={props}>
       <ProjectStyle>
@@ -125,20 +126,17 @@ console.log(isActiveChevron)
           <div>
             <div className="status-and-chevron">
               <div className="chevron-up" onClick={()=>setActiveChevron(!isActiveChevron)} >
-                <i className="fas fa-chevron-up" style={{transform : `${isActiveChevron || props.first ? "rotate(0deg)" : "rotate(180deg)"}`}}/>
+                <i className="fas fa-chevron-up" style={{transform : `${isActiveChevron ? "rotate(0deg)" : "rotate(180deg)"}`}}/>
               </div>
               <div className="progress-circle" />
             </div>
           </div>
         </div>
         <div className="allprojects-cta">
-          <button>
+          <p>
             All Projects{" "}
-            <img
-              src={process.env.PUBLIC_URL + "/images/chevron-right.svg"}
-              alt="view all projects"
-            />
-          </button>
+            <i className="fas fa-chevron-right" />
+          </p>
         </div>
       </ProjectStyle>
       </ThemeProvider>

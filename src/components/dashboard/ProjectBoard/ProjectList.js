@@ -17,6 +17,7 @@ class ProjectList extends Component {
     console.log("hello");
     this.props.findProjects();
   };
+
   render() {
     console.log(this.state);
     console.log(this.props);
@@ -27,7 +28,7 @@ class ProjectList extends Component {
         {/* {this.props.projectList.map(project => {
           return <Project color={this.getRandomInt()} props={project} />;
         })} */}
-        <Project color={this.getRandomInt()} first />
+        <Project color={this.getRandomInt()} toggleFirst={this.toggleFirst} />
         <Project color={this.getRandomInt()} />
         <Project color={this.getRandomInt()} />
         
