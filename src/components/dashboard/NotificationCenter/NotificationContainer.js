@@ -4,10 +4,8 @@ import NotificationList from "./NotificationList";
 import { transparentBackdrop } from "../cssVariables";
 
 const ContainerDiv = styled.div`
-
   border-radius: 12px;
   ${transparentBackdrop}
-
 `;
 
 const NotificationContainer = styled.div`

@@ -12,7 +12,7 @@ export const gunPowder = "#43425D";
 
 //MEDIA QUERIES
 export const phone = "(max-width: 375px)";
-export const tablet = "(max-width: 900px)";//idk what this is i need to google it
+export const tablet = "(max-width: 900px)"; //idk what this is i need to google it
 
 //GENERAL FONT SIZES
 export const headerFontDesktop = "1.8rem";
@@ -34,4 +34,4 @@ position: relative;
  background: white;
  filter: blur(0px) brightness(150%) opacity(35%);
  border-radius: 10px;
-}`
+}`;
