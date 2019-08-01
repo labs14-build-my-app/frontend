@@ -67,17 +67,12 @@ body {
   }
 }
 
-// .home-header-container{
-//     background: url("../assets/svgs/Blob\ Header.svg");
-
-//     background-size: 50%;
-// }
-
-//Ruben's jotaroEnergy ? false : <DIO energy={true} />;
+// Section 1 - Header & Nav (Ruben) // Optimized for 1920x1080,
 
 .displayNavAnime {
   animation: displayNavOpacityAnimation 0.4s ease-out;
 }
+
 @keyframes displayNavOpacityAnimation {
   0% {
     opacity: 0;
@@ -113,6 +108,7 @@ body {
     }
   }
 }
+
 .intro-container {
   padding-bottom: 163px;
   background: @whiteSmoke;
@@ -131,7 +127,6 @@ body {
     }
   }
   .home-header {
-    //Ruben's CSS
     z-index: -2;
     display: flex;
     justify-content: space-between;
@@ -147,38 +142,35 @@ body {
       font-weight: normal;
     }
 
-    // .home-navigation-bar {
-    //   //displays on click
-    //   display: none;
-    //   z-index: 420;
-    //   color: white;
-    //   filter: blur(0px);
-    // }
-
     .hamburger-menu-section {
-      display: flex; //remove -- to none
+      display: flex; // remove -- to none
       align-items: center;
       z-index: 2;
+
       .nav-section {
         display: flex;
         img {
           width: 22px;
           height: 22px;
         }
+
         ul {
           display: flex;
           li {
             margin-left: 4.87em;
           }
+
         }
 
         color: @white;
       }
+
       .hamburger-svg {
         width: 40px;
         height: 35px;
         cursor: pointer;
       }
+
       h3 {
         padding: 4px 6px;
         margin-right: 1.4375em;
@@ -189,22 +181,31 @@ body {
         color: #fff;
         cursor: pointer;
       }
+
     }
+
     @media (max-width: 1250px) {
+
       img {
         width: 45%;
       }
+
       section {
         padding-top: 17.3125em;
       }
+
       @media @phone {
         padding: 1em;
+
         h2 {
           font-size: 2rem;
         }
       }
+
     }
+
   }
+
   .cta-getstarted-section {
     display: flex;
     align-items: center;
@@ -212,9 +213,11 @@ body {
     img {
       max-width: 50%;
       z-index: 420;
+
       @media (max-width: 1450px) {
         width: 41%;
       }
+
     }
 
     section {
@@ -278,6 +281,7 @@ body {
       }
     }
   }
+
   //media queries
   @media @phone {
     .header-blobber {
@@ -286,6 +290,7 @@ body {
       top: -198px;
       right: -40px;
     }
+
     .home-header {
       padding: 20px 20px 0 20px;
       align-items: center;
@@ -294,26 +299,29 @@ body {
         z-index: 420;
         color: #fff;
       }
+
       img {
         width: 150%;
       }
+
       .hamburger-menu-section {
         h3 {
           display: none;
         }
       }
+
     }
   }
 }
+
 .grey-blob {
   background-image: url("../assets/svgs/Blob\ Getting\ Started.svg");
   background-size: contain;
   background-repeat: no-repeat;
-  // height: 1775px;
-  //   border: 1px solid red;
 }
 
-//Section 2 Benjamin Lopez Start // Optimized: N/A
+//Section 2 Benjamin Lopez Start // Optimized for 1920x1080,
+
 .getting-started {
   padding-top: 11.2rem;
   width: 131.3rem;
@@ -410,9 +418,11 @@ body {
     }
   }
 }
-//Section 2 end
 
-// Section 3 - Safety (Alfonso) -- Pretty optimized, removed properties that were already declared in body
+// section 2 end
+
+// Section 3 - Safety (Alfonso) // Optimized for 1920x1080, 
+
 .safety-first {
   display: flex;
   width: 143.6rem;
@@ -501,6 +511,10 @@ body {
   }
 }
 
+// section-3-end
+
+// Section 4 - Reviews (Anotoly) // Optimized for 1920x1080,
+
 .reviews {
   border: 3px solid green;
   position: relative;
@@ -572,9 +586,10 @@ body {
     display: inline-block;
   }
 }
+
 // section-4-end
 
-// section-5 Job T // Optimized : True
+// section-5 Jacob T // Optimized for 1920x1080,
 
 .section-5 {
   @media @phone {
@@ -671,7 +686,7 @@ body {
 
 // section-5-end
 
-// Section 6 - footer start - Alfonso // Optimized : N/A
+// Section 6 - footer start - Alfonso // Optimized for 1920x1080,
 
 footer {
   padding-top: 10.9rem;
@@ -710,4 +725,3 @@ footer {
 }
 
 // Section 6 - footer-end
-// homepage.less
