@@ -23,10 +23,14 @@ class ProjectList extends Component {
 
     return (
       <ProjectListContainer >
-       <button style={{width: "200px"}} type="submit" disabled={false} onClick={this.findProjects}>find projects</button>
-        {this.props.projectList.map(project => {
+       {/* <button style={{width: "200px"}} type="submit" disabled={false} onClick={this.findProjects}>find projects</button> */}
+        {/* {this.props.projectList.map(project => {
           return <Project color={this.getRandomInt()} props={project} />;
-        })}
+        })} */}
+        <Project color={this.getRandomInt()} first />
+        <Project color={this.getRandomInt()} />
+        <Project color={this.getRandomInt()} />
+        
        
       </ProjectListContainer>
     );
