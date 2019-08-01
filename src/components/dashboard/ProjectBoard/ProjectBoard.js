@@ -17,6 +17,7 @@ const ProjectBoardContainer = styled.div`
   ${transparentBackdrop}
 `;
 export class ProjectBoard extends Component {
+  
   render() {
     return (
       <ProjectBoardContainer>

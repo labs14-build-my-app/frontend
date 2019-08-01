@@ -54,7 +54,7 @@ const initialState = {
       case FIND_PROJECTS_START: 
       return{
           ...state,
-          projects: action.payload
+          projectList: action.payload
       }
       default:
         return state;

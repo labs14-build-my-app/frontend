@@ -65,7 +65,7 @@ export default function ProjectIntroduction() {
     <ProjectIntroContainer>
       <section className="proj-title">
         <h1>Projects </h1>
-        <NavLink to="/dev/project/id" className="allprojects-cta">
+        <NavLink to="/dev/find/projects" className="allprojects-cta">
           <p>
            All Projects <i className="fas fa-chevron-right" />
           </p>

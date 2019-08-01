@@ -59,7 +59,6 @@ border-left: 15px solid ${props=> colorArray[props.theme.color]};
   align-items: center;
   justify-content: center;
   margin-left: .625em;
-  ${'' /* downward chevron transform: rotate(180deg) */}
   }
 
 }
@@ -114,36 +113,35 @@ p{
 
 const Project = (props) => {
   const [isActiveChevron, setActiveChevron] = useState(false);
-
+console.log(props)
     return (
       <ThemeProvider theme={props}>
-      <ProjectStyle>
-        <div className="proj-head">
-          <div className="owner-img-and-name">
-            <h1>face of gurl</h1>
-            <div>
-              <h3>Project Title</h3>
-              <h4>project owner name</h4>
-              <p> project description</p>
-            </div>
-          </div>
-          <div>
-            <div className="status-and-chevron">
-              <div className="chevron-up" onClick={()=>setActiveChevron(!isActiveChevron)} >
-                <i className="fas fa-chevron-up" style={{transform : `${isActiveChevron ? "rotate(0deg)" : "rotate(180deg)"}`}}/>
+        <ProjectStyle>
+          <div className="proj-head">
+            <div className="owner-img-and-name">
+              <h1>face of gurl</h1>
+              <div>
+                <h3>{props.projectName}</h3>
+                <h4>{props.projectOwner}</h4>
+                <p> {props.projectDescription}</p>
               </div>
-              <div className="progress-circle" />
+            </div>
+            <div>
+              <div className="status-and-chevron">
+                <div className="chevron-up" onClick={()=>setActiveChevron(!isActiveChevron)} >
+                  <i className="fas fa-chevron-up" style={{transform : `${isActiveChevron ? "rotate(0deg)" : "rotate(180deg)"}`}}/>
+                </div>
+                <div className="progress-circle" />
+              </div>
             </div>
           </div>
-        </div>
-        <NavLink to="/dev/project/id" className="allprojects-cta">
-          <p>
-            Project Information{" "}
-            <i className="fas fa-chevron-right" />
-          </p>
-  
-        </NavLink>
-      </ProjectStyle>
+          <NavLink to="/dev/project/id" className="allprojects-cta">
+            <p>
+              Project Information{" "}
+              <i className="fas fa-chevron-right" />
+            </p>
+          </NavLink>
+        </ProjectStyle>
       </ThemeProvider>
     );
   }

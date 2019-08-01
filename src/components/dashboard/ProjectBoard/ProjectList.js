@@ -9,28 +9,27 @@ const ProjectListContainer = styled.ul`
 `;
 
 class ProjectList extends Component {
+  componentDidMount(){
+    this.props.findProjects();
+  }
   getRandomInt = () => {
     return Math.round(Math.random() * 2);
   };
   findProjects = (e)=> {
     e.preventDefault()
-    console.log("hello");
     this.props.findProjects();
   };
 
   render() {
-    console.log(this.state);
-    console.log(this.props);
-
+    const {projectList} = this.props;
     return (
       <ProjectListContainer >
-       {/* <button style={{width: "200px"}} type="submit" disabled={false} onClick={this.findProjects}>find projects</button> */}
-        {/* {this.props.projectList.map(project => {
-          return <Project color={this.getRandomInt()} props={project} />;
-        })} */}
-        <Project color={this.getRandomInt()} toggleFirst={this.toggleFirst} />
+       { (projectList.length) && projectList.map(project => {
+          return <Project color={this.getRandomInt()} {...project} />
+        })} 
+        {/* <Project color={this.getRandomInt()} toggleFirst={this.toggleFirst} />
         <Project color={this.getRandomInt()} />
-        <Project color={this.getRandomInt()} />
+        <Project color={this.getRandomInt()} /> */}
         
        
       </ProjectListContainer>
@@ -39,7 +38,7 @@ class ProjectList extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
+
   return {
     projectList: state.projectList
   };
