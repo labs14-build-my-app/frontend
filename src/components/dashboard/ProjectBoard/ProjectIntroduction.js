@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {NavLink} from "react-router-dom";
 import {
   sunglow,
   shamrock,
@@ -20,19 +21,27 @@ margin-bottom: .9375em;
 p{
   font-size: 1.5rem;
   align-self: center;
-  width: 80%;
+  
+  i{
+    margin-left: ${5/16}em;
+  }
 }
 .proj-title{
  display: flex;
  justify-content: space-between;
  align-self: stretch;
- 
+ a{
+   text-decoration: none;
+   color: inherit;
+ }
  
 }
 .proj-detail{
   display: flex;
   justify-content: space-between;
-
+  p{
+    width: 80%;
+  }
   .progress-square-container{
     width: 20%;
     padding-left:1.4375em;
@@ -56,15 +65,12 @@ export default function ProjectIntroduction() {
     <ProjectIntroContainer>
       <section className="proj-title">
         <h1>Projects </h1>
-        <div>
-          <button>
-            All Projects{" "}
-            <img
-              src={process.env.PUBLIC_URL + "/images/chevron-right.svg"}
-              alt="view all projects"
-            />
-          </button>
-        </div>
+        <NavLink to="/dev/project/id" className="allprojects-cta">
+          <p>
+           All Projects <i className="fas fa-chevron-right" />
+          </p>
+  
+        </NavLink>
       </section>
       <section className="proj-detail">
         <p>

@@ -13,6 +13,7 @@ import {
 } from "../cssVariables";
 import { example } from "../../../actions";
 import { connect } from "react-redux";
+import {NavLink} from "react-router-dom";
 const colorArray = [electricViolet, sunglow, shamrock]; //remove when backend updates progress
 
 // Needs to grab status of project from parents to display on .progress-circle{}
@@ -98,6 +99,9 @@ p{
   justify-content: flex-end;
   ${'' /* justify-content: space-between; */}
   margin: 0 ${40/16}em;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
   p{
     font-size: 1.5rem;
   }
@@ -132,12 +136,13 @@ const Project = (props) => {
             </div>
           </div>
         </div>
-        <div className="allprojects-cta">
+        <NavLink to="/dev/project/id" className="allprojects-cta">
           <p>
-            All Projects{" "}
+            Project Information{" "}
             <i className="fas fa-chevron-right" />
           </p>
-        </div>
+  
+        </NavLink>
       </ProjectStyle>
       </ThemeProvider>
     );
