@@ -17,11 +17,12 @@ const ProjectBoardContainer = styled.div`
   ${transparentBackdrop}
 `;
 export class ProjectBoard extends Component {
+  
   render() {
     return (
       <ProjectBoardContainer>
         {/* render the dev dashboard with description of projects*/}
-        {this.props.history.location.pathname === "/dev/dashboard" && <ProjectIntroduction /> }
+        {this.props.history.location.pathname === "/" && <ProjectIntroduction /> }
         <ProjectList {...this.props} />  
       </ProjectBoardContainer>
     );

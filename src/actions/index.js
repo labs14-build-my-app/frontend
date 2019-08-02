@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 // import { axiosWithAuth } from '../components/auth/axiosWithAuth';
-
+import {fakeState} from "../components/fakeState.js"
 export const EXAMPLE_START = 'EXAMPLE_START';
 export const EXAMPLE_SUCCESS = 'EXAMPLE_SUCCESS';
 export const EXAMPLE_FAILURE = 'EXAMPLE_FAILURE';
@@ -45,15 +45,12 @@ export const login = creds => dispatch => {
   export const FIND_PROJECTS_START = 'FIND_PROJECTS_START';
   export const FIND_PROJECTS_SUCCESS = 'FIND_PROJECTS_SUCCESS';
   export const FIND_PROJECTS_FAILURE = 'FIND_PROJECTS_FAILURE';
-  export const findProjects = dispatch =>{
-
-        return new Promise().then(res=>{
+  export const findProjects = () => dispatch =>{
+        return axios.get("https://dog.ceo/api/breeds/list/all")
+        .then(res=>{
             console.log(res.data);
-            dispatch({type: FIND_PROJECTS_START, payload: res.data});
-        })
-        .catch(err=>{
-            console.log(err);
-        })
+             dispatch({type: FIND_PROJECTS_START, payload: fakeState });
+        }).catch(err=> console.log(err))
     
 
   }

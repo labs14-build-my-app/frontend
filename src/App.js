@@ -12,11 +12,10 @@ function App() {
     <div>
 
     {/* renders nav bar for devs */}
-    <Route path="/dev" component={Navigation}/>
+    <Route path="/" component={Navigation}/>
 
-    
     <Route path="/login" component={Login}/>
-    <PrivateRoute exact path="/dev/dashboard" component={DashboardDev} />
+    <PrivateRoute exact path="/" component={DashboardDev} />
     {/* <PrivateRoute exact path="/entrepreneur/dashboard" component={DashboardEntrepreneur} /> */}
     </div>
   );
