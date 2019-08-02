@@ -22,7 +22,7 @@ export class ProjectBoard extends Component {
     return (
       <ProjectBoardContainer>
         {/* render the dev dashboard with description of projects*/}
-        {this.props.history.location.pathname === "/dev/dashboard" && <ProjectIntroduction /> }
+        {this.props.history.location.pathname === "/" && <ProjectIntroduction /> }
         <ProjectList {...this.props} />  
       </ProjectBoardContainer>
     );

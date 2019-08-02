@@ -141,23 +141,24 @@ class Login extends Component {
     //     this.props.history.push('/');
     // });
     //if user.type === dev
-    this.props.history.push('/dev/dashboard');
+    this.props.history.push('/');
 
     //if user.type === entrepreneur 
     // this.props.history.push('/entrepreneur/dashboard');
+    localStorage.setItem("token", {...this.state})
   };
 
   render() {
     return (
       <LoginContainer className="login-container">
         <div className="cta-content">
-          <h1>Merge into DevFindr.<br/> Commit for free.</h1>
+          <h1>Meet DevFindr.<br/> Sign up for free.</h1>
           
         </div>
         <div className="login-main">
           <h1
             className="login-title" >
-            GET IN HERE.
+            {/* Sign up */}
           </h1>
           
           <form

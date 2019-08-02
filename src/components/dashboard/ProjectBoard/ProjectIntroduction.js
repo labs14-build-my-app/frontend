@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {
   sunglow,
   shamrock,
@@ -65,12 +65,12 @@ export default function ProjectIntroduction() {
     <ProjectIntroContainer>
       <section className="proj-title">
         <h1>Projects </h1>
-        <NavLink to="/dev/find/projects" className="allprojects-cta">
+        <Link to="/dev/self/projects" className="allprojects-cta">
           <p>
            All Projects <i className="fas fa-chevron-right" />
           </p>
   
-        </NavLink>
+        </Link>
       </section>
       <section className="proj-detail">
         <p>

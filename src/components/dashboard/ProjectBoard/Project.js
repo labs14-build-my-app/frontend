@@ -13,7 +13,9 @@ import {
 } from "../cssVariables";
 import { example } from "../../../actions";
 import { connect } from "react-redux";
-import {NavLink} from "react-router-dom";
+import {NavLink, Link} from "react-router-dom";
+// import {flipOnHover} from "../animations/keyframes" 
+//basic trying out animations
 const colorArray = [electricViolet, sunglow, shamrock]; //remove when backend updates progress
 
 // Needs to grab status of project from parents to display on .progress-circle{}
@@ -25,6 +27,8 @@ box-shadow: 5px 5px 8px rgba(0,0,0,.16);
 border-radius: 10px;
 background: linear-gradient( 74deg, rgba(255,255,255,1) 0%, rgba(239,239,239,1) 100% );
 border-left: 15px solid ${props=> colorArray[props.theme.color]};
+
+
 .proj-head{
   display: flex;
   ${"" /* position: relative; */}
@@ -67,6 +71,8 @@ border-left: 15px solid ${props=> colorArray[props.theme.color]};
   display: flex;
   align-items: center;
   margin: 2.5em;
+  text-decoration: none;
+  color: inherit
     div{
       margin-left: 1.3em;
       h3{
@@ -119,11 +125,13 @@ console.log(props)
         <ProjectStyle>
           <div className="proj-head">
             <div className="owner-img-and-name">
-              <h1>face of gurl</h1>
+              <h1>look at this photograph</h1>
               <div>
-                <h3>{props.projectName}</h3>
-                <h4>{props.projectOwner}</h4>
+              <Link style={{textDecoration: "none", color: "inherit"}} to="/dev/project/id"><h3>{props.projectName}</h3></Link>
+                
+                <Link style={{textDecoration: "none", color: "inherit"}} to="/dev/project/id/entrepreneur"><h4>{props.projectOwner}</h4></Link>
                 <p> {props.projectDescription}</p>
+                
               </div>
             </div>
             <div>
