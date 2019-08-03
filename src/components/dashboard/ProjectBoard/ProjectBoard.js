@@ -18,13 +18,21 @@ const ProjectBoardContainer = styled.div`
   ${transparentBackdrop}
 `;
 export class ProjectBoard extends Component {
+
   render() {
+    const dashboard = "/dev/dashboard";
+    const findNewProjects = "/dev/find/projects";
     const {pathname} = this.props.history.location;
+    console.log(pathname)
+    console.log(pathname !== dashboard)
+    if(pathname !== dashboard && pathname !== findNewProjects){
+      return null;
+    }
     return (
       <ProjectBoardContainer>
         {/* render the dev dashboard with description of projects*/}
-        {pathname === "/dev/dashboard" ? <ProjectIntroduction /> : pathname ==="/dev/find/projects" && <FindProjects /> }
-        <ProjectList {...this.props} pathname={pathname} />  
+        {pathname === dashboard ? <ProjectIntroduction /> : pathname ===findNewProjects && <FindProjects /> }
+      <ProjectList {...this.props} pathname={pathname} />
       </ProjectBoardContainer>
     );
   }
