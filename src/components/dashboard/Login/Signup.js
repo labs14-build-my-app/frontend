@@ -1,46 +1,10 @@
 import React, { Component } from 'react';
-
 import { connect } from 'react-redux';
-// import { login } from '../../actions';
-import { BeatLoader } from 'react-spinners';
 import { Link } from 'react-router-dom';
-import styled from "styled-components";
-import { phone, tablet } from '../cssVariables';
-const LoginContainer = styled.div`
+import styled from "styled-components"
+import { tablet, phone } from '../cssVariables';
 
-  
-
-  .__Form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-
-    input {
-      font-size: 16px;
-      margin-bottom: 24px;
-      padding: 8px;
-    }
-
-    button {
-      font-size: 16px;
-      margin-bottom: 24px;
-      padding: 8px;
-      text-transform: uppercase;
-      font-weight: bold;
-      color: white;
-      background: black;
-    }
-  }
-
-  .cta-content{
-    font-size: 3.5rem;
-    line-height: 2;
-    width: 90%;
-    margin: 0 auto;
-    algin-self: center;
-    
-  }
-
+const SignupContainer = styled.div `
 
   display: flex;
   flex-direction: row;
@@ -52,24 +16,18 @@ const LoginContainer = styled.div`
   margin: 4em auto;
 
   align-items: center;
-  flex-direction: row-reverse;
+  flex-direction: row;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
     0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   background-color: #fff;
 
-  @media (max-width: 1081px) {
+  @media ${tablet} {
     flex-direction: column;
     width: 90%;
     box-shadow: none;
     .cta-content {
-     ${'' /* display: none; */}
-    h1{
-    font-size: 3.5rem;
-    line-height: 2;
-    width: 90%;
-
-    }
+      display: none;
     }
   }
   .cta-content {
@@ -78,17 +36,17 @@ const LoginContainer = styled.div`
     h1 {
     }
   }
-  .login-main {
+  .register-main {
     width: 40%;
-    border-right: 1px solid #efefef;
+    border-left: 1px solid #efefef;
     padding: 1em;
     margin: 0 auto;
     padding: 4em 2em;
-    @media ${tablet} {
+    @media ${tablet}{
       border: 0px;
       width: 60%;
     }
-    @media ${phone} {
+    @media ${phone}{
       width: 100%;
     }
     .alternative-cta {
@@ -121,11 +79,15 @@ const LoginContainer = styled.div`
     }
   }
 
-`
 
-class Login extends Component {
+.logo {
+  padding: 0.5em 0 0 1em;
+}
+`
+class Signup extends Component {
   state = {
     email: '',
+    username: '',
     password: ''
   };
 
@@ -137,32 +99,22 @@ class Login extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    // this.props.login({ ...this.state }).then(() => {
-    //     this.props.history.push('/');
-    // });
-    //if user.type === dev
-    this.props.history.push('/dev/dashboard');
-
-    //if user.type === entrepreneur 
-    // this.props.history.push('/entrepreneur/dashboard');
-    localStorage.setItem("token", {...this.state})
+    this.props.Signup({ ...this.state }).then(() => {
+      this.props.history.push('/');
+    });
   };
 
   render() {
     return (
-      <LoginContainer className="login-container">
+      <SignupContainer className="Signup-container">
         <div className="cta-content">
-          <h1>Meet DevFindr.<br/> Sign up for free.</h1>
+          <h1>A smarter way to trade.</h1>
           
         </div>
-        <div className="login-main">
-          <h1
-            className="login-title" >
-            {/* Sign up */}
-          </h1>
-          
+        <div className="Signup-main">
+          <h1>Get Started.</h1>
           <form
-            className="LogIn__Form"
+            className="Signup-form"
             onSubmit={this.handleSubmit}
             autoComplete="off"
           >
@@ -174,32 +126,37 @@ class Login extends Component {
               value={this.state.value}
             />
             <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              onChange={this.handleChanges}
+              value={this.state.value}
+            />
+            <input
               type="password"
               name="password"
               placeholder="Password"
               onChange={this.handleChanges}
               value={this.state.value}
             />
-            <button type="submit">
-              {this.props.isLoggingIn ? <BeatLoader /> : 'Sign In'}
-            </button>
+            <button type="submit">Sign Up</button>
             <div className="alternative-cta">
-              <p>Don't have a localStorage.getItem('token') yet? </p>
-              <Link to="/signup">Register</Link>
+              <p>Already have an account?</p>
+              <Link to="/login">Login</Link>
             </div>
           </form>
         </div>
-      </LoginContainer>
+      </SignupContainer>
     );
   }
 }
 const mapStateToProps = state => {
   return {
-    isLoggingIn: state.isLoggingIn,
+    isSignuping: state.isSignuping,
     error: state.error
   };
 };
 export default connect(
   mapStateToProps,
-  {  }
-)(Login);
+  { }
+)(Signup);

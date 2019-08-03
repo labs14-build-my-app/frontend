@@ -3,6 +3,7 @@ import ProjectIntroduction from "./ProjectIntroduction";
 import ProjectList from "./ProjectList";
 import styled from "styled-components";
 import { transparentBackdrop } from "../cssVariables";
+import FindProjects from "./FindProjects";
 const maxWidth = 900;
 const ProjectBoardContainer = styled.div`
   display: flex;
@@ -17,13 +18,13 @@ const ProjectBoardContainer = styled.div`
   ${transparentBackdrop}
 `;
 export class ProjectBoard extends Component {
-  
   render() {
+    const {pathname} = this.props.history.location;
     return (
       <ProjectBoardContainer>
         {/* render the dev dashboard with description of projects*/}
-        {this.props.history.location.pathname === "/" && <ProjectIntroduction /> }
-        <ProjectList {...this.props} />  
+        {pathname === "/dev/dashboard" ? <ProjectIntroduction /> : pathname ==="/dev/find/projects" && <FindProjects /> }
+        <ProjectList {...this.props} pathname={pathname} />  
       </ProjectBoardContainer>
     );
   }

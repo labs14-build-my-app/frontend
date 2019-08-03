@@ -5,6 +5,7 @@ import Login from "./components/dashboard/Login/Login";
 import DashboardDev from "./components/dashboard/index";
 import PrivateRoute from "./components/auth/PrivateRoute"
 import Navigation from "./components/dashboard/Navigation/Navigation"
+import Signup from "./components/dashboard/Login/Signup";
 
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
     <Route path="/" component={Navigation}/>
 
     <Route path="/login" component={Login}/>
-    <PrivateRoute exact path="/" component={DashboardDev} />
+    <Route path="/signup" component={Signup} />
+    <PrivateRoute path="/dev" component={DashboardDev} />
     {/* <PrivateRoute exact path="/entrepreneur/dashboard" component={DashboardEntrepreneur} /> */}
     </div>
   );

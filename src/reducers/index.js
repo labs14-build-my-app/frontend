@@ -5,7 +5,8 @@ import {
     LOGIN_START,
     LOGIN_SUCCESS, 
     LOGIN_FAILURE, 
-    FIND_PROJECTS_START
+    FIND_PROJECTS_START,
+    FIND_AVAILABLE_PROJECTS_START
   } from '../actions';
 
 const initialState = {
@@ -55,6 +56,11 @@ const initialState = {
       return{
           ...state,
           projectList: action.payload
+      };
+      case FIND_AVAILABLE_PROJECTS_START:
+      return{
+        ...state,
+        projectList: action.payload
       }
       default:
         return state;
