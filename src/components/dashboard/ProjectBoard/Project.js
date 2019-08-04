@@ -119,7 +119,6 @@ p{
 
 const Project = (props) => {
   const [isActiveChevron, setActiveChevron] = useState(false);
-console.log(props)
     return (
       <ThemeProvider theme={props}>
         <ProjectStyle>
