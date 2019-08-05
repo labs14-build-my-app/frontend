@@ -1,3 +1,4 @@
 [build]
-  base = "landing"
+  base = "landing/"
   command = "yarn build"
+  
