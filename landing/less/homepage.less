@@ -604,12 +604,12 @@ body {
   .section-5-cta {
     background: @white;
     text-align: center;
-    padding: 15rem 0 0 0;
+    padding: 14.5rem 0 0 0;
 
     .text-section {
       p {
-        padding: 0 0 1rem 0;
         color: @veryLightGrey;
+        padding: 0 0 1.5rem 0;
       }
 
       h1 {
@@ -618,8 +618,8 @@ body {
     }
 
     .buttons {
-      // this defins the margin between buttons and text, as well as the bottom of the parent container.
-      margin: 5rem 0 10rem 0;
+      margin: 5rem 0 10rem 0; // this defins the margin between buttons and text, as well as the bottom of the parent container.
+      padding: .5rem 0 0 0; // fixes visual inconsistency with it not looking centered.
 
       .button-primary {
         .button-primary(@height: 8rem, @padding: 0 6rem 0);
@@ -675,13 +675,13 @@ body {
         }
       }
 
-      //   img:nth-child(2) {
-      //     .blob-offset(-29.5rem, -11rem);
-      //   }
+        img:nth-child(2) {
+          .blob-offset(-29.5rem, -11rem);
+        }
 
-      //   img:nth-child(3) {
-      //     .blob-offset(-44rem, -10.5rem);
-      //   }
+        img:nth-child(3) {
+          .blob-offset(-44rem, -10.5rem);
+        }
     }
   }
 }

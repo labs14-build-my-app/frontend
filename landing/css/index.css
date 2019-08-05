@@ -198,6 +198,38 @@ body .button-secondary svg path {
     display: none;
   }
 }
+.displayNavAnime {
+  animation: displayNavOpacityAnimation 0.4s ease-out;
+}
+@keyframes displayNavOpacityAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.modal-nav-elements {
+  display: none;
+  z-index: 420;
+  color: white;
+  filter: blur(0px);
+  position: absolute;
+  top: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 1.56em 1.25em 0 0;
+}
+.modal-nav-elements img {
+  width: 22px;
+  height: 22px;
+  padding-bottom: 3.19em;
+}
+.modal-nav-elements div ul li {
+  text-align: right;
+  padding-bottom: 1.72em;
+}
 .intro-container {
   padding-bottom: 163px;
   background: #f2f2f2;
@@ -234,24 +266,39 @@ body .button-secondary svg path {
   color: #43425d;
   font-weight: normal;
 }
-.intro-container .home-header .home-navigation-bar {
-  display: none;
-}
 .intro-container .home-header .hamburger-menu-section {
   display: flex;
   align-items: center;
   z-index: 2;
 }
+.intro-container .home-header .hamburger-menu-section .nav-section {
+  display: flex;
+  color: #fff;
+}
+.intro-container .home-header .hamburger-menu-section .nav-section img {
+  width: 22px;
+  height: 22px;
+}
+.intro-container .home-header .hamburger-menu-section .nav-section ul {
+  display: flex;
+}
+.intro-container .home-header .hamburger-menu-section .nav-section ul li {
+  margin-left: 4.87em;
+}
 .intro-container .home-header .hamburger-menu-section .hamburger-svg {
   width: 40px;
   height: 35px;
+  cursor: pointer;
 }
 .intro-container .home-header .hamburger-menu-section h3 {
-  padding: 0 1.4375em;
+  padding: 4px 6px;
+  margin-right: 1.4375em;
+  margin-left: 4.87em;
   font-size: 1.8rem;
   font-family: "Source Sans Pro";
   font-weight: normal;
   color: #fff;
+  cursor: pointer;
 }
 @media (max-width: 1250px) {
   .intro-container .home-header img {
@@ -302,13 +349,16 @@ body .button-secondary svg path {
   color: #43425d;
   line-height: 30px;
 }
-.intro-container .cta-getstarted-section section button {
+.intro-container .cta-getstarted-section section a {
   margin: 3.15em 0px;
+  cursor: pointer;
+  display: inline-block;
 }
-.intro-container .cta-getstarted-section section button a {
+.intro-container .cta-getstarted-section section a button {
   color: white;
   font-size: 1.8rem;
   text-decoration: none;
+  cursor: pointer;
 }
 @media (max-width: 375px) {
   .intro-container .cta-getstarted-section {
@@ -326,8 +376,9 @@ body .button-secondary svg path {
   .intro-container .cta-getstarted-section section p {
     font-size: 1;
   }
+  .intro-container .cta-getstarted-section section a,
   .intro-container .cta-getstarted-section section button {
-    width: 95%;
+    width: 100%;
   }
   .intro-container .cta-getstarted-section img {
     padding-top: 3em;
@@ -344,7 +395,7 @@ body .button-secondary svg path {
     right: -40px;
   }
   .intro-container .home-header {
-    padding: 20px 34px 0 20px;
+    padding: 20px 20px 0 20px;
     align-items: center;
   }
   .intro-container .home-header h2 {
@@ -605,17 +656,18 @@ body .button-secondary svg path {
 .section-5 .section-5-cta {
   background: #fff;
   text-align: center;
-  padding: 15rem 0 0 0;
+  padding: 14.5rem 0 0 0;
 }
 .section-5 .section-5-cta .text-section p {
-  padding: 0 0 1rem 0;
   color: #ccc;
+  padding: 0 0 1.5rem 0;
 }
 .section-5 .section-5-cta .text-section h1 {
   color: #6c63ff;
 }
 .section-5 .section-5-cta .buttons {
   margin: 5rem 0 10rem 0;
+  padding: 0.5rem 0 0 0;
 }
 .section-5 .section-5-cta .buttons .button-primary {
   color: #fff;
@@ -677,6 +729,16 @@ body .button-secondary svg path {
     top: -63rem;
     left: 17rem;
   }
+}
+.section-5 .blobs .right img:nth-child(2) {
+  position: relative;
+  top: -29.5rem;
+  left: -11rem;
+}
+.section-5 .blobs .right img:nth-child(3) {
+  position: relative;
+  top: -44rem;
+  left: -10.5rem;
 }
 footer {
   padding-top: 10.9rem;
