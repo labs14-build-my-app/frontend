@@ -666,8 +666,8 @@ body .button-secondary svg path {
   color: #6c63ff;
 }
 .section-5 .section-5-cta .buttons {
-  margin: 5rem 0 10rem 0;
-  padding: 0.5rem 0 0 0;
+  margin: 5rem 0 10rem;
+  padding: 0.5rem 0 0;
 }
 .section-5 .section-5-cta .buttons .button-primary {
   color: #fff;
@@ -693,8 +693,8 @@ body .button-secondary svg path {
 }
 .section-5 .blobs .left img:first-child {
   position: relative;
-  top: -17.5rem;
-  left: 16rem;
+  top: -19rem;
+  left: 16.5rem;
 }
 @media (max-width: 375px) {
   .section-5 .blobs .left img:first-child {
@@ -706,8 +706,8 @@ body .button-secondary svg path {
 }
 .section-5 .blobs .left img:nth-child(2) {
   position: relative;
-  top: -55rem;
-  left: 14.5rem;
+  top: -56rem;
+  left: 15rem;
 }
 @media (max-width: 375px) {
   .section-5 .blobs .left img:nth-child(2) {
