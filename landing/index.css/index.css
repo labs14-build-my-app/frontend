@@ -129,25 +129,16 @@ table {
 html {
   font-size: 62.5%;
 }
-html {
-  overflow-x: hidden;
-}
 body {
   box-sizing: border-box;
   margin: 0 auto;
   background: white;
   font-family: "Source Sans Pro";
 }
-@media (min-width: 1500px) {
-  body {
-    overflow: hidden;
-    width: 100vw;
-  }
-}
 body h1 {
   font-size: 4.5rem;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   body h1 {
     font-size: 2.3rem;
   }
@@ -161,7 +152,7 @@ body p {
   color: #43425d;
   line-height: 30px;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   body p {
     font-size: 1.5rem;
   }
@@ -183,7 +174,7 @@ body .button-primary svg {
 body .button-primary svg path {
   fill: #fff;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   body .button-primary svg {
     display: none;
   }
@@ -202,7 +193,7 @@ body .button-secondary svg {
 body .button-secondary svg path {
   fill: #9519e8;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   body .button-secondary svg {
     display: none;
   }
@@ -242,12 +233,6 @@ body .button-secondary svg path {
 .intro-container {
   padding-bottom: 163px;
   background: #f2f2f2;
-  font-family: "Source Sans Pro";
-}
-@media (max-width: 1250px) {
-  .intro-container {
-    padding-bottom: 90px;
-  }
 }
 .intro-container .header-blobber {
   z-index: 0;
@@ -255,6 +240,16 @@ body .button-secondary svg path {
   top: 0;
   right: 0;
   max-width: 50%;
+}
+@media (max-width: 1440px) {
+  .intro-container .header-blobber {
+    width: 50%;
+  }
+}
+@media (max-width: 1250px) {
+  .intro-container .header-blobber {
+    width: 65%;
+  }
 }
 .intro-container .home-header {
   z-index: -2;
@@ -306,11 +301,14 @@ body .button-secondary svg path {
   cursor: pointer;
 }
 @media (max-width: 1250px) {
+  .intro-container .home-header img {
+    width: 45%;
+  }
   .intro-container .home-header section {
     padding-top: 17.3125em;
   }
 }
-@media (max-width: 1250px) and (max-width: 500px) {
+@media (max-width: 1250px) and (max-width: 375px) {
   .intro-container .home-header {
     padding: 1em;
   }
@@ -326,16 +324,19 @@ body .button-secondary svg path {
   max-width: 50%;
   z-index: 420;
 }
+@media (max-width: 1450px) {
+  .intro-container .cta-getstarted-section img {
+    width: 41%;
+  }
+}
 .intro-container .cta-getstarted-section section {
-  width: calc(100% - 6.25em);
   padding-left: 6.25em;
   padding-right: 3.3125em;
-  margin-top: 16vh;
   font-family: "Source Sans Pro";
 }
-@media (max-width: 1170px) {
+@media (max-width: 1450px) {
   .intro-container .cta-getstarted-section section {
-    padding-right: 0;
+    padding-top: 13.3125em;
   }
 }
 .intro-container .cta-getstarted-section section h2 {
@@ -359,7 +360,7 @@ body .button-secondary svg path {
   text-decoration: none;
   cursor: pointer;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   .intro-container .cta-getstarted-section {
     flex-direction: column-reverse;
     justify-content: center;
@@ -386,7 +387,13 @@ body .button-secondary svg path {
     align-self: flex-end;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
+  .intro-container .header-blobber {
+    max-width: 150%;
+    width: 150%;
+    top: -198px;
+    right: -40px;
+  }
   .intro-container .home-header {
     padding: 20px 20px 0 20px;
     align-items: center;
@@ -395,50 +402,11 @@ body .button-secondary svg path {
     z-index: 420;
     color: #fff;
   }
+  .intro-container .home-header img {
+    width: 150%;
+  }
   .intro-container .home-header .hamburger-menu-section h3 {
     display: none;
-  }
-}
-@media (max-width: 1400px) {
-  .intro-container .header-blobber {
-    max-width: 700px;
-  }
-}
-@media (max-width: 1170px) {
-  .intro-container .header-blobber {
-    right: -100px;
-  }
-}
-@media (max-width: 1050px) {
-  .intro-container .header-blobber {
-    max-width: 1500px;
-    width: 1500px;
-    top: -700px;
-  }
-  .intro-container .home-header h2 {
-    z-index: 2;
-    color: white;
-  }
-  .intro-container .cta-getstarted-section {
-    flex-direction: column-reverse;
-    margin-top: 4em;
-  }
-  .intro-container .cta-getstarted-section section {
-    z-index: 1;
-  }
-  .intro-container .cta-getstarted-section img {
-    max-width: 90%;
-    width: 90%;
-  }
-}
-@media (max-width: 780px) {
-  .intro-container .header-blobber {
-    top: -800px;
-    right: -300px;
-  }
-  .intro-container .cta-getstarted-section section {
-    padding-left: 0;
-    padding-top: 10rem;
   }
 }
 .grey-blob {
@@ -448,12 +416,13 @@ body .button-secondary svg path {
 }
 .getting-started {
   padding-top: 11.2rem;
-  width: 100%;
+  width: 131.3rem;
   margin: 0 auto;
+  border: 1px solid red;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   .getting-started {
-    max-width: 37rem;
+    width: 37rem;
   }
 }
 .getting-started .gs-header {
@@ -469,15 +438,14 @@ body .button-secondary svg path {
 }
 .getting-started .gs-header p {
   font-size: 1.8rem;
-  max-width: 72.4rem;
+  width: 72.4rem;
+  text-align: center;
   padding: 20px;
   margin-bottom: 81px;
   margin-left: 250px;
   line-height: 30px;
-  margin: 0 auto 81px auto;
-  text-align: center;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   .getting-started .gs-header p {
     margin-left: 6rem;
     width: 20rem;
@@ -486,9 +454,8 @@ body .button-secondary svg path {
 .getting-started .gs-cards {
   display: flex;
   justify-content: space-evenly;
-  flex-wrap: wrap;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
 }
 .getting-started .gs-cards h2 {
   text-align: center;
@@ -515,37 +482,37 @@ body .button-secondary svg path {
   width: 36.8rem;
 }
 .getting-started .gs-projectprepimg {
-  max-width: 34.266rem;
+  width: 34.266rem;
   height: 25rem;
 }
 .getting-started .gs-projectpreptxt p {
   font-size: 1.8rem;
-  max-width: 36.8rem;
+  width: 36.8rem;
 }
 .getting-started .gs-deliveryimg {
-  max-width: 33.726rem;
+  width: 33.726rem;
   height: 25rem;
 }
 .getting-started .gs-deliverytxt p {
   font-size: 1.8rem;
-  max-width: 36.8rem;
+  width: 36.8rem;
 }
 .safety-first {
   display: flex;
-  width: 100%;
+  width: 143.6rem;
   height: 53.6rem;
   margin: 0 auto;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin-top: 28.4rem;
   margin-bottom: 18.6rem;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   .safety-first {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
-    max-width: 32.3rem;
+    width: 32.3rem;
     height: 43.9rem;
     margin-left: 2rem;
     margin-right: 3.2rem;
@@ -553,13 +520,13 @@ body .button-secondary svg path {
   }
 }
 .safety-first .text-section {
-  max-width: 72.2rem;
+  width: 72.2rem;
   height: 21.4rem;
 }
 .safety-first .text-section .short-text {
   display: none;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   .safety-first .text-section {
     width: 100%;
     height: auto;
@@ -575,7 +542,7 @@ body .button-secondary svg path {
   font-weight: bold;
   text-align: left;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   .safety-first .text-section h2 {
     font-size: 2.3rem;
     font-weight: bold;
@@ -586,7 +553,7 @@ body .button-secondary svg path {
   text-align: left;
   font-weight: 300;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   .safety-first .text-section p {
     margin-top: 1rem;
     padding: 0;
@@ -595,16 +562,16 @@ body .button-secondary svg path {
   }
 }
 .safety-first .safety-svg {
-  max-width: 600px;
+  width: 600px;
   height: 536px;
   object-fit: cover;
 }
 .safety-first .safety-svg img {
   object-fit: cover;
-  max-width: 100%;
+  width: 100%;
   height: 100%;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   .safety-first .safety-svg {
     width: 159px;
     height: 200px;
@@ -617,7 +584,7 @@ body .button-secondary svg path {
   background-size: cover;
   background-size: contain;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   .reviews {
     height: 43.1rem;
     background: url("../assets/svgs/Blob User Reviews (person).svg") no-repeat;
@@ -633,7 +600,7 @@ body .button-secondary svg path {
   font-weight: bold;
   text-align: left;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   .reviews .user-reviews h2 {
     font-size: 2.3rem;
   }
@@ -643,7 +610,7 @@ body .button-secondary svg path {
   text-align: right;
   font-size: 1.8rem;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   .reviews .user-reviews p {
     font-size: 1.3rem;
     line-height: 1.3rem;
@@ -652,30 +619,30 @@ body .button-secondary svg path {
   }
 }
 .reviews .user-reviews .user-reviews-h {
-  max-width: 20.6rem;
+  width: 20.6rem;
   height: 4.4rem;
   position: absolute;
   top: 23.2rem;
   right: 25.2rem;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   .reviews .user-reviews .user-reviews-h {
-    max-width: 13.4rem;
+    width: 13.4rem;
     height: 2.9rem;
     top: 0rem;
     right: 3rem;
   }
 }
 .reviews .user-reviews .user-reviews-p {
-  max-width: 35.6rem;
+  width: 35.6rem;
   height: 5.3rem;
   position: absolute;
   top: 30.1rem;
   right: 25.2rem;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   .reviews .user-reviews .user-reviews-p {
-    max-width: 23.6rem;
+    width: 23.6rem;
     height: 6.7rem;
     top: 2.3rem;
     right: 0rem;
@@ -685,15 +652,15 @@ body .button-secondary svg path {
   display: flex;
   position: absolute;
   height: 28.8rem;
-  max-width: 86rem;
+  width: 86rem;
   bottom: 31.6rem;
   left: 53rem;
   background: white;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   .reviews .dev-review {
     height: 20.5rem;
-    max-width: 33.4rem;
+    width: 33.4rem;
     bottom: 11.3rem;
     left: 0rem;
   }
@@ -709,7 +676,7 @@ body .button-secondary svg path {
   padding-bottom: 3rem;
   border-radius: 6px;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   .reviews .dev-review .dev-review-text {
     margin: 1rem 0 0 0;
     display: flex;
@@ -723,14 +690,14 @@ body .button-secondary svg path {
   background: #f2f2f2;
   border-radius: 6px;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   .reviews .dev-review .dev-review-text .dev-review-text-p {
     overflow-y: scroll;
   }
 }
 .reviews .img-person {
   height: 684px;
-  max-width: 918.57px;
+  width: 918.57px;
   margin-top: 13.4rem;
   margin-left: 10rem;
   display: inline-block;
@@ -738,12 +705,12 @@ body .button-secondary svg path {
 @media (max-width: 375px) {
   .reviews .dev-review .dev-review-img-mob {
     margin-right: 1rem;
-    max-width: 9rem;
+    width: 9rem;
   }
 }
 @media (max-width: 375px) {
   .mob-block {
-    max-width: 20rem;
+    width: 20rem;
   }
 }
 @media (max-width: 375px) {
@@ -760,7 +727,10 @@ body .button-secondary svg path {
   margin: 0 auto;
   width: 100%;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
+  .section-5 {
+    border: 1px solid red;
+  }
 }
 .section-5 .section-5-cta {
   background: #fff;
@@ -804,7 +774,7 @@ body .button-secondary svg path {
   top: -17.5rem;
   left: 16rem;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   .section-5 .blobs .left img:first-child {
     height: 7.5rem;
     position: relative;
@@ -817,7 +787,7 @@ body .button-secondary svg path {
   top: -55rem;
   left: 14.5rem;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   .section-5 .blobs .left img:nth-child(2) {
     height: 1.8rem;
     position: relative;
@@ -830,7 +800,7 @@ body .button-secondary svg path {
   top: -53rem;
   left: -10rem;
 }
-@media (max-width: 500px) {
+@media (max-width: 375px) {
   .section-5 .blobs .right img:first-child {
     height: 7rem;
     position: relative;
@@ -843,6 +813,7 @@ footer {
   background: #f2f2f2;
 }
 footer .lists-of-links {
+  width: 1394px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -860,6 +831,7 @@ footer .lists-of-links ul li:first-child {
 footer .copyright {
   font-weight: bold;
   display: flex;
+  width: 308px;
   justify-content: space-between;
   align-items: baseline;
   padding-bottom: 6.2rem;

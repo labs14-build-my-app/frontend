@@ -1,10 +1,17 @@
+html{
+  overflow-x: hidden;
+}
 body {
   box-sizing: border-box;
   margin: 0 auto;
 
   background: white;
   font-family: @fontFamily;
+  @media (min-width: 1500px) {
 
+       overflow: hidden;
+       width: 100vw;
+}
   h1 {
     font-size: @fontsize-cta;
 
@@ -118,20 +125,22 @@ body {
 }
 .intro-container {
   padding-bottom: 163px;
+  // background: url("../assets/svgs/Blob Header.svg");
   background: @whiteSmoke;
-
+  font-family: @fontFamily;
+  @media (max-width: 1250px) {
+    padding-bottom: 90px;
+  }
   .header-blobber {
     z-index: 0;
     position: absolute;
     top: 0;
     right: 0;
     max-width: 50%;
-    @media (max-width: 1440px) {
-      width: 50%;
-    }
-    @media (max-width: 1250px) {
-      width: 65%;
-    }
+    
+    // @media (max-width: 1250px) {
+    //   width: 65%;
+    // }
   }
   .home-header {
     //Ruben's CSS
@@ -194,9 +203,9 @@ body {
       }
     }
     @media (max-width: 1250px) {
-      img {
-        width: 45%;
-      }
+      // img {
+      //   width: 45%;
+      // }
       section {
         padding-top: 17.3125em;
       }
@@ -215,17 +224,16 @@ body {
     img {
       max-width: 50%;
       z-index: 420;
-      @media (max-width: 1450px) {
-        width: 41%;
-      }
+      
     }
 
     section {
-      // width: 41%;
+      width: calc(~"100% - 6.25em");
       padding-left: 6.25em;
       padding-right: 3.3125em;
-      @media (max-width: 1450px) {
-        padding-top: 13.3125em;
+      margin-top: 16vh;
+      @media (max-width: 1170px) {
+        padding-right: 0;
       }
       font-family: @fontFamily;
 
@@ -283,12 +291,12 @@ body {
   }
   //media queries
   @media @phone {
-    .header-blobber {
-      max-width: 150%;
-      width: 150%;
-      top: -198px;
-      right: -40px;
-    }
+    // .header-blobber {
+    //   max-width: 150%;
+    //   width: 150%;
+    //   top: -198px;
+    //   right: -40px;
+    // }
     .home-header {
       padding: 20px 20px 0 20px;
       align-items: center;
@@ -297,15 +305,74 @@ body {
         z-index: 420;
         color: #fff;
       }
-      img {
-        width: 150%;
-      }
+      // img {
+      //   width: 150%;
+      // }
       .hamburger-menu-section {
         h3 {
           display: none;
         }
       }
     }
+  }
+  @media (max-width: 1400px) {
+    .header-blobber{
+      max-width: 700px;
+    }
+  }
+  @media (max-width: 1170px) {
+    .header-blobber{
+      right: -100px;
+    }
+
+  }
+  @media (max-width: 1250px) {
+    .header-blobber{
+
+    }
+  }
+  @media(max-width: 1050px){
+    .header-blobber{
+      max-width: 1500px;
+      width: 1500px;
+      top: -700px;
+    }
+    
+    .home-header{
+      h2{
+        z-index: 2;
+        color: white;
+      }
+    }
+    .cta-getstarted-section{
+      flex-direction: column-reverse;
+      margin-top: 4em;
+      .header-blobber{
+    
+      }
+      section{
+        z-index: 1;
+        
+      }
+      img{
+        max-width: 90%;
+        width: 90%;
+      }
+    }
+  }
+  @media (max-width: 780px) {
+    .header-blobber{
+      top: -800px;
+      right: -300px;
+    }
+    .cta-getstarted-section{
+      section{
+        padding-left: 0;
+        // margin-top: 30vh;
+        padding-top: 10rem;
+      }
+    }
+    
   }
 }
 .grey-blob {
@@ -319,12 +386,12 @@ body {
 //Section 2 Benjamin Lopez Start // Optimized: N/A
 .getting-started {
   padding-top: 11.2rem;
-  width: 131.3rem;
+  width: 100%;
   margin: 0 auto;
-  border: 1px solid red;
+  // border: 1px solid red;
 
   @media @phone {
-    width: 37rem;
+    max-width: 37rem;
   }
 
   .gs-header {
@@ -341,12 +408,14 @@ body {
 
     p {
       font-size: @fontsize-p;
-      width: 72.4rem;
+      max-width: 72.4rem;
       text-align: center;
       padding: 20px;
       margin-bottom: 81px;
       margin-left: 250px;
       line-height: @font-height;
+      margin: 0 auto 81px auto;
+      text-align: center;
       @media @phone {
         margin-left: 6rem;
         width: 20rem;
@@ -357,6 +426,7 @@ body {
   .gs-cards {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     @media @phone {
       //code needed for carousel
     }
@@ -392,24 +462,24 @@ body {
   }
 
   .gs-projectprepimg {
-    width: 34.266rem;
+    max-width: 34.266rem;
     height: 25rem;
   }
   .gs-projectpreptxt {
     p {
       font-size: @fontsize-p;
-      width: 36.8rem;
+      max-width: 36.8rem;
     }
   }
 
   .gs-deliveryimg {
-    width: 33.726rem;
+    max-width: 33.726rem;
     height: 25rem;
   }
   .gs-deliverytxt {
     p {
       font-size: @fontsize-p;
-      width: 36.8rem;
+      max-width: 36.8rem;
     }
   }
 }
@@ -418,11 +488,11 @@ body {
 // Section 3 - Safety (Alfonso) -- Pretty optimized, removed properties that were already declared in body
 .safety-first {
   display: flex;
-  width: 143.6rem;
+  width: 100%;
   height: 53.6rem;
   margin: 0 auto;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-top: 28.4rem;
   margin-bottom: 18.6rem;
   // border: 1px solid red;
@@ -431,7 +501,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
-    width: 32.3rem;
+    max-width: 32.3rem;
     height: 43.9rem;
     margin-left: 2rem;
     margin-right: 3.2rem;
@@ -439,7 +509,7 @@ body {
   }
 
   .text-section {
-    width: 72.2rem;
+    max-width: 72.2rem;
     height: 21.4rem;
 
     .short-text {
@@ -486,13 +556,13 @@ body {
   }
 
   .safety-svg {
-    width: 600px;
+    max-width: 600px;
     height: 536px;
     object-fit: cover;
 
     img {
       object-fit: cover;
-      width: 100%;
+      max-width: 100%;
       height: 100%;
     }
 
@@ -542,26 +612,26 @@ body {
       }
     }
     .user-reviews-h {
-      width: 20.6rem;
+      max-width: 20.6rem;
       height: 4.4rem;
       position: absolute;
       top: 23.2rem;
       right: 25.2rem;
       @media @phone {
-        width: 13.4rem;
+        max-width: 13.4rem;
         height: 2.9rem;
         top: 0rem;
         right: 3rem;
       }
     }
     .user-reviews-p {
-      width: 35.6rem;
+      max-width: 35.6rem;
       height: 5.3rem;
       position: absolute;
       top: 30.1rem;
       right: 25.2rem;
       @media @phone {
-        width: 23.6rem;
+        max-width: 23.6rem;
         height: 6.7rem;
         top: 2.3rem;
         right: 0rem;
@@ -572,13 +642,13 @@ body {
     display: flex;
     position: absolute;
     height: 28.8rem;
-    width: 86rem;
+    max-width: 86rem;
     bottom: 31.6rem;
     left: 53rem;
     background: white;
     @media @phone {
       height: 20.5rem;
-      width: 33.4rem;
+      max-width: 33.4rem;
       bottom: 11.3rem;
       left: 0rem;
     }
@@ -612,7 +682,7 @@ body {
   }
   .img-person {
     height: 684px;
-    width: 918.57px;
+    max-width: 918.57px;
     margin-top: 13.4rem;
     margin-left: 10rem;
     display: inline-block;
@@ -622,13 +692,13 @@ body {
 @media (max-width: 375px) {
   .reviews .dev-review .dev-review-img-mob {
     margin-right: 1rem;
-    width: 9rem;
+    max-width: 9rem;
   }
 }
 
 @media (max-width: 375px) {
   .mob-block {
-    width: 20rem;
+    max-width: 20rem;
   }
 }
 
@@ -649,7 +719,7 @@ body {
 
 .section-5 {
   @media @phone {
-    border: 1px solid red;
+    // border: 1px solid red;
   }
 
   margin: 0 auto;
@@ -749,7 +819,7 @@ footer {
   background: @whiteSmoke;
 
   .lists-of-links {
-    width: 1394px;
+    // width: 1394px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -772,7 +842,7 @@ footer {
   .copyright {
     font-weight: bold;
     display: flex;
-    width: 308px;
+    // width: 308px;
     justify-content: space-between;
     align-items: baseline;
     padding-bottom: 6.2rem;
