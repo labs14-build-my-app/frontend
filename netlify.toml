@@ -1,6 +1,6 @@
 
 [build]
-  base    = "landing"
+  base    = ""
   publish = "landing/build"
   command = "yarn build --type=UMD_DEV && cd landing && yarn && yarn prestart && yarn build"
 
