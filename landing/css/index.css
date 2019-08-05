@@ -719,8 +719,8 @@ body .button-secondary svg path {
 }
 .section-5 .blobs .right img:first-child {
   position: relative;
-  top: -53rem;
-  left: -10rem;
+  top: -54.5rem;
+  left: -12rem;
 }
 @media (max-width: 375px) {
   .section-5 .blobs .right img:first-child {
@@ -732,13 +732,13 @@ body .button-secondary svg path {
 }
 .section-5 .blobs .right img:nth-child(2) {
   position: relative;
-  top: -29.5rem;
-  left: -11rem;
+  top: -30rem;
+  left: -13rem;
 }
 .section-5 .blobs .right img:nth-child(3) {
   position: relative;
-  top: -44rem;
-  left: -10.5rem;
+  top: -45rem;
+  left: -12.5rem;
 }
 footer {
   padding-top: 10.9rem;
