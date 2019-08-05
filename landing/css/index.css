@@ -243,10 +243,11 @@ body .button-secondary svg path {
   padding-bottom: 163px;
   background: #f2f2f2;
   font-family: "Source Sans Pro";
+  padding-bottom: 22.2rem;
 }
 @media (max-width: 1250px) {
   .intro-container {
-    padding-bottom: 90px;
+    padding-bottom: 22.2rem;
   }
 }
 .intro-container .header-blobber {
@@ -442,12 +443,15 @@ body .button-secondary svg path {
   }
 }
 .grey-blob {
-  background-image: url("../assets/svgs/Blob\ Getting\ Started.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
+  position: relative;
+}
+.grey-blob .grey-blobber {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 1920px;
 }
 .getting-started {
-  padding-top: 11.2rem;
   width: 100%;
   margin: 0 auto;
 }
@@ -474,7 +478,7 @@ body .button-secondary svg path {
   margin-bottom: 81px;
   margin-left: 250px;
   line-height: 30px;
-  margin: 0 auto 81px auto;
+  margin: 0 auto 41px auto;
   text-align: center;
 }
 @media (max-width: 500px) {
@@ -487,6 +491,19 @@ body .button-secondary svg path {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  width: 85%;
+  margin: 0 auto;
+}
+.getting-started .gs-cards .gs-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 386px;
+}
+@media (max-width: 908px) {
+  .getting-started .gs-cards img {
+    margin-top: 4em;
+  }
 }
 @media (max-width: 500px) {
 }
@@ -500,36 +517,6 @@ body .button-secondary svg path {
   color: #58577b;
   text-align: center;
 }
-.getting-started .gs-signupcard {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-.getting-started .gs-signupimg {
-  width: 25rem;
-  height: 28.383rem;
-}
-.getting-started .gs-signuptxt p {
-  font-size: 1.8rem;
-  width: 36.8rem;
-}
-.getting-started .gs-projectprepimg {
-  max-width: 34.266rem;
-  height: 25rem;
-}
-.getting-started .gs-projectpreptxt p {
-  font-size: 1.8rem;
-  max-width: 36.8rem;
-}
-.getting-started .gs-deliveryimg {
-  max-width: 33.726rem;
-  height: 25rem;
-}
-.getting-started .gs-deliverytxt p {
-  font-size: 1.8rem;
-  max-width: 36.8rem;
-}
 .safety-first {
   display: flex;
   width: 100%;
@@ -537,7 +524,7 @@ body .button-secondary svg path {
   margin: 0 auto;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 28.4rem;
+  margin-top: 43.4rem;
   margin-bottom: 18.6rem;
 }
 @media (max-width: 500px) {

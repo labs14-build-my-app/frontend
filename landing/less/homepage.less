@@ -128,8 +128,9 @@ body {
   // background: url("../assets/svgs/Blob Header.svg");
   background: @whiteSmoke;
   font-family: @fontFamily;
+  padding-bottom: 22.2rem;
   @media (max-width: 1250px) {
-    padding-bottom: 90px;
+    padding-bottom: 22.2rem;
   }
   .header-blobber {
     z-index: 0;
@@ -376,20 +377,27 @@ body {
   }
 }
 .grey-blob {
-  background-image: url("../assets/svgs/Blob\ Getting\ Started.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
+  // background-image: url("../assets/svgs/Blob\ Getting\ Started.svg");
+  // background-size: contain;
+  // background-repeat: no-repeat;
   // height: 1775px;
   //   border: 1px solid red;
+
+  position: relative;
+  .grey-blobber{
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width:1920px;
+  }
 }
 
 //Section 2 Benjamin Lopez Start // Optimized: N/A
 .getting-started {
-  padding-top: 11.2rem;
   width: 100%;
   margin: 0 auto;
   // border: 1px solid red;
-
+  
   @media @phone {
     max-width: 37rem;
   }
@@ -404,6 +412,7 @@ body {
       color: @font-color;
       margin-bottom: 22px;
       text-align: center;
+      
     }
 
     p {
@@ -414,7 +423,7 @@ body {
       margin-bottom: 81px;
       margin-left: 250px;
       line-height: @font-height;
-      margin: 0 auto 81px auto;
+      margin: 0 auto 41px auto;
       text-align: center;
       @media @phone {
         margin-left: 6rem;
@@ -427,6 +436,19 @@ body {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    width: 85%;
+    margin: 0 auto;
+    .gs-card{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      max-width: 386px;
+    }
+    @media (max-width: 908px) {
+      img{
+        margin-top: 4em;
+      }
+    }
     @media @phone {
       //code needed for carousel
     }
@@ -444,44 +466,12 @@ body {
     }
   }
 
-  .gs-signupcard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
-  .gs-signupimg {
-    width: 25rem;
-    height: 28.383rem;
-  }
-  .gs-signuptxt {
-    p {
-      font-size: @fontsize-p;
-      width: 36.8rem;
-    }
-  }
-
-  .gs-projectprepimg {
-    max-width: 34.266rem;
-    height: 25rem;
-  }
-  .gs-projectpreptxt {
-    p {
-      font-size: @fontsize-p;
-      max-width: 36.8rem;
-    }
-  }
-
-  .gs-deliveryimg {
-    max-width: 33.726rem;
-    height: 25rem;
-  }
-  .gs-deliverytxt {
-    p {
-      font-size: @fontsize-p;
-      max-width: 36.8rem;
-    }
-  }
+  // .gs-signupcard {
+  //   display: flex;
+  //   justify-content: space-evenly;
+    
+  // }
+  
 }
 //Section 2 end
 
@@ -493,7 +483,8 @@ body {
   margin: 0 auto;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 28.4rem;
+  margin-top: 43.4rem;
+
   margin-bottom: 18.6rem;
   // border: 1px solid red;
 
