@@ -1,2 +1,10 @@
+
 [build]
-    base = "landing"
+  base    = "landing"
+  publish = "landing/build"
+  command = "yarn build && cd landing && yarn && yarn prestart && yarn build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
