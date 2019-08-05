@@ -18,6 +18,9 @@
     />
   </head>
   <body>
+   
+
+ 
     <!--[if lt IE 7]>
       <p class="browsehappy">
         You are using an <strong>outdated</strong> browser. Please
@@ -25,22 +28,26 @@
       </p>
     <![endif]-->
 
-    <!-- 
-
-      <div class="RubensSection">
-
-        div.nav (z-index me)
-        div.flex-it
-          div.content
-          div.images
-            div.blob
-            div.person
-
-      </div>
-
-    -->
 
     <!-- Section 1 Ruben "Facts Don't Care About Your Feelings" Ponce <3  Weebs ONLY -->
+        <nav class="modal-nav-elements">
+      <img src="./assets/svgs/icon_close.svg">
+       <div class="nav-section">
+            <ul>
+              <li>
+                Product Demo
+              </li>
+              <li>
+                Sign Up
+              </li>
+              <li>
+                Login
+              </li>
+            </ul>
+        </div>
+          </nav>
+          
+  <div class="hamburger-modal"  >
     <div class="intro-container">
       <div class="home-header">
         <img
@@ -50,35 +57,35 @@
         />
         <h2>DevFindr</h2>
         <div class="hamburger-menu-section">
+          <nav class="nav-section">
+                <ul>
+                  <li>
+                    Product Demo
+                  </li>
+                  <li>
+                    Sign Up
+                  </li>
+                  <li>
+                    Login
+                  </li>
+                </ul>
+             
+              </nav>
           <h3>MENU</h3>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="35"
-            viewBox="0 0 40 35"
-            class="hamburger-svg"
-          >
-            <path
-              id="icon_Menu"
-              d="M1.429,66.429H38.571A1.429,1.429,0,0,0,40,65V61.429A1.429,1.429,0,0,0,38.571,60H1.429A1.429,1.429,0,0,0,0,61.429V65A1.429,1.429,0,0,0,1.429,66.429Zm0,14.286H21.238a1.429,1.429,0,0,0,1.429-1.429V75.714a1.429,1.429,0,0,0-1.429-1.429H1.429A1.429,1.429,0,0,0,0,75.714v3.571A1.429,1.429,0,0,0,1.429,80.714ZM1.429,95H30.667A1.429,1.429,0,0,0,32.1,93.571V90a1.429,1.429,0,0,0-1.429-1.429H1.429A1.429,1.429,0,0,0,0,90v3.571A1.429,1.429,0,0,0,1.429,95Z"
-              transform="translate(0 -60)"
-              fill="#fff"
-            />
-          </svg>
-
-          <nav class="home-navigation-bar">
+          <img src="./assets/svgs/icon_Menu.svg" class="hamburger-svg" alt="" srcset="">
+          <!-- <nav class="home-navigation-bar">
             <ul>
               <li>
-                home stuff 1
+                Product Demo
               </li>
               <li>
-                home stuff 2
+                Sign Up
               </li>
               <li>
-                home stuff 3
+                Login
               </li>
             </ul>
-          </nav>
+          </nav> -->
         </div>
       </div>
       <div class="cta-getstarted-section">
@@ -90,7 +97,7 @@
             build their client-base while enabling Entrepreneurs to launch their
             startup ideas without being held back by their coding ability
           </p>
-          <button class="button-primary"><a href="#">GET STARTED</a></button>
+          <a href="#" ><button class="button-primary">GET STARTED</button></a>
         </section>
         <img src="./assets/svgs/Blob Header Person.svg" />
       </div>
@@ -111,6 +118,7 @@
     <!-- You need to add a media query at 1440px to get the stuff big af purple blob to work -->
 
     <section class="grey-blob">
+      <img src="./assets/svgs/Blob Getting Started.svg" alt="grey blob" class="grey-blobber" />
       <section class="getting-started">
         <div class="gs-header">
           <h2>Getting Started</h2>
@@ -121,28 +129,22 @@
           </p>
         </div>
         <div class="gs-cards">
-          <div class="gs-signupcard">
-            <!-- <div class="gs-signupimg">
-              
-            </div> -->
-            <img src="./assets/svgs/Blob Getting Started (sign up).svg" />
-
-            <div class="gs-signuptxt">
-              <h2>Sign Up</h2>
-              <p>
-                In order to get started with us you have to sign up for an
-                account, don't worry it's free to get started as an Entrepreneur
-                or Developer.
+            <div class="gs-card">
+              <img src="./assets/svgs/Blob Getting Started (sign up).svg" />
+              <div class="card-text">
+                <h2>Sign Up</h2>
+                <p>
+                  In order to get started with us you have to sign up for an
+                  account, don't worry it's free to get started as an Entrepreneur
+                  or Developer.
               </p>
             </div>
-          </div>
-          <div class="gs-projectprepcard">
-            <div class="gs-projectprepimg">
-              <img
-                src="./assets/svgs/Blob Getting Started (project prep).svg"
-              />
             </div>
-            <div class="gs-projectpreptxt">
+          <div class="gs-card">
+              <img
+              src="./assets/svgs/Blob Getting Started (project prep).svg"
+            />
+            <div class="card-text">
               <h2>Project Prep</h2>
               <p>
                 Entrepreneur's create project posts, developers submit proposals
@@ -152,11 +154,10 @@
               </p>
             </div>
           </div>
-          <div class="gs-deliverycard">
-            <div class="gs-deliveryimg">
+          <div class="gs-card">
+
               <img src="./assets/svgs/Blob Getting Started (delivery).svg" />
-            </div>
-            <div class="gs-deliverytxt">
+            <div class="card-text">
               <h2>Delivery</h2>
               <p>
                 Once the Developer completes the project, they are in charge of
@@ -209,17 +210,21 @@
           </p>
         </div>
       </div>
-      <div class="img-person">
-        <img src="./assets/svgs/Blob User Reviews (person).svg" alt="" />
+      <div class="img-person hide-mobile">
+        <img class="hide-mobile" src="./assets/svgs/Blob User Reviews (person).svg" alt="" />
       </div>
-
       <div class="dev-review">
-        <div class="dev-review-img">
+        <div class="dev-review-img hide-mobile">
           <img src="./assets/svgs/profile_picture_jacobt.svg" alt="" />
         </div>
         <div class="dev-review-text">
-          <h2>Jacob Tonna</h2>
-          <p>Software Engineer</p>
+          <div class="dev-review-img-mob hide-desk">
+            <img src="./assets/svgs/profile_picture_jacobt.svg" alt="" />
+          </div>
+          <div class="mob-block">
+            <h2>Jacob Tonna</h2>
+            <p>Software Engineer</p>
+          </div>
           <p class="dev-review-text-p">
             Thanks to DevFindr, I don't have to guess which potential clients
             are serious about getting work done. Finding serious clients has
@@ -227,6 +232,7 @@
             family.
           </p>
         </div>
+      </div>
       </div>
     </section>
 
@@ -330,5 +336,9 @@
       </div>
     </footer>
     <!-- Footer End -->
+   
+   
+  </div> <!-- end hamburger-modal -->
+  <script src="./js/modal.js"></script>
   </body>
 </html>
