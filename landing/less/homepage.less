@@ -774,11 +774,13 @@ body {
   width: 100%;
 
   .section-5-cta {
+    border: 1px solid red;
     background: @white;
     text-align: center;
-    padding: 14.5rem 0 0 0;
 
     .text-section {
+      padding: 14.5rem 0 0 0;
+
       p {
         color: @veryLightGrey;
         padding: 0 0 1.5rem 0;
@@ -786,6 +788,13 @@ body {
 
       h1 {
         color: @lightSlateBlue;
+      }
+
+      @media @phone {
+        padding: 10.5rem 0 0 0;
+          p{
+            padding: 0 0 1rem 0;
+          }
       }
     }
 
@@ -795,11 +804,25 @@ body {
 
       .button-primary {
         .button-primary(@height: 8rem, @padding: 0 6rem 0);
+
+          @media @phone {
+            .button-primary(@height: 6rem, @padding: 0 4rem 0);
+          }
       }
 
       .button-secondary {
         .button-secondary(@height: 8rem, @padding: 0 4rem 0);
+
+          @media @phone {
+            .button-secondary(@height: 6rem, @padding: 0 4rem 0);
+          }
       }
+
+      @media @phone {
+        display: flex;
+        margin: 3rem 0 1rem;
+      }
+
     }
   }
 
