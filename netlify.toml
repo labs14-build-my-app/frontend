@@ -1,8 +1,8 @@
 
 [build]
-  base    = ""
-  publish = "landing/build"
-  command = "yarn build --type=UMD_DEV && cd landing && yarn && yarn prestart && yarn build"
+  command = "yarn build"
+  publish="landing/build"
+  base = "landing"
 
 [[redirects]]
   from = "/*"
