@@ -1,4 +1,4 @@
 [build]
-  base    = "landing"
+  base    = "landing/"
   command = "yarn build"
-  publish = "landing"
+  publish = "landing/"
