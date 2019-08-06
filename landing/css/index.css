@@ -904,6 +904,14 @@ body .button-secondary svg path {
   top: -54.5rem;
   left: -12rem;
 }
+@media (max-width: 768px) {
+  .section-5 .blobs .right img:first-child {
+    height: 7.5rem;
+    position: relative;
+    top: -51rem;
+    left: 2rem;
+  }
+}
 @media (max-width: 375px) {
   .section-5 .blobs .right img:first-child {
     height: 7rem;
@@ -917,6 +925,14 @@ body .button-secondary svg path {
   top: -30rem;
   left: -13rem;
 }
+@media (max-width: 768px) {
+  .section-5 .blobs .right img:nth-child(2) {
+    height: 3.5rem;
+    position: relative;
+    top: -7.5rem;
+    left: 0.5rem;
+  }
+}
 @media (max-width: 375px) {
   .section-5 .blobs .right img:nth-child(2) {
     height: 3rem;
@@ -929,6 +945,14 @@ body .button-secondary svg path {
   position: relative;
   top: -45rem;
   left: -12.5rem;
+}
+@media (max-width: 768px) {
+  .section-5 .blobs .right img:nth-child(3) {
+    height: 2.5rem;
+    position: relative;
+    top: -12.5rem;
+    left: 0rem;
+  }
 }
 @media (max-width: 375px) {
   .section-5 .blobs .right img:nth-child(3) {
