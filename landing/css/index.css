@@ -782,7 +782,6 @@ body .button-secondary svg path {
 @media (max-width: 375px) {
 }
 .section-5 .section-5-cta {
-  border: 1px solid red;
   background: #fff;
   text-align: center;
 }
@@ -795,6 +794,11 @@ body .button-secondary svg path {
 }
 .section-5 .section-5-cta .text-section h1 {
   color: #6c63ff;
+}
+@media (max-width: 768px) {
+  .section-5 .section-5-cta .text-section {
+    padding: 12rem 0 0 0;
+  }
 }
 @media (max-width: 375px) {
   .section-5 .section-5-cta .text-section {
@@ -816,6 +820,16 @@ body .button-secondary svg path {
   height: 8rem;
   padding: 0 6rem 0;
 }
+@media (max-width: 768px) {
+  .section-5 .section-5-cta .buttons .button-primary {
+    color: #fff;
+    background: #9519e8;
+    border: none;
+    border-radius: 6px;
+    height: 7rem;
+    padding: 0 3.25rem 0;
+  }
+}
 @media (max-width: 375px) {
   .section-5 .section-5-cta .buttons .button-primary {
     color: #fff;
@@ -834,6 +848,16 @@ body .button-secondary svg path {
   height: 8rem;
   padding: 0 4rem 0;
 }
+@media (max-width: 768px) {
+  .section-5 .section-5-cta .buttons .button-secondary {
+    color: #000;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #9519e8;
+    border-radius: 6px;
+    height: 7rem;
+    padding: 0 3.25rem 0;
+  }
+}
 @media (max-width: 375px) {
   .section-5 .section-5-cta .buttons .button-secondary {
     color: #000;
@@ -842,6 +866,13 @@ body .button-secondary svg path {
     border-radius: 6px;
     height: 6rem;
     padding: 0 2.5rem 0;
+  }
+}
+@media (max-width: 768px) {
+  .section-5 .section-5-cta .buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5rem 0 15rem;
   }
 }
 @media (max-width: 375px) {
@@ -864,9 +895,9 @@ body .button-secondary svg path {
 }
 @media (max-width: 768px) {
   .section-5 .blobs .left img:first-child {
-    height: 11rem;
+    height: 14rem;
     position: relative;
-    top: -7.5rem;
+    top: -10.5rem;
     left: 3.1rem;
   }
 }
@@ -885,10 +916,10 @@ body .button-secondary svg path {
 }
 @media (max-width: 768px) {
   .section-5 .blobs .left img:nth-child(2) {
-    height: 2.5rem;
+    height: 3rem;
     position: relative;
-    top: -48.5rem;
-    left: -9.5rem;
+    top: -55rem;
+    left: -13.5rem;
   }
 }
 @media (max-width: 375px) {
