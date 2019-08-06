@@ -823,7 +823,7 @@ body .button-secondary svg path {
     border: none;
     border-radius: 6px;
     height: 6rem;
-    padding: 0 4rem 0;
+    padding: 0 2.5rem 0;
   }
 }
 .section-5 .section-5-cta .buttons .button-secondary {
@@ -841,13 +841,14 @@ body .button-secondary svg path {
     border: 2px solid #9519e8;
     border-radius: 6px;
     height: 6rem;
-    padding: 0 4rem 0;
+    padding: 0 2.5rem 0;
   }
 }
 @media (max-width: 375px) {
   .section-5 .section-5-cta .buttons {
     display: flex;
-    margin: 3rem 0 1rem;
+    justify-content: space-evenly;
+    margin: 3rem 0 12rem;
   }
 }
 .section-5 .blobs {
@@ -863,10 +864,10 @@ body .button-secondary svg path {
 }
 @media (max-width: 375px) {
   .section-5 .blobs .left img:first-child {
-    height: 7.5rem;
+    height: 9rem;
     position: relative;
-    top: -5rem;
-    left: 3rem;
+    top: -6.5rem;
+    left: 3.1rem;
   }
 }
 .section-5 .blobs .left img:nth-child(2) {
@@ -876,10 +877,10 @@ body .button-secondary svg path {
 }
 @media (max-width: 375px) {
   .section-5 .blobs .left img:nth-child(2) {
-    height: 1.8rem;
+    height: 2rem;
     position: relative;
-    top: -60rem;
-    left: -6rem;
+    top: -42.5rem;
+    left: -8.5rem;
   }
 }
 .section-5 .blobs .right img:first-child {
@@ -891,8 +892,8 @@ body .button-secondary svg path {
   .section-5 .blobs .right img:first-child {
     height: 7rem;
     position: relative;
-    top: -63rem;
-    left: 17rem;
+    top: -40.5rem;
+    left: 5rem;
   }
 }
 .section-5 .blobs .right img:nth-child(2) {
@@ -900,10 +901,26 @@ body .button-secondary svg path {
   top: -30rem;
   left: -13rem;
 }
+@media (max-width: 375px) {
+  .section-5 .blobs .right img:nth-child(2) {
+    height: 3rem;
+    position: relative;
+    top: -7.5rem;
+    left: -0.5rem;
+  }
+}
 .section-5 .blobs .right img:nth-child(3) {
   position: relative;
   top: -45rem;
   left: -12.5rem;
+}
+@media (max-width: 375px) {
+  .section-5 .blobs .right img:nth-child(3) {
+    height: 2rem;
+    position: relative;
+    top: -12.5rem;
+    left: 0rem;
+  }
 }
 footer {
   padding-top: 10.9rem;

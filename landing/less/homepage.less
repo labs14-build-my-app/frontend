@@ -763,7 +763,7 @@ body {
 
 // section 4 end
 
-// Section 5 - CTA (Jacob) // Optimized for 1920x1080, 
+// Section 5 - CTA (Jacob) // Optimized for 1920x1080, 375x667
 
 .section-5 {
   @media @phone {
@@ -806,7 +806,7 @@ body {
         .button-primary(@height: 8rem, @padding: 0 6rem 0);
 
           @media @phone {
-            .button-primary(@height: 6rem, @padding: 0 4rem 0);
+            .button-primary(@height: 6rem, @padding: 0 2.5rem 0);
           }
       }
 
@@ -814,13 +814,14 @@ body {
         .button-secondary(@height: 8rem, @padding: 0 4rem 0);
 
           @media @phone {
-            .button-secondary(@height: 6rem, @padding: 0 4rem 0);
+            .button-secondary(@height: 6rem, @padding: 0 2.5rem 0);
           }
       }
 
       @media @phone {
         display: flex;
-        margin: 3rem 0 1rem;
+        justify-content: space-evenly;
+        margin: 3rem 0 12rem;
       }
 
     }
@@ -840,8 +841,8 @@ body {
         .blob-offset(-19rem, 16.5rem);
 
         @media @phone {
-          height: 7.5rem;
-          .blob-offset(-5rem, 3rem);
+          height: 9rem;
+          .blob-offset(-6.5rem, 3.1rem);
         }
       }
 
@@ -849,8 +850,8 @@ body {
         .blob-offset(-56rem, 15rem);
 
         @media @phone {
-          height: 1.8rem;
-          .blob-offset(-60rem, -6rem);
+          height: 2rem;
+          .blob-offset(-42.5rem, -8.5rem);
         }
       }
     }
@@ -861,16 +862,26 @@ body {
 
         @media @phone {
           height: 7rem;
-          .blob-offset(-63rem, 17rem);
+          .blob-offset(-40.5rem, 5rem);
         }
       }
 
         img:nth-child(2) {
           .blob-offset(-30rem, -13rem);
+
+            @media @phone {
+              height: 3rem;
+              .blob-offset(-7.5rem, -0.5rem);
+            }
         }
 
         img:nth-child(3) {
           .blob-offset(-45rem, -12.5rem);
+
+            @media @phone {
+              height: 2rem;
+              .blob-offset(-12.5rem, 0rem);
+            }
         }
     }
   }
