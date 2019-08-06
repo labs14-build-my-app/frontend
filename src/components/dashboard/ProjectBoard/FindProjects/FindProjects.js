@@ -4,14 +4,20 @@ import styled from "styled-components";
 const FindProjectsContainer = styled.div`
   .find-proj-top {
     display: flex;
-    justify-content: space-evenly;
-    padding: ${7.5 - 2.5}em ${8.4375 - 2.5}em;
-  
+    justify-content: space-around;
+    margin-bottom: 5.125em;
+    .all-project-btn, .saved-project-btn{
+    font-size: 1.8rem;
+    color: #9592A8;
+    
+    }
     .all-project-btn {
       margin-right: 2.1875em;
+      max-width: 161px;
     }
     .saved-project-btn {
       margin-left: 2.1875em;
+      max-width: 191px;
     }
     input {
       padding: 17px 40px 15px 40px;
@@ -27,6 +33,7 @@ const FindProjectsContainer = styled.div`
       box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.16);
       padding: 16px 30px;
       border: none;
+      width: 100%;
     }
   }
     .find-proj-description{
@@ -61,7 +68,7 @@ export class FindProjects extends Component {
           <h2>There are 1,000,542 projects open for project proposals.</h2>
           <button>
           <p>refresh </p>
-          <img src={process.env.PUBLIC_URL + "/images/redo-alt.svg"} alt="swirly boi"/>
+          <img src={process.env.PUBLIC_URL + "/images/redo-alt.svg"} alt="refresh"/>
 
           </button>
         </div>

@@ -5,8 +5,11 @@ import { findProjects, findAvailableProjects } from "../../../actions/";
 import { connect } from "react-redux";
 import NewProjects from "./FindProjects/NewProjects";
 const ProjectListContainer = styled.ul`
-  max-width: 800px;
-  margin: 0 2.5em;
+  .find-new-proj-projectlist-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 5em 0em;
+  }
 `;
 //This component will call to the back end and get a list of projects that are requested by the user.
 //If pathname === /dev/dashboard, list of projects the dev is on.
@@ -40,6 +43,7 @@ class ProjectList extends Component {
       this.props.history.location,
       this.props
     ];
+    //render  .find-new-proj-container when on find projects page
     return (
       <ProjectListContainer>
         {pathname === dashboard &&
@@ -47,12 +51,13 @@ class ProjectList extends Component {
           projectList.map(project => {
             return <DevProject color={this.getRandomInt()} {...project} />;
           })}
-
-        {pathname === findNewProjects &&
+         {pathname === findNewProjects && <div className="find-new-proj-projectlist-container"> 
+        {
           projectList.length &&
           projectList.map(project => {
             return <NewProjects {...project} />;
           })}
+          </div> }
       </ProjectListContainer>
     );
   }

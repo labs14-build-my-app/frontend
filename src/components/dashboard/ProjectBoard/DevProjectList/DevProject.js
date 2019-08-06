@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled, {ThemeProvider} from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import {
   electricViolet,
   sunglow,
@@ -13,8 +13,8 @@ import {
 } from "../../cssVariables";
 import { example } from "../../../../actions";
 import { connect } from "react-redux";
-import {NavLink, Link} from "react-router-dom";
-// import {flipOnHover} from "../animations/keyframes" 
+import { NavLink, Link } from "react-router-dom";
+// import {flipOnHover} from "../animations/keyframes"
 //basic trying out animations
 const colorArray = [electricViolet, sunglow, shamrock]; //remove when backend updates progress
 
@@ -26,7 +26,7 @@ background: #ccc;
 box-shadow: 5px 5px 8px rgba(0,0,0,.16);
 border-radius: 10px;
 background: linear-gradient( 74deg, rgba(255,255,255,1) 0%, rgba(239,239,239,1) 100% );
-border-left: 15px solid ${props=> colorArray[props.theme.color]};
+border-left: 15px solid ${props => colorArray[props.theme.color]};
 
 
 .proj-head{
@@ -41,10 +41,10 @@ border-left: 15px solid ${props=> colorArray[props.theme.color]};
     flex-direction: row-reverse;
     margin: 1.875em;
     div{
-      margin: 0em ${10/16}em;
+      margin: 0em ${10 / 16}em;
     }
     .progress-circle{
-    background: ${props=> colorArray[props.theme.color]};
+    background: ${props => colorArray[props.theme.color]};
     padding: 15px;
     border: 0;
     border-radius: 50%;
@@ -102,8 +102,8 @@ p{
 .allprojects-cta{
   display: flex;
   justify-content: flex-end;
-  ${'' /* justify-content: space-between; */}
-  margin: 0 ${40/16}em;
+  ${"" /* justify-content: space-between; */}
+  margin: 0 ${40 / 16}em;
   cursor: pointer;
   text-decoration: none;
   color: inherit;
@@ -111,50 +111,65 @@ p{
     font-size: 1.5rem;
   }
   i{
-    margin-left: ${10/16}em;
-    margin-bottom: ${20/16}em;
+    margin-left: ${10 / 16}em;
+    margin-bottom: ${20 / 16}em;
   }
 }
 `;
 
-
-const DevProject = (props) => {
+const DevProject = props => {
   const [isActiveChevron, setActiveChevron] = useState(false);
-    return (
-      <ThemeProvider theme={props}>
-        <DevListProjectStyle>
-          <div className="proj-head">
-            <div className="owner-img-and-name">
-              <h1>look at this photograph</h1>
-              <div>
-              <Link style={{textDecoration: "none", color: "inherit"}} to="/dev/project/id"><h3>{props.projectName}</h3></Link>
-                
-                <Link style={{textDecoration: "none", color: "inherit"}} to="/dev/project/id/entrepreneur"><h4>{props.projectOwner}</h4></Link>
-                <p> {props.projectDescription}</p>
-                
-              </div>
-            </div>
+  return (
+    <ThemeProvider theme={props}>
+      <DevListProjectStyle>
+        <div className="proj-head">
+          <div className="owner-img-and-name">
+            <h1>look at this photograph</h1>
             <div>
-              <div className="status-and-chevron">
-                <div className="chevron-up" onClick={()=>setActiveChevron(!isActiveChevron)} >
-                  <i className="fas fa-chevron-up" style={{transform : `${isActiveChevron ? "rotate(0deg)" : "rotate(180deg)"}`}}/>
-                </div>
-                <div className="progress-circle" />
-              </div>
+              <Link
+                style={{ textDecoration: "none", color: "inherit" }}
+                to="/dev/project/id"
+              >
+                <h3>{props.projectName}</h3>
+              </Link>
+
+              <Link
+                style={{ textDecoration: "none", color: "inherit" }}
+                to="/dev/project/id/entrepreneur"
+              >
+                <h4>{props.projectOwner}</h4>
+              </Link>
+              <p> {props.description}</p>
             </div>
           </div>
-          <NavLink to="/dev/project/id" className="allprojects-cta">
-            <p>
-              Project Information{" "}
-              <i className="fas fa-chevron-right" />
-            </p>
-          </NavLink>
-        </DevListProjectStyle>
-      
-      </ThemeProvider>
-    );
-  }
-
+          <div>
+            <div className="status-and-chevron">
+              <div
+                className="chevron-up"
+                onClick={() => setActiveChevron(!isActiveChevron)}
+              >
+                <i
+                  className="fas fa-chevron-up"
+                  style={{
+                    transform: `${
+                      isActiveChevron ? "rotate(0deg)" : "rotate(180deg)"
+                    }`
+                  }}
+                />
+              </div>
+              <div className="progress-circle" />
+            </div>
+          </div>
+        </div>
+        <NavLink to="/dev/project/id" className="allprojects-cta">
+          <p>
+            Project Information <i className="fas fa-chevron-right" />
+          </p>
+        </NavLink>
+      </DevListProjectStyle>
+    </ThemeProvider>
+  );
+};
 
 const mapStateToProps = state => {
   return {

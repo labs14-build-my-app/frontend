@@ -25,17 +25,12 @@ export const fakeState = [{
     projectName: "Super Saiyan Iced Coffee",
     projectOwner: "Ruben Ponce",
     projectStatus: "IN PROGRESS",
-    description: "does stuff"
+    description: "We need a simple system we can use to manage client accounts for our marketing department. We need to be able to add notes to client accounts as well as multiple points of contact, payment information as well as launch dates and emails for new events."
   },
   {
     id:"1",
     projectName: "Super Saiyan Iced Coffee",
     projectOwner: "Ruben Ponce",
     projectStatus: "IN PROGRESS",
-    description: "does stuff"},
-    {
-      id:"2",
-      projectName: "Super Saiyan Iced Coffee",
-    projectOwner: "Ruben Ponce",
-    projectStatus: "IN PROGRESS",
-    description: "does stuff"}]
+    description: "We are in need of a simple system that can be used to track our inventory of items by model numbers, update the amount of inventory of multiple items at once as well as display information and maybe a photo of the item."}
+]

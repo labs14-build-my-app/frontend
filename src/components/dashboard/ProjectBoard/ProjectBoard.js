@@ -4,17 +4,19 @@ import ProjectList from "./ProjectList";
 import styled from "styled-components";
 import { transparentBackdrop } from "../cssVariables";
 import FindProjects from "./FindProjects/FindProjects";
-const maxWidth = 900;
+const maxWidth = 90;
 const ProjectBoardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: ${maxWidth}px;
+  max-width: ${maxWidth}vw;
   margin: 4em 2.5em 0 2.5em;
   padding: 2.5em;
   width: 100%;
   border-radius: 10px;
   border: none;
-
+  .find-proj-full-container{
+    padding: 7.5em 12.6875em 6.125em 8.4375em;
+  }
   ${transparentBackdrop}
 `;
 export class ProjectBoard extends Component {
@@ -29,8 +31,20 @@ export class ProjectBoard extends Component {
     return (
       <ProjectBoardContainer>
         {/* render the dev dashboard with description of projects*/}
-        {pathname === dashboard ? <ProjectIntroduction /> : pathname === findNewProjects && <FindProjects /> }
-      <ProjectList {...this.props} pathname={pathname} />
+        {/* {pathname === dashboard ? <ProjectIntroduction /> : pathname === findNewProjects && <FindProjects /> } */}
+
+        {
+
+        pathname === dashboard ? 
+        <> 
+          <ProjectIntroduction /> 
+          <ProjectList {...this.props} pathname={pathname} />
+        </>  : pathname === findNewProjects &&
+        <div className="find-proj-full-container">
+        <FindProjects />
+        <ProjectList {...this.props} pathname={pathname} />
+        </div>}
+        
       </ProjectBoardContainer>
     );
   }
