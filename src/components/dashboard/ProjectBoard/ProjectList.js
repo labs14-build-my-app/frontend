@@ -51,7 +51,7 @@ class ProjectList extends Component {
         {pathname === findNewProjects &&
           projectList.length &&
           projectList.map(project => {
-            return <NewProjects />;
+            return <NewProjects {...project} />;
           })}
       </ProjectListContainer>
     );

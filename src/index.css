@@ -54,3 +54,8 @@ html{
 body{
     background: url("./components/dashboard background.svg");
 }
+button{
+	border: none;
+	background: none;
+	cursor: pointer;
+}
