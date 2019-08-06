@@ -4,11 +4,11 @@ import ProjectList from "./ProjectList";
 import styled from "styled-components";
 import { transparentBackdrop } from "../cssVariables";
 import FindProjects from "./FindProjects/FindProjects";
-const maxWidth = 90;
+;
 const ProjectBoardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: ${maxWidth}vw;
+  max-width: 1448px;
   margin: 4em 2.5em 0 2.5em;
   padding: 2.5em;
   width: 100%;
