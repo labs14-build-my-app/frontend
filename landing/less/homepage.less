@@ -840,6 +840,11 @@ body {
       img:first-child {
         .blob-offset(-19rem, 16.5rem);
 
+        @media @tablet {
+          height: 11rem;
+          .blob-offset(-7.5rem, 3.1rem)
+        }
+
         @media @phone {
           height: 9rem;
           .blob-offset(-6.5rem, 3.1rem);
@@ -848,6 +853,11 @@ body {
 
       img:nth-child(2) {
         .blob-offset(-56rem, 15rem);
+
+        @media @tablet{
+          height: 2.5rem;
+          .blob-offset(-48.5rem, -9.5rem);
+        }
 
         @media @phone {
           height: 2rem;
