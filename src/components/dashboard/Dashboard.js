@@ -19,20 +19,25 @@ const SideContent = styled.div`
     align-self: normal;
     margin-top: 4em;
   }
-
-
 `;
 
 class Dashboard extends Component {
-  render() {
+  renderNotificationAndStatement = () => {
     return (
-        <SideContent>
-          <ProjectBoard {...this.props} />{/* passing history object */}
-          <div className="side-notif-and-statement-container">
-            <QuarterlyStatement />
-            <NotificationCenter />
-          </div>
-        </SideContent>
+      <div className="side-notif-and-statement-container">
+        <QuarterlyStatement />
+        <NotificationCenter />
+      </div>
+    );
+  };
+  render() {
+    const { pathname } = this.props.history.location;
+    return (
+      <SideContent>
+        <ProjectBoard {...this.props} />
+        {/* passing history object */}
+        {pathname === "/dev/dashboard" && this.renderNotificationAndStatement()}
+      </SideContent>
     );
   }
 }

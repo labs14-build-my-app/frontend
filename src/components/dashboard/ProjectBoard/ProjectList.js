@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import Project from "./Project";
+import DevProject from "./DevProjectList/DevProject";
 import styled from "styled-components";
-import { findProjects,findAvailableProjects } from "../../../actions/index";
+import { findProjects, findAvailableProjects } from "../../../actions/";
 import { connect } from "react-redux";
+import NewProjects from "./FindProjects/NewProjects";
 const ProjectListContainer = styled.ul`
   max-width: 800px;
   margin: 0 2.5em;
@@ -11,37 +12,47 @@ const ProjectListContainer = styled.ul`
 //If pathname === /dev/dashboard, list of projects the dev is on.
 //if pathname === /dev/find/projects, return list of projects posted by entreprenuers to be picked up by the dev.
 class ProjectList extends Component {
-  componentDidMount(){
+  componentDidMount() {
     this.props.findProjects();
   }
-  componentDidUpdate(){
-    console.log("update ran")
-    if( this.props.pathname ==="/dev/dashboard")
-    {
+
+  componentDidUpdate() {
+    console.log("update ran");
+    if (this.props.pathname === "/dev/dashboard") {
       this.props.findProjects();
     }
-    if(this.props.pathname==="/dev/find/projects"){
+    if (this.props.pathname === "/dev/find/projects") {
       this.props.findAvailableProjects();
     }
-    
   }
   getRandomInt = () => {
     return Math.round(Math.random() * 2);
   };
-  findProjects = (e)=> {
-    e.preventDefault()
+  findProjects = e => {
+    e.preventDefault();
     this.props.findProjects();
   };
 
   render() {
-    const {projectList, pathname} = this.props;
-    
-    
+    const [dashboard, findNewProjects, { pathname }, { projectList }] = [
+      "/dev/dashboard",
+      "/dev/find/projects",
+      this.props.history.location,
+      this.props
+    ];
     return (
-      <ProjectListContainer >
-       { (projectList.length) && projectList.map(project => {
-          return <Project color={this.getRandomInt()} {...project} />
-        })} 
+      <ProjectListContainer>
+        {pathname === dashboard &&
+          projectList.length &&
+          projectList.map(project => {
+            return <DevProject color={this.getRandomInt()} {...project} />;
+          })}
+
+        {pathname === findNewProjects &&
+          projectList.length &&
+          projectList.map(project => {
+            return <NewProjects />;
+          })}
       </ProjectListContainer>
     );
   }

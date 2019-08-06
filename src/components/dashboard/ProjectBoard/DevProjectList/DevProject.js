@@ -10,8 +10,8 @@ import {
   projectFontSubtext,
   trout,
   projectParagraphFont
-} from "../cssVariables";
-import { example } from "../../../actions";
+} from "../../cssVariables";
+import { example } from "../../../../actions";
 import { connect } from "react-redux";
 import {NavLink, Link} from "react-router-dom";
 // import {flipOnHover} from "../animations/keyframes" 
@@ -20,7 +20,7 @@ const colorArray = [electricViolet, sunglow, shamrock]; //remove when backend up
 
 // Needs to grab status of project from parents to display on .progress-circle{}
 // Change Background property to reflect progress from actual backend
-const ProjectStyle = styled.li`
+const DevListProjectStyle = styled.li`
 margin-bottom: 1.25em;
 background: #ccc;
 box-shadow: 5px 5px 8px rgba(0,0,0,.16);
@@ -117,11 +117,12 @@ p{
 }
 `;
 
-const Project = (props) => {
+
+const DevProject = (props) => {
   const [isActiveChevron, setActiveChevron] = useState(false);
     return (
       <ThemeProvider theme={props}>
-        <ProjectStyle>
+        <DevListProjectStyle>
           <div className="proj-head">
             <div className="owner-img-and-name">
               <h1>look at this photograph</h1>
@@ -148,7 +149,8 @@ const Project = (props) => {
               <i className="fas fa-chevron-right" />
             </p>
           </NavLink>
-        </ProjectStyle>
+        </DevListProjectStyle>
+      
       </ThemeProvider>
     );
   }
@@ -162,4 +164,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   { example }
-)(Project);
+)(DevProject);

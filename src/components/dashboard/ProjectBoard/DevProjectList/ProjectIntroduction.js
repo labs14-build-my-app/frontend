@@ -6,7 +6,7 @@ import {
   shamrock,
   electricViolet,
   headerFontDesktop
-} from "../cssVariables";
+} from "../../cssVariables.js";
 
 const ProjectIntroContainer = styled.div`
 display: flex;
