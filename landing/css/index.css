@@ -795,9 +795,9 @@ body .button-secondary svg path {
 .section-5 .section-5-cta .text-section h1 {
   color: #6c63ff;
 }
-@media (max-width: 1920px) {
+@media (max-width: 1366px) {
   .section-5 .section-5-cta .text-section {
-    padding: 14.5rem 0 0 0;
+    padding: 13rem 0 0 0;
   }
 }
 @media (max-width: 768px) {
@@ -873,6 +873,11 @@ body .button-secondary svg path {
     padding: 0 2.5rem 0;
   }
 }
+@media (max-width: 1366px) {
+  .section-5 .section-5-cta .buttons {
+    margin: 5rem 10rem;
+  }
+}
 @media (max-width: 768px) {
   .section-5 .section-5-cta .buttons {
     display: flex;
@@ -898,6 +903,14 @@ body .button-secondary svg path {
   top: -19rem;
   left: 16.5rem;
 }
+@media (max-width: 1366px) {
+  .section-5 .blobs .left img:first-child {
+    height: 16rem;
+    position: relative;
+    top: -12rem;
+    left: 8rem;
+  }
+}
 @media (max-width: 768px) {
   .section-5 .blobs .left img:first-child {
     height: 14rem;
@@ -918,6 +931,14 @@ body .button-secondary svg path {
   position: relative;
   top: -56rem;
   left: 15rem;
+}
+@media (max-width: 1366px) {
+  .section-5 .blobs .left img:nth-child(2) {
+    height: 3.5rem;
+    position: relative;
+    top: -55rem;
+    left: -15rem;
+  }
 }
 @media (max-width: 768px) {
   .section-5 .blobs .left img:nth-child(2) {
@@ -940,6 +961,14 @@ body .button-secondary svg path {
   top: -54.5rem;
   left: -12rem;
 }
+@media (max-width: 1366px) {
+  .section-5 .blobs .right img:first-child {
+    height: 11.5rem;
+    position: relative;
+    top: -51rem;
+    left: 3rem;
+  }
+}
 @media (max-width: 768px) {
   .section-5 .blobs .right img:first-child {
     height: 7.5rem;
@@ -961,6 +990,14 @@ body .button-secondary svg path {
   top: -30rem;
   left: -13rem;
 }
+@media (max-width: 1366px) {
+  .section-5 .blobs .right img:nth-child(2) {
+    height: 5rem;
+    position: relative;
+    top: -12rem;
+    left: -4rem;
+  }
+}
 @media (max-width: 768px) {
   .section-5 .blobs .right img:nth-child(2) {
     height: 3.5rem;
@@ -981,6 +1018,14 @@ body .button-secondary svg path {
   position: relative;
   top: -45rem;
   left: -12.5rem;
+}
+@media (max-width: 1366px) {
+  .section-5 .blobs .right img:nth-child(3) {
+    height: 6rem;
+    position: relative;
+    top: -28rem;
+    left: -1rem;
+  }
 }
 @media (max-width: 768px) {
   .section-5 .blobs .right img:nth-child(3) {

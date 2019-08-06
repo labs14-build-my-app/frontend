@@ -1,17 +1,20 @@
-html{
+html {
   overflow-x: hidden;
 }
+
 body {
   box-sizing: border-box;
   margin: 0 auto;
 
   background: white;
   font-family: @fontFamily;
+
   @media (min-width: 1500px) {
 
-       overflow: hidden;
-       width: 100vw;
-}
+    overflow: hidden;
+    width: 100vw;
+  }
+
   h1 {
     font-size: @fontsize-cta;
 
@@ -84,6 +87,7 @@ body {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -101,11 +105,13 @@ body {
   flex-direction: column;
   align-items: flex-end;
   margin: 1.56em 1.25em 0 0;
+
   img {
     width: 22px;
     height: 22px;
     padding-bottom: 3.19em;
   }
+
   div {
     ul {
       li {
@@ -121,10 +127,12 @@ body {
 .displayNavAnime {
   animation: displayNavOpacityAnimation 0.4s ease-out;
 }
+
 @keyframes displayNavOpacityAnimation {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -133,6 +141,7 @@ body {
 .hamburger-modal {
   // filter: blur(3px) brightness(35%);
 }
+
 .modal-nav-elements {
   //displays on click
   display: none;
@@ -145,11 +154,13 @@ body {
   flex-direction: column;
   align-items: flex-end;
   margin: 1.56em 1.25em 0 0;
+
   img {
     width: 22px;
     height: 22px;
     padding-bottom: 3.19em;
   }
+
   div {
     ul {
       li {
@@ -159,26 +170,30 @@ body {
     }
   }
 }
+
 .intro-container {
   padding-bottom: 163px;
   // background: url("../assets/svgs/Blob Header.svg");
   background: @whiteSmoke;
   font-family: @fontFamily;
   padding-bottom: 22.2rem;
+
   @media (max-width: 1250px) {
     padding-bottom: 22.2rem;
   }
+
   .header-blobber {
     z-index: 0;
     position: absolute;
     top: 0;
     right: 0;
     max-width: 50%;
-    
+
     // @media (max-width: 1250px) {
     //   width: 65%;
     // }
   }
+
   .home-header {
     z-index: -2;
     display: flex;
@@ -208,14 +223,18 @@ body {
       display: flex; // remove -- to none
       align-items: center;
       z-index: 2;
+
       .nav-section {
         display: none; //change to edit -- to flex
+
         img {
           width: 22px;
           height: 22px;
         }
+
         ul {
           display: flex;
+
           li {
             margin-left: 4.87em;
           }
@@ -223,6 +242,7 @@ body {
 
         color: @white;
       }
+
       .hamburger-svg {
         width: 40px;
         height: 35px;
@@ -243,6 +263,7 @@ body {
     }
 
     @media (max-width: 1250px) {
+
       // img {
       //   width: 45%;
       // }
@@ -269,7 +290,7 @@ body {
     img {
       max-width: 50%;
       z-index: 420;
-      
+
     }
 
     section {
@@ -277,9 +298,11 @@ body {
       padding-left: 6.25em;
       padding-right: 3.3125em;
       margin-top: 16vh;
+
       @media (max-width: 1170px) {
         padding-right: 0;
       }
+
       font-family: @fontFamily;
 
       h2 {
@@ -293,11 +316,13 @@ body {
         color: @font-color;
         line-height: 30px;
       }
+
       a {
         margin: 3.15em 0px;
         cursor: pointer;
         display: inline-block;
       }
+
       a button {
         color: white;
         font-size: 1.8rem;
@@ -305,27 +330,33 @@ body {
         cursor: pointer;
       }
     }
+
     @media @phone {
       //ruben's phone
       flex-direction: column-reverse;
       justify-content: center;
+
       section {
         padding: 0;
         // width: 100%;
         width: 90%;
         // margin: 0 20px;
         padding-top: 10rem;
+
         h2 {
           font-size: 2.3rem;
         }
+
         p {
           font-size: 1;
         }
+
         a,
         button {
           width: 100%;
         }
       }
+
       img {
         padding-top: 3em;
         max-width: 100%;
@@ -334,8 +365,10 @@ body {
       }
     }
   }
+
   //media queries
   @media @phone {
+
     // .header-blobber {
     //   max-width: 150%;
     //   width: 150%;
@@ -350,6 +383,7 @@ body {
         z-index: 420;
         color: #fff;
       }
+
       // img {
       //   width: 150%;
       // }
@@ -361,64 +395,70 @@ body {
 
     }
   }
+
   @media (max-width: 1400px) {
-    .header-blobber{
+    .header-blobber {
       max-width: 700px;
     }
   }
+
   @media (max-width: 1170px) {
-    .header-blobber{
+    .header-blobber {
       right: -100px;
     }
 
   }
-  @media (max-width: 1250px) {
-    .header-blobber{
 
-    }
+  @media (max-width: 1250px) {
+    .header-blobber {}
   }
-  @media(max-width: 1050px){
-    .header-blobber{
+
+  @media(max-width: 1050px) {
+    .header-blobber {
       max-width: 1500px;
       width: 1500px;
       top: -700px;
     }
-    
-    .home-header{
-      h2{
+
+    .home-header {
+      h2 {
         z-index: 2;
         color: white;
       }
     }
-    .cta-getstarted-section{
+
+    .cta-getstarted-section {
       flex-direction: column-reverse;
       margin-top: 4em;
-      .header-blobber{
-    
-      }
-      section{
+
+      .header-blobber {}
+
+      section {
         z-index: 1;
-        
+
       }
-      img{
+
+      img {
         max-width: 90%;
         width: 90%;
       }
     }
   }
+
   @media (max-width: 780px) {
-    .header-blobber{
+    .header-blobber {
       top: -800px;
       right: -300px;
     }
-    .cta-getstarted-section{
-      section{
+
+    .cta-getstarted-section {
+      section {
         padding-left: 0;
         // margin-top: 30vh;
         padding-top: 10rem;
       }
     }
-    
+
   }
 }
 
@@ -430,11 +470,12 @@ body {
   //   border: 1px solid red;
 
   position: relative;
-  .grey-blobber{
+
+  .grey-blobber {
     position: absolute;
     top: 0;
     z-index: -1;
-    width:1920px;
+    width: 1920px;
   }
 }
 
@@ -446,7 +487,7 @@ body {
   width: 100%;
   margin: 0 auto;
   // border: 1px solid red;
-  
+
   @media @phone {
     max-width: 37rem;
   }
@@ -461,7 +502,7 @@ body {
       color: @font-color;
       margin-bottom: 22px;
       text-align: center;
-      
+
     }
 
     p {
@@ -474,6 +515,7 @@ body {
       line-height: @font-height;
       margin: 0 auto 41px auto;
       text-align: center;
+
       @media @phone {
         margin-left: 6rem;
         width: 20rem;
@@ -487,17 +529,20 @@ body {
     flex-wrap: wrap;
     width: 85%;
     margin: 0 auto;
-    .gs-card{
+
+    .gs-card {
       display: flex;
       flex-direction: column;
       text-align: center;
       max-width: 386px;
     }
+
     @media (max-width: 908px) {
-      img{
+      img {
         margin-top: 4em;
       }
     }
+
     @media @phone {
       //code needed for carousel
     }
@@ -518,9 +563,9 @@ body {
   // .gs-signupcard {
   //   display: flex;
   //   justify-content: space-evenly;
-    
+
   // }
-  
+
 }
 
 // section 2 end
@@ -642,14 +687,17 @@ body {
       font-family: "Source SansPro";
       font-weight: bold;
       text-align: left;
+
       @media @phone {
         font-size: 2.3rem;
       }
     }
+
     p {
       font-family: "Source SansPro";
       text-align: right;
       font-size: 1.8rem;
+
       @media @phone {
         font-size: 1.3rem;
         line-height: 1.3rem;
@@ -657,12 +705,14 @@ body {
         text-align: center;
       }
     }
+
     .user-reviews-h {
       max-width: 20.6rem;
       height: 4.4rem;
       position: absolute;
       top: 23.2rem;
       right: 25.2rem;
+
       @media @phone {
         max-width: 13.4rem;
         height: 2.9rem;
@@ -670,12 +720,14 @@ body {
         right: 3rem;
       }
     }
+
     .user-reviews-p {
       max-width: 35.6rem;
       height: 5.3rem;
       position: absolute;
       top: 30.1rem;
       right: 25.2rem;
+
       @media @phone {
         max-width: 23.6rem;
         height: 6.7rem;
@@ -684,6 +736,7 @@ body {
       }
     }
   }
+
   .dev-review {
     display: flex;
     position: absolute;
@@ -692,15 +745,18 @@ body {
     bottom: 31.6rem;
     left: 53rem;
     background: white;
+
     @media @phone {
       height: 20.5rem;
       max-width: 33.4rem;
       bottom: 11.3rem;
       left: 0rem;
     }
+
     .dev-review-img {
       margin: 3.5rem;
     }
+
     .dev-review-text {
       margin: 3.5rem 3.5rem 3.5rem 0;
       display: flex;
@@ -708,6 +764,7 @@ body {
       justify-content: space-between;
       padding-bottom: 3rem;
       border-radius: 6px;
+
       @media @phone {
         margin: 1rem 0 0 0;
         display: flex;
@@ -720,12 +777,14 @@ body {
         padding: 1rem;
         background: #f2f2f2;
         border-radius: 6px;
+
         @media @phone {
           overflow-y: scroll;
         }
       }
     }
   }
+
   .img-person {
     height: 684px;
     max-width: 918.57px;
@@ -759,6 +818,7 @@ body {
     display: none;
   }
 }
+
 // section-4-end
 
 // section 4 end
@@ -789,8 +849,8 @@ body {
         color: @lightSlateBlue;
       }
 
-      @media @desktop{
-        padding: 14.5rem 0 0 0;
+      @media @chromebook {
+        padding: 13rem 0 0 0;
       }
 
       @media @tablet {
@@ -799,9 +859,10 @@ body {
 
       @media @phone {
         padding: 10.5rem 0 0 0;
-          p{
-            padding: 0 0 1rem 0;
-          }
+
+        p {
+          padding: 0 0 1rem 0;
+        }
       }
     }
 
@@ -834,6 +895,10 @@ body {
         }
       }
 
+      @media @chromebook {
+        margin: 5rem 10rem;
+      }
+
       @media @tablet {
         display: flex;
         justify-content: space-evenly;
@@ -853,7 +918,7 @@ body {
     display: flex;
     justify-content: space-between;
 
-    // by default the .blobs container will have its own box model, this adds too much spacing at the bottom
+    // by default the .blobs container will have its own box model the height of the biggest blob, this adds too much white spacing at the bottom
     // setting it to border box with 1px height solves this issue, and the images being offset still work as its position relative to its parent container.
     box-sizing: border-box;
     height: 1px;
@@ -861,6 +926,11 @@ body {
     .left {
       img:first-child {
         .blob-offset(-19rem, 16.5rem);
+
+        @media @chromebook {
+          height: 16rem;
+          .blob-offset(-12rem, 8rem)
+        }
 
         @media @tablet {
           height: 14rem;
@@ -876,7 +946,12 @@ body {
       img:nth-child(2) {
         .blob-offset(-56rem, 15rem);
 
-        @media @tablet{
+        @media @chromebook {
+          height: 3.5rem;
+          .blob-offset(-55rem, -15rem)
+        }
+
+        @media @tablet {
           height: 3rem;
           .blob-offset(-55rem, -13.5rem);
         }
@@ -892,6 +967,11 @@ body {
       img:first-child {
         .blob-offset(-54.5rem, -12rem);
 
+        @media @chromebook {
+          height: 11.5rem;
+          .blob-offset(-51rem, 3rem)
+        }
+
         @media @tablet {
           height: 7.5rem;
           .blob-offset(-51rem, 2rem)
@@ -903,33 +983,44 @@ body {
         }
       }
 
-        img:nth-child(2) {
-          .blob-offset(-30rem, -13rem);
+      img:nth-child(2) {
+        .blob-offset(-30rem, -13rem);
 
-          @media @tablet {
-            height: 3.5rem;
-            .blob-offset(-7.5rem, 0.5rem);
-          }
-
-          @media @phone {
-            height: 3rem;
-            .blob-offset(-7.5rem, -0.5rem);
-          }
+        @media @chromebook {
+          height: 5rem;
+          .blob-offset(-12rem, -4rem);
         }
 
-        img:nth-child(3) {
-          .blob-offset(-45rem, -12.5rem);
-
-           @media @tablet {
-             height: 2.5rem;
-             .blob-offset(-12.5rem, 0rem);
-           }
-
-           @media @phone {
-             height: 2rem;
-             .blob-offset(-12.5rem, 0rem);
-           }
+        @media @tablet {
+          height: 3.5rem;
+          .blob-offset(-7.5rem, 0.5rem);
         }
+
+        @media @phone {
+          height: 3rem;
+          .blob-offset(-7.5rem, -0.5rem);
+        }
+      }
+
+      img:nth-child(3) {
+        .blob-offset(-45rem, -12.5rem);
+
+        @media @chromebook {
+          height: 6rem;
+          .blob-offset(-28rem, -1rem);
+        }
+
+        @media @tablet {
+          height: 2.5rem;
+          .blob-offset(-12.5rem, 0rem);
+        }
+
+        @media @phone {
+          height: 2rem;
+          .blob-offset(-12.5rem, 0rem);
+        }
+
+      }
     }
   }
 }
