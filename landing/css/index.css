@@ -795,6 +795,11 @@ body .button-secondary svg path {
 .section-5 .section-5-cta .text-section h1 {
   color: #6c63ff;
 }
+@media (max-width: 1920px) {
+  .section-5 .section-5-cta .text-section {
+    padding: 14.5rem 0 0 0;
+  }
+}
 @media (max-width: 768px) {
   .section-5 .section-5-cta .text-section {
     padding: 12rem 0 0 0;
