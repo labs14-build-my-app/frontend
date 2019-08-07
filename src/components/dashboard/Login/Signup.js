@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import styled from "styled-components"
-import { tablet, phone } from '../cssVariables';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { signup } from "../../../actions";
 
-const SignupContainer = styled.div `
+import { tablet, phone } from "../cssVariables";
 
+const SignupContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -42,11 +43,11 @@ const SignupContainer = styled.div `
     padding: 1em;
     margin: 0 auto;
     padding: 4em 2em;
-    @media ${tablet}{
+    @media ${tablet} {
       border: 0px;
       width: 60%;
     }
-    @media ${phone}{
+    @media ${phone} {
       width: 100%;
     }
     .alternative-cta {
@@ -79,16 +80,16 @@ const SignupContainer = styled.div `
     }
   }
 
-
-.logo {
-  padding: 0.5em 0 0 1em;
-}
-`
+  .logo {
+    padding: 0.5em 0 0 1em;
+  }
+`;
 class Signup extends Component {
   state = {
-    email: '',
-    username: '',
-    password: ''
+    name: "",
+    email: "",
+    password: "",
+    isDeveloper: true
   };
 
   handleChanges = e => {
@@ -99,8 +100,9 @@ class Signup extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.Signup({ ...this.state }).then(() => {
-      this.props.history.push('/');
+    console.log(this.state);
+    this.props.signup({ ...this.state }).then(() => {
+      this.props.history.push("/");
     });
   };
 
@@ -109,7 +111,6 @@ class Signup extends Component {
       <SignupContainer className="Signup-container">
         <div className="cta-content">
           <h1>A smarter way to trade.</h1>
-          
         </div>
         <div className="Signup-main">
           <h1>Get Started.</h1>
@@ -127,7 +128,7 @@ class Signup extends Component {
             />
             <input
               type="text"
-              name="username"
+              name="name"
               placeholder="Username"
               onChange={this.handleChanges}
               value={this.state.value}
@@ -158,5 +159,5 @@ const mapStateToProps = state => {
 };
 export default connect(
   mapStateToProps,
-  { }
+  { signup }
 )(Signup);

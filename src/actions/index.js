@@ -21,13 +21,31 @@ export const example = parameter => dispatch => {
     );
 };
 
+export const SIGNING_UP_START = "SIGNING_UP_START";
+export const SIGNING_UP_SUCCESS = "SIGNING_UP_SUCCESS";
+export const SIGNING_UP_FAILURE = "SIGNING_UP_FAILURE";
+
+export const signup = creds => dispatch => {
+  dispatch({ type: SIGNING_UP_START });
+  return axios
+    .post("https://devfindr-mongo-db.herokuapp.com/users", creds)
+    .then(res => {
+      localStorage.setItem("token", res.data.token);
+      dispatch({ type: SIGNING_UP_SUCCESS, payload: res.data.token });
+    })
+
+    .catch(err => {
+      dispatch({ type: SIGNING_UP_FAILURE, payload: err.response.data });
+    });
+};
+
 export const LOGIN_START = "LOGIN_START";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAILURE = "LOGIN_FAILURE";
 export const login = creds => dispatch => {
   dispatch({ type: LOGIN_START });
   return axios
-    .post(" https://devfindr-mongo-db.herokuapp.com/users/login", creds)
+    .post("https://devfindr-mongo-db.herokuapp.com/users/login", creds)
     .then(res => {
       localStorage.setItem("token", res.data.token);
       dispatch({ type: LOGIN_SUCCESS, payload: res.data.token });
