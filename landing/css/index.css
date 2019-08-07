@@ -816,6 +816,10 @@ body .button-secondary svg path {
 .section-5 .section-5-cta .buttons {
   margin: 5rem 0 10rem;
   padding: 0.5rem 0 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .section-5 .section-5-cta .buttons .button-primary {
   color: #fff;
@@ -833,6 +837,7 @@ body .button-secondary svg path {
     border-radius: 6px;
     height: 7rem;
     padding: 0 3.25rem 0;
+    margin-right: 4rem;
   }
 }
 @media (max-width: 375px) {
@@ -843,6 +848,7 @@ body .button-secondary svg path {
     border-radius: 6px;
     height: 6rem;
     padding: 0 2.5rem 0;
+    margin-right: 2rem;
   }
 }
 .section-5 .section-5-cta .buttons .button-secondary {
@@ -875,20 +881,16 @@ body .button-secondary svg path {
 }
 @media (max-width: 1366px) {
   .section-5 .section-5-cta .buttons {
-    margin: 5rem 10rem;
+    margin: 5rem 0 10rem;
   }
 }
 @media (max-width: 768px) {
   .section-5 .section-5-cta .buttons {
-    display: flex;
-    justify-content: space-evenly;
     margin: 5rem 0 15rem;
   }
 }
 @media (max-width: 375px) {
   .section-5 .section-5-cta .buttons {
-    display: flex;
-    justify-content: space-evenly;
     margin: 3rem 0 12rem;
   }
 }
