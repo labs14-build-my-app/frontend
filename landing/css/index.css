@@ -828,6 +828,18 @@ body .button-secondary svg path {
   border-radius: 6px;
   height: 8rem;
   padding: 0 6rem 0;
+  margin-right: 4rem;
+}
+@media (max-width: 1366px) {
+  .section-5 .section-5-cta .buttons .button-primary {
+    color: #fff;
+    background: #9519e8;
+    border: none;
+    border-radius: 6px;
+    height: 7rem;
+    padding: 0 4.5rem 0;
+    margin-right: 4rem;
+  }
 }
 @media (max-width: 768px) {
   .section-5 .section-5-cta .buttons .button-primary {
@@ -837,7 +849,7 @@ body .button-secondary svg path {
     border-radius: 6px;
     height: 7rem;
     padding: 0 3.25rem 0;
-    margin-right: 4rem;
+    margin-right: 3rem;
   }
 }
 @media (max-width: 375px) {
@@ -858,6 +870,16 @@ body .button-secondary svg path {
   border-radius: 6px;
   height: 8rem;
   padding: 0 4rem 0;
+}
+@media (max-width: 1366px) {
+  .section-5 .section-5-cta .buttons .button-secondary {
+    color: #000;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #9519e8;
+    border-radius: 6px;
+    height: 7rem;
+    padding: 0 4.5rem 0;
+  }
 }
 @media (max-width: 768px) {
   .section-5 .section-5-cta .buttons .button-secondary {
@@ -907,7 +929,7 @@ body .button-secondary svg path {
 }
 @media (max-width: 1366px) {
   .section-5 .blobs .left img:first-child {
-    height: 16rem;
+    max-width: 16rem;
     position: relative;
     top: -12rem;
     left: 8rem;
@@ -936,10 +958,10 @@ body .button-secondary svg path {
 }
 @media (max-width: 1366px) {
   .section-5 .blobs .left img:nth-child(2) {
-    height: 3.5rem;
+    max-width: 6rem;
     position: relative;
-    top: -55rem;
-    left: -15rem;
+    top: -50rem;
+    left: 1rem;
   }
 }
 @media (max-width: 768px) {
@@ -965,7 +987,7 @@ body .button-secondary svg path {
 }
 @media (max-width: 1366px) {
   .section-5 .blobs .right img:first-child {
-    height: 11.5rem;
+    max-width: 18rem;
     position: relative;
     top: -51rem;
     left: 3rem;
@@ -994,10 +1016,10 @@ body .button-secondary svg path {
 }
 @media (max-width: 1366px) {
   .section-5 .blobs .right img:nth-child(2) {
-    height: 5rem;
+    max-width: 5rem;
     position: relative;
-    top: -12rem;
-    left: -4rem;
+    top: -17rem;
+    left: -9rem;
   }
 }
 @media (max-width: 768px) {
@@ -1023,9 +1045,9 @@ body .button-secondary svg path {
 }
 @media (max-width: 1366px) {
   .section-5 .blobs .right img:nth-child(3) {
-    height: 6rem;
+    max-width: 5rem;
     position: relative;
-    top: -28rem;
+    top: -34rem;
     left: -1rem;
   }
 }
