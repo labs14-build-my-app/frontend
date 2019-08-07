@@ -1,15 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import { connect } from 'react-redux';
-// import { login } from '../../actions';
-import { BeatLoader } from 'react-spinners';
-import { Link } from 'react-router-dom';
+import { connect } from "react-redux";
+import { login } from "../../../actions";
+import { BeatLoader } from "react-spinners";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { phone, tablet } from '../cssVariables';
+import { phone, tablet } from "../cssVariables";
 const LoginContainer = styled.div`
-
-  
-
   .__Form {
     width: 100%;
     display: flex;
@@ -32,15 +29,13 @@ const LoginContainer = styled.div`
     }
   }
 
-  .cta-content{
+  .cta-content {
     font-size: 3.5rem;
     line-height: 2;
     width: 90%;
     margin: 0 auto;
     algin-self: center;
-    
   }
-
 
   display: flex;
   flex-direction: row;
@@ -63,13 +58,12 @@ const LoginContainer = styled.div`
     width: 90%;
     box-shadow: none;
     .cta-content {
-     ${'' /* display: none; */}
-    h1{
-    font-size: 3.5rem;
-    line-height: 2;
-    width: 90%;
-
-    }
+      ${"" /* display: none; */}
+      h1 {
+        font-size: 3.5rem;
+        line-height: 2;
+        width: 90%;
+      }
     }
   }
   .cta-content {
@@ -120,13 +114,12 @@ const LoginContainer = styled.div`
       }
     }
   }
-
-`
+`;
 
 class Login extends Component {
   state = {
-    email: '',
-    password: ''
+    email: "",
+    password: ""
   };
 
   handleChanges = e => {
@@ -141,26 +134,26 @@ class Login extends Component {
     //     this.props.history.push('/');
     // });
     //if user.type === dev
-    this.props.history.push('/dev/dashboard');
+    this.props.login({ ...this.state });
+    this.props.history.push("/dev/dashboard");
 
-    //if user.type === entrepreneur 
+    //if user.type === entrepreneur
     // this.props.history.push('/entrepreneur/dashboard');
-    localStorage.setItem("token", {...this.state})
+    // localStorage.setItem("token", {...this.state})
   };
 
   render() {
     return (
       <LoginContainer className="login-container">
         <div className="cta-content">
-          <h1>Meet DevFindr.<br/> Sign up for free.</h1>
-          
+          <h1>
+            Meet DevFindr.
+            <br /> Sign up for free.
+          </h1>
         </div>
         <div className="login-main">
-          <h1
-            className="login-title" >
-            {/* Sign up */}
-          </h1>
-          
+          <h1 className="login-title">{/* Sign up */}</h1>
+
           <form
             className="LogIn__Form"
             onSubmit={this.handleSubmit}
@@ -181,7 +174,7 @@ class Login extends Component {
               value={this.state.value}
             />
             <button type="submit">
-              {this.props.isLoggingIn ? <BeatLoader /> : 'Sign In'}
+              {this.props.isLoggingIn ? <BeatLoader /> : "Sign In"}
             </button>
             <div className="alternative-cta">
               <p>Don't have a localStorage.getItem('token') yet? </p>
@@ -193,6 +186,7 @@ class Login extends Component {
     );
   }
 }
+
 const mapStateToProps = state => {
   return {
     isLoggingIn: state.isLoggingIn,
@@ -201,5 +195,5 @@ const mapStateToProps = state => {
 };
 export default connect(
   mapStateToProps,
-  {  }
+  { login }
 )(Login);

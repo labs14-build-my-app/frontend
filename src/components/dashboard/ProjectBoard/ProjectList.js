@@ -4,8 +4,9 @@ import styled from "styled-components";
 import { findProjects, findAvailableProjects } from "../../../actions/";
 import { connect } from "react-redux";
 import NewProjects from "./FindProjects/NewProjects";
+
 const ProjectListContainer = styled.ul`
-  .find-new-proj-projectlist-container{
+  .find-new-proj-projectlist-container {
     display: flex;
     justify-content: space-between;
     padding: 5em 0em;
@@ -28,9 +29,11 @@ class ProjectList extends Component {
       this.props.findAvailableProjects();
     }
   }
+
   getRandomInt = () => {
     return Math.round(Math.random() * 2);
   };
+
   findProjects = e => {
     e.preventDefault();
     this.props.findProjects();
@@ -51,13 +54,14 @@ class ProjectList extends Component {
           projectList.map(project => {
             return <DevProject color={this.getRandomInt()} {...project} />;
           })}
-         {pathname === findNewProjects && <div className="find-new-proj-projectlist-container"> 
-        {
-          projectList.length &&
-          projectList.map(project => {
-            return <NewProjects {...project} />;
-          })}
-          </div> }
+        {pathname === findNewProjects && (
+          <div className="find-new-proj-projectlist-container">
+            {projectList.length &&
+              projectList.map(project => {
+                return <NewProjects {...project} />;
+              })}
+          </div>
+        )}
       </ProjectListContainer>
     );
   }
