@@ -507,6 +507,11 @@ body .button-secondary svg path {
     max-width: 37rem;
   }
 }
+@media (max-width: 1366px) {
+  .getting-started {
+    margin-top: -10px;
+  }
+}
 .getting-started .gs-header {
   font-family: "Source Sans Pro";
   text-align: center;
@@ -1092,7 +1097,7 @@ footer {
 footer .lists-of-links {
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-bottom: 16.7rem;
 }
 footer .lists-of-links ul li {
@@ -1107,8 +1112,26 @@ footer .lists-of-links ul li:first-child {
 footer .copyright {
   font-weight: bold;
   display: flex;
+  max-width: 1750px;
   justify-content: space-between;
   align-items: baseline;
   padding-bottom: 6.2rem;
   padding-left: 10rem;
+}
+@media (max-width: 375px) {
+  footer .copyright {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  footer .copyright {
+    flex-direction: column;
+  }
+}
+@media (max-width: 1366px) {
+  footer .copyright {
+    max-width: 1150px;
+  }
 }

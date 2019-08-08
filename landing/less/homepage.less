@@ -507,7 +507,9 @@ body {
   @media @phone {
     max-width: 37rem;
   }
-
+  @media @chromebook{
+    margin-top: -10px;
+  }
 
   .gs-header {
     font-family: @fontFamily;
@@ -1059,7 +1061,7 @@ footer {
     // width: 1394px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding-bottom: 16.7rem;
 
     ul {
@@ -1079,11 +1081,22 @@ footer {
   .copyright {
     font-weight: bold;
     display: flex;
-    // width: 308px;
+    max-width: 1750px;
     justify-content: space-between;
     align-items: baseline;
     padding-bottom: 6.2rem;
     padding-left: 10rem;
+    @media @phone{
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 1rem;
+    }
+    @media @tablet{
+      flex-direction: column;
+    }
+    @media @chromebook{
+      max-width: 1150px;
+    }
   }
 }
 
