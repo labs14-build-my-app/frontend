@@ -1,38 +1,40 @@
 import {
-  EXAMPLE_START,
-  EXAMPLE_SUCCESS,
-  EXAMPLE_FAILURE,
-  LOGIN_START,
-  LOGIN_SUCCESS,
-  LOGIN_FAILURE,
-  FIND_PROJECTS_START,
-  FIND_AVAILABLE_PROJECTS_START
-} from "../actions";
+    EXAMPLE_START,
+    EXAMPLE_SUCCESS,
+    EXAMPLE_FAILURE, 
+    LOGIN_START,
+    LOGIN_SUCCESS, 
+    LOGIN_FAILURE, 
+    FIND_PROJECTS_START,
+    FIND_AVAILABLE_PROJECTS_START
+    
+  } from '../actions';
+  
 
 const initialState = {
-  isLoggingIn: false,
-  token: localStorage.getItem("token") || "",
-  projectList: []
-};
-
-export const rootReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case EXAMPLE_START:
-      return {
-        ...state,
-        isEXAMPLEing: true
-      };
-    case EXAMPLE_SUCCESS:
-      return {
-        ...state,
-        isEXAMPLEing: false
-      };
-    case EXAMPLE_FAILURE:
-      return {
-        ...state,
-        isEXAMPLEing: false
-      };
-
+    isLoggingIn: false,
+    token: localStorage.getItem('token'),
+    projectList: []
+  };
+  
+  export const rootReducer = (state = initialState, action) => {
+    switch (action.type) {
+      case EXAMPLE_START:
+        return {
+          ...state,
+          isEXAMPLEing: true
+        };
+      case EXAMPLE_SUCCESS:
+        return {
+          ...state,
+          isEXAMPLEing: false
+        };
+      case EXAMPLE_FAILURE:
+        return {
+          ...state,
+          isEXAMPLEing: false
+        };
+      
     case LOGIN_START:
       return {
         ...state,
@@ -42,7 +44,7 @@ export const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoggingIn: false,
-        error: ""
+        error: ''
       };
     case LOGIN_FAILURE:
       return {
@@ -50,18 +52,18 @@ export const rootReducer = (state = initialState, action) => {
         isLoggingIn: false,
         error: `*${action.payload}`
       };
-
-    case FIND_PROJECTS_START:
-      return {
+  
+      case FIND_PROJECTS_START: 
+      return{
+          projectList: action.payload
+      };
+      case FIND_AVAILABLE_PROJECTS_START:
+      return{
         ...state,
         projectList: action.payload
-      };
-    case FIND_AVAILABLE_PROJECTS_START:
-      return {
-        ...state,
-        projectList: action.payload
-      };
-    default:
-      return state;
-  }
-};
+      }
+      default:
+        return state;
+    }
+  };
+  

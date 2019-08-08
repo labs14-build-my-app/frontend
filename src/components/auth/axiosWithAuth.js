@@ -7,6 +7,6 @@ export const axiosWithAuth = () => {
       'Content-Type': 'application/json',
       Authorization: token
     },
-    baseURL: 'backend . com to be determined'
+    baseURL: 'https://devfindr-mongo-db.herokuapp.com'
   });
 };

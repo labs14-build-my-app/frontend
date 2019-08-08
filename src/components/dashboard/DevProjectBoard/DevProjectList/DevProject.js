@@ -11,7 +11,6 @@ import {
   trout,
   projectParagraphFont
 } from "../../cssVariables";
-import { example } from "../../../../actions";
 import { connect } from "react-redux";
 import { NavLink, Link } from "react-router-dom";
 // import {flipOnHover} from "../animations/keyframes"
@@ -178,5 +177,5 @@ const mapStateToProps = state => {
 };
 export default connect(
   mapStateToProps,
-  { example }
+  {  }
 )(DevProject);

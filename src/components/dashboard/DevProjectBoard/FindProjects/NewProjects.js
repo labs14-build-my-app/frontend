@@ -63,6 +63,7 @@ border-radius: 6px;
 `;
 export default class NewProjects extends Component {
   render() {
+    console.log(this.props)
     return (
       <EntrepreneurProjects>
         <img

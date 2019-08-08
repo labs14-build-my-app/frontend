@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ProjectBoard from "./ProjectBoard/ProjectBoard";
+import ProjectBoard from "./DevProjectBoard/ProjectBoard";
 import QuarterlyStatement from "./QuarterlyStatement/QuarterlyStatement.js";
 import NotificationCenter from "./NotificationCenter/NotificationContainer";
 import styled from "styled-components";
@@ -32,11 +32,20 @@ class Dashboard extends Component {
   };
   render() {
     const { pathname } = this.props.history.location;
+    console.log(pathname==="/entrepreneur")
     return (
       <SideContent>
-        <ProjectBoard {...this.props} />
+      {/* DEVELOPER COMPONENTS */}
+      { pathname.startsWith("/dev") && <ProjectBoard {...this.props} />}
         {/* passing history object */}
         {pathname === "/dev/dashboard" && this.renderNotificationAndStatement()}
+
+        {/* END DEVELOPER COMPONENTS */}
+
+        {/* ENTREPRENUER COMPONENTS */}
+
+        {pathname.startsWith("/entrepreneur") && <h1> WELCOME ENTREPRENUER</h1>}
+        {/* END ENTREPRENUER COMPONENTS */}
       </SideContent>
     );
   }
