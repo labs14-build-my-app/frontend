@@ -9,5 +9,8 @@ export default (userinformation = [], action) => {
 			return{
 				currentuser: action.payload
 			}
+		
+		default:
+			return userinformation;
 	}
 }

@@ -15,5 +15,8 @@ export default (myprojectsinformation = [], action) => {
 			return{
 				projectList: action.payload
 			}
+
+		default:
+			return myprojectsinformation;
 	}
 }
