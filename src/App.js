@@ -1,50 +1,57 @@
 import React, { useEffect } from "react";
 import "./index.css";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import Login from "./components/dashboard/Login/Login";
 import dashboard from "./components/dashboard/index";
 import PrivateRoute from "./components/auth/PrivateRoute";
-import Navigation from "./components/dashboard/Navigation/Navigation";
 import Signup from "./components/dashboard/Login/Signup";
 import { connect } from "react-redux";
 import { getUserinfo } from "./actions";
+import { BeatLoader } from "react-spinners";
 
 const App = props => {
   const { currentUser, getUserinfo } = props;
-
-  useEffect(() => {
-    if (localStorage.getItem("token")) {
-      getUserinfo();
-      // function fetchUser() {
-      //   const response = props.getUserinfo();
-      //   return response;
-      // }
-
-      // fetchUser();
-    }
-  }, []);
-
   console.log(currentUser);
 
+  useEffect(() => {
+    if (!currentUser && localStorage.getItem("token")) {
+      getUserinfo();
+    }
+  }, [currentUser, getUserinfo]);
+
+  console.log(currentUser);
+  console.log(props);
+  console.log(localStorage.getItem("user"));
+  console.log("HELLLLLLLLLLLLLOOOOOOOOOOOOOOOOOO");
+  console.log("test");
   return (
     <div>
       {/* renders nav bar for devs */}
-      <Route path="/" component={Navigation} />
+
+      {currentUser === null ? (
+        <Redirect to="/login" />
+      ) : currentUser.isDeveloper ? (
+        <PrivateRoute path="/dev" component={dashboard} />
+      ) : currentUser.isDeveloper === false ? (
+        <PrivateRoute path="/entrepreneur" component={dashboard} />
+      ) : null}
 
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
-      {currentUser !== undefined && currentUser.isDeveloper ? (
+
+      {/* {currentUser !== undefined && currentUser.isDeveloper ? (
         <PrivateRoute path="/entrepreneur" component={dashboard} />
       ) : (
         <PrivateRoute path="/dev" component={dashboard} />
-      )}
+      )} */}
     </div>
   );
 };
 
 const mapStateToProps = state => {
+  console.log(state);
   return {
-    currentUser: state.currentUser
+    currentUser: state.getUserInfo.currentUser
   };
 };
 export default connect(

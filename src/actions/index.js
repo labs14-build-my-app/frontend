@@ -1,8 +1,5 @@
 import axios from "axios";
 import { axiosWithAuth } from "../components/auth/axiosWithAuth";
-export const EXAMPLE_START = "EXAMPLE_START";
-export const EXAMPLE_SUCCESS = "EXAMPLE_SUCCESS";
-export const EXAMPLE_FAILURE = "EXAMPLE_FAILURE";
 
 export const SIGNING_UP_START = "SIGNING_UP_START";
 export const SIGNING_UP_SUCCESS = "SIGNING_UP_SUCCESS";
@@ -85,7 +82,11 @@ export const getUserinfo = () => dispatch => {
   axiosWithAuth()
     .get(`${BEurl}/users/me`)
     .then(res => {
+      console.log(res.data);
+      localStorage.setItem("user", res.data.currentUser);
       dispatch({ type: GET_USERINFO.SUCCESS, payload: res.data });
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+      dispatch({ type: GET_USERINFO.UNAVAILABLE });
+    });
 };

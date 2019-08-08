@@ -4,7 +4,9 @@ import QuarterlyStatement from "./QuarterlyStatement/QuarterlyStatement.js";
 import NotificationCenter from "./NotificationCenter/NotificationContainer";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { withRouter, Route } from "react-router-dom";
+import Navigation from "./Navigation/Navigation";
+
 const SideContent = styled.div`
   display: flex;
   justify-content: evenly;
@@ -24,19 +26,22 @@ const SideContent = styled.div`
 class Dashboard extends Component {
   renderNotificationAndStatement = () => {
     return (
-      <div className="side-notif-and-statement-container">
-        <QuarterlyStatement />
-        <NotificationCenter />
-      </div>
+      <>
+        <Route path="/" component={Navigation} />
+        <div className="side-notif-and-statement-container">
+          <QuarterlyStatement />
+          <NotificationCenter />
+        </div>
+      </>
     );
   };
   render() {
     const { pathname } = this.props.history.location;
-    console.log(pathname==="/entrepreneur")
+    console.log(pathname === "/entrepreneur");
     return (
       <SideContent>
-      {/* DEVELOPER COMPONENTS */}
-      { pathname.startsWith("/dev") && <ProjectBoard {...this.props} />}
+        {/* DEVELOPER COMPONENTS */}
+        {pathname.startsWith("/dev") && <ProjectBoard {...this.props} />}
         {/* passing history object */}
         {pathname === "/dev/dashboard" && this.renderNotificationAndStatement()}
 

@@ -1,22 +1,18 @@
-import {
-	FIND_PROJECTS,
-	FIND_AVAILABLE_PROJECTS,
-	} from '../actions'
+import { FIND_PROJECTS, FIND_AVAILABLE_PROJECTS } from "../actions";
 
-export default (myprojectsinformation = [], action) => {
+export default (myprojectsinformation = {}, action) => {
+  switch (action.type) {
+    case FIND_PROJECTS.SUCCESS:
+      return {
+        projectList: action.payload
+      };
 
-	switch(action.type){
-		case FIND_PROJECTS.SUCCESS: 
-			return{
-				projectList: action.payload
-			};
-			
-		case FIND_AVAILABLE_PROJECTS.SUCCESS:
-			return{
-				projectList: action.payload
-			}
+    case FIND_AVAILABLE_PROJECTS.SUCCESS:
+      return {
+        projectList: action.payload
+      };
 
-		default:
-			return myprojectsinformation;
-	}
-}
+    default:
+      return myprojectsinformation;
+  }
+};

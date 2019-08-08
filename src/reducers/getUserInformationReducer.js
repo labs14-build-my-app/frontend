@@ -1,16 +1,19 @@
-import {
-	GET_USERINFO,
-	} from '../actions';
+import { GET_USERINFO } from "../actions";
+const initialState = {
+  currentUser: null
+};
+export default (userInformation = initialState, action) => {
+  switch (action.type) {
+    case GET_USERINFO.SUCCESS:
+      return {
+        currentUser: action.payload
+      };
+    // case GET_USERINFO.UNAVAILABLE:
+    //   return {
+    //     currentUser: null
+    //   };
 
-export default (userinformation = [], action) => {
-	switch(action.type){
-		
-		case GET_USERINFO.SUCCESS:
-			return{
-				currentuser: action.payload
-			}
-		
-		default:
-			return userinformation;
-	}
-}
+    default:
+      return userInformation;
+  }
+};
