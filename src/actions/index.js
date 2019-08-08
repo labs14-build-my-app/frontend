@@ -1,10 +1,9 @@
 import axios from "axios";
-import { axiosWithAuth } from '../components/auth/axiosWithAuth';
+import { axiosWithAuth } from "../components/auth/axiosWithAuth";
 import { fakeState, availableProjects } from "../components/fakeState.js";
 export const EXAMPLE_START = "EXAMPLE_START";
 export const EXAMPLE_SUCCESS = "EXAMPLE_SUCCESS";
 export const EXAMPLE_FAILURE = "EXAMPLE_FAILURE";
-
 
 export const SIGNING_UP_START = "SIGNING_UP_START";
 export const SIGNING_UP_SUCCESS = "SIGNING_UP_SUCCESS";
@@ -41,37 +40,57 @@ export const login = creds => dispatch => {
     });
 };
 
-export const FIND_PROJECTS_START = "FIND_PROJECTS_START";
-export const FIND_PROJECTS_SUCCESS = "FIND_PROJECTS_SUCCESS";
-export const FIND_PROJECTS_FAILURE = "FIND_PROJECTS_FAILURE";
+export const FIND_PROJECTS = {
+  START: "FIND_PROJECTS_START",
+SUCCESS : "FIND_PROJECTS_SUCCESS",
+FAILURE : "FIND_PROJECTS_FAILURE"
+}
 export const findProjects = () => dispatch => {
-   axiosWithAuth()
+  dispatch({type: FIND_PROJECTS.START})
+  axiosWithAuth()
     .get(`${BEurl}/projects`)
     .then(res => {
       console.log(res.data);
-      dispatch({ type: FIND_PROJECTS_START, payload: res.data });
+      dispatch({ type: FIND_PROJECTS.SUCCESS, payload: res.data });
     })
     .catch(err => console.log(err));
 };
 
-export const FIND_AVAILABLE_PROJECTS_START = "FIND_AVAILABLE_PROJECTS_START";
-export const FIND_AVAILABLE_PROJECTS_SUCCESS ="FIND_AVAILABLE_PROJECTS_SUCCESS";
-export const FIND_AVAILABLE_PROJECTS_FAILURE ="FIND_AVAILABLE_PROJECTS_FAILURE";
+export const FIND_AVAILABLE_PROJECTS = {
+  START: "FIND_AVAILABLE_PROJECTS_START",
+  SUCCESS: "FIND_AVAILABLE_PROJECTS_SUCCESS",
+  FAILURE: "FIND_AVAILABLE_PROJECTS_FAILURE"
+};
 export const findAvailableProjects = () => dispatch => {
-  dispatch({type: FIND_AVAILABLE_PROJECTS_START })
- axiosWithAuth()
+  dispatch({ type: FIND_AVAILABLE_PROJECTS.START });
+  axiosWithAuth()
     .get(`${BEurl}/projects/all`)
     .then(res => {
       console.log(res.data);
       dispatch({
-        type: FIND_AVAILABLE_PROJECTS_START,
+        type: FIND_AVAILABLE_PROJECTS.SUCCESS,
         payload: res.data
       });
     })
     .catch(err => console.log(err));
 };
 
-export const FETCH_PROJECTS_START = 'FETCH_PROJECTS_START';
-export const FETCH_PROJECT_SUCCESS = 'FETCH_PROJECT_SUCCESS';
-export const FETCH_MORE_PROJECTS = 'FETCH_MORE_PROJECTS';
-export const FETCH_PROJECT_FAILURE = 'FETCH_PROJECT_FAILURE';
+
+export const GET_USERINFO = {
+  START: "GET_USERINFO_START",
+  SUCCESS: "GET_USERINFO_SUCCESS",
+  UNAVAILABLE: "GET_USERINFO_UNAVAILABLE"
+}
+export const getUserinfo = () => (dispatch) =>{
+dispatch({type: GET_USERINFO.START})
+axiosWithAuth()
+.get(`${BEurl}/users/me`)
+.then(res=>{
+  console.log(res.data);
+  dispatch({type: GET_USERINFO.SUCCESS, payload: res.data})
+})
+.catch(err=>console.log(err))
+}
+
+
+
