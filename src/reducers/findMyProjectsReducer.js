@@ -3,7 +3,7 @@ import {
 	FIND_AVAILABLE_PROJECTS,
 	} from '../actions'
 
-export default (myprojectsinformation = {}, action) => {
+export default (myprojectsinformation = [], action) => {
 
 	switch(action.type){
 		case FIND_PROJECTS.SUCCESS: 

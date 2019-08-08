@@ -9,4 +9,4 @@ const rootReducer = combineReducers({
   userinformation: getUserInformationReducer, // stores the user information of currently authenticated user (currently state but should be local storage)
 });
 
-export default rootReducer
+export default rootReducer;

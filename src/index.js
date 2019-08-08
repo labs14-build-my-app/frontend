@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { applyMiddleware, createStore,compose } from 'redux';
-import { rootReducer } from './reducers';
+import rootReducer from './reducers';
 import {BrowserRouter as Router} from "react-router-dom";
 //TODO: DO CONDITIONAL MAGIC TO MAKE THIS ENABLE DURING PRODUCTION AND DEVELOPMENT
 

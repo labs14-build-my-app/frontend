@@ -4,25 +4,25 @@ import {
 	LOGIN_FAILURE,
 	} from '../actions';
 
-export default (logininformation = {}, action) => {
+export default (logininformation = [], action) => {
 	switch(action.type){
 
 		case LOGIN_START:
 			return {
-			  ...state,
+			  ...logininformation,
 			  isLoggingIn: true
 			};
 
 		  case LOGIN_SUCCESS:
 			return {
-			  ...state,
+			  ...logininformation,
 			  isLoggingIn: false,
 			  error: ''
 			};
 
 		  case LOGIN_FAILURE:
 			return {
-			  ...state,
+			  ...logininformation,
 			  isLoggingIn: false,
 			  error: `*${action.payload}`
 			};
