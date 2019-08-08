@@ -1,6 +1,5 @@
 import axios from "axios";
 import { axiosWithAuth } from "../components/auth/axiosWithAuth";
-import { fakeState, availableProjects } from "../components/fakeState.js";
 export const EXAMPLE_START = "EXAMPLE_START";
 export const EXAMPLE_SUCCESS = "EXAMPLE_SUCCESS";
 export const EXAMPLE_FAILURE = "EXAMPLE_FAILURE";
@@ -10,6 +9,7 @@ export const SIGNING_UP_SUCCESS = "SIGNING_UP_SUCCESS";
 export const SIGNING_UP_FAILURE = "SIGNING_UP_FAILURE";
 
 const BEurl = "https://devfindr-mongo-db.herokuapp.com";
+
 export const signup = creds => dispatch => {
   dispatch({ type: SIGNING_UP_START });
   return axios
@@ -42,11 +42,11 @@ export const login = creds => dispatch => {
 
 export const FIND_PROJECTS = {
   START: "FIND_PROJECTS_START",
-SUCCESS : "FIND_PROJECTS_SUCCESS",
-FAILURE : "FIND_PROJECTS_FAILURE"
-}
+  SUCCESS: "FIND_PROJECTS_SUCCESS",
+  FAILURE: "FIND_PROJECTS_FAILURE"
+};
 export const findProjects = () => dispatch => {
-  dispatch({type: FIND_PROJECTS.START})
+  dispatch({ type: FIND_PROJECTS.START });
   axiosWithAuth()
     .get(`${BEurl}/projects`)
     .then(res => {
@@ -75,22 +75,17 @@ export const findAvailableProjects = () => dispatch => {
     .catch(err => console.log(err));
 };
 
-
 export const GET_USERINFO = {
   START: "GET_USERINFO_START",
   SUCCESS: "GET_USERINFO_SUCCESS",
   UNAVAILABLE: "GET_USERINFO_UNAVAILABLE"
-}
-export const getUserinfo = () => (dispatch) =>{
-dispatch({type: GET_USERINFO.START})
-axiosWithAuth()
-.get(`${BEurl}/users/me`)
-.then(res=>{
-  console.log(res.data);
-  dispatch({type: GET_USERINFO.SUCCESS, payload: res.data})
-})
-.catch(err=>console.log(err))
-}
-
-
-
+};
+export const getUserinfo = () => dispatch => {
+  dispatch({ type: GET_USERINFO.START });
+  axiosWithAuth()
+    .get(`${BEurl}/users/me`)
+    .then(res => {
+      dispatch({ type: GET_USERINFO.SUCCESS, payload: res.data });
+    })
+    .catch(err => console.log(err));
+};

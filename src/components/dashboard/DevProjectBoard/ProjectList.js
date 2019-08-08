@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import DevProject from "./DevProjectList/DevProject";
 import styled from "styled-components";
 import { findProjects, findAvailableProjects } from "../../../actions/";
@@ -28,18 +28,16 @@ const ProjectList = props => {
   ];
   console.log(pathname);
   //render  .find-new-proj-container when on find projects page
-  useEffect(  () => {
-    if(pathname === searchProjectPage){
-    props.findAvailableProjects()
-    } 
-    else if(pathname === dashboard){
-      props.findProjects()
-    } else{
-      return null
+  useEffect(() => {
+    if (pathname === searchProjectPage) {
+      props.findAvailableProjects();
+    } else if (pathname === dashboard) {
+      props.findProjects();
+    } else {
+      return null;
     }
-  }
-, [])
-const validProjectList =  (projectList.length  || projectList.length > 0);
+  }, []);
+  const validProjectList = projectList.length || projectList.length > 0;
   return (
     <ProjectListContainer>
       {pathname === dashboard &&
@@ -60,9 +58,8 @@ const validProjectList =  (projectList.length  || projectList.length > 0);
 };
 
 const mapStateToProps = (state, props) => {
-
   const { pathname } = props.history.location;
-  console.log(state)
+  console.log(state);
   // need a pathname mapped to state
   if (state.projectList === undefined) {
     return {
