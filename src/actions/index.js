@@ -47,7 +47,7 @@ export const findProjects = () => dispatch => {
   axiosWithAuth()
     .get(`${BEurl}/projects`)
     .then(res => {
-      console.log(res.data);
+      console.log(res.data, "WE NEED PROJECTS TO BE ADDED BY ENTREPRENUERS");
       dispatch({ type: FIND_PROJECTS.SUCCESS, payload: res.data });
     })
     .catch(err => console.log(err));
