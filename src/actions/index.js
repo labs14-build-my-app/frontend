@@ -1,6 +1,5 @@
 import axios from "axios";
 import { axiosWithAuth } from "../components/auth/axiosWithAuth";
-import { fakeState, availableProjects } from "../components/fakeState.js";
 export const EXAMPLE_START = "EXAMPLE_START";
 export const EXAMPLE_SUCCESS = "EXAMPLE_SUCCESS";
 export const EXAMPLE_FAILURE = "EXAMPLE_FAILURE";
@@ -50,7 +49,7 @@ export const findProjects = () => dispatch => {
   axiosWithAuth()
     .get(`${BEurl}/projects`)
     .then(res => {
-      console.log(res.data);
+      console.log(res.data, "WE NEED PROJECTS TO BE ADDED BY ENTREPRENUERS");
       dispatch({ type: FIND_PROJECTS.SUCCESS, payload: res.data });
     })
     .catch(err => console.log(err));
