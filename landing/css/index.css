@@ -490,7 +490,7 @@ body .button-secondary svg path {
 }
 @media (max-width: 768px) {
   .grey-blob .grey-blobber {
-    max-width: 76rem;
+    max-width: 76.8rem;
   }
 }
 @media (max-width: 375px) {
