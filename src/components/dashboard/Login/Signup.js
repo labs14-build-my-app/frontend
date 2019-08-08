@@ -8,7 +8,7 @@ const SignupContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  div{
+  div {
     display: flex;
     flex-direction: column;
   }
@@ -19,10 +19,10 @@ const SignupContainer = styled.div`
     background: black;
     color: white;
     width: 200px;
-    height: 100px; 
+    height: 100px;
     font-size: 2rem;
   }
-  a{
+  a {
     font-size: 1.3rem;
   }
 `;
@@ -49,7 +49,7 @@ class Signup extends Component {
     e.preventDefault();
     console.log(this.state);
     this.props.signup({ ...this.state }).then(() => {
-      this.props.history.push("/");
+      this.props.history.push("/dev/dashboard");
     });
   };
 

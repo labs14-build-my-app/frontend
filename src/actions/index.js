@@ -83,7 +83,7 @@ export const getUserinfo = () => dispatch => {
     .get(`${BEurl}/users/me`)
     .then(res => {
       console.log(res.data);
-      localStorage.setItem("user", res.data.currentUser);
+      localStorage.setItem("user", JSON.stringify(res.data));
       dispatch({ type: GET_USERINFO.SUCCESS, payload: res.data });
     })
     .catch(err => {

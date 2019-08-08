@@ -7,33 +7,31 @@ import PrivateRoute from "./components/auth/PrivateRoute";
 import Signup from "./components/dashboard/Login/Signup";
 import { connect } from "react-redux";
 import { getUserinfo } from "./actions";
-import { BeatLoader } from "react-spinners";
 
 const App = props => {
   const { currentUser, getUserinfo } = props;
-  console.log(currentUser);
 
   useEffect(() => {
-    if (!currentUser && localStorage.getItem("token")) {
+    if (!currentUser) {
       getUserinfo();
+      props.history.push("/dev/dashboard");
     }
   }, [currentUser, getUserinfo]);
-
-  console.log(currentUser);
   console.log(props);
-  console.log(localStorage.getItem("user"));
-  console.log("HELLLLLLLLLLLLLOOOOOOOOOOOOOOOOOO");
-  console.log("test");
+  const localUser = JSON.parse(localStorage.getItem("user"));
+  console.log(localUser);
   return (
     <div>
-      {/* renders nav bar for devs */}
-
-      {currentUser === null ? (
+      {localUser === null ? (
         <Redirect to="/login" />
-      ) : currentUser.isDeveloper ? (
-        <PrivateRoute path="/dev" component={dashboard} />
-      ) : currentUser.isDeveloper === false ? (
-        <PrivateRoute path="/entrepreneur" component={dashboard} />
+      ) : localUser.isDeveloper ? (
+        <PrivateRoute exact path="/dev/dashboard" component={dashboard} />
+      ) : localUser.isDeveloper === false ? (
+        <PrivateRoute
+          exact
+          path="/entrepreneur/dashboard"
+          component={dashboard}
+        />
       ) : null}
 
       <Route path="/login" component={Login} />
