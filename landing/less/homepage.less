@@ -476,6 +476,15 @@ body {
     top: 0;
     z-index: -1;
     width: 1920px;
+    @media @chromebook{
+      max-width: 133.5rem;
+    }
+    @media @tablet{
+      max-width: 76rem;
+    }
+    @media @phone{
+      max-width: 37.5rem;
+    }
   }
 }
 
@@ -483,20 +492,22 @@ body {
 
 // Section 2 - Start (Benjamin) // Optimized for 1920x1080,
 
+// @-moz-document url-prefix() { <-- For mozilla use
+//   .getting-started{ 
+//     border: 1px solid red;
+//   }
+// }
+
 .getting-started {
   width: 100%;
   margin: 0 auto;
-  // border: 1px solid red;
+// border: 1px solid red;
+  
 
   @media @phone {
     max-width: 37rem;
   }
-  @media @tablet{
 
-  }
-  @media @chromebook{
-
-  }
 
   .gs-header {
     font-family: @fontFamily;
@@ -526,12 +537,6 @@ body {
         margin-left: 6rem;
         width: 20rem;
       }
-      @media @tablet{
-
-      }
-      @media @chromebook{
-        
-      }
     }
   }
 
@@ -553,16 +558,6 @@ body {
       img {
         margin-top: 4em;
       }
-    }
-    
-    @media @phone{
-
-    }
-    @media @tablet{
-
-    }
-    @media @chromebook{
-      
     }
 
     h2 {
