@@ -36,7 +36,7 @@ const ProjectList = props => {
     } else {
       return null;
     }
-  }, []);
+  }, [ searchProjectPage,dashboard, pathname, props]);
   const validProjectList = projectList.length || projectList.length > 0;
   return (
     <ProjectListContainer>

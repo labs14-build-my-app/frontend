@@ -8,16 +8,18 @@ import Signup from "./components/dashboard/Login/Signup";
 import { connect } from "react-redux";
 import { getUserinfo } from "./actions";
 
-const App = props => {
-  const { currentUser, getUserinfo } = props;
-
+const App = ({ currentUser, getUserinfo, history }) => {
+ 
+  console.log(currentUser)
+  
   useEffect(() => {
-    if (!currentUser) {
+    console.log(localStorage.getItem("token"))
+    if(localStorage.getItem("token") === null ){
       getUserinfo();
-      props.history.push("/dev/dashboard");
-    }
-  }, [currentUser, getUserinfo]);
-  console.log(props);
+    }   
+      history.push("/dev/dashboard");
+  }, [getUserinfo,history]);
+
   const localUser = JSON.parse(localStorage.getItem("user"));
   console.log(localUser);
   return (

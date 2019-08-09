@@ -9,7 +9,7 @@ import logger from "redux-logger";
 import { applyMiddleware, createStore, compose } from "redux";
 import rootReducer from "./reducers";
 import { BrowserRouter as Router } from "react-router-dom";
-import createHistory from "history/createBrowserHistory";
+const createHistory = require("history").createBrowserHistory
 //TODO: DO CONDITIONAL MAGIC TO MAKE THIS ENABLE DURING PRODUCTION AND DEVELOPMENT
 
 //REMOVE DURING PRODUCTION

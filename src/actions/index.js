@@ -30,6 +30,7 @@ export const login = creds => dispatch => {
     .post(`${BEurl}/users/login`, creds)
     .then(res => {
       localStorage.setItem("token", res.data.token);
+      
       dispatch({ type: LOGIN_SUCCESS, payload: res.data.token });
     })
     .catch(err => {
