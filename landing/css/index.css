@@ -721,6 +721,8 @@ body .button-secondary svg path {
     height: 6.7rem;
     top: 2.3rem;
     right: 0rem;
+    left: 7rem;
+    display: none;
   }
 }
 @media (max-width: 1366px) {
