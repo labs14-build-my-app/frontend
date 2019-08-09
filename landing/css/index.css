@@ -703,6 +703,11 @@ body .button-secondary svg path {
     right: 3rem;
   }
 }
+@media (max-width: 1366px) {
+  .reviews .user-reviews .user-reviews-h {
+    right: 10rem;
+  }
+}
 .reviews .user-reviews .user-reviews-p {
   max-width: 35.6rem;
   height: 5.3rem;
@@ -716,6 +721,11 @@ body .button-secondary svg path {
     height: 6.7rem;
     top: 2.3rem;
     right: 0rem;
+  }
+}
+@media (max-width: 1366px) {
+  .reviews .user-reviews .user-reviews-p {
+    right: 8rem;
   }
 }
 .reviews .dev-review {
