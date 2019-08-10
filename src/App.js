@@ -6,7 +6,7 @@ import PrivateRoute from "./components/auth/PrivateRoute";
 import Signup from "./components/dashboard/Login/Signup";
 import { connect } from "react-redux";
 import Navigation from "./components/dashboard/Navigation/Navigation";
-
+import DevFindr from "./components/dashboard/DevFindr/DevFindr"
 // import { getUserinfo } from "./actions";
 
 const App = ({ history }) => {
@@ -16,7 +16,7 @@ const App = ({ history }) => {
   return (
     <div>
      <Route path="/" component={Navigation} />
-     <PrivateRoute path="/" component={} developer={currentUser && currentUser.isDeveloper} />
+     <PrivateRoute path="/" component={DevFindr} developer={currentUser && currentUser.isDeveloper} />
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
 
