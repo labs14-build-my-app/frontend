@@ -110,7 +110,7 @@ const LoginContainer = styled.div`
         text-transform: uppercase;
         font-weight: bold;
         color: white;
-        background: black;
+        background: red;
       }
     }
   }
@@ -136,13 +136,15 @@ class Login extends Component {
     //if user.type === dev
     this.props.login({ ...this.state });
     this.props.history.push("/dev/dashboard");
-
     //if user.type === entrepreneur
     // this.props.history.push('/entrepreneur/dashboard');
     // localStorage.setItem("token", {...this.state})
   };
 
   render() {
+    if(localStorage.getItem("user")){
+      this.props.history.push("/dev/dashboard")
+    }
     return (
       <LoginContainer className="login-container">
         <div className="cta-content">
@@ -174,6 +176,7 @@ class Login extends Component {
               value={this.state.value}
             />
             <button type="submit">
+            {console.log(this.props)}
               {this.props.isLoggingIn ? <BeatLoader /> : "Sign In"}
             </button>
             <div className="alternative-cta">
@@ -188,9 +191,9 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state)
   return {
-    isLoggingIn: state.isLoggingIn,
-    error: state.error
+    isLoggingIn: state.loginInfo.isLoggingIn,
   };
 };
 export default connect(

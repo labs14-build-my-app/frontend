@@ -27,7 +27,7 @@ class Dashboard extends Component {
   renderNotificationAndStatement = () => {
     return (
       <>
-        <Route path="/" component={Navigation} />
+     
         <div className="side-notif-and-statement-container">
           <QuarterlyStatement />
           <NotificationCenter />

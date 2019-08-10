@@ -29,6 +29,7 @@ export const login = creds => dispatch => {
   return axios
     .post(`${BEurl}/users/login`, creds)
     .then(res => {
+      console.log(res.data)
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
       dispatch({ type: LOGIN_SUCCESS, payload: res.data.token });
