@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import ProjectBoard from "./DevProjectBoard/ProjectBoard";
-import QuarterlyStatement from "./QuarterlyStatement/QuarterlyStatement.js";
-import NotificationCenter from "./NotificationCenter/NotificationContainer";
+import ProjectBoard from "./ProjectBoard";
+import QuarterlyStatement from "../QuarterlyStatement/QuarterlyStatement.js";
+import NotificationCenter from "../NotificationCenter/NotificationContainer";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { withRouter, Route } from "react-router-dom";
-import Navigation from "./Navigation/Navigation";
+import { Route } from "react-router-dom";
 
 const SideContent = styled.div`
   display: flex;
@@ -23,11 +22,10 @@ const SideContent = styled.div`
   }
 `;
 
-class Dashboard extends Component {
+class DeveloperDashboard extends Component {
   renderNotificationAndStatement = () => {
     return (
-      <>
-     
+      <> 
         <div className="side-notif-and-statement-container">
           <QuarterlyStatement />
           <NotificationCenter />
@@ -36,21 +34,13 @@ class Dashboard extends Component {
     );
   };
   render() {
-    const { pathname } = this.props.history.location;
-    console.log(pathname === "/entrepreneur");
+    const { pathname } = this.props.history.location
     return (
       <SideContent>
-        {/* DEVELOPER COMPONENTS */}
+
         {pathname.startsWith("/dev") && <ProjectBoard {...this.props} />}
-        {/* passing history object */}
         {pathname === "/dev/dashboard" && this.renderNotificationAndStatement()}
 
-        {/* END DEVELOPER COMPONENTS */}
-
-        {/* ENTREPRENUER COMPONENTS */}
-
-        {pathname.startsWith("/entrepreneur") && <h1> WELCOME ENTREPRENUER</h1>}
-        {/* END ENTREPRENUER COMPONENTS */}
       </SideContent>
     );
   }
@@ -63,4 +53,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   {}
-)(withRouter(Dashboard));
+)(DeveloperDashboard);
