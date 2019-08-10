@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import DevProject from "./DevProjectList/DevProject";
 import styled from "styled-components";
-import { findProjects, findAvailableProjects } from "../../../actions/";
 import { connect } from "react-redux";
 import NewProjects from "./FindProjects/NewProjects";
 
@@ -30,9 +29,9 @@ const ProjectList = props => {
   //render  .find-new-proj-container when on find projects page
   useEffect(() => {
     if (pathname === searchProjectPage) {
-      props.findAvailableProjects();
+      console.log(`test`);
     } else if (pathname === dashboard) {
-      props.findProjects();
+      console.log(`test`);
     } else {
       return null;
     }
@@ -58,23 +57,23 @@ const ProjectList = props => {
 };
 
 const mapStateToProps = (state, props) => {
-  const { pathname } = props.history.location;
-  console.log(state);
-  // need a pathname mapped to state
-  if (state.projectList === undefined) {
-    return {
-      projectList: []
-    };
-  } else if (
-    state.projectList.length > 2 &&
-    pathname === "/dev/find/projects"
-  ) {
-    return { projectList: state.projectList.splice(0, 2) };
-  } else {
-    return { projectList: state.projectList };
-  }
+  // const { pathname } = props.history.location;
+  // console.log(state);
+  // // need a pathname mapped to state
+  // if (state.projectList === undefined) {
+  //   return {
+  //     projectList: []
+  //   };
+  // } else if (
+  //   state.projectList.length > 2 &&
+  //   pathname === "/dev/find/projects"
+  // ) {
+  //   return { projectList: state.projectList.splice(0, 2) };
+  // } else {
+  //   return { projectList: state.projectList };
+  // }
 };
 export default connect(
   mapStateToProps,
-  { findProjects, findAvailableProjects }
+  {}
 )(ProjectList);

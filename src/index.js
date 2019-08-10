@@ -7,9 +7,9 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
 import { applyMiddleware, createStore, compose } from "redux";
-import rootReducer from "./reducers";
+import rootReducer from "./redux/reducers";
 import { BrowserRouter as Router } from "react-router-dom";
-const createHistory = require("history").createBrowserHistory
+const createHistory = require("history").createBrowserHistory;
 //TODO: DO CONDITIONAL MAGIC TO MAKE THIS ENABLE DURING PRODUCTION AND DEVELOPMENT
 
 //REMOVE DURING PRODUCTION

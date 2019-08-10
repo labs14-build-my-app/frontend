@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
-import { login } from "../../../actions";
+import { login } from "../../../redux/actions";
 import { BeatLoader } from "react-spinners";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -142,8 +142,8 @@ class Login extends Component {
   };
 
   render() {
-    if(localStorage.getItem("user")){
-      this.props.history.push("/dev/dashboard")
+    if (localStorage.getItem("user")) {
+      this.props.history.push("/dev/dashboard");
     }
     return (
       <LoginContainer className="login-container">
@@ -176,7 +176,7 @@ class Login extends Component {
               value={this.state.value}
             />
             <button type="submit">
-            {console.log(this.props)}
+              {console.log(this.props)}
               {this.props.isLoggingIn ? <BeatLoader /> : "Sign In"}
             </button>
             <div className="alternative-cta">
@@ -191,10 +191,8 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state)
-  return {
-    isLoggingIn: state.loginInfo.isLoggingIn,
-  };
+  console.log(state);
+  return {};
 };
 export default connect(
   mapStateToProps,

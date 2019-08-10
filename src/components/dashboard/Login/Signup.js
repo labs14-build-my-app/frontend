@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { signup } from "../../../actions";
 import Switch from "react-switch";
 const SignupContainer = styled.div`
   display: flex;
@@ -48,9 +47,6 @@ class Signup extends Component {
   handleSubmit = e => {
     e.preventDefault();
     console.log(this.state);
-    this.props.signup({ ...this.state }).then(() => {
-      this.props.history.push("/dev/dashboard");
-    });
   };
 
   render() {
@@ -103,12 +99,9 @@ class Signup extends Component {
   }
 }
 const mapStateToProps = state => {
-  return {
-    isSignuping: state.isSignuping,
-    error: state.error
-  };
+  return {};
 };
 export default connect(
   mapStateToProps,
-  { signup }
+  {}
 )(Signup);
