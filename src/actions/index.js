@@ -30,7 +30,7 @@ export const login = creds => dispatch => {
     .post(`${BEurl}/users/login`, creds)
     .then(res => {
       localStorage.setItem("token", res.data.token);
-      
+      localStorage.setItem("user", JSON.stringify(res.data.user));
       dispatch({ type: LOGIN_SUCCESS, payload: res.data.token });
     })
     .catch(err => {
@@ -64,7 +64,6 @@ export const findAvailableProjects = () => dispatch => {
   axiosWithAuth()
     .get(`${BEurl}/projects/all`)
     .then(res => {
-      console.log(res.data);
       dispatch({
         type: FIND_AVAILABLE_PROJECTS.SUCCESS,
         payload: res.data
@@ -83,11 +82,10 @@ export const getUserinfo = () => dispatch => {
   axiosWithAuth()
     .get(`${BEurl}/users/me`)
     .then(res => {
-      console.log(res.data);
       localStorage.setItem("user", JSON.stringify(res.data));
       dispatch({ type: GET_USERINFO.SUCCESS, payload: res.data });
     })
     .catch(err => {
-      dispatch({ type: GET_USERINFO.UNAVAILABLE });
+      dispatch({ type: GET_USERINFO.UNAVAILABLE, payload: err });
     });
 };

@@ -9,19 +9,16 @@ import { connect } from "react-redux";
 import { getUserinfo } from "./actions";
 
 const App = ({ currentUser, getUserinfo, history }) => {
- 
-  console.log(currentUser)
-  
   useEffect(() => {
-    console.log(localStorage.getItem("token"))
-    if(localStorage.getItem("token") === null ){
+    if (localStorage.getItem("token") === null) {
       getUserinfo();
-    }   
+    } else {
       history.push("/dev/dashboard");
-  }, [getUserinfo,history]);
+    }
+  }, [getUserinfo, history]);
 
   const localUser = JSON.parse(localStorage.getItem("user"));
-  console.log(localUser);
+
   return (
     <div>
       {localUser === null ? (
@@ -49,7 +46,6 @@ const App = ({ currentUser, getUserinfo, history }) => {
 };
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     currentUser: state.getUserInfo.currentUser
   };
