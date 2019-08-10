@@ -8,16 +8,11 @@ import { connect } from "react-redux";
 import Navigation from "./components/dashboard/Navigation/Navigation";
 import DevFindr from "./components/dashboard/DevFindr/DevFindr";
 
-const App = ({ history, currentUser }) => {
-  console.log(currentUser);
+const App = props => {
   return (
     <div>
       <Route path="/" component={Navigation} />
-      <PrivateRoute
-        path="/"
-        component={DevFindr}
-        developer={currentUser && currentUser.isDeveloper}
-      />
+      <PrivateRoute path="/" component={DevFindr} />
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
     </div>

@@ -136,9 +136,6 @@ class Login extends Component {
     //if user.type === dev
     this.props.login({ ...this.state });
     this.props.history.push("/dev/dashboard");
-    //if user.type === entrepreneur
-    // this.props.history.push('/entrepreneur/dashboard');
-    // localStorage.setItem("token", {...this.state})
   };
 
   render() {
@@ -176,7 +173,6 @@ class Login extends Component {
               value={this.state.value}
             />
             <button type="submit">
-              {console.log(this.props)}
               {this.props.isLoggingIn ? <BeatLoader /> : "Sign In"}
             </button>
             <div className="alternative-cta">
@@ -192,7 +188,10 @@ class Login extends Component {
 
 const mapStateToProps = state => {
   console.log(state);
-  return {};
+  return {
+    user: state.user,
+    loggingIn: state.loggingIn
+  };
 };
 export default connect(
   mapStateToProps,

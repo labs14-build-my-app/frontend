@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Switch from "react-switch";
+import { signup } from "../../../redux/actions";
 const SignupContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -47,6 +48,7 @@ class Signup extends Component {
   handleSubmit = e => {
     e.preventDefault();
     console.log(this.state);
+    this.props.signup({ ...this.state });
   };
 
   render() {
@@ -99,9 +101,12 @@ class Signup extends Component {
   }
 }
 const mapStateToProps = state => {
-  return {};
+  return {
+    isSigningup: state.isSigningup,
+    user: state.user
+  };
 };
 export default connect(
   mapStateToProps,
-  {}
+  { signup }
 )(Signup);
