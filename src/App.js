@@ -9,18 +9,16 @@ import Navigation from "./components/dashboard/Navigation/Navigation";
 import DevFindr from "./components/dashboard/DevFindr/DevFindr"
 // import { getUserinfo } from "./actions";
 
-const App = ({ history }) => {
+const App = ({ history, currentUser }) => {
 
-  const [currentUser, setUser] = React.useState( JSON.parse(localStorage.getItem("user")))
+
   console.log(currentUser)
   return (
     <div>
      <Route path="/" component={Navigation} />
-     <PrivateRoute path="/" component={DevFindr} developer={currentUser && currentUser.isDeveloper} />
+      <PrivateRoute path="/" component={DevFindr} developer={currentUser && currentUser.isDeveloper} />
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
-
-
     </div>
   );
 };
