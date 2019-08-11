@@ -5,14 +5,16 @@ import {
   LOGIN_SUCCESS,
   SIGNUP_START,
   SIGNUP_SUCCESS,
-  SIGNUP_FAILURE
+  SIGNUP_FAILURE,
+  LOAD_APP
 } from "../actions";
 
 const initialState = {
-  user: {},
+  user: null,
   isDeveloper: null,
   loggingIn: false,
-  isSigningup: false
+  isSigningup: false,
+  loadingApp: false
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -47,13 +49,25 @@ const rootReducer = (state = initialState, action) => {
         isSigningup: false,
         user: action.payload.user
       };
-
     case SIGNUP_FAILURE:
       return {
         ...state,
         isSigningup: false
       };
-
+    case LOAD_APP.START:  
+      return {
+        loadingApp: true
+      };
+    case LOAD_APP.SUCCESS: 
+      return {
+        user: action.payload
+      };
+    
+    case LOAD_APP.FAILURE: 
+      return {
+        error: "please log in again"
+      };
+    
     default:
       return state;
   }

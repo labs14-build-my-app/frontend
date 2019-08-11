@@ -134,14 +134,15 @@ class Login extends Component {
     //     this.props.history.push('/');
     // });
     //if user.type === dev
-    this.props.login({ ...this.state });
-    this.props.history.push("/dev/dashboard");
+    this.props.login({ ...this.state }).then((res)=>{
+      console.log(res)
+      this.props.history.push("/");
+    });
+   
   };
 
   render() {
-    if (localStorage.getItem("user")) {
-      this.props.history.push("/dev/dashboard");
-    }
+   
     return (
       <LoginContainer className="login-container">
         <div className="cta-content">

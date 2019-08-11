@@ -19,34 +19,23 @@ const ProjectList = props => {
     return Math.round(Math.random() * 2);
   };
 
-  const [dashboard, searchProjectPage, { pathname }, { projectList }] = [
+  const [dashboard, searchProjectPage, { pathname }] = [
     "/dev/dashboard",
     "/dev/find/projects",
     props.history.location,
     props
   ];
-  console.log(pathname);
-  //render  .find-new-proj-container when on find projects page
-  useEffect(() => {
-    if (pathname === searchProjectPage) {
-      console.log(`test`);
-    } else if (pathname === dashboard) {
-      console.log(`test`);
-    } else {
-      return null;
-    }
-  }, []);
-  const validProjectList = projectList.length || projectList.length > 0;
+const projectList = [];
+  // const validProjectList = projectList.length || projectList.length > 0;
   return (
     <ProjectListContainer>
       {pathname === dashboard &&
-        validProjectList &&
         projectList.map(project => {
           return <DevProject color={getRandomInt()} {...project} />;
         })}
       {pathname === searchProjectPage && (
         <div className="find-new-proj-projectlist-container">
-          {validProjectList &&
+          {
             projectList.map(project => {
               return <NewProjects {...project} />;
             })}
@@ -73,7 +62,8 @@ const mapStateToProps = (state, props) => {
   //   return { projectList: state.projectList };
   // }
 };
-export default connect(
-  mapStateToProps,
-  {}
-)(ProjectList);
+// export default connect(
+//   mapStateToProps,
+//   {}
+// )(ProjectList);
+export default ProjectList;

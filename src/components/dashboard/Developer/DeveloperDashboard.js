@@ -4,7 +4,7 @@ import QuarterlyStatement from "../QuarterlyStatement/QuarterlyStatement.js";
 import NotificationCenter from "../NotificationCenter/NotificationContainer";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 
 const SideContent = styled.div`
   display: flex;
@@ -34,12 +34,19 @@ class DeveloperDashboard extends Component {
     );
   };
   render() {
-    const { pathname } = this.props.history.location
+    console.log(this.props)
+    // const { pathname } = this.props.history.location
+
+ 
     return (
       <SideContent>
-
-        {pathname.startsWith("/dev") && <ProjectBoard {...this.props} />}
-        {pathname === "/dev/dashboard" && this.renderNotificationAndStatement()}
+      <Redirect to="/dev/dashboard" />
+      <Route path="/dev/dashboard" render={() => {
+       return( <>
+         <ProjectBoard {...this.props} />
+         {() => this.renderNotificationAndStatement()}
+        </>)
+      }} />
 
       </SideContent>
     );

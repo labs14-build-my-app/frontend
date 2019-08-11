@@ -1,9 +1,16 @@
 import React from 'react'
-
-export const  EntrepreneurBoard = () => {
+import {Route, Redirect} from "react-router-dom";
+import EntrepreneurHome from './EntrepreneurHome';
+const EntrepreneurBoard = () => {
         return (
-            <div>
-                <h1>Find your perfect Developers here</h1>
-            </div>
+            <>
+            <Redirect to="/entrepreneur/dashboard" />
+            <Route path="/entrepreneur/dashboard" render= {(props)=>{
+              return  <EntrepreneurHome {...props} />
+            }}/>
+               
+            </>
         )
 }
+
+export default EntrepreneurBoard;
