@@ -474,6 +474,11 @@ body .button-secondary svg path {
     padding-top: 10rem;
   }
 }
+@-moz-document url-prefix() {
+  .cta-getstarted-section img {
+    width: 90000px;
+  }
+}
 .grey-blob {
   position: relative;
 }

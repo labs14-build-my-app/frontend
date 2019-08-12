@@ -188,7 +188,6 @@ body {
     top: 0;
     right: 0;
     max-width: 50%;
-
     // @media (max-width: 1250px) {
     //   width: 65%;
     // }
@@ -290,7 +289,6 @@ body {
     img {
       max-width: 50%;
       z-index: 420;
-
     }
 
     section {
@@ -462,6 +460,14 @@ body {
   }
 }
 
+@-moz-document url-prefix() { 
+  .cta-getstarted-section{ 
+  img{
+    width: 90000px;
+    }
+  }
+}
+
 .grey-blob {
   // background-image: url("../assets/svgs/Blob\ Getting\ Started.svg");
   // background-size: contain;
@@ -492,11 +498,7 @@ body {
 
 // Section 2 - Start (Benjamin) // Optimized for 1920x1080, 1366x768, 768x1024, 375x667
 
-// @-moz-document url-prefix() { <-- For mozilla use
-//   .getting-started{ 
-//     border: 1px solid red;
-//   }
-// }
+
 
 .getting-started {
   width: 100%;
