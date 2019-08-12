@@ -589,6 +589,12 @@ body .button-secondary svg path {
     margin-top: 8.6rem;
   }
 }
+@media (max-width: 768px) {
+  .safety-first {
+    margin-top: 12rem;
+    max-width: 76rem;
+  }
+}
 .safety-first .text-section {
   max-width: 72.2rem;
   height: 21.4rem;
@@ -641,11 +647,18 @@ body .button-secondary svg path {
   max-width: 100%;
   height: 100%;
 }
+@media (max-width: 768px) {
+  .safety-first .safety-svg img {
+    object-fit: fill;
+  }
+}
 @media (max-width: 375px) {
   .safety-first .safety-svg {
     width: 159px;
     height: 200px;
   }
+}
+@media (max-width: 768px) {
 }
 .reviews {
   position: relative;
@@ -653,6 +666,11 @@ body .button-secondary svg path {
   background: url("../assets/svgs/Blob User Reviews.svg") no-repeat;
   background-size: cover;
   background-size: contain;
+}
+@media (max-width: 768px) {
+  .reviews {
+    background: none;
+  }
 }
 @media (max-width: 375px) {
   .reviews {
@@ -695,17 +713,23 @@ body .button-secondary svg path {
   top: 23.2rem;
   right: 25.2rem;
 }
+@media (max-width: 1366px) {
+  .reviews .user-reviews .user-reviews-h {
+    right: 8rem;
+  }
+}
+@media (max-width: 768px) {
+  .reviews .user-reviews .user-reviews-h {
+    right: 2rem;
+    top: 20rem;
+  }
+}
 @media (max-width: 375px) {
   .reviews .user-reviews .user-reviews-h {
     max-width: 13.4rem;
     height: 2.9rem;
     top: 0rem;
     right: 3rem;
-  }
-}
-@media (max-width: 1366px) {
-  .reviews .user-reviews .user-reviews-h {
-    right: 10rem;
   }
 }
 .reviews .user-reviews .user-reviews-p {
@@ -715,19 +739,24 @@ body .button-secondary svg path {
   top: 30.1rem;
   right: 25.2rem;
 }
+@media (max-width: 1366px) {
+  .reviews .user-reviews .user-reviews-p {
+    right: 8rem;
+  }
+}
+@media (max-width: 768px) {
+  .reviews .user-reviews .user-reviews-p {
+    right: 2rem;
+    top: 25rem;
+    max-width: 32rem;
+  }
+}
 @media (max-width: 375px) {
   .reviews .user-reviews .user-reviews-p {
     max-width: 23.6rem;
     height: 6.7rem;
     top: 2.3rem;
     right: 0rem;
-    left: 7rem;
-    display: none;
-  }
-}
-@media (max-width: 1366px) {
-  .reviews .user-reviews .user-reviews-p {
-    right: 8rem;
   }
 }
 .reviews .dev-review {
@@ -738,6 +767,13 @@ body .button-secondary svg path {
   bottom: 31.6rem;
   left: 53rem;
   background: white;
+}
+@media (max-width: 768px) {
+  .reviews .dev-review {
+    left: 20rem;
+    bottom: 42.4rem;
+    max-width: 60rem;
+  }
 }
 @media (max-width: 375px) {
   .reviews .dev-review {
@@ -784,6 +820,11 @@ body .button-secondary svg path {
   margin-left: 10rem;
   display: inline-block;
 }
+@media (max-width: 768px) {
+  .reviews .img-person {
+    margin-left: 0rem;
+  }
+}
 @media (max-width: 375px) {
   .reviews .dev-review .dev-review-img-mob {
     margin-right: 1rem;
@@ -803,6 +844,11 @@ body .button-secondary svg path {
 @media (min-width: 375.1px) {
   .hide-desk {
     display: none;
+  }
+}
+@media (max-width: 768px) {
+  .hide-mobile {
+    max-width: 600px;
   }
 }
 .section-5 {

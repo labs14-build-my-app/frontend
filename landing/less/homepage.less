@@ -602,6 +602,10 @@ body {
     margin-right: 3.2rem;
     margin-top: 8.6rem;
   }
+  @media @tablet{
+    margin-top: 12rem;
+    max-width: 76rem;
+  }
 
   .text-section {
     max-width: 72.2rem;
@@ -659,12 +663,20 @@ body {
       object-fit: cover;
       max-width: 100%;
       height: 100%;
+      @media @tablet{
+        // border: 1px solid red; 
+        object-fit: fill;
+      }
     }
 
     @media @phone {
       width: 159px;
       height: 200px;
       // border: 1px solid green;
+    }
+    @media @tablet{
+    //  border: 1px solid red; 
+     
     }
   }
 }
@@ -679,6 +691,9 @@ body {
   background: url("../assets/svgs/Blob User Reviews.svg") no-repeat;
   background-size: cover;
   background-size: contain;
+  @media @tablet{
+    background: none;
+  }
 
   @media @phone {
     height: 43.1rem;
@@ -720,6 +735,13 @@ body {
       position: absolute;
       top: 23.2rem;
       right: 25.2rem;
+      @media @chromebook{
+        right: 8rem;
+      }
+      @media @tablet{
+        right: 2rem;
+        top: 20rem;
+      }
 
       @media @phone {
         max-width: 13.4rem;
@@ -727,9 +749,7 @@ body {
         top: 0rem;
         right: 3rem;
       }
-      @media @chromebook{
-        right: 10rem;
-      }
+
     }
 
     .user-reviews-p {
@@ -739,17 +759,23 @@ body {
       top: 30.1rem;
       right: 25.2rem;
 
+      @media @chromebook{
+        right: 8rem;
+      }
+
+      @media @tablet{
+        right: 2rem;
+        top: 25rem;
+        max-width: 32rem;
+      }
+
       @media @phone {
         max-width: 23.6rem;
         height: 6.7rem;
         top: 2.3rem;
         right: 0rem;
-        left: 7rem;
-        display: none;
       }
-      @media @chromebook{
-        right: 8rem;
-      }
+
     }
   }
 
@@ -761,6 +787,12 @@ body {
     bottom: 31.6rem;
     left: 53rem;
     background: white;
+    
+    @media @tablet{
+      left: 20rem;
+      bottom: 42.4rem;
+      max-width: 60rem;
+    }
 
     @media @phone {
       height: 20.5rem;
@@ -768,6 +800,7 @@ body {
       bottom: 11.3rem;
       left: 0rem;
     }
+
 
     .dev-review-img {
       margin: 3.5rem;
@@ -807,6 +840,9 @@ body {
     margin-top: 13.4rem;
     margin-left: 10rem;
     display: inline-block;
+    @media @tablet{
+      margin-left: 0rem;
+    }
   }
 }
 
@@ -835,6 +871,11 @@ body {
   }
 }
 
+@media @tablet{
+  .hide-mobile{
+    max-width: 600px;
+  }
+}
 // section-4-end
 
 // section 4 end
