@@ -1,29 +1,24 @@
 import React from 'react'
 import DeveloperDashboard from "../Developer/DeveloperDashboard";
 import EntrepreneurBoard from "../Entrepreneur/EntrepreneurBoard";
-import {connect} from "react-redux";
+import {connect, useSelector} from "react-redux";
 import {loadApp } from "../../../redux/actions"
 const errorHasOccured = <p>An Error has occured please log in again</p>
 
 const DevFindr = (props) =>{
-    console.log(props)
+
     if( !props.user ){
-        console.log("loading app")
         props.loadApp();
     }
         return (
-            props.user ? 
-            
-            
+            props.user ?     
             <>
-            {   console.log(!props.user.isDeveloper === false)}
-            {console.log(props.user)}
                {props.user.isDeveloper ? <DeveloperDashboard {...props} /> : !props.user.isDeveloper === true ? <EntrepreneurBoard {...props} /> : errorHasOccured}    
             </> : errorHasOccured
         )
 }
 const mapStateToProps = state =>{
-    console.log(state)
+console.log(state, "redux devfindr state")
     return {
     user: state.user
     }

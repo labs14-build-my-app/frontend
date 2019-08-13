@@ -26,15 +26,11 @@ export class ProjectBoard extends Component {
       "/dev/find/projects"
     ];
     const { pathname } = this.props.history.location;
-    console.log(pathname);
     if (pathname !== dashboard && pathname !== findNewProjects) {
       return null;
     }
     return (
       <ProjectBoardContainer>
-        {/* render the dev dashboard with description of projects*/}
-        {/* {pathname === dashboard ? <ProjectIntroduction /> : pathname === findNewProjects && <FindProjects /> } */}
-
         {pathname === dashboard ? (
           <>
             <ProjectIntroduction />

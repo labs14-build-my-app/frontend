@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import {
   headerFontDesktop,
@@ -61,9 +61,8 @@ border-radius: 6px;
     
 }
 `;
-export default class NewProjects extends Component {
-  render() {
-    console.log(this.props)
+ const NewProjects  = ({projectName, projectOwner, description}) => {
+
     return (
       <EntrepreneurProjects>
         <img
@@ -78,16 +77,16 @@ export default class NewProjects extends Component {
               style={{ textDecoration: "none", color: "inherit" }}
               to="/dev/project/id"
             >
-              <h3>{this.props.projectName}</h3>
+              <h3>{projectName}</h3>
             </Link>
 
             <Link
               style={{ textDecoration: "none", color: "inherit" }}
               to="/dev/project/id/entrepreneur"
             >
-              <h4>{this.props.projectOwner}</h4>
+              <h4>{projectOwner}</h4>
             </Link>
-            <p> {this.props.description}</p>
+            <p> {description}</p>
             <div className="find-proj-cta-btn-container">
               <button>SAVE FOR LATER</button>
               <button>MORE INFORMATION</button>
@@ -97,4 +96,5 @@ export default class NewProjects extends Component {
       </EntrepreneurProjects>
     );
   }
-}
+
+export default NewProjects

@@ -1,8 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import DevProject from "./DevProjectList/DevProject";
 import styled from "styled-components";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import NewProjects from "./FindProjects/NewProjects";
+import { fetchSelfProjects, fetchAllProjects } from "../../../redux/actions";
+import {connect} from "react-redux"
+
 
 const ProjectListContainer = styled.ul`
   .find-new-proj-projectlist-container {
@@ -11,29 +14,38 @@ const ProjectListContainer = styled.ul`
     padding: 5em 0em;
   }
 `;
-//This component will call to the back end and get a list of projects that are requested by the user.
-//If pathname === /dev/dashboard, list of projects the dev is on.
-//if pathname === /dev/find/projects, return list of projects posted by entreprenuers to be picked up by the dev.
-const ProjectList = props => {
+
+
+const ProjectList = ({fetchSelfProjects, fetchAllProjects, history}) => {
+  const pathname = useRef(history.location.pathname)
   const getRandomInt = () => {
     return Math.round(Math.random() * 2);
   };
-
-  const [dashboard, searchProjectPage, { pathname }] = [
+  console.log(pathname, pathname.current)
+  const [dashboard, searchProjectPage] = [
     "/dev/dashboard",
     "/dev/find/projects",
-    props.history.location,
-    props
+ 
   ];
-const projectList = [];
-  // const validProjectList = projectList.length || projectList.length > 0;
+
+
+  const {projectList, projectsAlreadyCalled, allProjectsCalled} = useSelector(s=> s)
+
+  useEffect(() => {
+    if((pathname === dashboard && projectList.length === 0) || !projectsAlreadyCalled) fetchSelfProjects()
+
+    if((pathname === searchProjectPage && projectList.lenght ===0) || !allProjectsCalled) fetchAllProjects() 
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[projectsAlreadyCalled,pathname.current])
+  const validProjectList = projectList.length || projectList.length > 0;
   return (
     <ProjectListContainer>
-      {pathname === dashboard &&
+      { validProjectList && pathname === dashboard &&
         projectList.map(project => {
           return <DevProject color={getRandomInt()} {...project} />;
         })}
-      {pathname === searchProjectPage && (
+      { validProjectList && pathname === searchProjectPage && (
         <div className="find-new-proj-projectlist-container">
           {
             projectList.map(project => {
@@ -45,25 +57,10 @@ const projectList = [];
   );
 };
 
-const mapStateToProps = (state, props) => {
-  // const { pathname } = props.history.location;
-  // console.log(state);
-  // // need a pathname mapped to state
-  // if (state.projectList === undefined) {
-  //   return {
-  //     projectList: []
-  //   };
-  // } else if (
-  //   state.projectList.length > 2 &&
-  //   pathname === "/dev/find/projects"
-  // ) {
-  //   return { projectList: state.projectList.splice(0, 2) };
-  // } else {
-  //   return { projectList: state.projectList };
-  // }
-};
-// export default connect(
-//   mapStateToProps,
-//   {}
-// )(ProjectList);
-export default ProjectList;
+const mapStateToProps = state =>{
+  console.log(state)
+  return{
+    projectList: state.projectList
+  }
+}
+export default connect(mapStateToProps, {fetchSelfProjects, fetchAllProjects})(ProjectList);
