@@ -6,6 +6,7 @@ import { login } from "../../../redux/actions";
 
 import styled from "styled-components";
 import { headerFontDesktop } from "../cssVariables";
+import { BeatLoader } from "react-spinners";
 
 const LoginPageContainer = styled.div`
   display: flex;
@@ -90,16 +91,23 @@ class Login extends Component {
           </nav>
 
           <div className='form'>
-            <form>
-              <input type="text" placeholder="What's the email you registered with?" />
-              <input type="password" placeholder="What's the password for your account?" />
-              <button>Login</button>
+            
+            <form onSubmit={this.handleSubmit}>
+              <input type="text" name="email" placeholder="What's the email you registered with?" onChange={this.handleChanges} value={this.state.value} />
+              <input type="password" name="password" placeholder="What's the password for your account?" onChange={this.handleChanges} value={this.state.value} />
+              <button type="submit" >
+                {this.props.isLoggingIn ? <BeatLoader /> : "Login" }
+              </button>
             </form>
+
             <div className="forgot-password">
               Forgot your password? <NavLink to='/ChangePassword'>Change it here.</NavLink>
               </div>
           </div>
         </div>
+
+          {/* Heres the content for the right side of the page */}
+
         <div className="right">
           right content
         </div>
