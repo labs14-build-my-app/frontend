@@ -6,6 +6,7 @@ import PrivateRoute from "./components/auth/PrivateRoute";
 import Signup from "./components/dashboard/Login/Signup";
 import Navigation from "./components/dashboard/Navigation/Navigation";
 import DevFindr from "./components/dashboard/DevFindr/DevFindr";
+import ChangePassword from "./components/dashboard/Login/ChangePassword";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <PrivateRoute path="/" component={DevFindr} />
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
+      <Route path="/changepassword" component={ChangePassword} />
     </>
   );
 };
