@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef,useState } from "react";
 import DevProject from "./DevProjectList/DevProject";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
@@ -17,10 +17,11 @@ const ProjectListContainer = styled.ul`
 
 
 const ProjectList = ({fetchSelfProjects, fetchAllProjects, history}) => {
-  const pathname = useRef(history.location.pathname)
+  const pathname = useState(history.location.pathname)
   const getRandomInt = () => {
     return Math.round(Math.random() * 2);
   };
+  console.group("PROJECTLIST")
   console.log(pathname, pathname.current)
   const [dashboard, searchProjectPage] = [
     "/dev/dashboard",
@@ -30,6 +31,7 @@ const ProjectList = ({fetchSelfProjects, fetchAllProjects, history}) => {
 
 
   const {projectList, projectsAlreadyCalled, allProjectsCalled} = useSelector(s=> s)
+  console.log(projectList)
 
   useEffect(() => {
     if((pathname === dashboard && projectList.length === 0) || !projectsAlreadyCalled) fetchSelfProjects()
@@ -38,14 +40,17 @@ const ProjectList = ({fetchSelfProjects, fetchAllProjects, history}) => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[projectsAlreadyCalled,pathname.current])
-  const validProjectList = projectList.length || projectList.length > 0;
+  const validProjectList = projectList.length !== null ||  0 < projectList.length
+  console.log(validProjectList, "VALID PROJECT")
+  console.log(pathname === dashboard, pathname === searchProjectPage, `pathname: ${pathname[0]}`)
+  console.groupEnd();
   return (
     <ProjectListContainer>
-      { validProjectList && pathname === dashboard &&
+      { validProjectList && pathname[0] === dashboard &&
         projectList.map(project => {
           return <DevProject color={getRandomInt()} {...project} />;
         })}
-      { validProjectList && pathname === searchProjectPage && (
+      { validProjectList && pathname[0] === searchProjectPage && (
         <div className="find-new-proj-projectlist-container">
           {
             projectList.map(project => {
