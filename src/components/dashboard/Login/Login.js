@@ -7,8 +7,21 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { phone, tablet } from "../cssVariables";
 
-// const LoginContainer = styled.div`
-// `;
+const LoginPageContainer = styled.div`
+  display: flex;
+  border: 1px solid red;
+  padding: 10rem 10rem;
+
+  .left{
+    border: 1px solid green;
+    width: 50%;
+  }
+
+  .right{
+    border: 1px solid blue;
+    width: 50%;
+  }
+`;
 
 class Login extends Component {
   state = {
@@ -38,45 +51,14 @@ class Login extends Component {
   render() {
    
     return (
-      <LoginContainer className="login-container">
-        <div className="cta-content">
-          <h1>
-            Meet DevFindr.
-            <br /> Sign up for free.
-          </h1>
+      <LoginPageContainer className="page-container">
+        <div className="left">
+          left content
         </div>
-        <div className="login-main">
-          <h1 className="login-title">{/* Sign up */}</h1>
-
-          <form
-            className="LogIn__Form"
-            onSubmit={this.handleSubmit}
-            autoComplete="off"
-          >
-            <input
-              type="email"
-              name="email"
-              placeholder="Email address"
-              onChange={this.handleChanges}
-              value={this.state.value}
-            />
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              onChange={this.handleChanges}
-              value={this.state.value}
-            />
-            <button type="submit">
-              {this.props.isLoggingIn ? <BeatLoader /> : "Sign In"}
-            </button>
-            <div className="alternative-cta">
-              <p>Don't have a localStorage.getItem('token') yet? </p>
-              <Link to="/signup">Register</Link>
-            </div>
-          </form>
+        <div className="right">
+          right content
         </div>
-      </LoginContainer>
+      </LoginPageContainer>
     );
   }
 }
