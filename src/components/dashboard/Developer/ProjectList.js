@@ -59,12 +59,14 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
       {validProjectList &&
         pathname[0] === dashboard &&
         projectList.map(project => {
-          return <DevProject color={getRandomInt()} {...project} />;
+          return (
+            <DevProject key={project._id} color={getRandomInt()} {...project} />
+          );
         })}
       {validProjectList && pathname[0] === searchProjectPage && (
         <div className="find-new-proj-projectlist-container">
           {projectList.map(project => {
-            return <NewProjects {...project} />;
+            return <NewProjects {...project} key={project._id} />;
           })}
         </div>
       )}
