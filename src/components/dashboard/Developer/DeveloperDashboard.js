@@ -34,17 +34,19 @@ class DeveloperDashboard extends Component {
     );
   };
   render() {
-    const { pathname } = this.props.history.location;
+    console.log(this.props);
+    // const { pathname } = this.props.history.location
+
     return (
       <SideContent>
-        <Redirect to={pathname === "/" ? "dev/dashboard" : `${pathname}`} />
+        <Redirect to="/dev/dashboard" />
         <Route
-          path="/dev"
-          render={props => {
+          path="/dev/dashboard"
+          render={() => {
             return (
               <>
-                <ProjectBoard {...props} />
-                {() => this.renderNotificationAndStatement()}
+                <ProjectBoard {...this.props} />
+                {this.renderNotificationAndStatement()}
               </>
             );
           }}
