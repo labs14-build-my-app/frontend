@@ -26,9 +26,12 @@ export class ProjectBoard extends Component {
       "/dev/find/projects"
     ];
     const { pathname } = this.props.history.location;
+    console.log(pathname === findNewProjects);
+    
     if (pathname !== dashboard && pathname !== findNewProjects) {
       return null;
     }
+    
     return (
       <ProjectBoardContainer>
         {pathname === dashboard ? (
@@ -37,7 +40,7 @@ export class ProjectBoard extends Component {
             <ProjectList {...this.props} pathname={pathname} />
           </>
         ) : (
-          pathname === findNewProjects && (
+          pathname === findNewProjects && (     
             <div className="find-proj-full-container">
               <FindProjects />
               <ProjectList {...this.props} pathname={pathname} />

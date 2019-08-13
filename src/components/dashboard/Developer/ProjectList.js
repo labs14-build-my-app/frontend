@@ -28,21 +28,27 @@ const ProjectList = ({fetchSelfProjects, fetchAllProjects, history}) => {
     "/dev/find/projects",
  
   ];
+  const {projectList} = useSelector(s=> s)
+
+  const validProjectList = projectList.length !== null || projectList.length > 0
 
 
-  const {projectList, projectsAlreadyCalled, allProjectsCalled} = useSelector(s=> s)
   console.log(projectList)
-
+  console.log(validProjectList && pathname[0] === searchProjectPage, "SEARCH PROJECTS")
   useEffect(() => {
-    if((pathname === dashboard && projectList.length === 0) || !projectsAlreadyCalled) fetchSelfProjects()
+    if(pathname[0] === dashboard){ 
+      fetchSelfProjects()
+    }
 
-    if((pathname === searchProjectPage && projectList.lenght ===0) || !allProjectsCalled) fetchAllProjects() 
+    if(pathname[0] === searchProjectPage){ 
+      fetchAllProjects()
+     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[projectsAlreadyCalled,pathname.current])
-  const validProjectList = projectList.length !== null ||  0 < projectList.length
+  },[pathname[0]])
   console.log(validProjectList, "VALID PROJECT")
   console.log(pathname === dashboard, pathname === searchProjectPage, `pathname: ${pathname[0]}`)
+
   console.groupEnd();
   return (
     <ProjectListContainer>

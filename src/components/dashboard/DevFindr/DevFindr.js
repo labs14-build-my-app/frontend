@@ -13,7 +13,6 @@ const DevFindr = props => {
   }
   return props.user ? (
     <>
-      {console.log(!props.user.isDeveloper === false)}
       {console.log(props.user)}
       {props.user.isDeveloper ? (
         <DeveloperDashboard {...props} />

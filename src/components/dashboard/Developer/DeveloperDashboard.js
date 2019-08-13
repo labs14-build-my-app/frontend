@@ -35,11 +35,11 @@ class DeveloperDashboard extends Component {
   };
   render() {
     console.log(this.props);
-    // const { pathname } = this.props.history.location
+    const { pathname } = this.props.history.location
 
     return (
       <SideContent>
-        <Redirect to="/dev/dashboard" />
+        <Redirect to={`${pathname}`} />
         <Route
           path="/dev/dashboard"
           render={() => {
@@ -51,6 +51,7 @@ class DeveloperDashboard extends Component {
             );
           }}
         />
+        <Route path="/dev/find/projects" component={ProjectBoard}/>
       </SideContent>
     );
   }
