@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { connect } from "react-redux";
+import { fetchAllProjects, saveProject } from "../../../../redux/actions";
+
 import {
   headerFontDesktop,
   headerFontFamily,
@@ -8,7 +11,9 @@ import {
   trout,
   projectParagraphFont
 } from "../../cssVariables";
+
 import { Link } from "react-router-dom";
+
 const EntrepreneurProjects = styled.li`
 background: #fff;
 position: relative;
@@ -61,40 +66,52 @@ border-radius: 6px;
     
 }
 `;
- const NewProjects  = ({projectName, projectOwner, description}) => {
 
-    return (
-      <EntrepreneurProjects>
-        <img
-          src={process.env.PUBLIC_URL + "/images/icon_dots.svg"}
-          alt="menu"
-          className="find-proj-options"
-        />
-        <div className="owner-img-and-name">
-          <h1>look at this photograph</h1>
-          <div>
-            <Link
-              style={{ textDecoration: "none", color: "inherit" }}
-              to="/dev/project/id"
-            >
-              <h3>{projectName}</h3>
-            </Link>
+const NewProjects = ({
+  projectName,
+  projectOwner,
+  description,
+  saveProject,
+  id
+}) => {
+  return (
+    <EntrepreneurProjects>
+      <img
+        src={process.env.PUBLIC_URL + "/images/icon_dots.svg"}
+        alt="menu"
+        className="find-proj-options"
+      />
+      <div className="owner-img-and-name">
+        <h1>look at this photograph</h1>
+        <div>
+          <Link
+            style={{ textDecoration: "none", color: "inherit" }}
+            to="/dev/project/id"
+          >
+            <h3>{projectName}</h3>
+          </Link>
 
-            <Link
-              style={{ textDecoration: "none", color: "inherit" }}
-              to="/dev/project/id/entrepreneur"
-            >
-              <h4>{projectOwner}</h4>
-            </Link>
-            <p> {description}</p>
-            <div className="find-proj-cta-btn-container">
-              <button>SAVE FOR LATER</button>
-              <button>MORE INFORMATION</button>
-            </div>
+          <Link
+            style={{ textDecoration: "none", color: "inherit" }}
+            to="/dev/project/id/entrepreneur"
+          >
+            <h4>{projectOwner}</h4>
+          </Link>
+          <p> {description}</p>
+          <div className="find-proj-cta-btn-container">
+            <button onClick={() => saveProject(id)}>SAVE FOR LATER</button>
+            <button>MORE INFORMATION</button>
           </div>
         </div>
-      </EntrepreneurProjects>
-    );
-  }
+      </div>
+    </EntrepreneurProjects>
+  );
+};
 
-export default NewProjects
+const mapStateToProps = state => {
+  return {};
+};
+export default connect(
+  mapStateToProps,
+  { fetchAllProjects, saveProject }
+)(NewProjects);

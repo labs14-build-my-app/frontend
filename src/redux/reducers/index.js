@@ -4,7 +4,8 @@ import {
   SIGNUP,
   LOAD_APP,
   FETCH_SELF_PROJECTS,
-  FETCH_ALL_PROJECTS
+  FETCH_ALL_PROJECTS,
+  SAVE_PROJECT
 } from "../actions";
 
 const initialState = {
@@ -101,6 +102,22 @@ const rootReducer = (state = initialState, action) => {
         ),
         allProjectsCalled: true
       };
+
+    case SAVE_PROJECT.START:
+      return {
+        ...state
+      };
+
+    case SAVE_PROJECT.SUCCESS:
+      return {
+        ...state
+      };
+
+    case SAVE_PROJECT.FAILURE:
+      return {
+        ...state
+      };
+
     default:
       return {
         ...state
