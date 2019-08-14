@@ -19,7 +19,7 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
   const getRandomInt = () => {
     return Math.round(Math.random() * 2);
   };
-  // console.group("PROJECTLIST");
+  console.group("ProjectList -- Rerender");
   // console.log(pathname, pathname.current);
 
   const [dashboard, searchProjectPage] = [

@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import {loadApp} from "../../../../redux/actions"
 import {connect} from "react-redux";
+import {Link} from "react-router-dom";
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -93,7 +94,6 @@ const HeaderContainer = styled.div`
 `;
 
 const Header = (props) => {
-    console.log(props)
     const {user, loadApp, loadingApp } = props;
 
     const [menuIsOpen, toggleMenu] = useState(false);
@@ -102,11 +102,10 @@ const Header = (props) => {
     if(loadingApp){
         loadApp();
     }
-    console.log(menuIsOpen)
 
   return (
     <HeaderContainer>
-      <h1>DevFindr</h1>
+      <Link to="/dev/dashboard" style={{textDecoration: "none", color: "inherit"}}><h1>DevFindr</h1></Link>
       <div className="header-and-logos-container">
         <nav onClick={() => toggleMenu(!menuIsOpen)}>
           <p>{user && user.name}</p>
@@ -120,14 +119,11 @@ const Header = (props) => {
               <li>settings</li>
           </ul>
           </div>
-         
         </nav>
         <div className="bell-notifications" onClick={() => toggleNotif(!notifIsOpen)} >
             <img src={`${process.env.PUBLIC_URL}/images/icon_bell_line.svg`} alt="icon bell" /> 
             <div className="notification-dot"  />
-            
             <div className="notif-nav-menu-container" style= {{ display: `${notifIsOpen ? 'flex' : 'none' }`}}>
-            
             <ul className="notif-nav-menu">
               <li>home</li>
               <li>find projects</li>
@@ -135,7 +131,7 @@ const Header = (props) => {
               <li>stuff 3</li>
               <li>settings</li>
           </ul>
-            </div>
+        </div>
          
             {/* style={ { display:`${props.notificationIsThere ? 'block' : 'none'}  ` } } */}
             
@@ -148,7 +144,6 @@ const Header = (props) => {
 const mapStateToProps = state => {
     //BOOLEAN IF ARRAY LIST OF NOTIFICATION HAS LENGTH > 0
     
-    console.log(state.notificationIsThere)
     return{
         user: state.user,
         loadingApp: state.loadingApp

@@ -19,7 +19,7 @@ const DevFindr = props => {
       ) : (
         errorHasOccured
       )}
-    </ div>
+    </div>
   ) : (
     errorHasOccured
   );
