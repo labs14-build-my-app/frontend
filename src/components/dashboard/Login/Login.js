@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { login } from "../../../redux/actions";
 
 import styled from "styled-components";
-import { headerFontDesktop, h1, electricViolet, veryLightBlue, textColor1, textColor2 } from "../cssVariables";
+import { headerFontDesktop, h1, electricViolet, veryLightBlue, textColor1, textColor2, textBox } from "../cssVariables";
 import { BeatLoader } from "react-spinners";
 
 const LoginPageContainer = styled.div`
@@ -55,9 +55,31 @@ const LeftContainer = styled.div`
     }
 
     .form{
+      margin: 7rem 0 0;
+
       form{
         display: flex;
         flex-direction: column;
+
+        .input-field{
+          
+          input:focus{
+            outline: none; // removes browser-default focus styling
+          }
+
+          float:left;
+          width: 100%;
+          position: relative;
+
+          input{
+            width: 100%;
+            box-sizing: border-box; // fixes textbox from expanding its bounds by 1.3px;
+          }
+
+          
+        }
+
+        }
         button{
           background: red;
         }
@@ -138,7 +160,14 @@ class Login extends Component {
             </nav>
             <div className='form'>
               <form onSubmit={this.handleSubmit}>
-                <input type="text" name="email" placeholder="What's the email you registered with?" onChange={this.handleChanges} value={this.state.value} />
+
+                <div className="input-field">
+                  <span className="field-title"> Email </span> <br/>
+                  <input type="text" name="email" placeholder="What's the email you registered with?" onChange={this.handleChanges} value={this.state.value} />
+                  <span className="input-field-border"> </span>
+                </div>
+
+                <span> Password </span> <br/>
                 <input type="password" name="password" placeholder="What's the password for your account?" onChange={this.handleChanges} value={this.state.value} />
                 <button type="submit" >
                   {this.props.isLoggingIn ? <BeatLoader /> : "Login" }
