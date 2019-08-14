@@ -5,14 +5,14 @@ import { NavLink } from "react-router-dom";
 import { login } from "../../../redux/actions";
 
 import styled from "styled-components";
-import { headerFontDesktop } from "../cssVariables";
+import { headerFontDesktop, h1 } from "../cssVariables";
 import { BeatLoader } from "react-spinners";
 
 const LoginPageContainer = styled.div`
+border: 1px solid red;
   margin: 0 auto;
   display: flex;
   display: nowrap;
-  border: 1px solid red;
   font-size: ${headerFontDesktop};
   height: 1080px; // temporary
 `;
@@ -20,13 +20,11 @@ const LoginPageContainer = styled.div`
 const LeftContainer = styled.div`
   width: 45%;
   height: 100%;
-  border: 1px solid yellow;
+  background: #F2F3FF;
 
   .l-container{
-    border: 1px solid green;
     height: 100%;
     nav{
-      border: 1px solid purple;
 
       ol{
         list-style-type: none;
@@ -53,12 +51,11 @@ const LeftContainer = styled.div`
 `;
 
 const RightContainer = styled.div`
-  width: 50%;
+  width: 55%;
   height: 100%;
 
   .r-container{
     height: 100%;
-    border: 1px solid blue;
     background:
     /* gradient overlay */
     linear-gradient(61deg, rgba(24, 7, 94, .7), rgba(149, 25, 232, .7)),
@@ -68,6 +65,18 @@ const RightContainer = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    .text{
+      padding-top: 40%;
+      color: white;
+      margin-left: 9rem;
+
+      h1{
+        font-size: ${h1};
+        line-height: 6.9rem;
+        padding: 0 0 1rem;
+      }
+    }
   }
 `;
 
@@ -126,11 +135,13 @@ class Login extends Component {
         <RightContainer>
           <div className="r-container">
             {/* The background and gradient are applied using styled components */}
-            <h1> Plan Together, <br/>
-            Succeed Together.</h1>
-            <h3> Our Unique Project Proposal System allows both developers and <br/>
-            entreprenuer't to effectively brainstorm ideas, <br/>
-            set goals and deliver results. </h3>
+            <div className="text">
+              <h1> Plan Together, <br/>
+              Succeed Together.</h1>
+              <p> Our Unique Project Proposal System allows both developers and <br/>
+              entreprenuer't to effectively brainstorm ideas, <br/>
+              set goals and deliver results. </p>
+            </div>
           </div>
         </RightContainer>
       </LoginPageContainer>

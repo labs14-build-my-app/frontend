@@ -16,6 +16,7 @@ export const tablet = "(max-width: 900px)"; //idk what this is i need to google 
 
 //GENERAL FONT SIZES
 export const headerFontDesktop = "1.8rem";
+export const h1 = "5.5rem";
 export const headerFontFamily = "Source Sans Pro";
 export const headerFontWeight = "normal";
 
