@@ -12,7 +12,7 @@ const DashboardContentContainer = styled.div`
   align-items: stretch;
   ${'' /* margin-bottom: 7.25em;
   margin-top: 4em; */}
-  max-width: 1840px;
+  
   height: 950px;
 
   .side-notif-and-statement-container {

@@ -8,8 +8,6 @@ const ProjectBoardContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-
-  width: 100%;
   border-radius: 10px;
   border: none;
   .find-proj-full-container {
