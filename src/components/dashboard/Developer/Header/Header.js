@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
+import {loadApp} from "../../../../redux/actions"
 import {connect} from "react-redux";
 const HeaderContainer = styled.div`
   display: flex;
@@ -41,12 +42,19 @@ const HeaderContainer = styled.div`
 `;
 
 const Header = (props) => {
+    console.log(props)
+    const {user, loadApp, loadingApp } = props;
+    // loadApp();
+    if(loadingApp){
+        loadApp();
+    }
+
   return (
     <HeaderContainer>
       <h1>DevFindr</h1>
       <div className="header-and-logos-container">
         <nav>
-          <p>$state.user</p>
+          <p>{user && user.name}</p>
           <img src={`${process.env.PUBLIC_URL}/images/caret-down.svg`} alt="select down"/>
         </nav>
         <div className="bell-notifications">
@@ -63,7 +71,8 @@ const mapStateToProps = state => {
     
     console.log(state.notificationIsThere)
     return{
-        notificationIsThere: state.notificationIsThere
+        user: state.user,
+        loadingApp: state.loadingApp
     }
 }
-export default connect(mapStateToProps, {})(Header);
+export default connect(mapStateToProps, {loadApp})(Header);

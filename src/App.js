@@ -12,7 +12,6 @@ const AppContainer = styled.div`
   .main-app-container{
     display: flex;
     flex-direction: column;
-
     .main-app-column{
       background: transparent linear-gradient(297deg, #F2F3FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
       padding: 11.5625em 4.3125em 7em 6.625em;
