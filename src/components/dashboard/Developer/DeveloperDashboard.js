@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import ProjectBoard from "./ProjectBoard";
-import QuarterlyStatement from "../QuarterlyStatement/QuarterlyStatement.js";
 import NotificationCenter from "../NotificationCenter/NotificationContainer";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
+import Header from "./Header/Header";
 
 const SideContent = styled.div`
   display: flex;
@@ -13,6 +13,10 @@ const SideContent = styled.div`
   align-items: stretch;
   margin-bottom: 7.25em;
   margin-top: 4em;
+  max-width: 1840px;
+height: 950px;
+background: transparent linear-gradient(297deg, #F2F3FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+opacity: 1;
   .side-notif-and-statement-container {
     display: flex;
     flex-direction: column;
@@ -27,19 +31,17 @@ class DeveloperDashboard extends Component {
     return (
       <>
         <div className="side-notif-and-statement-container">
-          <QuarterlyStatement />
           <NotificationCenter />
         </div>
       </>
     );
   };
   render() {
-    console.log(this.props);
     const { pathname } = this.props.history.location
-
     return (
       <SideContent>
         <Redirect to={`${pathname}`} />
+        <Header />
         <Route
           path="/dev/dashboard"
           render={() => {

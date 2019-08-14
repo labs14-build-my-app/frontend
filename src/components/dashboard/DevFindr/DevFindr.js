@@ -8,12 +8,10 @@ const errorHasOccured = <p>An Error has occured please log in again</p>;
 const DevFindr = props => {
   // console.log(props)
   if (!props.user) {
-    console.log("loading app");
     props.loadApp();
   }
   return props.user ? (
     <>
-      {console.log(props.user)}
       {props.user.isDeveloper ? (
         <DeveloperDashboard {...props} />
       ) : !props.user.isDeveloper === true ? (

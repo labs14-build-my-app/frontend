@@ -7,9 +7,8 @@ import FindProjects from "./FindProjects/FindProjects";
 const ProjectBoardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 1448px;
-  margin: 4em 2.5em 0 2.5em;
-  padding: 2.5em;
+  width: 100%;
+
   width: 100%;
   border-radius: 10px;
   border: none;
