@@ -10,6 +10,11 @@ export const electricViolet = "#9519E8";
 export const trout = "#4D4F5C";
 export const gunPowder = "#43425D";
 
+// NEW CSS COLORS
+export const textColor1 = "#43425D";
+export const textColor2 = "#9592A8";
+export const veryLightBlue = "#F2F3FF";
+
 //MEDIA QUERIES
 export const phone = "(max-width: 375px)";
 export const tablet = "(max-width: 900px)"; //idk what this is i need to google it

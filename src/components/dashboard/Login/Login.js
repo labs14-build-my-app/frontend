@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { login } from "../../../redux/actions";
 
 import styled from "styled-components";
-import { headerFontDesktop, h1 } from "../cssVariables";
+import { headerFontDesktop, h1, electricViolet, veryLightBlue, textColor1, textColor2 } from "../cssVariables";
 import { BeatLoader } from "react-spinners";
 
 const LoginPageContainer = styled.div`
@@ -23,7 +23,11 @@ const LeftContainer = styled.div`
   background: #F2F3FF;
 
   .l-container{
+    margin: 17rem 16rem 0;
     height: 100%;
+
+    border: 1px solid black;
+
     nav{
 
       ol{
@@ -35,16 +39,28 @@ const LeftContainer = styled.div`
         display: inline-block;
 
         :first-child{
+          font-size: 2.5rem;
         }
 
         :nth-child(2){
-
+          font-size: 1.3rem;
+          padding: 0 1.8rem 0;
         }
 
         :nth-child(3){
-
+          font-size: 2.5rem;
         }
 
+      }
+    }
+
+    .form{
+      form{
+        display: flex;
+        flex-direction: column;
+        button{
+          background: red;
+        }
       }
     }
   }
@@ -80,6 +96,7 @@ const RightContainer = styled.div`
       p{
         line-height: 3rem;
       }
+
 
     }
   }
