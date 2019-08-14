@@ -9,16 +9,22 @@ import { headerFontDesktop } from "../cssVariables";
 import { BeatLoader } from "react-spinners";
 
 const LoginPageContainer = styled.div`
+  margin: 0 auto;
   display: flex;
+  display: nowrap;
   border: 1px solid red;
-  padding: 10rem 10rem;
   font-size: ${headerFontDesktop};
+  height: 1080px; // temporary
+`;
 
-  // Left Side of the page
-  .left{
+const LeftContainer = styled.div`
+  width: 45%;
+  height: 100%;
+  border: 1px solid yellow;
+
+  .l-container{
     border: 1px solid green;
-    width: 50%;
-
+    height: 100%;
     nav{
       border: 1px solid purple;
 
@@ -40,15 +46,28 @@ const LoginPageContainer = styled.div`
         :nth-child(3){
 
         }
-        
+
       }
     }
   }
+`;
 
-  //Right Side of the page
-  .right{
+const RightContainer = styled.div`
+  width: 50%;
+  height: 100%;
+
+  .r-container{
+    height: 100%;
     border: 1px solid blue;
-    width: 50%;
+    background:
+    /* gradient overlay */
+    linear-gradient(61deg, rgba(24, 7, 94, .7), rgba(149, 25, 232, .7)),
+    /* bottom image */
+    url('https://images.unsplash.com/photo-1549692520-acc6669e2f0c');
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 `;
 
@@ -66,10 +85,6 @@ class Login extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    // this.props.login({ ...this.state }).then(() => {
-    //     this.props.history.push('/');
-    // });
-    //if user.type === dev
     this.props.login({ ...this.state }).then((res)=>{
       console.log('Login.js Says: ' + res)
       this.props.history.push("/");
@@ -81,36 +96,43 @@ class Login extends Component {
    
     return (
       <LoginPageContainer className="page-container">
-        <div className="left">
-          <nav>
-            <ol>
-              <li><NavLink to='/Login'>Login</NavLink></li>
-              <li>or</li>
-              <li><NavLink to='/Signup'>Sign Up</NavLink></li>
-            </ol>
-          </nav>
+        <LeftContainer>
+          <div className="l-container">
+            <nav>
+              <ol>
+                <li><NavLink to='/Login'>Login</NavLink></li>
+                <li>or</li>
+                <li><NavLink to='/Signup'>Sign Up</NavLink></li>
+              </ol>
+            </nav>
+            <div className='form'>
+              <form onSubmit={this.handleSubmit}>
+                <input type="text" name="email" placeholder="What's the email you registered with?" onChange={this.handleChanges} value={this.state.value} />
+                <input type="password" name="password" placeholder="What's the password for your account?" onChange={this.handleChanges} value={this.state.value} />
+                <button type="submit" >
+                  {this.props.isLoggingIn ? <BeatLoader /> : "Login" }
+                </button>
+              </form>
 
-          <div className='form'>
-            
-            <form onSubmit={this.handleSubmit}>
-              <input type="text" name="email" placeholder="What's the email you registered with?" onChange={this.handleChanges} value={this.state.value} />
-              <input type="password" name="password" placeholder="What's the password for your account?" onChange={this.handleChanges} value={this.state.value} />
-              <button type="submit" >
-                {this.props.isLoggingIn ? <BeatLoader /> : "Login" }
-              </button>
-            </form>
-
-            <div className="forgot-password">
-              Forgot your password? <NavLink to='/ChangePassword'>Change it here.</NavLink>
-              </div>
+              <div className="forgot-password">
+                Forgot your password? <NavLink to='/ChangePassword'>Change it here.</NavLink>
+                </div>
+            </div>
           </div>
-        </div>
+        </LeftContainer>
 
           {/* Heres the content for the right side of the page */}
 
-        <div className="right">
-          right content
-        </div>
+        <RightContainer>
+          <div className="r-container">
+            {/* The background and gradient are applied using styled components */}
+            <h1> Plan Together, <br/>
+            Succeed Together.</h1>
+            <h3> Our Unique Project Proposal System allows both developers and <br/>
+            entreprenuer't to effectively brainstorm ideas, <br/>
+            set goals and deliver results. </h3>
+          </div>
+        </RightContainer>
       </LoginPageContainer>
     );
   }
