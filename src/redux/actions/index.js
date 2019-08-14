@@ -105,3 +105,23 @@ export const fetchAllProjects = () => dispatch => {
       dispatch({ type: FETCH_ALL_PROJECTS.FAILURE });
     });
 };
+
+export const SAVE_PROJECT = {
+  START: "SAVE_PROJECT_START",
+  SUCCESS: "SAVE_PROJECT_SUCCESS",
+  FAILURE: "SAVE_PROJECT_FAILURE"
+};
+
+export const saveProject = id => dispatch => {
+  dispatch({ type: SAVE_PROJECT.START });
+  return axiosWithAuth()
+    .put(`${BACKEND_URL}/projects/dev/${id}`)
+    .then(res => {
+      console.log(res);
+      dispatch({ type: SAVE_PROJECT.SUCCESS });
+    })
+    .catch(err => {
+      console.log(err.status);
+      dispatch({ type: SAVE_PROJECT.FAILURE });
+    });
+};

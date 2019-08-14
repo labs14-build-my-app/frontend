@@ -58,7 +58,6 @@ const FindProjectsContainer = styled.div`
 `;
 export class FindProjects extends Component {
   render() {
-    console.log(this.props);
     return (
       <FindProjectsContainer>
         <div className="find-proj-top">

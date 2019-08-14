@@ -19,8 +19,9 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
   const getRandomInt = () => {
     return Math.round(Math.random() * 2);
   };
-  console.group("PROJECTLIST");
-  console.log(pathname, pathname.current);
+  // console.group("PROJECTLIST");
+  // console.log(pathname, pathname.current);
+
   const [dashboard, searchProjectPage] = [
     "/dev/dashboard",
     "/dev/find/projects"
@@ -30,11 +31,11 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
   const validProjectList =
     projectList.length !== null || projectList.length > 0;
 
-  console.log(projectList);
-  console.log(
-    validProjectList && pathname[0] === searchProjectPage,
-    "SEARCH PROJECTS"
-  );
+  // console.log(projectList);
+  // console.log(
+  //   validProjectList && pathname[0] === searchProjectPage,
+  //   "SEARCH PROJECTS"
+  // );
   useEffect(() => {
     if (pathname[0] === dashboard) {
       fetchSelfProjects();
@@ -43,15 +44,15 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
     if (pathname[0] === searchProjectPage) {
       fetchAllProjects();
     }
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname[0]]);
-  console.log(validProjectList, "VALID PROJECT");
-  console.log(
-    pathname === dashboard,
-    pathname === searchProjectPage,
-    `pathname: ${pathname[0]}`
-  );
+
+  // console.log(validProjectList, "VALID PROJECT");
+  // console.log(
+  //   pathname === dashboard,
+  //   pathname === searchProjectPage,
+  //   `pathname: ${pathname[0]}`
+  // );
 
   console.groupEnd();
   return (
@@ -66,7 +67,9 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
       {validProjectList && pathname[0] === searchProjectPage && (
         <div className="find-new-proj-projectlist-container">
           {projectList.map(project => {
-            return <NewProjects {...project} key={project._id} />;
+            return (
+              <NewProjects {...project} key={project._id} id={project._id} />
+            );
           })}
         </div>
       )}
