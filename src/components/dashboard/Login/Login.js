@@ -74,8 +74,13 @@ const RightContainer = styled.div`
       h1{
         font-size: ${h1};
         line-height: 6.9rem;
-        padding: 0 0 1rem;
+        padding: 0 0 2rem;
       }
+
+      p{
+        line-height: 3rem;
+      }
+
     }
   }
 `;
