@@ -44,7 +44,6 @@ const HeaderContainer = styled.div`
 const Header = (props) => {
     console.log(props)
     const {user, loadApp, loadingApp } = props;
-    // loadApp();
     if(loadingApp){
         loadApp();
     }
@@ -58,7 +57,8 @@ const Header = (props) => {
           <img src={`${process.env.PUBLIC_URL}/images/caret-down.svg`} alt="select down"/>
         </nav>
         <div className="bell-notifications">
-            <div className="notification-dot" style={ { display:`${props.notificationIsThere ? 'block' : 'none'}  ` } }/>
+            <div className="notification-dot" />
+            {/* style={ { display:`${props.notificationIsThere ? 'block' : 'none'}  ` } } */}
             <img src={`${process.env.PUBLIC_URL}/images/icon_bell_line.svg`} alt="icon bell" />
         </div>
       </div>
