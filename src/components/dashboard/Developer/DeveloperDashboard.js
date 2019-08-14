@@ -4,7 +4,6 @@ import NotificationCenter from "../NotificationCenter/NotificationContainer";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
-import Header from "./Header/Header";
 
 const SideContent = styled.div`
   display: flex;
@@ -41,7 +40,6 @@ class DeveloperDashboard extends Component {
     return (
       <SideContent>
         <Redirect to={`${pathname}`} />
-        <Header />
         <Route
           path="/dev/dashboard"
           render={() => {
@@ -53,6 +51,7 @@ class DeveloperDashboard extends Component {
             );
           }}
         />
+
         <Route path="/dev/find/projects" component={ProjectBoard}/>
       </SideContent>
     );

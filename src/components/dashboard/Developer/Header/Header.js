@@ -1,33 +1,69 @@
 import React from "react";
 import styled from "styled-components";
+import {connect} from "react-redux";
 const HeaderContainer = styled.div`
   display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 3.125em 6.25em 2.25em 6.25em;
+  
   h1 {
+      font-size: 3.5rem;
   }
-  nav {
-      position: relative;
-    .bell-notification {
-      background: #ffb3b3 0% 0% no-repeat padding-box;
-      box-shadow: 5px 5px 8px #ffd9d9;
-      border-radius: 4px;
-      opacity: 1;
+  .header-and-logos-container{
+      display: flex;
+      align-items: center;
+    nav {
+        display: flex;
+        justify-content: space-evenly;
+        margin-right: 3.375em;
+        font-size: 1.8rem;
+        img{
+            margin-left: 0.9375em;
+        }
     }
-  }
+    .bell-notifications {
+        display: flex;
+        position: relative;
+        .notification-dot{
+            z-index: 10;
+            position: absolute;
+            background: #FF0000 0% 0% no-repeat padding-box;
+            opacity: 1;
+            width: 7px;
+            height: 7px;    
+            border-radius: 50%;
+            top: -3px;
+            right: -6.5px;
+        }
+    }
+}
 `;
 
-const Header = () => {
+const Header = (props) => {
   return (
     <HeaderContainer>
       <h1>DevFindr</h1>
-      <div>
+      <div className="header-and-logos-container">
         <nav>
           <p>$state.user</p>
-          <img src={`${process.env.PUBLIC_URL}/images/caret-down.svg`} />
+          <img src={`${process.env.PUBLIC_URL}/images/caret-down.svg`} alt="select down"/>
         </nav>
-        <div className="bell-notification" />
+        <div className="bell-notifications">
+            <div className="notification-dot" style={ { display:`${props.notificationIsThere ? 'block' : 'none'}  ` } }/>
+            <img src={`${process.env.PUBLIC_URL}/images/icon_bell_line.svg`} alt="icon bell" />
+        </div>
       </div>
     </HeaderContainer>
   );
 };
 
-export default Header;
+const mapStateToProps = state => {
+    //BOOLEAN IF ARRAY LIST OF NOTIFICATION HAS LENGTH > 0
+    
+    console.log(state.notificationIsThere)
+    return{
+        notificationIsThere: state.notificationIsThere
+    }
+}
+export default connect(mapStateToProps, {})(Header);

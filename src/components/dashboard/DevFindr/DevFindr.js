@@ -11,7 +11,7 @@ const DevFindr = props => {
     props.loadApp();
   }
   return props.user ? (
-    <>
+    <div>
       {props.user.isDeveloper ? (
         <DeveloperDashboard {...props} />
       ) : !props.user.isDeveloper === true ? (
@@ -19,7 +19,7 @@ const DevFindr = props => {
       ) : (
         errorHasOccured
       )}
-    </>
+    </ div>
   ) : (
     errorHasOccured
   );

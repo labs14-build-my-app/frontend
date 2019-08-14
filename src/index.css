@@ -51,9 +51,7 @@ html{
     font-family:'Source Sans Pro';
 
 }
-body{
-    background: url("./components/dashboard background.svg");
-}
+
 button{
 	border: none;
 	background: none;
