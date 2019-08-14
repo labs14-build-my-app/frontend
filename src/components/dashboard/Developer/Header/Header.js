@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   margin: 3.125em 6.25em 2.25em 6.25em;
   
   h1 {
