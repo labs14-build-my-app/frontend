@@ -136,7 +136,7 @@ class Login extends Component {
     //if user.type === dev
     this.props.login({ ...this.state }).then((res)=>{
       console.log(res)
-      this.props.history.push("/");
+      this.props.history.push("/dev/dashboard");
     });
    
   };
