@@ -11,7 +11,7 @@ const DevFindr = props => {
     props.loadApp();
   }
   return props.user ? (
-    <div>
+    <div className="main-app-column">
       {props.user.isDeveloper ? (
         <DeveloperDashboard {...props} />
       ) : !props.user.isDeveloper === true ? (

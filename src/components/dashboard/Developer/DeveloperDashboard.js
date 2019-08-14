@@ -5,23 +5,23 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
 
-const SideContent = styled.div`
+const DashboardContentContainer = styled.div`
   display: flex;
   justify-content: evenly;
   justify-content: center;
   align-items: stretch;
-  margin-bottom: 7.25em;
-  margin-top: 4em;
+  ${'' /* margin-bottom: 7.25em;
+  margin-top: 4em; */}
   max-width: 1840px;
-height: 950px;
-background: transparent linear-gradient(297deg, #F2F3FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
-opacity: 1;
+  height: 950px;
+
   .side-notif-and-statement-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-self: normal;
     margin-top: 4em;
+
   }
 `;
 
@@ -38,7 +38,7 @@ class DeveloperDashboard extends Component {
   render() {
     const { pathname } = this.props.history.location
     return (
-      <SideContent>
+      <DashboardContentContainer>
         <Redirect to={`${pathname}`} />
         <Route
           path="/dev/dashboard"
@@ -53,7 +53,7 @@ class DeveloperDashboard extends Component {
         />
 
         <Route path="/dev/find/projects" component={ProjectBoard}/>
-      </SideContent>
+      </DashboardContentContainer>
     );
   }
 }
