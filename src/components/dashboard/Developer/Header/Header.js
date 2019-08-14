@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import {loadApp} from "../../../../redux/actions"
 import {connect} from "react-redux";
@@ -15,18 +15,67 @@ const HeaderContainer = styled.div`
       display: flex;
       align-items: center;
     nav {
-        display: flex;
+        display: inline-flex;
         justify-content: space-evenly;
         margin-right: 3.375em;
         font-size: 1.8rem;
+        cursor: pointer;
         img{
             margin-left: 0.9375em;
         }
+        .header-nav-menu-container{
+            position: relative;
+            align-self: flex-end;
+            right: 0;
+            left: 0;
+            .header-nav-menu{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            background: #4D4F5C ;
+            z-index: 10;
+            right: 1px;
+            box-sizing: border-box;
+            li{
+                margin-top: 1.6rem;
+                padding: 1.2rem 2rem;
+                &:hover{
+                    background: #ccc;
+                }
+            }
+            
+        }
+        }
+        
     }
-    .bell-notifications {
-        display: flex;
+    .bell-notifications{
         position: relative;
-        .notification-dot{
+        cursor: pointer;
+       .notif-nav-menu-container{
+        position: relative;
+        display: inline-flex;
+        align-self: flex-end;
+        right: 0;
+        left: 0;
+       
+         .notif-nav-menu{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            background: #4D4F5C ;
+            z-index: 10;
+            right: 1px;
+            box-sizing: border-box;
+            li{
+                margin-top: 1.6rem;
+                padding: 1.2rem 2rem;
+                &:hover{
+                    background: #ccc;
+                }
+            }
+        }
+       }
+       .notification-dot{
             z-index: 10;
             position: absolute;
             background: #FF0000 0% 0% no-repeat padding-box;
@@ -37,29 +86,59 @@ const HeaderContainer = styled.div`
             top: -3px;
             right: -6.5px;
         }
+      
     }
+        
 }
 `;
 
 const Header = (props) => {
     console.log(props)
     const {user, loadApp, loadingApp } = props;
+
+    const [menuIsOpen, toggleMenu] = useState(false);
+    const [notifIsOpen, toggleNotif] = useState(false);
+
     if(loadingApp){
         loadApp();
     }
+    console.log(menuIsOpen)
 
   return (
     <HeaderContainer>
       <h1>DevFindr</h1>
       <div className="header-and-logos-container">
-        <nav>
+        <nav onClick={() => toggleMenu(!menuIsOpen)}>
           <p>{user && user.name}</p>
           <img src={`${process.env.PUBLIC_URL}/images/caret-down.svg`} alt="select down"/>
+          <div className="header-nav-menu-container"  style={{display: `${menuIsOpen ? 'flex' : 'none'}`}}>
+          <ul className="header-nav-menu">
+              <li>home</li>
+              <li>find projects</li>
+              <li>stuff 2</li>
+              <li>stuff 3</li>
+              <li>settings</li>
+          </ul>
+          </div>
+         
         </nav>
-        <div className="bell-notifications">
-            <div className="notification-dot" />
+        <div className="bell-notifications" onClick={() => toggleNotif(!notifIsOpen)} >
+            <img src={`${process.env.PUBLIC_URL}/images/icon_bell_line.svg`} alt="icon bell" /> 
+            <div className="notification-dot"  />
+            
+            <div className="notif-nav-menu-container" style= {{ display: `${notifIsOpen ? 'flex' : 'none' }`}}>
+            
+            <ul className="notif-nav-menu">
+              <li>home</li>
+              <li>find projects</li>
+              <li>stuff 2</li>
+              <li>stuff 3</li>
+              <li>settings</li>
+          </ul>
+            </div>
+         
             {/* style={ { display:`${props.notificationIsThere ? 'block' : 'none'}  ` } } */}
-            <img src={`${process.env.PUBLIC_URL}/images/icon_bell_line.svg`} alt="icon bell" />
+            
         </div>
       </div>
     </HeaderContainer>
