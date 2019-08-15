@@ -474,6 +474,11 @@ body .button-secondary svg path {
     padding-top: 10rem;
   }
 }
+@-moz-document url-prefix() {
+  .cta-getstarted-section img {
+    width: 90000px;
+  }
+}
 .grey-blob {
   position: relative;
 }
@@ -483,6 +488,21 @@ body .button-secondary svg path {
   z-index: -1;
   width: 1920px;
 }
+@media (max-width: 1366px) {
+  .grey-blob .grey-blobber {
+    max-width: 133.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .grey-blob .grey-blobber {
+    max-width: 76.8rem;
+  }
+}
+@media (max-width: 375px) {
+  .grey-blob .grey-blobber {
+    max-width: 37.5rem;
+  }
+}
 .getting-started {
   width: 100%;
   margin: 0 auto;
@@ -490,6 +510,11 @@ body .button-secondary svg path {
 @media (max-width: 375px) {
   .getting-started {
     max-width: 37rem;
+  }
+}
+@media (max-width: 1366px) {
+  .getting-started {
+    margin-top: -10px;
   }
 }
 .getting-started .gs-header {
@@ -537,8 +562,6 @@ body .button-secondary svg path {
     margin-top: 4em;
   }
 }
-@media (max-width: 375px) {
-}
 .getting-started .gs-cards h2 {
   text-align: center;
   margin-top: 20px;
@@ -569,6 +592,12 @@ body .button-secondary svg path {
     margin-left: 2rem;
     margin-right: 3.2rem;
     margin-top: 8.6rem;
+  }
+}
+@media (max-width: 768px) {
+  .safety-first {
+    margin-top: 12rem;
+    max-width: 76rem;
   }
 }
 .safety-first .text-section {
@@ -623,11 +652,18 @@ body .button-secondary svg path {
   max-width: 100%;
   height: 100%;
 }
+@media (max-width: 768px) {
+  .safety-first .safety-svg img {
+    object-fit: fill;
+  }
+}
 @media (max-width: 375px) {
   .safety-first .safety-svg {
     width: 159px;
     height: 200px;
   }
+}
+@media (max-width: 768px) {
 }
 .reviews {
   position: relative;
@@ -635,6 +671,11 @@ body .button-secondary svg path {
   background: url("../assets/svgs/Blob User Reviews.svg") no-repeat;
   background-size: cover;
   background-size: contain;
+}
+@media (max-width: 768px) {
+  .reviews {
+    background: none;
+  }
 }
 @media (max-width: 375px) {
   .reviews {
@@ -677,6 +718,17 @@ body .button-secondary svg path {
   top: 23.2rem;
   right: 25.2rem;
 }
+@media (max-width: 1366px) {
+  .reviews .user-reviews .user-reviews-h {
+    right: 8rem;
+  }
+}
+@media (max-width: 768px) {
+  .reviews .user-reviews .user-reviews-h {
+    right: 2rem;
+    top: 20rem;
+  }
+}
 @media (max-width: 375px) {
   .reviews .user-reviews .user-reviews-h {
     max-width: 13.4rem;
@@ -691,6 +743,18 @@ body .button-secondary svg path {
   position: absolute;
   top: 30.1rem;
   right: 25.2rem;
+}
+@media (max-width: 1366px) {
+  .reviews .user-reviews .user-reviews-p {
+    right: 8rem;
+  }
+}
+@media (max-width: 768px) {
+  .reviews .user-reviews .user-reviews-p {
+    right: 2rem;
+    top: 25rem;
+    max-width: 32rem;
+  }
 }
 @media (max-width: 375px) {
   .reviews .user-reviews .user-reviews-p {
@@ -708,6 +772,13 @@ body .button-secondary svg path {
   bottom: 31.6rem;
   left: 53rem;
   background: white;
+}
+@media (max-width: 768px) {
+  .reviews .dev-review {
+    left: 20rem;
+    bottom: 42.4rem;
+    max-width: 60rem;
+  }
 }
 @media (max-width: 375px) {
   .reviews .dev-review {
@@ -754,6 +825,11 @@ body .button-secondary svg path {
   margin-left: 10rem;
   display: inline-block;
 }
+@media (max-width: 768px) {
+  .reviews .img-person {
+    margin-left: 0rem;
+  }
+}
 @media (max-width: 375px) {
   .reviews .dev-review .dev-review-img-mob {
     margin-right: 1rem;
@@ -773,6 +849,11 @@ body .button-secondary svg path {
 @media (min-width: 375.1px) {
   .hide-desk {
     display: none;
+  }
+}
+@media (max-width: 768px) {
+  .hide-mobile {
+    max-width: 600px;
   }
 }
 .section-5 {
@@ -1079,7 +1160,7 @@ footer {
 footer .lists-of-links {
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-bottom: 16.7rem;
 }
 footer .lists-of-links ul li {
@@ -1094,8 +1175,26 @@ footer .lists-of-links ul li:first-child {
 footer .copyright {
   font-weight: bold;
   display: flex;
+  max-width: 1750px;
   justify-content: space-between;
   align-items: baseline;
   padding-bottom: 6.2rem;
   padding-left: 10rem;
+}
+@media (max-width: 375px) {
+  footer .copyright {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  footer .copyright {
+    flex-direction: column;
+  }
+}
+@media (max-width: 1366px) {
+  footer .copyright {
+    max-width: 1150px;
+  }
 }
