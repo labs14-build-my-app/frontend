@@ -56,25 +56,36 @@ const LeftContainer = styled.div`
 
     .form{
 
+      input:focus{
+        outline: none;
+      }
+
       form{
         display: flex;
         flex-direction: column;
 
         .input-field{
+          border: 1px solid purple;
+          position: relative;
+          float: left;
+          width: 100%;
 
           .field-title{
-            
+
           }
 
           input{
-
+            width: 100%
+            box-sizing: border-box; // fixes the issue where it expands out of the box model by 1.3px on the right
+            
             ::placeholder{
             }
 
           }
 
-          input:focus{
-          }
+          .input-box ~ .focus-border{position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: #4caf50; transition: 0.4s;}
+
+.input-box:focus ~ .focus-border{width: 100%; transition: 0.4s;}
 
         }
 
@@ -160,8 +171,8 @@ class Login extends Component {
 
                 <div className="input-field">
                   <span className="field-title"> Email </span> <br/>
-                  <input type="text" name="email" placeholder="What's the email you registered with?" onChange={this.handleChanges} value={this.state.value} />
-                  <span className="input-field-border"> </span>
+                  <input className="input-box" type="text" name="email" placeholder="What's the email you registered with?" onChange={this.handleChanges} value={this.state.value} />
+                  <span className="focus-border"> </span>
                 </div>
 
                 <span> Password </span> <br/>
