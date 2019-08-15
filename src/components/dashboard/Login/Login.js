@@ -77,8 +77,10 @@ const LeftContainer = styled.div`
           input{
             width: 100%
             box-sizing: border-box; // fixes the issue where it expands out of the box model by 1.3px on the right
+            border-botom: .2rem solid ${textColor1};
             
             ::placeholder{
+              font-size: ${headerFontDesktop};
             }
 
           }
