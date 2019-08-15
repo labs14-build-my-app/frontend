@@ -26,9 +26,15 @@ const LeftContainer = styled.div`
     margin: 17rem 15.5rem 0;
     height: 100%;
 
-    border: 1px solid black;
-
     nav{
+
+      a{
+        text-decoration: none;
+
+        ::visited{
+          text-decoration: none;
+        }
+      }
 
       ol{
         list-style-type: none;
@@ -40,18 +46,39 @@ const LeftContainer = styled.div`
 
         :first-child{
           font-size: 2.5rem;
+
+          .active{
+            color: ${electricViolet}
+          }
+
         }
 
         :nth-child(2){
           font-size: 1.3rem;
           padding: 0 1.8rem 0;
+          color: ${textColor2};
         }
 
         :nth-child(3){
           font-size: 2.5rem;
+
+          .active{
+            color: ${electricViolet}
+          }
+          
+          a{
+            color: ${textColor2};
+
+            :hover{
+              color: ${electricViolet};
+              transition: 0.4s;
+            }
+          }
+
         }
 
       }
+
     }
 
     .form{
@@ -71,6 +98,7 @@ const LeftContainer = styled.div`
           position: relative;
           float: left;
           width: 100%;
+          margin: 0 0 3rem;
 
           .field-title{
             display: inline-block;
@@ -79,6 +107,7 @@ const LeftContainer = styled.div`
 
           input{
             width: 100%
+            height: 4.2rem; // prevents text from clipping
             box-sizing: border-box; // fixes the issue where it expands out of the box model by 1.3px on the right
             background: transparent;
             border: 0;
@@ -109,10 +138,35 @@ const LeftContainer = styled.div`
 
         }
 
+        button{
+          margin: 1rem 0 0;
+          font-size: 1.6rem;
+          color: #fff;
+          background: ${electricViolet};
+          box-shadow: 5px 5px 8px rgba(149, 25, 232, 0.16);
+          border-radius: .6rem;
+          height: 5.5rem;
+        }
+
         }
 
       }
     }
+
+    .forgot-password{
+      text-align: center;
+      margin: 3rem 0 0;
+      
+      a{
+        text-decoration: none;
+
+        ::visited{
+          text-decoration: none;
+        }
+      }
+
+    }
+
   }
 `;
 
@@ -181,9 +235,9 @@ class Login extends Component {
           <div className="l-container">
             <nav>
               <ol>
-                <li><NavLink to='/Login'>Login</NavLink></li>
+                <li><NavLink to='/login'>Login</NavLink></li>
                 <li>or</li>
-                <li><NavLink to='/Signup'>Sign Up</NavLink></li>
+                <li><NavLink to='/signup'>Sign Up</NavLink></li>
               </ol>
             </nav>
             <div className='form'>
@@ -195,15 +249,19 @@ class Login extends Component {
                   <span className="input-border"> </span>
                 </div>
 
-                <span> Password </span> <br/>
-                <input className="input-box" type="password" name="password" placeholder="What's the password for your account?" onChange={this.handleChanges} value={this.state.value} />
+                <div className="input-field">
+                  <span className="field-title"> Password </span> <br/>
+                  <input className="input-box" type="password" name="password" placeholder="What's the password for your account?" onChange={this.handleChanges} value={this.state.value} />
+                  <span className="input-border"></span>
+                </div>
+
                 <button type="submit" >
                   {this.props.isLoggingIn ? <BeatLoader /> : "Login" }
                 </button>
               </form>
 
               <div className="forgot-password">
-                Forgot your password? <NavLink to='/ChangePassword'>Change it here.</NavLink>
+                <p>Forgot your password? <NavLink to='/ChangePassword'>Change it here.</NavLink></p>
                 </div>
             </div>
           </div>
