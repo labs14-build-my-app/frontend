@@ -120,6 +120,14 @@ const LeftContainer = styled.div`
 
           }
 
+          // password visibility icon
+
+          .toggle-visability{
+            position: relative;
+            float: right;
+            margin: -2.5rem;
+          }
+
           // animation's for the text-box bottom border
 
           .input-box ~ .input-border{
@@ -209,8 +217,16 @@ const RightContainer = styled.div`
 class Login extends Component {
   state = {
     email: "",
-    password: ""
+    password: "",
+    password_hidden: true,
   };
+
+  togglePasswordVisibility = e => {
+    e.preventDefault();
+    this.setState({
+      password_hidden: !this.state.password_hidden
+    })
+  }
 
   handleChanges = e => {
     this.setState({
@@ -251,7 +267,8 @@ class Login extends Component {
 
                 <div className="input-field">
                   <span className="field-title"> Password </span> <br/>
-                  <input className="input-box" type="password" name="password" placeholder="What's the password for your account?" onChange={this.handleChanges} value={this.state.value} />
+                  <input className="input-box" type={this.state.password_hidden ? "password" : "text"} name="password" placeholder="What's the password for your account?" onChange={this.handleChanges} value={this.state.value} />
+                  <button className="password-visibility" type="button" name="password_hidden" onClick={this.togglePasswordVisibility}> icon </button>
                   <span className="input-border"></span>
                 </div>
 
