@@ -55,6 +55,9 @@ const LeftContainer = styled.div`
     }
 
     .form{
+      font-size: 1.8rem;
+      margin: 20.3rem 0 0;
+
 
       input:focus{
         outline: none;
@@ -65,29 +68,44 @@ const LeftContainer = styled.div`
         flex-direction: column;
 
         .input-field{
-          border: 1px solid purple;
           position: relative;
           float: left;
           width: 100%;
 
           .field-title{
-
+            display: inline-block;
+            margin: 0 0 3rem;
           }
 
           input{
             width: 100%
             box-sizing: border-box; // fixes the issue where it expands out of the box model by 1.3px on the right
-            border-botom: .2rem solid ${textColor1};
-            
+            background: transparent;
+            border: 0;
+            padding: 0 .5rem 2rem;
+            border-bottom: 2px solid ${textColor1};
+
             ::placeholder{
               font-size: ${headerFontDesktop};
             }
 
           }
 
-          .input-box ~ .focus-border{position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: #4caf50; transition: 0.4s;}
+          // animation's for the text-box bottom border
 
-.input-box:focus ~ .focus-border{width: 100%; transition: 0.4s;}
+          .input-box ~ .input-border{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: .26rem; // makes a slightly visable diffrence that lets users know they have clicked the text box
+            background-color: ${electricViolet};
+            transition: 0.4s;}
+
+          .input-box:focus ~ .input-border{
+            width: 100%;
+            transition: 0.4s;
+          }
 
         }
 
@@ -174,7 +192,7 @@ class Login extends Component {
                 <div className="input-field">
                   <span className="field-title"> Email </span> <br/>
                   <input className="input-box" type="text" name="email" placeholder="What's the email you registered with?" onChange={this.handleChanges} value={this.state.value} />
-                  <span className="focus-border"> </span>
+                  <span className="input-border"> </span>
                 </div>
 
                 <span> Password </span> <br/>
