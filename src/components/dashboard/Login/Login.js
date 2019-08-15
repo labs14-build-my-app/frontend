@@ -23,7 +23,7 @@ const LeftContainer = styled.div`
   background: #F2F3FF;
 
   .l-container{
-    margin: 17rem 16rem 0;
+    margin: 17rem 15.5rem 0;
     height: 100%;
 
     border: 1px solid black;
@@ -55,28 +55,42 @@ const LeftContainer = styled.div`
     }
 
     .form{
-      margin: 7rem 0 0;
+      font-size: 1.8rem;
+      margin: 20.3rem 0 0;
 
       form{
         display: flex;
         flex-direction: column;
 
         .input-field{
+          float:left;
+          width: 100%;
+          position: relative;
+
+          .field-title{
+            display: inline-block; // spans dont have padding by default because they are inline elements
+            padding: 0 0 2.8rem;
+          }
           
           input:focus{
             outline: none; // removes browser-default focus styling
           }
 
-          float:left;
-          width: 100%;
-          position: relative;
-
           input{
             width: 100%;
             box-sizing: border-box; // fixes textbox from expanding its bounds by 1.3px;
+            border: 0;
+            padding: 1rem 0 1.3rem;
+            border-bottom: .2rem solid ${textColor1};
+            background: transparent;
+
+            ::placeholder{
+              font-size: ${headerFontDesktop};
+            }
           }
 
           
+
         }
 
         }
