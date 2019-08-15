@@ -5,12 +5,21 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 const LeftNavigationElements = styled.nav`
-.LeftNav{
-max-width: 100px;
-}
+    margin-top: 8.125em;
+    .LeftNav{
+        max-width: 100px;
+        ul{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+    }
 .LeftNav li{
     padding: 30px;    
 }
+background: transparent linear-gradient(4deg, #F2F3FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+opacity: 1;
 `;
 
 export default function LeftNavigation(){
