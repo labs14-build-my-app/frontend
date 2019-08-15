@@ -7,7 +7,7 @@ import Signup from "./components/dashboard/Login/Signup";
 import DevFindr from "./components/dashboard/DevFindr/DevFindr";
 import Header from "./components/dashboard/Developer/Header/Header";
 import styled from "styled-components";
-// import LeftNavigation from "./components/dashboard/Navigation/LeftNavigation"
+import LeftNavigation from "./components/dashboard/Navigation/LeftNavigation"
 const AppContainer = styled.div`
   display: flex
   .main-app-container{
@@ -25,6 +25,7 @@ const App = () => {
   return (
     <>
       <AppContainer>
+      <LeftNavigation />
         <div className="main-app-container">
         <Route path="/" component={Header} />
         <PrivateRoute path="/" component={DevFindr} />
