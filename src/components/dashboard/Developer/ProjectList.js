@@ -31,11 +31,6 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
   const validProjectList =
     projectList.length !== null || projectList.length > 0;
 
-  // console.log(projectList);
-  // console.log(
-  //   validProjectList && pathname[0] === searchProjectPage,
-  //   "SEARCH PROJECTS"
-  // );
   useEffect(() => {
     if (pathname[0] === dashboard) {
       fetchSelfProjects();
@@ -46,13 +41,6 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname[0]]);
-
-  // console.log(validProjectList, "VALID PROJECT");
-  // console.log(
-  //   pathname === dashboard,
-  //   pathname === searchProjectPage,
-  //   `pathname: ${pathname[0]}`
-  // );
 
   console.groupEnd();
   return (

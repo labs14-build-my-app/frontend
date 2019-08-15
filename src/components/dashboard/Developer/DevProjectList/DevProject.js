@@ -71,11 +71,11 @@ border-left: 15px solid ${props => colorArray[props.theme.color]};
   align-items: center;
   margin: 2.5em;
   text-decoration: none;
-  color: inherit
+  color: inherit;
     div{
       margin-left: 1.3em;
-      h3{
-    ${"" /* project title */}
+    h3{
+    ${"" /* project title */};
     font-size: ${headerFontDesktop};
     font-family: ${headerFontFamily};
     font-weight: ${headerFontWeight};
