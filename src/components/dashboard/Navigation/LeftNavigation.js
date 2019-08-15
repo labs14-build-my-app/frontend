@@ -4,12 +4,12 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
-
-
 const LeftNavigationElements = styled.nav`
 .LeftNav{
-border: 1px solid red;
-max-width: 300px;
+max-width: 100px;
+}
+.LeftNav li{
+    padding: 30px;    
 }
 `;
 
@@ -19,24 +19,19 @@ export default function LeftNavigation(){
         <div className='LeftNav'>
             <ul>
                 <li>
-                home
-                <NavLink><img src='' alt=''/></NavLink>
+                <NavLink to="/dev/dashboard"><img src={process.env.PUBLIC_URL + "/images/icon_home.svg"} alt=''/></NavLink>
                 </li>
                 <li>
-                search
-                <NavLink><img src='' alt=''/></NavLink>
+                <NavLink to="/dev/find/projects"><img src={process.env.PUBLIC_URL + "/images/icon_search.svg"} alt=''/></NavLink>
                 </li>
                 <li>
-                statements
-                <NavLink><img src='' alt=''/></NavLink>
+                <NavLink to='/dev/statements'><img src={process.env.PUBLIC_URL + "/images/icon_user_projects.svg"} alt=''/></NavLink>
                 </li>
                 <li>
-                notifications
-                <NavLink><img src='' alt=''/></NavLink>
+                <NavLink to="/dev/notifications"><img src={process.env.PUBLIC_URL + "/images/icon_bell_filled.svg"} alt=''/></NavLink>
                 </li>
                 <li>
-                settings
-                <NavLink><img src='' alt=''/></NavLink>
+                <NavLink to="/dev/settings"><img src={process.env.PUBLIC_URL + "/images/icon_user_settings.svg"} alt=''/></NavLink>
                 </li>
             </ul>
         </div>
