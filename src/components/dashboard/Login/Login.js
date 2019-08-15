@@ -126,7 +126,7 @@ const RightContainer = styled.div`
     /* gradient overlay */
     linear-gradient(61deg, rgba(24, 7, 94, .7), rgba(149, 25, 232, .7)),
     /* bottom image */
-    url('https://images.unsplash.com/photo-1549692520-acc6669e2f0c');
+    url('${process.env.PUBLIC_URL + "/images/heros/login-signup-hero.jpg"}');
 
     background-position: center;
     background-repeat: no-repeat;
