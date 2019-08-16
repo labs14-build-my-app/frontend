@@ -14,26 +14,37 @@ const LoginPageContainer = styled.div`
   display: nowrap;
   font-size: ${headerFontDesktop};
   height: 1080px; // temporary
+
+  a{
+    text-decoration: none;
+    color: ${textColor2};
+
+    .active{
+      color: ${electricViolet}
+    }
+
+      :visited{
+        text-decoration: none;
+      }
+
+      :hover{
+        color: ${electricViolet};
+        transition: 0.4s;
+      }
+  }
+
 `;
 
 const LeftContainer = styled.div`
   width: 45%;
   height: 100%;
-  background: #F2F3FF;
+  background: ${veryLightBlue};
 
   .l-container{
     margin: 17rem 15.5rem 0;
     height: 100%;
 
     nav{
-
-      a{
-        text-decoration: none;
-
-        :visited{
-          text-decoration: none;
-        }
-      }
 
       ol{
         list-style-type: none;
@@ -60,20 +71,7 @@ const LeftContainer = styled.div`
 
         :nth-child(3){
           font-size: 2.5rem;
-
-          .active{
-            color: ${electricViolet}
-          }
           
-          a{
-            color: ${textColor2};
-
-            :hover{
-              color: ${electricViolet};
-              transition: 0.4s;
-            }
-          }
-
         }
 
       }
@@ -212,8 +210,8 @@ const RightContainer = styled.div`
   }
 `;
 
-const hidePass = <img src={process.env.PUBLIC_URL + '/images/icons/icon_Eye_slash.svg'} />;
-const showPass = <img src={process.env.PUBLIC_URL + '/images/icons/icon_Eye_visable.svg'} />;
+const showPass = <img src={process.env.PUBLIC_URL + '/images/icons/icon_Eye_slash.svg'} />;
+const hidePass = <img src={process.env.PUBLIC_URL + '/images/icons/icon_Eye_visable.svg'} />;
 
 class Login extends Component {
   state = {
@@ -248,6 +246,9 @@ class Login extends Component {
    
     return (
       <LoginPageContainer className="page-container">
+
+        {/* content area for the left side of the page */}
+
         <LeftContainer>
           <div className="l-container">
             <nav>
