@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { login } from "../../../redux/actions";
 
 import styled from "styled-components";
-import { headerFontDesktop, h1, electricViolet, veryLightBlue, textColor1, textColor2, textBox, losLinks, projectFontSubtext, losTransitionTime } from "../cssVariables";
+import { headerFontDesktop, h1, electricViolet, veryLightBlue, textColor1, textColor2, textBox, losLinks, projectFontSubtext, losTransitionTime, losBackground, kkk } from "../cssVariables";
 import { BeatLoader } from "react-spinners";
 
 const LoginPageContainer = styled.div`
@@ -160,19 +160,12 @@ const RightContainer = styled.div`
 
   .r-container{
     height: 100%;
-    background:
-    /* gradient overlay */
-    linear-gradient(61deg, rgba(24, 7, 94, .7), rgba(149, 25, 232, .7)),
-    /* bottom image */
-    url('${process.env.PUBLIC_URL + "/images/heros/login-signup-hero.jpg"}');
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    
+    ${losBackground};
 
     .text{
       padding-top: 40%;
-      color: white;
+      color: ${privilege};
       margin-left: 9rem;
 
       h1{

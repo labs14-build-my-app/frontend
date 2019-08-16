@@ -9,6 +9,7 @@ export const shamrock = "#25DA95";
 export const electricViolet = "#9519E8";
 export const trout = "#4D4F5C";
 export const gunPowder = "#43425D";
+export const privilege = "#fff"
 
 // NEW CSS COLORS
 export const textColor1 = "#43425D";
@@ -48,3 +49,13 @@ box-shadow: 5px 5px 8px 0px rgba(255,255,255,0.16);
  border-radius: 10px;
  z-index: -10;
 }`;
+
+// gradient overlay for login & signup page
+export const losBackground = `
+	background:
+	linear-gradient(61deg, rgba(24, 7, 94, .7), rgba(149, 25, 232, .7)),
+	url('${process.env.PUBLIC_URL + "/images/heros/login-signup-hero.jpg"}');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+`
