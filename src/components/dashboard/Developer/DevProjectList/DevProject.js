@@ -23,6 +23,7 @@ const DevListProjectStyle = styled.li`
   padding: 1.4375em 2.5em;
   align-items: center;
   margin-bottom: 1.5em;
+
   .project-owner-and-image {
     margin-right: 12vw;
   }

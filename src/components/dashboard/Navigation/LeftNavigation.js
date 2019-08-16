@@ -15,8 +15,14 @@ const LeftNavigationElements = styled.nav`
       a li svg path {
         fill: #9592a8;
       }
+      a :hover{
+          background: #FFEFFF;
+          transition: .2s;
+          
+      }
       .active svg path {
         fill: #9519e8;
+        
       }
     }
   }
