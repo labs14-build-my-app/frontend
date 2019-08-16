@@ -9,7 +9,6 @@ import { headerFontDesktop, h1, electricViolet, veryLightBlue, textColor1, textC
 import { BeatLoader } from "react-spinners";
 
 const LoginPageContainer = styled.div`
-border: 1px solid red;
   margin: 0 auto;
   display: flex;
   display: nowrap;
@@ -268,7 +267,7 @@ class Login extends Component {
                 <div className="input-field">
                   <span className="field-title"> Password </span> <br/>
                   <input className="input-box" type={this.state.password_hidden ? "password" : "text"} name="password" placeholder="What's the password for your account?" onChange={this.handleChanges} value={this.state.value} />
-                  <button className="password-visibility" type="button" name="password_hidden" onClick={this.togglePasswordVisibility}> icon </button>
+                  <button className="password-visibility" type="button" name="password_hidden" onClick={this.togglePasswordVisibility}> {this.state.password_hidden? "on" : "off" }</button>
                   <span className="input-border"></span>
                 </div>
 
