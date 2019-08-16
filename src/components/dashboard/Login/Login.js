@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { login } from "../../../redux/actions";
 
 import styled from "styled-components";
-import { headerFontDesktop, h1, electricViolet, veryLightBlue, textColor1, textColor2, textBox, losLinks, projectFontSubtext, losTransitionTime, losBackground, kkk } from "../cssVariables";
+import { headerFontDesktop, h1, electricViolet, veryLightBlue, textColor1, textColor2, losLinks, projectFontSubtext, losTransitionTime, losBackground, privilege } from "../cssVariables";
 import { BeatLoader } from "react-spinners";
 
 const LoginPageContainer = styled.div`
@@ -96,8 +96,9 @@ const LeftContainer = styled.div`
             box-sizing: border-box; // fixes the issue where it expands out of the box model by 1.3px on the right
             background: transparent;
             border: 0;
-            padding: 0 .5rem 2rem;
+            padding: 0 0 2rem 0rem;
             border-bottom: 2px solid ${textColor1};
+            font-size: ${headerFontDesktop};
 
             ::placeholder{
               font-size: ${headerFontDesktop};
@@ -105,12 +106,14 @@ const LeftContainer = styled.div`
 
           }
 
-          /* password visibility icon */
+          /* password visibility button */
 
-          .toggle-visability{
-            position: relative;
+          .password-visibility{
+            position: absolute;
             float: right;
-            margin: -2.5rem;
+            top: 4.5rem;
+            right: 2rem;
+            z-index: 1;
           }
 
           /* animation's for the text-box bottom border */
@@ -132,7 +135,7 @@ const LeftContainer = styled.div`
 
         }
 
-        button{
+        .submit-button{
           margin: 1rem 0 0;
           font-size: 1.6rem;
           color: #fff;
@@ -183,8 +186,8 @@ const RightContainer = styled.div`
   }
 `;
 
-const showPass = <img src={process.env.PUBLIC_URL + '/images/icons/icon_Eye_slash.svg'} />;
-const hidePass = <img src={process.env.PUBLIC_URL + '/images/icons/icon_Eye_visable.svg'} />;
+const showPass = <img src={process.env.PUBLIC_URL + '/images/icons/icon_Eye_slash.svg'} alt="show password" />;
+const hidePass = <img src={process.env.PUBLIC_URL + '/images/icons/icon_Eye_visable.svg'} alt="hide password" />;
 
 class Login extends Component {
   state = {
@@ -243,11 +246,11 @@ class Login extends Component {
                 <div className="input-field">
                   <span className="field-title"> Password </span> <br/>
                   <input className="input-box" type={this.state.password_hidden ? "password" : "text"} name="password" placeholder="What's the password for your account?" onChange={this.handleChanges} value={this.state.value} />
-                  <button className="password-visibility" type="button" name="password_hidden" onClick={this.togglePasswordVisibility}> {this.state.password_hidden ? hidePass : showPass }</button>
                   <span className="input-border"></span>
+                  <button className="password-visibility" type="button" name="password_hidden" onClick={this.togglePasswordVisibility}> {this.state.password_hidden ? hidePass : showPass }</button>
                 </div>
 
-                <button type="submit" >
+                <button type="submit" className="submit-button" >
                   {this.props.isLoggingIn ? <BeatLoader /> : "Login" }
                 </button>
               </form>
