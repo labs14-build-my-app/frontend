@@ -6,7 +6,6 @@ import { loadApp } from "../../../redux/actions";
 const errorHasOccured = <p>An Error has occured please log in again</p>;
 
 const DevFindr = props => {
-  // console.log(props)
   if (!props.user) {
     props.loadApp();
   }
@@ -28,7 +27,7 @@ const mapStateToProps = state => {
   // console.log(state)
   return {
     user: state.user
-  };
+  }
 };
 export default connect(
   mapStateToProps,

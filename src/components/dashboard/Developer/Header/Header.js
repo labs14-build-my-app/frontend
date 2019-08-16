@@ -21,6 +21,7 @@ const HeaderContainer = styled.div`
         margin-right: 3.375em;
         font-size: 1.8rem;
         cursor: pointer;
+        user-select: none;
         img{
             margin-left: 0.9375em;
         }

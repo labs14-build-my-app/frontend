@@ -49,13 +49,13 @@ class DeveloperDashboard extends Component {
         <Route
           path="/dev/dashboard"
           render={() => {
-            return (<>
+            return (<div className="developer-home">
               <ProjectIntroduction />
               <div className="project-board-and-notifications">
                 <ProjectBoard {...this.props} />
                 {this.renderNotificationAndStatement()}
               </ div>
-              </>
+              </ div>
             );
           }}
         />
