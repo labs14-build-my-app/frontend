@@ -25,6 +25,11 @@ export const h1 = "5.5rem";
 export const headerFontFamily = "Source Sans Pro";
 export const headerFontWeight = "normal";
 
+// Login & Signup Specific Fonts
+export const losLinks = "2.5rem";
+export const losTransitionTime = "0.4s"
+
+
 //<ProjectBoard /> specific fonts
 export const projectFontSubtext = "1.3rem";
 export const projectParagraphFont = "1.5rem";

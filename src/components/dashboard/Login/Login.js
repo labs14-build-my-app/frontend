@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { login } from "../../../redux/actions";
 
 import styled from "styled-components";
-import { headerFontDesktop, h1, electricViolet, veryLightBlue, textColor1, textColor2, textBox } from "../cssVariables";
+import { headerFontDesktop, h1, electricViolet, veryLightBlue, textColor1, textColor2, textBox, losLinks, projectFontSubtext, losTransitionTime } from "../cssVariables";
 import { BeatLoader } from "react-spinners";
 
 const LoginPageContainer = styled.div`
@@ -19,17 +19,13 @@ const LoginPageContainer = styled.div`
     text-decoration: none;
     color: ${textColor2};
 
-    .active{
-      color: ${electricViolet}
-    }
-
       :visited{
         text-decoration: none;
       }
 
       :hover{
         color: ${electricViolet};
-        transition: 0.4s;
+        transition: ${losTransitionTime};
       }
   }
 
@@ -53,25 +49,17 @@ const LeftContainer = styled.div`
 
       li{
         display: inline-block;
+        font-size: ${losLinks};
 
-        :first-child{
-          font-size: 2.5rem;
-
-          .active{
-            color: ${electricViolet}
-          }
-
+        .active{
+          color: ${electricViolet};
         }
+
 
         :nth-child(2){
-          font-size: 1.3rem;
+          font-size: ${projectFontSubtext};
           padding: 0 1.8rem 0;
           color: ${textColor2};
-        }
-
-        :nth-child(3){
-          font-size: 2.5rem;
-          
         }
 
       }
@@ -79,7 +67,7 @@ const LeftContainer = styled.div`
     }
 
     .form{
-      font-size: 1.8rem;
+      font-size: ${headerFontDesktop};
       margin: 20.3rem 0 0;
 
 
@@ -117,7 +105,7 @@ const LeftContainer = styled.div`
 
           }
 
-          // password visibility icon
+          /* password visibility icon */
 
           .toggle-visability{
             position: relative;
@@ -125,20 +113,21 @@ const LeftContainer = styled.div`
             margin: -2.5rem;
           }
 
-          // animation's for the text-box bottom border
+          /* animation's for the text-box bottom border */
 
           .input-box ~ .input-border{
             position: absolute;
             bottom: 0;
             left: 0;
             width: 0;
-            height: .26rem; // makes a slightly visable diffrence that lets users know they have clicked the text box
+            height: .26rem; 
             background-color: ${electricViolet};
-            transition: 0.4s;}
+            transition: ${losTransitionTime};
+            }
 
           .input-box:focus ~ .input-border{
             width: 100%;
-            transition: 0.4s;
+            transition: ${losTransitionTime};
           }
 
         }
@@ -161,16 +150,7 @@ const LeftContainer = styled.div`
     .forgot-password{
       text-align: center;
       margin: 3rem 0 0;
-      
-      a{
-        text-decoration: none;
-        
-        :visited{
-          text-decoration: none;
-        }
-        
-      }
-    
+          
     }
 `;
 
