@@ -9,7 +9,7 @@ import Header from "./components/dashboard/Developer/Header/Header";
 import styled from "styled-components";
 import LeftNavigation from "./components/dashboard/Navigation/LeftNavigation"
 const AppContainer = styled.div`
-  display: flex
+  display: flex;
   .main-app-container{
     display: flex;
     flex-direction: column;
@@ -25,7 +25,7 @@ const App = () => {
   return (
     <>
       <AppContainer>
-      <LeftNavigation />
+        <LeftNavigation />
         <div className="main-app-container">
         <Route path="/" component={Header} />
         <PrivateRoute path="/" component={DevFindr} />

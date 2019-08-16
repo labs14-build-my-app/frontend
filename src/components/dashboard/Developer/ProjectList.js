@@ -12,6 +12,9 @@ const ProjectListContainer = styled.ul`
     justify-content: space-between;
     padding: 5em 0em;
   }
+  /* dev-project-list styles */
+ padding: 4.1875em 2.5em 6.625em 7.4em;
+ 
 `;
 
 const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {

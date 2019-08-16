@@ -10,6 +10,19 @@ export const electricViolet = "#9519E8";
 export const trout = "#4D4F5C";
 export const gunPowder = "#43425D";
 
+export const setColorAndOpacity = (color, opacity) => {
+  switch (color) {
+    case electricViolet:
+      return `rgba(149, 25, 232, ${opacity})`;
+    case shamrock:
+      return `rgba(37, 218, 149, ${opacity})`;
+    case sunglow:
+      return `rgba(255, 220, 43, ${opacity})`;
+    default:
+      return "";
+  }
+};
+
 //MEDIA QUERIES
 export const phone = "(max-width: 375px)";
 export const tablet = "(max-width: 900px)"; //idk what this is i need to google it
