@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import {
   electricViolet,
+  electricVioletText,
   sunglow,
+  sunglowText,
+  sunglowLight,
   shamrock,
+  shamrockText,
   setColorAndOpacity
 } from "../../cssVariables";
 import { connect } from "react-redux";
@@ -47,11 +51,13 @@ const DevListProjectStyle = styled.li`
     border-radius: 50%;
   }
   .project-status {
-    padding: 0.9375em 3.4375em;
-    /* searchStatus(status, returnText, returnTextColor) */
-    color:  ${(props) => searchStatus(props.theme.status, false, true)};
+    padding: 0.9375em 0;
+    color: #C2A721;
     font-weight: bolder;
     font-size: 1.5rem;
+    /* max-width: 183px; */
+    width: 11.4375em;
+    text-align: center;
     background: ${(props) => setColorAndOpacity(searchStatus(props.theme.status), 1)} 0% 0% no-repeat padding-box;
   }
 `;
@@ -60,20 +66,20 @@ const searchStatus = (status, returnText, returnTextColor) => {
   console.log(status);
   switch (status) {
     case "searching":
-      return returnTextColor ? "#C2A721" : returnText ? "Searching" : sunglow;
+      return returnTextColor ? `${sunglowText}` : returnText ? "Searching" : sunglow;
     case "completed":
-      return returnTextColor ? "#6C63FF" :  returnText ? "Completed" : electricViolet;
+      return returnTextColor ? `${electricVioletText}` :  returnText ? "Completed" : electricViolet;
     case "in progress":
-      return returnTextColor ? "#3D9E47F" :  returnText ? "In Progress" : shamrock;
+      return returnTextColor ? `${shamrockText}` :  returnText ? "In Progress" : shamrock;
     // unsure of colors for these
     case "cancelled":
       return  returnTextColor ? "red" :   returnText ? "Cancelled" : "#FFB3B3";
     case "review":
-      return returnTextColor ? "#6C63FF" : returnText ? "Waiting For Review" : "#FFF9D9";
+      return returnTextColor ? `${sunglowText}` : returnText ? "Waiting For Review" : `${sunglowLight}`;
     case "updated":
-      return returnTextColor ? "#6C63FF" :  returnText ? "Update Proposal" : "#FFF9D9";
+      return returnTextColor ? `${sunglowText}` :  returnText ? "Update Proposal" : `${sunglowLight}` ;
     default:
-      return returnTextColor ? "#6C63FF" :  returnText ? "Project Status Invalid" : ""; 
+      return returnTextColor ? `${sunglowText}` :  returnText ? "Project Status Invalid" : ""; 
       // ^ this will return black;
   }
 };
@@ -113,12 +119,4 @@ const DevProject = props => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    state: state.example
-  };
-};
-export default connect(
-  mapStateToProps,
-  {}
-)(DevProject);
+export default DevProject
