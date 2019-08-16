@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ProjectIntroduction from "./DevProjectList/ProjectIntroduction";
 import ProjectList from "./ProjectList";
 import styled from "styled-components";
 import { transparentBackdrop } from "../cssVariables";
@@ -33,7 +32,6 @@ export class ProjectBoard extends Component {
       <ProjectBoardContainer>
         {pathname === dashboard ? (
           <>
-            <ProjectIntroduction />
             <ProjectList {...this.props} pathname={pathname} />
           </>
         ) : (
