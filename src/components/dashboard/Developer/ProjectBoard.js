@@ -9,10 +9,11 @@ const ProjectBoardContainer = styled.div`
   width: 100%;
   border-radius: 10px;
   border: none;
+  margin-top: 2.5em;
+  background: transparent linear-gradient(248deg, #F2F3FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
   .find-proj-full-container {
     padding: 7.5em 12.6875em 6.125em 8.4375em;
   }
-  ${transparentBackdrop}
 `;
 
 export class ProjectBoard extends Component {

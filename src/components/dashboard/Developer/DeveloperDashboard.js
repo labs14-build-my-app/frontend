@@ -19,13 +19,15 @@ const DashboardContentContainer = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-self: normal;
-    margin-top: 4em;
+    
+
 
   }
   .project-board-and-notifications{
     display: flex;
   background: transparent linear-gradient(248deg, rgba(242, 243, 255, 1) 0%, rgba(255, 255, 255, 1) 100%) 0% 0% no-repeat padding-box;
   box-shadow: 5px 5px 8px rgba(255, 255, 255, 0.25);
+  margin-top: 2.5em;
   }
 `;
 

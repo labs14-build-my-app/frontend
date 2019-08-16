@@ -16,7 +16,7 @@ const AppContainer = styled.div`
     width: 100%;
     .main-app-column{
       background: transparent linear-gradient(297deg, #F2F3FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
-      padding: 11.5625em 4.3125em 7em 6.625em;
+      padding: 11.5625em 7.125em 7em 6.625em;
       
     }
   }
