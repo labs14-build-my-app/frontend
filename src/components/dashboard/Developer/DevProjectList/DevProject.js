@@ -14,7 +14,7 @@ import { connect } from "react-redux";
 const DevListProjectStyle = styled.li`
   max-width: 1126px;
   background: #ffffff 0% 0% no-repeat padding-box;
-  box-shadow: 5px 5px 8px 0px ${props => setColorAndOpacity(searchStatus(props.theme.status), 0.08)};
+  box-shadow: 5px 5px 8px 0px ${props => setColorAndOpacity(searchStatus(props.theme.status), 0.25)};
     /* box-shadow: 5px 5px 8px #FFF9D9; */
   border-radius: 4px;
   opacity: 1;
