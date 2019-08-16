@@ -212,6 +212,9 @@ const RightContainer = styled.div`
   }
 `;
 
+const hidePass = <img src={process.env.PUBLIC_URL + '/images/icons/icon_Eye_slash.svg'} />;
+const showPass = <img src={process.env.PUBLIC_URL + '/images/icons/icon_Eye_visable.svg'} />;
+
 class Login extends Component {
   state = {
     email: "",
@@ -266,7 +269,7 @@ class Login extends Component {
                 <div className="input-field">
                   <span className="field-title"> Password </span> <br/>
                   <input className="input-box" type={this.state.password_hidden ? "password" : "text"} name="password" placeholder="What's the password for your account?" onChange={this.handleChanges} value={this.state.value} />
-                  <button className="password-visibility" type="button" name="password_hidden" onClick={this.togglePasswordVisibility}> {this.state.password_hidden ? "on" : "off" }</button>
+                  <button className="password-visibility" type="button" name="password_hidden" onClick={this.togglePasswordVisibility}> {this.state.password_hidden ? hidePass : showPass }</button>
                   <span className="input-border"></span>
                 </div>
 
