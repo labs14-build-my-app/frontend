@@ -25,7 +25,7 @@ const SideContent = styled.div`
 class DeveloperDashboard extends Component {
   renderNotificationAndStatement = () => {
     return (
-      <> 
+      <>
         <div className="side-notif-and-statement-container">
           <QuarterlyStatement />
           <NotificationCenter />
@@ -34,20 +34,23 @@ class DeveloperDashboard extends Component {
     );
   };
   render() {
-    console.log(this.props)
+    console.log(this.props);
     // const { pathname } = this.props.history.location
 
- 
     return (
       <SideContent>
-      <Redirect to="/dev/dashboard" />
-      <Route path="/dev/dashboard" render={() => {
-       return( <>
-         <ProjectBoard {...this.props} />
-         {() => this.renderNotificationAndStatement()}
-        </>)
-      }} />
-
+        <Redirect to="/dev/dashboard" />
+        <Route
+          path="/dev/dashboard"
+          render={() => {
+            return (
+              <>
+                <ProjectBoard {...this.props} />
+                {this.renderNotificationAndStatement()}
+              </>
+            );
+          }}
+        />
       </SideContent>
     );
   }
