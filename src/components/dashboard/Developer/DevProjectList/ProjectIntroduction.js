@@ -23,7 +23,7 @@ const ProjectIntroduction = props => {
   const { user } = useSelector(s => s);
   return (
     <ProjectIntroContainer>
-      <h1>Hello {user.name}, welcome to your dashboard</h1>
+      <h1>Hello {user && user.firstName}, welcome to your dashboard.</h1>
       <div>
       <h3>12:07 PM</h3>
       <p>8/12/2019</p>

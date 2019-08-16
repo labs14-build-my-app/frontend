@@ -108,7 +108,7 @@ const Header = (props) => {
       <Link to="/dev/dashboard" style={{textDecoration: "none", color: "inherit"}}><h1>DevFindr</h1></Link>
       <div className="header-and-logos-container">
         <nav onClick={() => toggleMenu(!menuIsOpen)}>
-          <p>{user && user.name}</p>
+          <p>{user && `${user.firstName} ${user.lastName}` }</p>
           <img src={`${process.env.PUBLIC_URL}/images/caret-down.svg`} alt="select down"/>
           <div className="header-nav-menu-container"  style={{display: `${menuIsOpen ? 'flex' : 'none'}`}}>
           <ul className="header-nav-menu">

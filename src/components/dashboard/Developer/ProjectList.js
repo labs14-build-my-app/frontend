@@ -7,13 +7,14 @@ import { fetchSelfProjects, fetchAllProjects } from "../../../redux/actions";
 import { connect } from "react-redux";
 
 const ProjectListContainer = styled.ul`
+margin-top: 2.5em;
   .find-new-proj-projectlist-container {
     display: flex;
     justify-content: space-between;
     padding: 5em 0em;
   }
   /* dev-project-list styles */
- padding: 4.1875em 2.5em 6.625em 7.4em;
+ padding: 1.25em 2.5em 6.625em 7.4em;
  
 `;
 
