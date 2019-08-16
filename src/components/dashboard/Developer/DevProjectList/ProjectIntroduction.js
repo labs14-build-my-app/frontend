@@ -9,6 +9,15 @@ const ProjectIntroContainer = styled.div`
   box-shadow: 5px 5px 8px #ffffff;
   border-radius: 5px;
   opacity: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.4375em 1.4375em;
+  align-items: center;
+  color: rgba(67, 66, 93, 1);
+  div{
+    text-align: center;
+    line-height: 17px;
+  }
 `;
 const ProjectIntroduction = props => {
   const { user } = useSelector(s => s);
@@ -16,6 +25,8 @@ const ProjectIntroduction = props => {
     <ProjectIntroContainer>
       <h1>Hello {user.name}, welcome to your dashboard</h1>
       <div>
+      <h3>12:07 PM</h3>
+      <p>8/12/2019</p>
         
       </div>
     </ProjectIntroContainer>
