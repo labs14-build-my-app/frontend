@@ -10,6 +10,7 @@ import styled from "styled-components";
 import LeftNavigation from "./components/dashboard/Navigation/LeftNavigation"
 const AppContainer = styled.div`
   display: flex;
+  height: 100%;
   .main-app-container{
     display: flex;
     flex-direction: column;
