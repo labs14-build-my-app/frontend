@@ -78,8 +78,6 @@ const searchStatus = (status, returnText, returnTextColor) => {
   }
 };
 const DevProject = props => {
-  const [isActiveChevron, setActiveChevron] = useState(false);
-  const [projectColorStatus, setProjectColorStatus] = useState("");
   console.log(props);
   return (
     <ThemeProvider theme={props}>
