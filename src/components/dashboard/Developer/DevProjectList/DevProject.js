@@ -52,7 +52,7 @@ const DevListProjectStyle = styled.li`
     color:  ${(props) => searchStatus(props.theme.status, false, true)};
     font-weight: bolder;
     font-size: 1.5rem;
-    background: ${(props) => setColorAndOpacity(searchStatus(props.theme.status), .25)} 0% 0% no-repeat padding-box;
+    background: ${(props) => setColorAndOpacity(searchStatus(props.theme.status), 1)} 0% 0% no-repeat padding-box;
   }
 `;
 
