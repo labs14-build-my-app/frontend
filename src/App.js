@@ -5,6 +5,9 @@ import Login from "./components/dashboard/Login/Login";
 import PrivateRoute from "./components/auth/PrivateRoute";
 import Signup from "./components/dashboard/Login/Signup";
 import DevFindr from "./components/dashboard/DevFindr/DevFindr";
+import ChangePassword from "./components/dashboard/Login/ChangePassword";
+
+=======
 import Header from "./components/dashboard/Developer/Header/Header";
 import styled from "styled-components";
 import LeftNavigation from "./components/dashboard/Navigation/LeftNavigation"
@@ -37,6 +40,7 @@ const App = () => {
       </AppContainer>
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
+      <Route path="/changepassword" component={ChangePassword} />
     </>
   );
 };
