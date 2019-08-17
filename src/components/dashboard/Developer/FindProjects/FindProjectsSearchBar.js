@@ -23,11 +23,13 @@ const FindProjectsSearchBarContainer = styled.div`
       color: #9592a8;
       margin-left: 1.875em;
       font-size: 1.3rem;
+      user-select: none;
+      cursor: pointer;
       svg {
         transform: rotate(-90deg);
         margin-left: 1.3125em;
         width: 9px;
-    height: 9px;
+        height: 9px;
         path {
           fill: #9592a8;
         }
