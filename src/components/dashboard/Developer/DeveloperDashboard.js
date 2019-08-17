@@ -43,9 +43,10 @@ class DeveloperDashboard extends Component {
   };
   render() {
     const { pathname } = this.props.history.location
+    console.log("dashboard rendered")
     return (
       <DashboardContentContainer>
-        <Redirect to={`${pathname}`} />
+        <Redirect to="/dev/dashboard" />
         <Route
           path="/dev/dashboard"
           render={() => {

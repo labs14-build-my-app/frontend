@@ -93,8 +93,8 @@ const LeftContainer = styled.div`
 
           input{
             width: 100%;
-            height: 4.2rem; // prevents text from clipping
-            box-sizing: border-box; // fixes the issue where it expands out of the box model by 1.3px on the right
+            height: 4.2rem; /* prevents text from clipping*/
+            box-sizing: border-box; /* fixes the issue where it expands out of the box model by 1.3px on the right */
             background: transparent;
             border: 0;
             padding: 0 0 2rem 0rem;

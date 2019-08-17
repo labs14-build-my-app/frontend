@@ -9,6 +9,7 @@ const DevFindr = props => {
   if (!props.user) {
     props.loadApp();
   }
+  console.log("devfindr loaded")
   return props.user ? (
     <div className="main-app-column">
       {props.user.isDeveloper ? (
