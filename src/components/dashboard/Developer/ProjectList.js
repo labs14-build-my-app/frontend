@@ -11,6 +11,7 @@ const ProjectListContainer = styled.ul`
     display: flex;
     justify-content: space-between;
     padding: 5em 0em;
+   
   }
 
   /* dev-project-list styles */

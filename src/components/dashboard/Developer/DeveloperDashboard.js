@@ -43,7 +43,6 @@ class DeveloperDashboard extends Component {
   };
   render() {
     const { pathname } = this.props.history.location
-    console.log("dashboard rendered")
     
     return (
       <DashboardContentContainer>

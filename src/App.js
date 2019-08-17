@@ -13,7 +13,7 @@ import LeftNavigation from "./components/dashboard/Navigation/LeftNavigation";
 const AppContainer = styled.div`
   .essential-container {
     display: flex;
-    height: 100%;
+    height: 100vh;
   }
 
   .main-app-container {
@@ -26,6 +26,7 @@ const AppContainer = styled.div`
       height: 100%;
       .developer-home {
         padding: 11.5625em 7.125em 7em 6.625em;
+        
       }
     }
   }
@@ -37,7 +38,7 @@ const App = props => {
         <div className="essential-container">
           <Route path="/dev" component={LeftNavigation} />
           <div className="main-app-container">
-            <Route path="/dev/dashboard" component={Header} />
+            <Route path="/dev" component={Header} />
             <PrivateRoute path="/" component={DevFindr} />
             {/* <Route path="/" component={LeftNavigation}/> */}
           </div>
