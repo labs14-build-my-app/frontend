@@ -10,9 +10,10 @@ import ChangePassword from "./components/dashboard/Login/ChangePassword";
 import Header from "./components/dashboard/Developer/Header/Header";
 import styled from "styled-components";
 import LeftNavigation from "./components/dashboard/Navigation/LeftNavigation"
+
 const AppContainer = styled.div`
   display: flex;
- ${window.location.pathname === "/login" || "/signup" || "/signup2" ? null :  'height: 100%;'}
+ ${window.location.pathname === "/login" || window.location.pathname === "/signup" || window.location.pathname=== "/signup2" ? null :  'height: 100%;'}
   .main-app-container{
     display: flex;
     flex-direction: column;
@@ -27,6 +28,7 @@ const AppContainer = styled.div`
   }
 `
 const App = () => {
+  console.log(window.location.pathname)
   return (
     <>
       <AppContainer>
