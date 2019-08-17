@@ -42,7 +42,7 @@ const LeftContainer = styled.div`
     height: 100%;
 
     nav{
-
+      padding-top: 5.0625em
       ol{
         list-style-type: none;
         padding-left: 0;
