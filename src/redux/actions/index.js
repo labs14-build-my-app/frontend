@@ -1,47 +1,51 @@
 import axios from "axios";
-import {axiosWithAuth} from "../../components/auth/axiosWithAuth"
-const BACKEND_URL = "https://devfindr-mongo-db.herokuapp.com";
+import { axiosWithAuth } from "../../components/auth/axiosWithAuth";
+export const BACKEND_URL = "https://devfindr-mongo-db.herokuapp.com";
 
-export const LOGIN_START = "LOGIN_START";
-export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
-export const LOGIN_FAILED = "LOGIN_FAILED";
+export const LOGIN = {
+  START: "LOGIN_START",
+  SUCCESS: "LOGIN_SUCCESS",
+  FAILED: "LOGIN_FAILED"
+};
 
 export const login = creds => dispatch => {
-  dispatch({ type: LOGIN_START });
+  dispatch({ type: LOGIN.START });
 
   return axios
     .post(`${BACKEND_URL}/users/login`, creds)
     .then(res => {
       console.log(res.data);
-      if(res.data.user){
-      localStorage.setItem("token", res.data.token)
-      localStorage.setItem("user", res.data.user)
+      if (res.data.user) {
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("user", res.data.user);
       }
-      dispatch({ type: LOGIN_SUCCESS, payload: res.data });
+      dispatch({ type: LOGIN.SUCCESS, payload: res.data });
     })
     .catch(err => {
       console.log(err);
-      dispatch({ type: LOGIN_FAILED, payload: err });
+      dispatch({ type: LOGIN.FAILED, payload: err });
     });
 };
 
-export const SIGNUP_START = "SIGNUP_START";
-export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
-export const SIGNUP_FAILURE = "SIGNUP_FAILURE";
+export const SIGNUP = {
+  START: "SIGNUP_START",
+  SUCCESS: "SIGNUP_SUCCESS",
+  FAILURE: "SIGNUP_FAILURE"
+};
 
 export const signup = creds => dispatch => {
-  dispatch({ type: SIGNUP_START });
+  dispatch({ type: SIGNUP.START });
 
   return axios
     .post(`${BACKEND_URL}/users`, creds)
     .then(res => {
       console.log(res.data);
       localStorage.setItem("token", res.data.token);
-      dispatch({ type: SIGNUP_SUCCESS, payload: res.data.user });
+      dispatch({ type: SIGNUP.SUCCESS, payload: res.data.user });
     })
     .catch(err => {
       console.log(err);
-      dispatch({ type: SIGNUP_FAILURE, payload: err });
+      dispatch({ type: SIGNUP.FAILURE, payload: err });
     });
 };
 
@@ -49,17 +53,75 @@ export const LOAD_APP = {
   START: "LOAD_APP_START",
   SUCCESS: "LOAD_APP_SUCCESS",
   FAILURE: "LOAD_APP_FAILURE"
-}
-export const loadApp = () => dispatch =>{
-  dispatch({type: LOAD_APP.START})
-  return axiosWithAuth().get(`${BACKEND_URL}/users/me`)
-  .then(res=>{
-    console.log(res.data, "return user") 
-    dispatch({type: LOAD_APP.SUCCESS, payload: res.data} )
-  })
-}
+};
+export const loadApp = () => dispatch => {
+  dispatch({ type: LOAD_APP.START });
+  return axiosWithAuth()
+    .get(`${BACKEND_URL}/users/me`)
+    .then(res => {
+      console.log(res.data, "return user");
+      dispatch({ type: LOAD_APP.SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      console.log(err);
+      dispatch({ type: LOAD_APP.FAILURE });
+    });
+};
 
-// export const FETCH_PROJECTS
-// export const fetchSelfProjects  = () => dispatch => {
-//   dispatch({type: ""})
-// }
+export const FETCH_SELF_PROJECTS = {
+  START: "FETCH_SELF_START",
+  SUCCESS: "FETCH_SELF_SUCCESS",
+  FAILURE: "FETCH_SELF_FAILURE"
+};
+export const fetchSelfProjects = () => dispatch => {
+  dispatch({ type: FETCH_SELF_PROJECTS.START });
+  return axiosWithAuth()
+    .get(`${BACKEND_URL}/projects/dev`)
+    .then(res => {
+      console.log(res);
+      dispatch({ type: FETCH_SELF_PROJECTS.SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      console.log(err);
+      dispatch({ type: FETCH_SELF_PROJECTS.FAILURE });
+    });
+};
+
+export const FETCH_ALL_PROJECTS = {
+  START: "FETCH_ALL_START",
+  SUCCESS: "FETCH_ALL_SUCCESS",
+  FAILURE: "FETCH_ALL_FAILURE"
+};
+export const fetchAllProjects = () => dispatch => {
+  dispatch({ type: FETCH_ALL_PROJECTS.START });
+  return axiosWithAuth()
+    .get(`${BACKEND_URL}/projects/all`)
+    .then(res => {
+      console.log(res);
+      dispatch({ type: FETCH_ALL_PROJECTS.SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      console.log(err);
+      dispatch({ type: FETCH_ALL_PROJECTS.FAILURE });
+    });
+};
+
+export const SAVE_PROJECT = {
+  START: "SAVE_PROJECT_START",
+  SUCCESS: "SAVE_PROJECT_SUCCESS",
+  FAILURE: "SAVE_PROJECT_FAILURE"
+};
+
+export const saveProject = id => dispatch => {
+  dispatch({ type: SAVE_PROJECT.START });
+  return axiosWithAuth()
+    .put(`${BACKEND_URL}/projects/dev/${id}`)
+    .then(res => {
+      console.log(res);
+      dispatch({ type: SAVE_PROJECT.SUCCESS });
+    })
+    .catch(err => {
+      console.log(err.status);
+      dispatch({ type: SAVE_PROJECT.FAILURE });
+    });
+};

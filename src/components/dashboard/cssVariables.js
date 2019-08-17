@@ -5,8 +5,17 @@ to name your colors. Thanks for coding responsively.
 */
 //CSS COLORS
 export const sunglow = "#FFDC2B";
+export const sunglowLight = "#FFF9D9";
+export const sunglowText = "#C2A721";
+
 export const shamrock = "#25DA95";
+export const shacmrockLight = "#D9FFDD";
+export const shamrockText = "#3D9E47";
+
 export const electricViolet = "#9519E8";
+export const electricVioletLight = "#E2E0FF";
+export const electricVioletText = "#6C63FF";
+
 export const trout = "#4D4F5C";
 export const gunPowder = "#43425D";
 export const privilege = "#fff"
@@ -15,6 +24,24 @@ export const privilege = "#fff"
 export const textColor1 = "#43425D";
 export const textColor2 = "#9592A8";
 export const veryLightBlue = "#F2F3FF";
+
+//sets lighter color than the main above
+export const setColorAndOpacity = (color, opacity) => {
+  switch (color) {
+    case electricViolet:
+      return `rgba(217, 255, 221, ${opacity})`;
+    case shamrock:
+      return `rgba(37, 218, 149, ${opacity})`;
+    case sunglow:
+      return `rgba(255, 249, 217, ${opacity})`;
+    case sunglowLight:
+      return `rgba(255, 249, 217, ${opacity})`;
+    case electricVioletLight:
+      return `rgba(226, 224, 255, ${opacity})`;
+    default:
+      return "";
+  }
+};
 
 //MEDIA QUERIES
 export const phone = "(max-width: 375px)";

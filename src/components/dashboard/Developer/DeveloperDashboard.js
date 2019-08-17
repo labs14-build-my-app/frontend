@@ -1,24 +1,33 @@
 import React, { Component } from "react";
 import ProjectBoard from "./ProjectBoard";
-import QuarterlyStatement from "../QuarterlyStatement/QuarterlyStatement.js";
 import NotificationCenter from "../NotificationCenter/NotificationContainer";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
-
-const SideContent = styled.div`
+import ProjectIntroduction from "../Developer/DevProjectList/ProjectIntroduction"
+const DashboardContentContainer = styled.div`
   display: flex;
   justify-content: evenly;
   justify-content: center;
   align-items: stretch;
-  margin-bottom: 7.25em;
-  margin-top: 4em;
+  ${'' /* margin-bottom: 7.25em;
+  margin-top: 4em; */}
+  flex-direction: column;
+
   .side-notif-and-statement-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-self: normal;
-    margin-top: 4em;
+    
+
+
+  }
+  .project-board-and-notifications{
+    display: flex;
+  background: transparent linear-gradient(248deg, rgba(242, 243, 255, 1) 0%, rgba(255, 255, 255, 1) 100%) 0% 0% no-repeat padding-box;
+  box-shadow: 5px 5px 8px rgba(255, 255, 255, 0.25);
+  margin-top: 2.5em;
   }
 `;
 
@@ -27,31 +36,32 @@ class DeveloperDashboard extends Component {
     return (
       <>
         <div className="side-notif-and-statement-container">
-          <QuarterlyStatement />
           <NotificationCenter />
         </div>
       </>
     );
   };
   render() {
-    console.log(this.props);
-    // const { pathname } = this.props.history.location
-
+    const { pathname } = this.props.history.location
     return (
-      <SideContent>
-        <Redirect to="/dev/dashboard" />
+      <DashboardContentContainer>
+        <Redirect to={`${pathname}`} />
         <Route
           path="/dev/dashboard"
           render={() => {
-            return (
-              <>
+            return (<div className="developer-home">
+              <ProjectIntroduction />
+              <div className="project-board-and-notifications">
                 <ProjectBoard {...this.props} />
                 {this.renderNotificationAndStatement()}
-              </>
+              </ div>
+              </ div>
             );
           }}
         />
-      </SideContent>
+
+        <Route path="/dev/find/projects" component={ProjectBoard}/>
+      </DashboardContentContainer>
     );
   }
 }
