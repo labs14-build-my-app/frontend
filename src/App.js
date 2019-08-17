@@ -7,13 +7,12 @@ import Signup from "./components/dashboard/Login/Signup";
 import DevFindr from "./components/dashboard/DevFindr/DevFindr";
 import ChangePassword from "./components/dashboard/Login/ChangePassword";
 
-=======
 import Header from "./components/dashboard/Developer/Header/Header";
 import styled from "styled-components";
 import LeftNavigation from "./components/dashboard/Navigation/LeftNavigation"
 const AppContainer = styled.div`
   display: flex;
-  height: 100%;
+ ${window.location.pathname === "/login" || "/signup" || "/signup2" ? null :  'height: 100%;'}
   .main-app-container{
     display: flex;
     flex-direction: column;
@@ -31,9 +30,9 @@ const App = () => {
   return (
     <>
       <AppContainer>
-        <LeftNavigation />
+       <Route path="/dev" component={LeftNavigation} />
         <div className="main-app-container">
-        <Route path="/" component={Header} />
+        <Route path="/dev/dashboard" component={Header} />
         <PrivateRoute path="/" component={DevFindr} />
         {/* <Route path="/" component={LeftNavigation}/> */}
         </div>

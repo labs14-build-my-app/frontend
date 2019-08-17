@@ -13,7 +13,7 @@ const LoginPageContainer = styled.div`
   display: flex;
   display: nowrap;
   font-size: ${headerFontDesktop};
-  height: 1080px; // temporary
+  height: 100%;
 
   a{
     text-decoration: none;
@@ -37,7 +37,8 @@ const LeftContainer = styled.div`
   background: ${veryLightBlue};
 
   .l-container{
-    margin: 17rem 15.5rem 0;
+    width: calc(100% - 144px);
+    margin: 0 auto;
     height: 100%;
 
     nav{
@@ -162,7 +163,7 @@ const RightContainer = styled.div`
   height: 100%;
 
   .r-container{
-    height: 100%;
+     height: 100vh;
     
     ${losBackground};
 
