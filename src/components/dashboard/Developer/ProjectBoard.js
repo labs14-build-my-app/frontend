@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ProjectIntroduction from "./DevProjectList/ProjectIntroduction";
 import ProjectList from "./ProjectList";
 import styled from "styled-components";
 import { transparentBackdrop } from "../cssVariables";
@@ -7,16 +6,15 @@ import FindProjects from "./FindProjects/FindProjects";
 const ProjectBoardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 1448px;
-  margin: 4em 2.5em 0 2.5em;
-  padding: 2.5em;
   width: 100%;
   border-radius: 10px;
   border: none;
+  margin-top: 2.5em;
+  background: transparent linear-gradient(248deg, #F2F3FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
   .find-proj-full-container {
     padding: 7.5em 12.6875em 6.125em 8.4375em;
+    height: 100vh;
   }
-  ${transparentBackdrop}
 `;
 
 export class ProjectBoard extends Component {
@@ -26,18 +24,20 @@ export class ProjectBoard extends Component {
       "/dev/find/projects"
     ];
     const { pathname } = this.props.history.location;
+    console.log(pathname === findNewProjects);
+    
     if (pathname !== dashboard && pathname !== findNewProjects) {
       return null;
     }
+    
     return (
       <ProjectBoardContainer>
         {pathname === dashboard ? (
           <>
-            <ProjectIntroduction />
             <ProjectList {...this.props} pathname={pathname} />
           </>
         ) : (
-          pathname === findNewProjects && (
+          pathname === findNewProjects && (     
             <div className="find-proj-full-container">
               <FindProjects />
               <ProjectList {...this.props} pathname={pathname} />

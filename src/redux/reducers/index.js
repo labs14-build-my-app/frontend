@@ -4,7 +4,8 @@ import {
   SIGNUP,
   LOAD_APP,
   FETCH_SELF_PROJECTS,
-  FETCH_ALL_PROJECTS
+  FETCH_ALL_PROJECTS,
+  SAVE_PROJECT
 } from "../actions";
 
 const initialState = {
@@ -12,7 +13,7 @@ const initialState = {
   loggingIn: false,
   isSigningup: false,
   loadingApp: false,
-  projectList: [],
+  projectList: []
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -56,49 +57,67 @@ const rootReducer = (state = initialState, action) => {
         isSigningup: false
       };
 
-    case LOAD_APP.START:  
+    case LOAD_APP.START:
       return {
-        ...state, 
+        ...state,
         loadingApp: true
       };
-    case LOAD_APP.SUCCESS: 
+    case LOAD_APP.SUCCESS:
       return {
         ...state,
         user: action.payload,
-        loadingApp: false,
+        loadingApp: false
       };
-    
-    case LOAD_APP.FAILURE: 
+
+    case LOAD_APP.FAILURE:
       return {
-        ...state, 
+        ...state,
         error: "please log in again",
         loadingApp: false
       };
-      case "LOAD_INITIAL_PROJECTS": 
-      return{
-        ...state, 
-        projectList: state.projectList
-      }
-      case FETCH_SELF_PROJECTS.START:
-      return{
-        ...state,
-      }
-      case FETCH_SELF_PROJECTS.SUCCESS:
+    case "LOAD_INITIAL_PROJECTS":
       return {
-        ...state, 
+        ...state,
+        projectList: state.projectList
+      };
+    case FETCH_SELF_PROJECTS.START:
+      return {
+        ...state
+      };
+    case FETCH_SELF_PROJECTS.SUCCESS:
+      return {
+        ...state,
         projectList: action.payload,
         projectsAlreadyCalled: true
-      }
-      case FETCH_ALL_PROJECTS.START:
-      return{
-        ...state,
-      }
-      case FETCH_ALL_PROJECTS.SUCCESS:
+      };
+    case FETCH_ALL_PROJECTS.START:
       return {
-        ...state, 
-        projectList: action.payload,
+        ...state
+      };
+    case FETCH_ALL_PROJECTS.SUCCESS:
+      return {
+        ...state,
+        projectList: action.payload.filter(
+          project => project.status === "searching"
+        ),
         allProjectsCalled: true
-      }
+      };
+
+    case SAVE_PROJECT.START:
+      return {
+        ...state
+      };
+
+    case SAVE_PROJECT.SUCCESS:
+      return {
+        ...state
+      };
+
+    case SAVE_PROJECT.FAILURE:
+      return {
+        ...state
+      };
+
     default:
       return {
         ...state

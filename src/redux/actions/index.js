@@ -71,37 +71,57 @@ export const loadApp = () => dispatch => {
 export const FETCH_SELF_PROJECTS = {
   START: "FETCH_SELF_START",
   SUCCESS: "FETCH_SELF_SUCCESS",
-  FAILURE: "FETCH_SELF_FAILURE",
-}
-export const fetchSelfProjects = () => dispatch =>{
-dispatch({type: FETCH_SELF_PROJECTS.START})
+  FAILURE: "FETCH_SELF_FAILURE"
+};
+export const fetchSelfProjects = () => dispatch => {
+  dispatch({ type: FETCH_SELF_PROJECTS.START });
   return axiosWithAuth()
-  .get(`${BACKEND_URL}/projects`)
-  .then(res=>{
-    console.log(res)
-    dispatch({type: FETCH_SELF_PROJECTS.SUCCESS, payload: res.data})
-  })
-  .catch(err=>{
-    console.log(err)
-    dispatch({type: FETCH_SELF_PROJECTS.FAILURE})
-  })
-}
+    .get(`${BACKEND_URL}/projects/dev`)
+    .then(res => {
+      console.log(res);
+      dispatch({ type: FETCH_SELF_PROJECTS.SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      console.log(err);
+      dispatch({ type: FETCH_SELF_PROJECTS.FAILURE });
+    });
+};
 
 export const FETCH_ALL_PROJECTS = {
   START: "FETCH_ALL_START",
   SUCCESS: "FETCH_ALL_SUCCESS",
-  FAILURE: "FETCH_ALL_FAILURE",
-}
-export const fetchAllProjects = () => dispatch =>{
-dispatch({type: FETCH_ALL_PROJECTS.START})
+  FAILURE: "FETCH_ALL_FAILURE"
+};
+export const fetchAllProjects = () => dispatch => {
+  dispatch({ type: FETCH_ALL_PROJECTS.START });
   return axiosWithAuth()
-  .get(`${BACKEND_URL}/projects/all`)
-  .then(res=>{
-    console.log(res)
-    dispatch({type: FETCH_ALL_PROJECTS.SUCCESS, payload: res.data})
-  })
-  .catch(err=>{
-    console.log(err)
-    dispatch({type: FETCH_ALL_PROJECTS.FAILURE})
-  })
-}
+    .get(`${BACKEND_URL}/projects/all`)
+    .then(res => {
+      console.log(res);
+      dispatch({ type: FETCH_ALL_PROJECTS.SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      console.log(err);
+      dispatch({ type: FETCH_ALL_PROJECTS.FAILURE });
+    });
+};
+
+export const SAVE_PROJECT = {
+  START: "SAVE_PROJECT_START",
+  SUCCESS: "SAVE_PROJECT_SUCCESS",
+  FAILURE: "SAVE_PROJECT_FAILURE"
+};
+
+export const saveProject = id => dispatch => {
+  dispatch({ type: SAVE_PROJECT.START });
+  return axiosWithAuth()
+    .put(`${BACKEND_URL}/projects/dev/${id}`)
+    .then(res => {
+      console.log(res);
+      dispatch({ type: SAVE_PROJECT.SUCCESS });
+    })
+    .catch(err => {
+      console.log(err.status);
+      dispatch({ type: SAVE_PROJECT.FAILURE });
+    });
+};

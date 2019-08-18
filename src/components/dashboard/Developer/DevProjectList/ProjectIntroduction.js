@@ -1,97 +1,35 @@
 import React from "react";
 import styled from "styled-components";
-import {Link} from "react-router-dom";
-import {
-  sunglow,
-  shamrock,
-  electricViolet,
-  headerFontDesktop
-} from "../../cssVariables.js";
+import { useSelector } from "react-redux";
 
 const ProjectIntroContainer = styled.div`
-display: flex;
-align-items: center;
-flex-direction: column;
-margin: 0 2.5em;
-margin-bottom: 1.875em;
-h1{
-font-size: ${headerFontDesktop}
-margin-bottom: .9375em;
-}
-p{
-  font-size: 1.5rem;
-  align-self: center;
-  
-  i{
-    margin-left: ${5/16}em;
-  }
-}
-.proj-title{
- display: flex;
- justify-content: space-between;
- align-self: stretch;
- a{
-   text-decoration: none;
-   color: inherit;
- }
- 
-}
-.proj-detail{
+  font-size: 1.8rem;
+  max-width: 1657px;
+  background: #f2f3ff 0% 0% no-repeat padding-box;
+  box-shadow: 5px 5px 8px #ffffff;
+  border-radius: 5px;
+  opacity: 1;
   display: flex;
   justify-content: space-between;
-  p{
-    width: 80%;
+  padding: 1.4375em 1.4375em;
+  align-items: center;
+  color: rgba(67, 66, 93, 1);
+  div{
+    text-align: center;
+    line-height: 17px;
   }
-  .progress-square-container{
-    width: 20%;
-    padding-left:1.4375em;
-    li{
-      display: flex;
-      align-items: center;
-      margin-bottom: 5px;
-      border-radius: 2px;
-      span{
-        padding: 10px;
-        display: block;
-        margin-right: 0.9375em;
-      }
-    }
-  }
-}
 `;
-//stateful component
-export default function ProjectIntroduction() {
+const ProjectIntroduction = props => {
+  const { user } = useSelector(s => s);
   return (
     <ProjectIntroContainer>
-      <section className="proj-title">
-        <h1>Projects </h1>
-        <Link to="/dev/self/projects" className="allprojects-cta">
-          <p>
-           All Projects <i className="fas fa-chevron-right" />
-          </p>
-  
-        </Link>
-      </section>
-      <section className="proj-detail">
-        <p>
-          {" "}
-          Here's some of your most recent projects, you can click on one for
-          more information about it or to access the project's page and or
-          submit project proposals to the client.
-        </p>
-        <ul className="progress-square-container">
-          <li>
-            <span style={{ background: `${sunglow}` }} /> Proposal Stage
-          </li>
-          <li>
-            <span style={{ background: `${shamrock}` }} /> In Progress
-          </li>
-          <li>
-            <span style={{ background: `${electricViolet}` }} /> Completed /
-            Canceled
-          </li>
-        </ul>
-      </section>
+      <h1>Hello {user && user.firstName}, welcome to your dashboard.</h1>
+      <div>
+      <h3>12:07 PM</h3>
+      <p>8/12/2019</p>
+        
+      </div>
     </ProjectIntroContainer>
   );
-}
+};
+export default ProjectIntroduction;

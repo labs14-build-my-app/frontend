@@ -6,15 +6,12 @@ import { loadApp } from "../../../redux/actions";
 const errorHasOccured = <p>An Error has occured please log in again</p>;
 
 const DevFindr = props => {
-  // console.log(props)
   if (!props.user) {
-    console.log("loading app");
     props.loadApp();
   }
+  console.log("devfindr loaded")
   return props.user ? (
-    <>
-      {console.log(!props.user.isDeveloper === false)}
-      {console.log(props.user)}
+    <div className="main-app-column">
       {props.user.isDeveloper ? (
         <DeveloperDashboard {...props} />
       ) : !props.user.isDeveloper === true ? (
@@ -22,7 +19,7 @@ const DevFindr = props => {
       ) : (
         errorHasOccured
       )}
-    </>
+    </div>
   ) : (
     errorHasOccured
   );
@@ -31,7 +28,7 @@ const mapStateToProps = state => {
   // console.log(state)
   return {
     user: state.user
-  };
+  }
 };
 export default connect(
   mapStateToProps,
