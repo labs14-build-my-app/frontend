@@ -4,6 +4,7 @@ import { Route } from "react-router-dom";
 import Login from "./components/dashboard/Login/Login";
 import PrivateRoute from "./components/auth/PrivateRoute";
 import Signup from "./components/dashboard/Login/Signup";
+import Signup2 from "./components/dashboard/Login/Signup2";
 import Navigation from "./components/dashboard/Navigation/Navigation";
 import DevFindr from "./components/dashboard/DevFindr/DevFindr";
 import ChangePassword from "./components/dashboard/Login/ChangePassword";
@@ -15,6 +16,7 @@ const App = () => {
       <PrivateRoute path="/" component={DevFindr} />
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
+      <Route path="/signup2" component={Signup2} />
       <Route path="/changepassword" component={ChangePassword} />
     </>
   );
