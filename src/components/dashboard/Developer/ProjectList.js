@@ -11,20 +11,17 @@ const ProjectListContainer = styled.ul`
     /* display: flex;
     justify-content: space-between; */
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     /* grid-auto-rows: minmax(100px, 342px); */
     grid-gap: 30px;
     padding: 2.5em 0;
-   
   }
 
   /* dev-project-list styles */
 
- .dev-proj-projectlist-container{
-  padding: 1.25em 2.5em 6.625em 7.4em;
- }
- 
- 
+  .dev-proj-projectlist-container {
+    padding: 1.25em 2.5em 6.625em 7.4em;
+  }
 `;
 
 const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
@@ -32,6 +29,20 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
   const getRandomInt = () => {
     return Math.round(Math.random() * 2);
   };
+
+  // const getColorForProjectStatus = status => {
+  //   switch (status) {
+  //     case "searching":
+  //       return getRandomInt();
+
+  //     case "review":
+  //       return "#E2E0FF";
+
+  //     default:
+  //       return getRandomInt();
+  //   }
+  // };
+
   console.group("ProjectList -- Rerender");
   // console.log(pathname, pathname.current);
 
@@ -58,24 +69,30 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
   console.groupEnd();
   return (
     <ProjectListContainer>
-      {validProjectList &&
-        pathname[0] === dashboard &&(
-          <div className="dev-proj-projectlist-container">
+      {validProjectList && pathname[0] === dashboard && (
+        <div className="dev-proj-projectlist-container">
           {projectList.map(project => {
-          return (
-           
-            <DevProject key={project._id} color={getRandomInt()} {...project} />
-           
-          );
-        })}
-          </div>
-        )
-        }
+            console.log(project);
+            return (
+              <DevProject
+                key={project._id}
+                color={getRandomInt()}
+                {...project}
+              />
+            );
+          })}
+        </div>
+      )}
       {validProjectList && pathname[0] === searchProjectPage && (
         <div className="find-new-proj-projectlist-container">
           {projectList.map((project, i) => {
             return (
-              <NewProjects {...project} key={project._id} number={i} id={project._id} />
+              <NewProjects
+                {...project}
+                key={project._id}
+                number={i}
+                id={project._id}
+              />
             );
           })}
         </div>

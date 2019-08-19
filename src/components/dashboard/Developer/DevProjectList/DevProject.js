@@ -18,8 +18,9 @@ import { connect } from "react-redux";
 const DevListProjectStyle = styled.li`
   max-width: 1126px;
   background: #ffffff 0% 0% no-repeat padding-box;
-  box-shadow: 5px 5px 8px 0px ${props => setColorAndOpacity(searchStatus(props.theme.status), 0.25)};
-    /* box-shadow: 5px 5px 8px #FFF9D9; */
+  box-shadow: 5px 5px 8px 0px
+    ${props => setColorAndOpacity(searchStatus(props.theme.status), 0.25)};
+  /* box-shadow: 5px 5px 8px #FFF9D9; */
   border-radius: 4px;
   opacity: 1;
   display: flex;
@@ -52,13 +53,15 @@ const DevListProjectStyle = styled.li`
   }
   .project-status {
     padding: 0.9375em 0;
-    color: #C2A721;
+    color: #c2a721;
     font-weight: bolder;
     font-size: 1.5rem;
     /* max-width: 183px; */
     width: 11.4375em;
     text-align: center;
-    background: ${(props) => setColorAndOpacity(searchStatus(props.theme.status), 1)} 0% 0% no-repeat padding-box;
+    background: ${props =>
+        setColorAndOpacity(searchStatus(props.theme.status), 1)}
+      0% 0% no-repeat padding-box;
   }
 `;
 
@@ -66,25 +69,56 @@ const searchStatus = (status, returnText, returnTextColor) => {
   console.log(status);
   switch (status) {
     case "searching":
-      return returnTextColor ? `${sunglowText}` : returnText ? "Searching" : sunglow;
+      return returnTextColor
+        ? `${sunglowText}`
+        : returnText
+        ? "Searching"
+        : sunglow;
     case "completed":
-      return returnTextColor ? `${electricVioletText}` :  returnText ? "Completed" : electricViolet;
+      return returnTextColor
+        ? `${electricVioletText}`
+        : returnText
+        ? "Completed"
+        : electricViolet;
     case "in progress":
-      return returnTextColor ? `${shamrockText}` :  returnText ? "In Progress" : shamrock;
+      return returnTextColor
+        ? `${shamrockText}`
+        : returnText
+        ? "In Progress"
+        : shamrock;
     // unsure of colors for these
     case "cancelled":
-      return  returnTextColor ? "red" :   returnText ? "Cancelled" : "#FFB3B3";
+      return returnTextColor ? "red" : returnText ? "Cancelled" : "#FFB3B3";
     case "review":
-      return returnTextColor ? `${sunglowText}` : returnText ? "Waiting For Review" : `${sunglowLight}`;
+      return returnTextColor
+        ? `${sunglowText}`
+        : returnText
+        ? "Waiting For Review"
+        : `${sunglowLight}`;
     case "updated":
-      return returnTextColor ? `${sunglowText}` :  returnText ? "Update Proposal" : `${sunglowLight}` ;
+      return returnTextColor
+        ? `${sunglowText}`
+        : returnText
+        ? "Update Proposal"
+        : `${sunglowLight}`;
     default:
-      return returnTextColor ? `${sunglowText}` :  returnText ? "Project Status Invalid" : ""; 
-      // ^ this will return black;
+      return returnTextColor
+        ? `${sunglowText}`
+        : returnText
+        ? "Project Status Invalid"
+        : "";
+    // ^ this will return black;
   }
 };
 const DevProject = props => {
-  console.log(props);
+  const endDate = (date, days) => {
+    let result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+  };
+
+  const startDate = new Date(props.createdAt);
+  // console.log(props);
   return (
     <ThemeProvider theme={props}>
       <DevListProjectStyle>
@@ -92,18 +126,22 @@ const DevProject = props => {
           src={`${
             process.env.PUBLIC_URL
           }/images/Landing Page - Mobile 375x667.png`}
+          alt="Project"
         />
         <div className="project-owner-and-image project-column">
           <h3>{props.projectName || "Project Name"}</h3>
           <p>{props.name || "Project Owner"}</p>
         </div>
         <div className="dev-project-start-date project-column">
-          <h3>{props.createdAt}</h3>
+          <h3>{new Date(props.createdAt).toLocaleDateString()}</h3>
           <p>Start Date</p>
         </div>
         <div className="dev-project-end-date project-column">
-          <h3>{props.endDate || "ends pretty soon my dude"}</h3>
-          <p>Estimated End DaTe</p>
+          <h3>
+            {endDate(startDate, 30).toLocaleDateString() ||
+              "ends pretty soon my dude"}
+          </h3>
+          <p>Estimated End Date</p>
         </div>
         <div className="dev-project-cost project-column">
           <h3>${props.cost || 5000} </h3>
@@ -113,10 +151,12 @@ const DevProject = props => {
           <h3>${props.deposit || 1520}</h3>
           <p>deposit</p>
         </div>
-        <div className="project-status">{searchStatus(props.status, true) || "project status"}</div>
+        <div className="project-status">
+          {searchStatus(props.status, true) || "project status"}
+        </div>
       </DevListProjectStyle>
     </ThemeProvider>
   );
 };
 
-export default DevProject
+export default DevProject;
