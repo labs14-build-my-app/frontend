@@ -668,13 +668,19 @@ body .button-secondary svg path {
 .reviews {
   position: relative;
   height: 104.8rem;
-  background: url("../assets/svgs/Blob User Reviews.svg") no-repeat;
-  background-size: cover;
-  background-size: contain;
+  background: #f2f3ff;
+}
+.reviews .purple-blobber {
+  margin-bottom: -1000px;
+}
+@media (max-width: 768px) {
+  .reviews .purple-blobber {
+    display: none;
+  }
 }
 @media (max-width: 768px) {
   .reviews {
-    background: none;
+    background: #f2f3ff;
   }
 }
 @media (max-width: 375px) {
@@ -726,7 +732,7 @@ body .button-secondary svg path {
 @media (max-width: 768px) {
   .reviews .user-reviews .user-reviews-h {
     right: 2rem;
-    top: 20rem;
+    top: 18rem;
   }
 }
 @media (max-width: 375px) {
@@ -752,7 +758,7 @@ body .button-secondary svg path {
 @media (max-width: 768px) {
   .reviews .user-reviews .user-reviews-p {
     right: 2rem;
-    top: 25rem;
+    top: 23rem;
     max-width: 32rem;
   }
 }

@@ -690,12 +690,20 @@ body {
 .reviews {
   position: relative;
   height: 104.8rem;
-  background: url("../assets/svgs/Blob User Reviews.svg") no-repeat;
-  background-size: cover;
-  background-size: contain;
-  
+  // background: url("../assets/svgs/Blob User Reviews.svg") no-repeat;
+  // background-size: cover;
+  // background-size: contain;
+  background: #f2f3ff;
+
+  .purple-blobber{
+    margin-bottom: -1000px;
+    
+    @media @tablet{
+      display: none;
+    }
+  }
   @media @tablet{
-    background: none;
+    background: #f2f3ff;
   }
 
   @media @phone {
@@ -743,7 +751,7 @@ body {
       }
       @media @tablet{
         right: 2rem;
-        top: 20rem;
+        top: 18rem;
       }
 
       @media @phone {
@@ -768,7 +776,7 @@ body {
 
       @media @tablet{
         right: 2rem;
-        top: 25rem;
+        top: 23rem;
         max-width: 32rem;
       }
 
