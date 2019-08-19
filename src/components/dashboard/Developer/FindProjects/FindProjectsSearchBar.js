@@ -108,7 +108,9 @@ const FindProjectsSearchBar = () => {
     <FindProjectsSearchBarContainer>
       <div className="searchbar-field">
         <div className="input-searchbar">
+
           <input placeholder="Search for projects by industry or keyword..." />
+ 
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="19.996"

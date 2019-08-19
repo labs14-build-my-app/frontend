@@ -49,6 +49,7 @@ class Signup extends Component {
     e.preventDefault();
     console.log(this.state);
     this.props.signup({ ...this.state }).then(res => {
+  
       this.props.history.push("/");
     });
   };
@@ -72,8 +73,15 @@ class Signup extends Component {
             />
             <input
               type="text"
-              name="name"
-              placeholder="Username"
+              name="firstName"
+              placeholder="first name"
+              onChange={this.handleChanges}
+              value={this.state.value}
+            />
+             <input
+              type="text"
+              name="lastName"
+              placeholder="last name"
               onChange={this.handleChanges}
               value={this.state.value}
             />

@@ -8,16 +8,22 @@ import { connect } from "react-redux";
 
 const ProjectListContainer = styled.ul`
   .find-new-proj-projectlist-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 5em 0em;
+    /* display: flex;
+    justify-content: space-between; */
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    /* grid-auto-rows: minmax(100px, 342px); */
+    grid-gap: 30px;
+    padding: 2.5em 0;
    
   }
 
   /* dev-project-list styles */
 
-
- padding: 1.25em 2.5em 6.625em 7.4em;
+ .dev-proj-projectlist-container{
+  padding: 1.25em 2.5em 6.625em 7.4em;
+ }
+ 
  
 `;
 
@@ -53,17 +59,23 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
   return (
     <ProjectListContainer>
       {validProjectList &&
-        pathname[0] === dashboard &&
-        projectList.map(project => {
+        pathname[0] === dashboard &&(
+          <div className="dev-proj-projectlist-container">
+          {projectList.map(project => {
           return (
+           
             <DevProject key={project._id} color={getRandomInt()} {...project} />
+           
           );
         })}
+          </div>
+        )
+        }
       {validProjectList && pathname[0] === searchProjectPage && (
         <div className="find-new-proj-projectlist-container">
-          {projectList.map(project => {
+          {projectList.map((project, i) => {
             return (
-              <NewProjects {...project} key={project._id} id={project._id} />
+              <NewProjects {...project} key={project._id} number={i} id={project._id} />
             );
           })}
         </div>

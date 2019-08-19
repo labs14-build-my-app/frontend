@@ -9,6 +9,7 @@ import ChangePassword from "./components/dashboard/Login/ChangePassword";
 import Header from "./components/dashboard/Developer/Header/Header";
 import styled, { ThemeProvider } from "styled-components";
 import LeftNavigation from "./components/dashboard/Navigation/LeftNavigation";
+import ProjectModal from "./components/dashboard/Developer/FindProjects/ProjectModal";
 
 const AppContainer = styled.div`
   .essential-container {
@@ -34,6 +35,8 @@ const AppContainer = styled.div`
 const App = props => {
   return (
     <>
+            <Route path="/dev/find/projects/:id" component={ProjectModal} />
+
       <AppContainer>
         <div className="essential-container">
           <Route path="/dev" component={LeftNavigation} />
@@ -43,6 +46,7 @@ const App = props => {
             {/* <Route path="/" component={LeftNavigation}/> */}
           </div>
         </div>
+ 
       </AppContainer>
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
