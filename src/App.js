@@ -27,7 +27,6 @@ const AppContainer = styled.div`
       height: 100%;
       .developer-home {
         padding: 11.5625em 7.125em 7em 6.625em;
-        
       }
     }
   }
@@ -35,7 +34,6 @@ const AppContainer = styled.div`
 const App = props => {
   return (
     <>
-            <Route path="/dev/find/projects/:id" component={ProjectModal} />
 
       <AppContainer>
         <div className="essential-container">
@@ -46,7 +44,6 @@ const App = props => {
             {/* <Route path="/" component={LeftNavigation}/> */}
           </div>
         </div>
- 
       </AppContainer>
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />

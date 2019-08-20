@@ -61,6 +61,7 @@ export const loadApp = () => dispatch => {
     .then(res => {
       console.log(res.data, "return user");
       dispatch({ type: LOAD_APP.SUCCESS, payload: res.data });
+      
     })
     .catch(err => {
       console.log(err);
@@ -99,6 +100,7 @@ export const fetchAllProjects = () => dispatch => {
     .then(res => {
       console.log(res);
       dispatch({ type: FETCH_ALL_PROJECTS.SUCCESS, payload: res.data });
+      // return axios.get(`${BACKEND_URL}`)
     })
     .catch(err => {
       console.log(err);

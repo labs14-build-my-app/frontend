@@ -5,7 +5,8 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 const LeftNavigationElements = styled.nav`
-  margin-top: 8.125em;
+  padding-top: 8.125em;
+  z-index: 15;
   .LeftNav {
     max-width: 100px;
     ul {

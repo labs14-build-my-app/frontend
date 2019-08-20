@@ -9,6 +9,7 @@ const HeaderContainer = styled.div`
   align-items: center;
   padding: 3.125em 6.25em 2.25em 6.25em;
   background: transparent linear-gradient(270deg, #F2F3FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+  z-index: 15;
   h1 {
       font-size: 3.5rem;
   }

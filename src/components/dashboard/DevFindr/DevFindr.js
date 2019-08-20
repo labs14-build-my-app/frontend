@@ -3,6 +3,8 @@ import DeveloperDashboard from "../Developer/DeveloperDashboard";
 import EntrepreneurBoard from "../Entrepreneur/EntrepreneurBoard";
 import { connect } from "react-redux";
 import { loadApp } from "../../../redux/actions";
+import ProjectModal from "../Developer/FindProjects/ProjectModal";
+import {Route} from "react-router-dom";
 const errorHasOccured = <p>An Error has occured please log in again</p>;
 
 const DevFindr = props => {
@@ -12,6 +14,8 @@ const DevFindr = props => {
   console.log("devfindr loaded")
   return props.user ? (
     <div className="main-app-column">
+      <Route path="/dev/find/projects/:id" component={ProjectModal} />
+
       {props.user.isDeveloper ? (
         <DeveloperDashboard {...props} />
       ) : !props.user.isDeveloper === true ? (
