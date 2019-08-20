@@ -3,7 +3,7 @@ const modal = document.querySelector(".hamburger-modal");
 const mobileNav = document.querySelector(".modal-nav-elements");
 const hamburger = document.querySelector(".hamburger-svg");
 
-const desktopNav = hamburger.parentNode.querySelector("ul");
+const desktopNav = hamburger.parentNode.querySelector("nav");
 const introGetStarted = document.querySelector('.cta-getstarted-section').querySelector('h2');
 
 const closeButtonSrc = "./assets/svgs/icon_close.svg";
@@ -61,7 +61,6 @@ const removeNav = (e) =>{
             
             hamburger.src = hamburgerButtonSrc;
             desktopNav.style.display = desktopNavCSS[0];
-          
             hamburger.parentElement.children[1].textContent = "MENU"
 
             hamburger.parentElement.classList.add("displayNavAnime")
