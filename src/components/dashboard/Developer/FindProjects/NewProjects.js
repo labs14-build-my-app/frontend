@@ -79,7 +79,6 @@ const EntrepreneurProjects = styled.li`
 const NewProjects = props => {
   const { name, owner, description, saveProject, ownerOccupation, id } = props;
   console.log(props);
-  console.log(name, description, owner, saveProject);
   return (
     <EntrepreneurProjects>
       <div className="project-container">
@@ -103,7 +102,7 @@ const NewProjects = props => {
           </div>
         </div>
         <p className="description">
-          {"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.".substr(
+          {description.substr(
             0,
             200
           ) + "..."}{" "}
@@ -113,7 +112,7 @@ const NewProjects = props => {
 
           <Link to={{
             pathname: `/dev/find/projects/${id}`,
-            state: { name: name, owner: owner, descrption: description, id: id }
+            state: { name: name, owner: owner, description: description, id: id }
           }} className="cta-moreinfo">
             <svg
               aria-hidden="true"

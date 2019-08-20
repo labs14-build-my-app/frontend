@@ -57,7 +57,7 @@ const ProjectModalModal = styled.div`
 export class ProjectModal extends Component {
   render() {
     const { name, owner, description, id } = this.props.location.state;
-
+    console.log(this.props)
     return (
       <ProjectModalModal>
         <div>{/* icons */}</div>
@@ -80,7 +80,7 @@ export class ProjectModal extends Component {
               </div>
             </div>
             <h2>{name} Proposal</h2>
-            <p>{description}</p>
+            <p>{description} test</p>
             <p>$3500 <br />
             preferred price range<br />
            $875 deposit</p>
