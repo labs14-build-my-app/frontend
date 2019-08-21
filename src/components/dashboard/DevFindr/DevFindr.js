@@ -14,7 +14,7 @@ const DevFindr = props => {
   console.log("devfindr loaded")
   return props.user ? (
     <div className="main-app-column">
-      <Route path="/dev/find/projects/:id" component={ProjectModal} />
+            <Route path="/dev/find/projects/:id" component={ProjectModal} />
 
       {props.user.isDeveloper ? (
         <DeveloperDashboard {...props} />

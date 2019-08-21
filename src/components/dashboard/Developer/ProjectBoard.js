@@ -13,7 +13,7 @@ const ProjectBoardContainer = styled.div`
   background: transparent linear-gradient(248deg, #F2F3FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
   .find-proj-full-container {
     padding: 7.5em 12.6875em 6.125em 8.4375em;
-    height: 100vh;
+
   }
 `;
 
@@ -32,6 +32,7 @@ export class ProjectBoard extends Component {
     
     return (
       <ProjectBoardContainer>
+
         {pathname === dashboard ? (
           <>
             <ProjectList {...this.props} pathname={pathname} />

@@ -1,22 +1,42 @@
-import React, { Component } from "react";
+import React, { useEffect, useCallback, useState } from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
+import { Editor, EditorState } from "draft-js";
+import { NONAME } from "dns";
+
 const ProjectModalModal = styled.div`
   background: white;
   z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-    padding: 1.5625em;
-    background: #F2F4FF;
-    border-radius: 5px;
-    margin: 0 4.375em;
+  padding: 1.5625em;
+  background: #f2f4ff;
+  border-radius: 5px;
+  margin: 0 4.375em;
+  input{
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    width: 100%;
+  }
   .proposal-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    background: #fff;
-    padding: 7.625em 0 5em 7.625em
+    background: rgba(255, 255, 255, 0.5);
+    padding: 7.625em 5em 5em 7.625em;
+    position: relative;
+    .invoice-actions {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      img {
+        display: inline-block;
+        margin-left: 1.5625em;
+        cursor: pointer;
+      }
+    }
   }
   .project-top {
     box-sizing: border-box;
@@ -28,11 +48,11 @@ const ProjectModalModal = styled.div`
       p {
         margin-left: 1em;
       }
-      h3{
-          font-size: 1.5rem;
+      h3 {
+        font-size: 1.5rem;
       }
-      p{
-          font-size: 1.3rem;
+      p {
+        font-size: 1.3rem;
       }
       align-items: center;
       .profile-pic {
@@ -42,66 +62,128 @@ const ProjectModalModal = styled.div`
       }
     }
   }
-  
-    .entreprenuer-section{
-        h2{
-           font-size: 2.5rem; 
-           margin-bottom: 1.25em
-        } 
-        p{
-            font-size: 1.5rem;
-        }
+
+  .entreprenuer-section {
+    padding-right: 5em;
+    border-right: 2px solid #f2f2f2;
+    width: 28%;
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.25em;
     }
+    p {
+      font-size: 1.5rem;
+      line-height: 19px;
+    }
+  }
+  .developer-section {
+    margin-left: 5.625em;
+    width: 100%;
+    .dev-draft-input {
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+    
+
+      :focus {
+        transition: 0.5s;
+        border-left: none;
+        padding: 3em 1em;
+      }
+      border-left: 2px solid purple;
+      transition: 0.3s;
+    }
+  }
 `;
 
-export class ProjectModal extends Component {
-  render() {
-    const { name, owner, description, id } = this.props.location.state;
-    console.log(this.props)
-    return (
-      <ProjectModalModal>
-        <div>{/* icons */}</div>
-        <div className="proposal-container">
-          {/* proposal-container */}
-          <div className="entreprenuer-section">
-            {/* entreprenuer section */}
-            <div className="project-top">
-              <div className="owner-info">
-                <img
-                  src={`${
-                    process.env.PUBLIC_URL
-                  }/images/Landing Page - Mobile 375x667.png`}
-                  className="profile-pic"
-                />
-                <div>
-                  <h3>{name}</h3>
-                  <p> {owner || "entreprenuer"}</p>
-                </div>
+var today = new Date();
+var date =
+  today.getFullYear() + "/" + (today.getMonth() + 1) + "/" + today.getDate();
+
+const ProjectModal = props => {
+  const [editorState, setEditorState] = React.useState("");
+//   const toggleCloseModal = React.useState(false)
+
+
+  const back = e => {
+    console.log(props);
+    props.history.goBack();
+  };
+  const handleKeyDown = useCallback(e => {
+    if (e.keyCode === 27 ) {
+      console.log("going back");
+      props.history.goBack();
+    }
+  });
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      return window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  const { name, owner, description, id } = props.location.state;
+  console.log(editorState);
+
+  return (
+    <ProjectModalModal onKeyUp={handleKeyDown}>
+      <div>{/* icons */}</div>
+      <div className="proposal-container">
+        {/* proposal-container */}
+        <div className="invoice-actions">
+          <img src={`${process.env.PUBLIC_URL}/images/icons/share.svg`} />
+          <img src={`${process.env.PUBLIC_URL}/images/icons/print.svg`} />
+          <img
+            onClick={back}
+            src={`${process.env.PUBLIC_URL}/images/icons/icon_close.svg`}
+          />
+        </div>
+        <div className="entreprenuer-section">
+          {/* entreprenuer section */}
+          <div className="project-top">
+            <div className="owner-info">
+              <img
+                src={`${
+                  process.env.PUBLIC_URL
+                }/images/Landing Page - Mobile 375x667.png`}
+                className="profile-pic"
+              />
+              <div>
+                <h3>{name}</h3>
+                <p> {owner || "entreprenuer"}</p>
               </div>
             </div>
-            <h2>{name} Proposal</h2>
-            <p>{description} test</p>
-            <p>$3500 <br />
-            preferred price range<br />
-           $875 deposit</p>
           </div>
-          <div>
-            {/* developer proposal */}
-            <div className="project-proposal-cta">
-            <input type="text" placeholder="Hello Pazao, I'm Ruben Ponce. I have developed systems like this in the past, there's a few examples of my work here on my portfolio https://ruben-ponce.com. I would love to work on this project for you & your company. The tools id be using would be React.js for the front end and Java for the back end. I'm advocating for React because its lightweight, extremely fast and can scale effortlessly and is one of the most widely used front end frameworks. Java Backend for saving user information, such as email's, passwords (encrypted), orders etc. For staying organized I will be using trello, it helps manages tasks and todo lists. This will help ensure I stay on target and with your review we can make sure the project aligns with what it is that your company needs. We would have to talk about hosting at a later date since it sounds like you don't have hosting setup, but that's okay I can do that for you. I hope to hear back from you soon, your company's Facebook has some amazing looking apparel. Thank you for your time."/>
-              <div>
-                <p>Total Project Bounty</p>
-                <input type="text" placeholder="$3500" />
-                <input type="text" placeholder="date" />
-                
-              </div>
-              <div>{/* send icon */}</div>
+          <h2>{name}</h2>
+          <p>{description} test</p>
+          <p>
+            $3500 <br />
+            preferred price range
+            <br />
+            $875 deposit
+          </p>
+        </div>
+        <div className="developer-section">
+          {/* developer proposal */}
+          <p>{date}</p>
+          <h2>{name} Proposal</h2>
+          <div className="project-proposal-cta">
+            <input type="text" className="dev-draft-input" />
+
+            <div>
+              <p>Total Project Bounty</p>
+              <input type="text" placeholder="$Negotiable amount put required number validation and other validation on these forms, Ruben" />
+              <date type="text" placeholder="date" />
+            </div>
+            <div>
+                {/* send icon */}
             </div>
           </div>
         </div>
-      </ProjectModalModal>
-    );
-  }
-}
+      </div>
+    </ProjectModalModal>
+  );
+};
 
 export default ProjectModal;

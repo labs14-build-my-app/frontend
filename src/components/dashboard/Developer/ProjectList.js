@@ -14,7 +14,7 @@ const ProjectListContainer = styled.ul`
     grid-template-columns: repeat(3, 1fr);
     /* grid-auto-rows: minmax(100px, 342px); */
     grid-gap: 30px;
-    padding: 2.5em 0;
+    padding: 2.5em 0 0 0;
   }
 
   /* dev-project-list styles */
@@ -85,6 +85,7 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
       )}
       {validProjectList && pathname[0] === searchProjectPage && (
         <div className="find-new-proj-projectlist-container">
+
           {projectList.map((project, i) => {
             return (
               <NewProjects

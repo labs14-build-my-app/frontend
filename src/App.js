@@ -9,12 +9,9 @@ import ChangePassword from "./components/dashboard/Login/ChangePassword";
 import Header from "./components/dashboard/Developer/Header/Header";
 import styled, { ThemeProvider } from "styled-components";
 import LeftNavigation from "./components/dashboard/Navigation/LeftNavigation";
-import ProjectModal from "./components/dashboard/Developer/FindProjects/ProjectModal";
-
 const AppContainer = styled.div`
   .essential-container {
     display: flex;
-    height: 100vh;
   }
 
   .main-app-container {
@@ -24,7 +21,6 @@ const AppContainer = styled.div`
     .main-app-column {
       background: transparent linear-gradient(297deg, #f2f3ff 0%, #ffffff 100%)
         0% 0% no-repeat padding-box;
-      height: 100%;
       .developer-home {
         padding: 11.5625em 7.125em 7em 6.625em;
       }
@@ -44,6 +40,7 @@ const App = props => {
             {/* <Route path="/" component={LeftNavigation}/> */}
           </div>
         </div>
+
       </AppContainer>
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
