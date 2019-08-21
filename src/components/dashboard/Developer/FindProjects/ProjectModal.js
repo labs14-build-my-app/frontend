@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import styled from "styled-components";
 import { Editor, EditorState } from "draft-js";
 import { NONAME } from "dns";
+import { connect } from "react-redux";
+import { getOwner } from "../../../../redux/actions";
 
 const ProjectModalModal = styled.div`
   background: white;
@@ -80,7 +82,7 @@ const ProjectModalModal = styled.div`
     margin-left: 5.625em;
     width: 100%;
     .dev-draft-input {
-      background: transparent;
+      background: #f2f3ff 0% 0% no-repeat padding-box;
       border: none;
       font-size: 1.5rem;
 
@@ -103,6 +105,9 @@ const ProjectModal = props => {
   const [editorState, setEditorState] = React.useState("");
   //   const toggleCloseModal = React.useState(false)
 
+  const { name, owner, description, id } = props.location.state;
+  console.log(editorState);
+
   const back = e => {
     console.log(props);
     props.history.goBack();
@@ -121,11 +126,13 @@ const ProjectModal = props => {
     };
   }, []);
 
-  const { name, owner, description, id } = props.location.state;
-  console.log(editorState);
+  useEffect(() => {
+    props.getOwner(owner);
+  }, []);
 
   return (
     <ProjectModalModal onKeyUp={handleKeyDown}>
+      {console.log(props.owner)}
       <div>{/* icons */}</div>
       <div className="proposal-container">
         {/* proposal-container */}
@@ -193,4 +200,13 @@ const ProjectModal = props => {
   );
 };
 
-export default ProjectModal;
+const mapStateToProps = state => {
+  return {
+    owner: state.owner
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { getOwner }
+)(ProjectModal);

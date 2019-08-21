@@ -5,7 +5,8 @@ import {
   LOAD_APP,
   FETCH_SELF_PROJECTS,
   FETCH_ALL_PROJECTS,
-  SAVE_PROJECT
+  SAVE_PROJECT,
+  GET_OWNER
 } from "../actions";
 
 const initialState = {
@@ -118,6 +119,16 @@ const rootReducer = (state = initialState, action) => {
         ...state
       };
 
+    case GET_OWNER.START:
+      return {
+        ...state
+      };
+
+    case GET_OWNER.SUCCESS:
+      return {
+        ...state,
+        owner: action.payload
+      };
     default:
       return {
         ...state

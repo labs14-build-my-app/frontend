@@ -61,7 +61,6 @@ export const loadApp = () => dispatch => {
     .then(res => {
       console.log(res.data, "return user");
       dispatch({ type: LOAD_APP.SUCCESS, payload: res.data });
-      
     })
     .catch(err => {
       console.log(err);
@@ -100,7 +99,6 @@ export const fetchAllProjects = () => dispatch => {
     .then(res => {
       console.log(res);
       dispatch({ type: FETCH_ALL_PROJECTS.SUCCESS, payload: res.data });
-      // return axios.get(`${BACKEND_URL}`)
     })
     .catch(err => {
       console.log(err);
@@ -125,5 +123,25 @@ export const saveProject = id => dispatch => {
     .catch(err => {
       console.log(err.status);
       dispatch({ type: SAVE_PROJECT.FAILURE });
+    });
+};
+
+export const GET_OWNER = {
+  START: "GET_OWNER_START",
+  SUCCESS: "GET_OWNER_SUCCESS",
+  FAILURE: "GET_OWNER_FAILURE"
+};
+
+export const getOwner = id => dispatch => {
+  dispatch({ type: GET_OWNER.START });
+  axiosWithAuth()
+    .get(`${BACKEND_URL}/users/entrepreneur/${id}`)
+    .then(res => {
+      console.log(res);
+      dispatch({ type: GET_OWNER.SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      console.log(err);
+      dispatch({ type: GET_OWNER.FAILURE });
     });
 };
