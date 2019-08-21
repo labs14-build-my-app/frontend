@@ -50,7 +50,7 @@ const EntrepreneurProjects = styled.li`
       justify-content: space-between;
       font-size: 1.5rem;
       align-items: center;
-      a{
+      a {
         text-decoration: none;
         cursor: pointer;
       }
@@ -70,7 +70,6 @@ const EntrepreneurProjects = styled.li`
           margin-right: 1.3em;
         }
         p {
- 
         }
       }
     }
@@ -95,6 +94,7 @@ const NewProjects = props => {
                 process.env.PUBLIC_URL
               }/images/Landing Page - Mobile 375x667.png`}
               className="profile-pic"
+              alt="some alt text"
             />
             <div>
               <h3>{name}</h3>
@@ -102,19 +102,22 @@ const NewProjects = props => {
             </div>
           </div>
         </div>
-        <p className="description">
-          {description.substr(
-            0,
-            200
-          ) + "..."}{" "}
-        </p>
+        <p className="description">{description.substr(0, 200) + "..."} </p>
         <div className="project-bottom">
-          <a onClick={() => saveProject(id)}> Save For Later </a>
-
-          <Link to={{
-            pathname: `/dev/find/projects/${id}`,
-            state: { name: name, owner: owner, description: description, id: id }
-          }} className="cta-moreinfo">
+          <a onClick={() => saveProject(id)}> Save For Later </a>{" "}
+          {/*  Use a styled button if you're not going to provide an href here ^*/}
+          <Link
+            to={{
+              pathname: `/dev/find/projects/${id}`,
+              state: {
+                name: name,
+                owner: owner,
+                description: description,
+                id: id
+              }
+            }}
+            className="cta-moreinfo"
+          >
             <svg
               aria-hidden="true"
               focusable="false"

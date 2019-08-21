@@ -14,7 +14,7 @@ const ProjectModalModal = styled.div`
   background: #f2f4ff;
   border-radius: 5px;
   margin: 0 4.375em;
-  input{
+  input {
     background: transparent;
     border: none;
     font-size: 1.5rem;
@@ -83,7 +83,6 @@ const ProjectModalModal = styled.div`
       background: transparent;
       border: none;
       font-size: 1.5rem;
-    
 
       :focus {
         transition: 0.5s;
@@ -102,15 +101,14 @@ var date =
 
 const ProjectModal = props => {
   const [editorState, setEditorState] = React.useState("");
-//   const toggleCloseModal = React.useState(false)
-
+  //   const toggleCloseModal = React.useState(false)
 
   const back = e => {
     console.log(props);
     props.history.goBack();
   };
   const handleKeyDown = useCallback(e => {
-    if (e.keyCode === 27 ) {
+    if (e.keyCode === 27) {
       console.log("going back");
       props.history.goBack();
     }
@@ -132,11 +130,18 @@ const ProjectModal = props => {
       <div className="proposal-container">
         {/* proposal-container */}
         <div className="invoice-actions">
-          <img src={`${process.env.PUBLIC_URL}/images/icons/share.svg`} />
-          <img src={`${process.env.PUBLIC_URL}/images/icons/print.svg`} />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/icons/share.svg`}
+            alt="no error pls"
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/icons/print.svg`}
+            alt="no error pls"
+          />
           <img
             onClick={back}
             src={`${process.env.PUBLIC_URL}/images/icons/icon_close.svg`}
+            alt="no error pls"
           />
         </div>
         <div className="entreprenuer-section">
@@ -148,6 +153,7 @@ const ProjectModal = props => {
                   process.env.PUBLIC_URL
                 }/images/Landing Page - Mobile 375x667.png`}
                 className="profile-pic"
+                alt="no error pls"
               />
               <div>
                 <h3>{name}</h3>
@@ -173,12 +179,13 @@ const ProjectModal = props => {
 
             <div>
               <p>Total Project Bounty</p>
-              <input type="text" placeholder="$Negotiable amount put required number validation and other validation on these forms, Ruben" />
+              <input
+                type="text"
+                placeholder="$Negotiable amount put required number validation and other validation on these forms, Ruben"
+              />
               <date type="text" placeholder="date" />
             </div>
-            <div>
-                {/* send icon */}
-            </div>
+            <div>{/* send icon */}</div>
           </div>
         </div>
       </div>
