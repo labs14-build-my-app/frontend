@@ -27,19 +27,6 @@ const ProjectListContainer = styled.ul`
 const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
   const pathname = useState(history.location.pathname);
 
-  // const getColorForProjectStatus = status => {
-  //   switch (status) {
-  //     case "searching":
-  //       return getRandomInt();
-
-  //     case "review":
-  //       return "#E2E0FF";
-
-  //     default:
-  //       return getRandomInt();
-  //   }
-  // };
-
   console.group("ProjectList -- Rerender");
   // console.log(pathname, pathname.current);
 
