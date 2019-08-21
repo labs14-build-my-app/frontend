@@ -7,7 +7,8 @@ import {
   FETCH_ALL_PROJECTS,
   SAVE_PROJECT,
   GET_OWNER,
-  SUBMIT_PROPOSAL
+  SUBMIT_PROPOSAL,
+  LOGOUT
 } from "../actions";
 
 const initialState = {
@@ -15,7 +16,8 @@ const initialState = {
   loggingIn: false,
   isSigningup: false,
   loadingApp: false,
-  projectList: []
+  devProjectList: [],
+  searchProjectList: []
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -89,8 +91,8 @@ const rootReducer = (state = initialState, action) => {
     case FETCH_SELF_PROJECTS.SUCCESS:
       return {
         ...state,
-        projectList: action.payload,
-        projectsAlreadyCalled: true
+        devProjectList: action.payload,
+        
       };
     case FETCH_ALL_PROJECTS.START:
       return {
@@ -99,10 +101,9 @@ const rootReducer = (state = initialState, action) => {
     case FETCH_ALL_PROJECTS.SUCCESS:
       return {
         ...state,
-        projectList: action.payload.filter(
+        searchProjectList: action.payload.filter(
           project => project.status === "searching"
-        ),
-        allProjectsCalled: true
+        )
       };
 
     case SAVE_PROJECT.START:
@@ -139,20 +140,33 @@ const rootReducer = (state = initialState, action) => {
         error: action.payload,
         fetchingOwner: false
       };
-      case SUBMIT_PROPOSAL.START:
-      return{
+    case SUBMIT_PROPOSAL.START:
+      return {
         ...state
-      }
-      case SUBMIT_PROPOSAL.SUCCESS:
-      return{
+      };
+    case SUBMIT_PROPOSAL.SUCCESS:
+      return {
         ...state
-      }
-      case SUBMIT_PROPOSAL.FAILURE:
-      return{
+      };
+    case SUBMIT_PROPOSAL.FAILURE:
+      return {
         ...state,
         error: "error fetching proposals"
-      }
-      
+      };
+    case LOGOUT.START:
+      return {
+        ...state
+      };
+
+    case LOGOUT.SUCCESS:
+      return {
+        user: null
+      };
+    case LOGOUT.FAILURE:
+      return {
+        ...state
+      };
+
     default:
       return {
         ...state
