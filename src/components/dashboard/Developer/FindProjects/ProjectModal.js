@@ -1,7 +1,8 @@
 import React, { useEffect, useCallback } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { getOwner } from "../../../../redux/actions";
+import { getOwner,submitProposal } from "../../../../redux/actions";
+import { electricViolet, privilege } from "../../cssVariables";
 
 const ProjectModalModal = styled.div`
   background: white;
@@ -91,7 +92,16 @@ const ProjectModalModal = styled.div`
       border-left: 2px solid purple;
       transition: 0.3s;
     }
-  }
+    .submit-proposal{
+      button{
+        padding: 1.5em 2em;
+        color: ${privilege};
+        background: ${electricViolet};
+        margin: 1em 0;
+        border-radius: 5px;
+      }
+
+    }
 `;
 
 var today = new Date();
@@ -100,7 +110,6 @@ var date =
 
 const ProjectModal = props => {
   const [editorState, setEditorState] = React.useState("");
-  //   const toggleCloseModal = React.useState(false)
 
   const { name, owner, description, id } = props.location.state;
   const { getOwner, projectOwner, fetchingOwner } = props;
@@ -112,7 +121,6 @@ const ProjectModal = props => {
   };
   const handleKeyDown = useCallback(e => {
     if (e.keyCode === 27) {
-      console.log("going back");
       props.history.goBack();
     }
   });
@@ -126,9 +134,23 @@ const ProjectModal = props => {
     };
   }, []);
 
-  // useEffect(() => {
-  //   props.getOwner(owner);
-  // }, []);
+  const handleSubmit = e =>{
+    e.preventDefault();
+    
+  }
+  
+  const [userInput, setUserInput] = useReducer(
+ (state, newState) => ({...state, ...newState}),
+ {
+   body: "",
+   money:""
+ }
+ );
+ const handleChange = evt => {
+ const name = evt.target.name;
+ const newValue = evt.target.value;
+ setUserInput({[name]: newValue});
+
 
   return (
     <ProjectModalModal onKeyUp={handleKeyDown}>
@@ -161,7 +183,7 @@ const ProjectModal = props => {
                 className="profile-pic"
                 alt="no error pls"
               />
-              <div>
+              <div className="owner-details">
                 <h3>{name}</h3>
                 <p>
                   {" "}
@@ -182,7 +204,6 @@ const ProjectModal = props => {
           </p>
         </div>
         <div className="developer-section">
-          {/* developer proposal */}
           <p>{date}</p>
           <h2>{name} Proposal</h2>
           <div className="project-proposal-cta">
@@ -196,7 +217,9 @@ const ProjectModal = props => {
               />
               {/* <date type="text" placeholder="date" /> */}
             </div>
-            <div>{/* send icon */}</div>
+            <div className="submit-proposal" onClick={handleSubmit}>
+              <button type="button" >Submit Proposal</button>
+            </div>
           </div>
         </div>
       </div>
@@ -213,5 +236,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { getOwner }
+  { getOwner, submitProposal }
 )(ProjectModal);
