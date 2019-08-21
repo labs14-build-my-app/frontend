@@ -125,21 +125,3 @@ export const saveProject = id => dispatch => {
       dispatch({ type: SAVE_PROJECT.FAILURE });
     });
 };
-
-export const GET_OWNER = {
-  START: "GET_OWNER_START",
-  SUCCESS: "GET_OWNER_SUCCESS",
-  FAILURE: "GET_OWNER_FAILURE"
-};
-
-export const getOwner = id => dispatch => {
-  dispatch({ type: GET_OWNER.START });
-  return axiosWithAuth()
-    .get(`${BACKEND_URL}/users/entrepreneur/${id}`)
-    .then(res => {
-      dispatch({ type: GET_OWNER.SUCCESS, payload: res.data });
-    })
-    .catch(err => {
-      dispatch({ type: GET_OWNER.FAILURE, payload: err });
-    });
-};

@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
-import { getOwner } from "../../../../redux/actions";
+import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import {
   electricViolet,
@@ -132,7 +130,7 @@ const DevProject = props => {
         />
         <div className="project-owner-and-image project-column">
           <h3>{props.name || "Project Name"}</h3>
-          <p>{props.name || "Project Owner"}</p>
+          <p>{props.ownerName || "Project Owner"}</p>
         </div>
         <div className="dev-project-start-date project-column">
           <h3>{new Date(props.createdAt).toLocaleDateString()}</h3>
@@ -161,11 +159,4 @@ const DevProject = props => {
   );
 };
 
-const mapStateToProps = state => {
-  return {};
-};
-
-export default connect(
-  mapStateToProps,
-  { getOwner }
-)(DevProject);
+export default DevProject;

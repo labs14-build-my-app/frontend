@@ -77,7 +77,14 @@ const EntrepreneurProjects = styled.li`
 `;
 
 const NewProjects = props => {
-  const { name, owner, description, saveProject, ownerOccupation, id } = props;
+  const {
+    name,
+    ownerName,
+    description,
+    saveProject,
+    ownerOccupation,
+    id
+  } = props;
   console.log(props);
   return (
     <EntrepreneurProjects>
@@ -111,7 +118,7 @@ const NewProjects = props => {
               pathname: `/dev/find/projects/${id}`,
               state: {
                 name: name,
-                owner: owner,
+                ownerName: ownerName,
                 description: description,
                 id: id
               }
