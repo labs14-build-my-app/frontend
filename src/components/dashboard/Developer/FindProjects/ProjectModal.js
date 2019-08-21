@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback,useReducer } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { getOwner,submitProposal } from "../../../../redux/actions";
@@ -102,6 +102,7 @@ const ProjectModalModal = styled.div`
       }
 
     }
+  }
 `;
 
 var today = new Date();
@@ -111,10 +112,9 @@ var date =
 const ProjectModal = props => {
   const [editorState, setEditorState] = React.useState("");
 
-  const { name, owner, description, id } = props.location.state;
-  const { getOwner, projectOwner, fetchingOwner } = props;
-  // console.log(editorState);
+  const { name, ownerName, description, id } = props.location.state;
 
+  console.log(props);
   const back = e => {
     console.log(props);
     props.history.goBack();
@@ -127,7 +127,6 @@ const ProjectModal = props => {
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
-    getOwner(owner);
 
     return () => {
       return window.removeEventListener("keydown", handleKeyDown);
@@ -150,7 +149,7 @@ const ProjectModal = props => {
  const name = evt.target.name;
  const newValue = evt.target.value;
  setUserInput({[name]: newValue});
-
+ }
 
   return (
     <ProjectModalModal onKeyUp={handleKeyDown}>
@@ -185,12 +184,7 @@ const ProjectModal = props => {
               />
               <div className="owner-details">
                 <h3>{name}</h3>
-                <p>
-                  {" "}
-                  {!projectOwner
-                    ? "entrepreneur"
-                    : `${projectOwner.firstName} ${projectOwner.lastName}`}
-                </p>
+                <p>{ownerName}</p>
               </div>
             </div>
           </div>
@@ -237,4 +231,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   { getOwner, submitProposal }
-)(ProjectModal);
+)(ProjectModal)

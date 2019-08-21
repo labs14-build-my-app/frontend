@@ -15,7 +15,6 @@ const initialState = {
   loggingIn: false,
   isSigningup: false,
   loadingApp: false,
-  fetchingOwner: false,
   projectList: []
 };
 

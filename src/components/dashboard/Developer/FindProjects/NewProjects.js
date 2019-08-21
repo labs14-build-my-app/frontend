@@ -52,7 +52,7 @@ const EntrepreneurProjects = styled.li`
       align-items: center;
       a{
         text-decoration: none;
-        cursor: pointer; 
+        cursor: pointer
       }
       .cta-moreinfo {
         background: #9519e8 0% 0% no-repeat padding-box;
