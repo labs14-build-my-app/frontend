@@ -35,15 +35,18 @@ const HeaderContainer = styled.div`
             display: flex;
             flex-direction: column;
             position: absolute;
-            background: #4D4F5C ;
+            background: #9519E8 ;
             z-index: 10;
             right: 1px;
             box-sizing: border-box;
             li{
                 margin-top: 1.6rem;
                 padding: 1.2rem 2rem;
-                &:hover{
-                    background: #ccc;
+                color: white;
+                :hover{
+                    background: #bb75f0;
+                    transition: .2s;
+;
                 }
             }
             
@@ -123,8 +126,8 @@ const Header = (props) => {
           </div>
         </nav>
         <div className="bell-notifications" onClick={() => toggleNotif(!notifIsOpen)} >
-            <img src={`${process.env.PUBLIC_URL}/images/icon_bell_line.svg`} alt="icon bell" /> 
-            <div className="notification-dot"  />
+            {/* <img src={`${process.env.PUBLIC_URL}/images/icon_bell_line.svg`} alt="icon bell" /> 
+            <div className="notification-dot"  /> */}
             <div className="notif-nav-menu-container" style= {{ display: `${notifIsOpen ? 'flex' : 'none' }`}}>
             <ul className="notif-nav-menu">
               <li>home</li>
