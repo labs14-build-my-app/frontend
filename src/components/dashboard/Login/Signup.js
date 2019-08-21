@@ -29,9 +29,8 @@ const SignupPageContainer = styled.div`
 
 const LeftContainer = styled.div`
   width: 45%;
-  height: 100%;
+  height: 100%vh;
   background: ${veryLightBlue};
-
   .l-container{
     width: calc(100% - 144px);
     margin: 0 auto;
@@ -134,10 +133,26 @@ const LeftContainer = styled.div`
           border-radius: .6rem;
           height: 5.5rem;
         }
-
+        
+        .createacc-btn{
+          text-align: center;
+          padding: 15px;
+          background: #9519e8;
+          box-shadow: 5px 5px 8px #9519E8;
+          border-radius: 6px;
+          opacity: 1;
+        }
         }
 
       }
+      .btmlogin-txt{
+        text-align: center;
+        padding: 15px;
+      }
+    }
+    .legal-txt{
+      font: Italic 15px/19px Source Sans Pro;
+      color: #43425D;
     }
   }
 `;
@@ -228,14 +243,14 @@ class Signup extends Component {
                 </div>
 
                 <div className="input-field">
-                  <span> Password </span> <br />
-                  <span>We recommend using the password we generated for you below, its super secure.</span> <br />
+                  <span className="field-title"> Password </span> <br />
+                  
                   <input className="input-box" type="password" name="password" placeholder="password" onChange={this.handleChanges} value={this.state.value} />
                   <span className="input-border"> </span>
                 </div>
 
                 
-
+                <div className="createacc-btn">
                 <Link to={{
                  pathname: "/signup2",
                  state: {
@@ -243,12 +258,14 @@ class Signup extends Component {
                  }
                 }}>Create Account</Link>
 
-
+                  </div>
               </form>
             </div>
+            <div className='btmlogin-txt'>
             <span>Already have an account?</span>
-            <NavLink to='/Login'>Log in.</NavLink>
-            <p>Legal Notice: By Creating an account on Dev Findr, you are agreeing to our terms of service agreement which can be found here.</p>
+            <NavLink to='/Login'> Log in.</NavLink>
+            </div>
+            <p className='legal-txt'>Legal Notice: By Creating an account on Dev Findr, you are agreeing to our terms of service agreement which can be found here.</p>
           </div>
         </LeftContainer>
 

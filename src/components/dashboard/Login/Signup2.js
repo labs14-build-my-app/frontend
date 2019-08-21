@@ -59,7 +59,64 @@ const LeftContainer = styled.div`
         }
       }
     }
-
+    .text1 {
+      height: 4.4rem;
+      width: 40.8rem;
+      margin-top: 19.2rem;
+      text-align: left;
+      font-family: Source Sans Pro;
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      color: #43425D;
+      opacity: 1;
+    }
+    .text2 {
+      height: 3.2rem;
+      width: 40.8rem;
+      margin-top: 1.9rem;
+      text-align: left;
+      font-family: Source Sans Pro;
+      font-size: 2.5rem;
+      letter-spacing: 0;
+      color: #43425D;
+      opacity: 1;
+    }
+    .text3 {
+      height: 3.9rem;
+      width: 55.1rem;
+      margin-top: 2.8rem;
+      text-align: left;
+      font-family: Source Sans Pro;
+      font-size: 1.5rem;
+      letter-spacing: 0;
+      color: #FFFFFF;
+      opacity: 1;
+      background: transparent linear-gradient(86deg, #16075E 0%, #7313B3 100%) 0% 0% no-repeat padding-box;
+      box-shadow: 5px 5px 8px #9519E8;
+      border-radius: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .buttons {
+      margin-top: 2.8rem;
+      height: 3.9rem;
+      width: 55.1rem;
+      display: flex;
+      justify-content: space-between;
+      .button {
+        height: 2.7rem;
+        width: 45%;
+        background: #9592A8 0% 0% no-repeat padding-box;
+        box-shadow: 5px 5px 8px #000000;
+        border-radius: 6px;
+        opacity: 1;
+        letter-spacing: 0;
+        color: #FFFFFF;
+        font-family: Source Sans Pro;
+      }
+    }
     
     }
   }
@@ -114,17 +171,19 @@ class Signup2 extends Component {
                 <LeftContainer>
                     <div className="l-container">
                         <nav>
-                            <ol>
-                                <li><NavLink to='/Login'>Login</NavLink></li>
-                                <li>or</li>
-                                <li><NavLink to='/Signup'>Sign Up</NavLink></li>
-                            </ol>
+                          <ol>
+                            <li><NavLink to='/Login'>Login</NavLink></li>
+                            <li>or</li>
+                            <li><NavLink to='/Signup'>Sign Up</NavLink></li>
+                          </ol>
                         </nav>
-                        <h1>One Last Thing</h1>
-                        <h2>Are you an Entrepreneur or Developer?</h2>
-                        <h3>This can't be changed later, but you can always make a new account.</h3>
-                        <button onClick={this.handleEnt}>Entrepreneur</button>
-                        <button onClick={this.handleDev}>Developer</button>
+                        <div className="text1">One Last Thing</div>
+                        <div className="text2">Are you an Entrepreneur or Developer?</div>
+                        <div className="text3">This can't be changed later, but you can always make a new account.</div>
+                        <div className="buttons">
+                          <button className="button" onClick={this.handleEnt}>Entrepreneur</button>
+                          <button className="button" onClick={this.handleDev}>Developer</button>
+                        </div>
                     </div>
                 </LeftContainer>
 
