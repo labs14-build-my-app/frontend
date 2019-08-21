@@ -127,7 +127,7 @@ const rootReducer = (state = initialState, action) => {
     case GET_OWNER.SUCCESS:
       return {
         ...state,
-        owner: action.payload
+        projectOwner: action.payload
       };
     default:
       return {

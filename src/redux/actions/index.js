@@ -134,14 +134,12 @@ export const GET_OWNER = {
 
 export const getOwner = id => dispatch => {
   dispatch({ type: GET_OWNER.START });
-  axiosWithAuth()
+  return axiosWithAuth()
     .get(`${BACKEND_URL}/users/entrepreneur/${id}`)
     .then(res => {
-      console.log(res);
       dispatch({ type: GET_OWNER.SUCCESS, payload: res.data });
     })
     .catch(err => {
-      console.log(err);
       dispatch({ type: GET_OWNER.FAILURE });
     });
 };

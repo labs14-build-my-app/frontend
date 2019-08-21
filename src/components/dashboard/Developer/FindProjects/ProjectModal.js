@@ -106,7 +106,8 @@ const ProjectModal = props => {
   //   const toggleCloseModal = React.useState(false)
 
   const { name, owner, description, id } = props.location.state;
-  console.log(editorState);
+  const { getOwner, projectOwner } = props;
+  // console.log(editorState);
 
   const back = e => {
     console.log(props);
@@ -121,18 +122,19 @@ const ProjectModal = props => {
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
+    getOwner(owner);
+
     return () => {
       return window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
-  useEffect(() => {
-    props.getOwner(owner);
-  }, []);
+  // useEffect(() => {
+  //   props.getOwner(owner);
+  // }, []);
 
   return (
     <ProjectModalModal onKeyUp={handleKeyDown}>
-      {console.log(props.owner)}
       <div>{/* icons */}</div>
       <div className="proposal-container">
         {/* proposal-container */}
@@ -165,6 +167,7 @@ const ProjectModal = props => {
               <div>
                 <h3>{name}</h3>
                 <p> {owner || "entreprenuer"}</p>
+                {console.log(projectOwner)}
               </div>
             </div>
           </div>
@@ -202,7 +205,7 @@ const ProjectModal = props => {
 
 const mapStateToProps = state => {
   return {
-    owner: state.owner
+    projectOwner: state.projectOwner
   };
 };
 
