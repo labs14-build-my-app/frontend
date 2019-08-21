@@ -26,9 +26,6 @@ const ProjectListContainer = styled.ul`
 
 const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
   const pathname = useState(history.location.pathname);
-  const getRandomInt = () => {
-    return Math.round(Math.random() * 2);
-  };
 
   // const getColorForProjectStatus = status => {
   //   switch (status) {
