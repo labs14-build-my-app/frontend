@@ -73,19 +73,12 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
         <div className="dev-proj-projectlist-container">
           {projectList.map(project => {
             console.log(project);
-            return (
-              <DevProject
-                key={project._id}
-                color={getRandomInt()}
-                {...project}
-              />
-            );
+            return <DevProject key={project._id} {...project} />;
           })}
         </div>
       )}
       {validProjectList && pathname[0] === searchProjectPage && (
         <div className="find-new-proj-projectlist-container">
-
           {projectList.map((project, i) => {
             return (
               <NewProjects
