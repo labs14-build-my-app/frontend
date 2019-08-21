@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+import { connect } from "react-redux";
+import { getOwner } from "../../../../redux/actions";
 import styled, { ThemeProvider } from "styled-components";
 import {
   electricViolet,
@@ -10,7 +12,6 @@ import {
   shamrockText,
   setColorAndOpacity
 } from "../../cssVariables";
-import { connect } from "react-redux";
 // import { NavLink, Link } from "react-router-dom";
 
 // Needs to grab status of project from parents to display on .progress-circle{}
@@ -66,7 +67,7 @@ const DevListProjectStyle = styled.li`
 `;
 
 const searchStatus = (status, returnText, returnTextColor) => {
-  console.log(status);
+  // console.log(status);
   switch (status) {
     case "searching":
       return returnTextColor
@@ -110,6 +111,7 @@ const searchStatus = (status, returnText, returnTextColor) => {
     // ^ this will return black;
   }
 };
+
 const DevProject = props => {
   const endDate = (date, days) => {
     let result = new Date(date);
@@ -159,4 +161,11 @@ const DevProject = props => {
   );
 };
 
-export default DevProject;
+const mapStateToProps = state => {
+  return {};
+};
+
+export default connect(
+  mapStateToProps,
+  { getOwner }
+)(DevProject);

@@ -14,6 +14,7 @@ const initialState = {
   loggingIn: false,
   isSigningup: false,
   loadingApp: false,
+  fetchingOwner: false,
   projectList: []
 };
 
@@ -121,13 +122,22 @@ const rootReducer = (state = initialState, action) => {
 
     case GET_OWNER.START:
       return {
-        ...state
+        ...state,
+        fetchingOwner: true
       };
 
     case GET_OWNER.SUCCESS:
       return {
         ...state,
-        projectOwner: action.payload
+        projectOwner: action.payload,
+        fetchingOwner: false
+      };
+
+    case GET_OWNER.FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+        fetchingOwner: false
       };
     default:
       return {

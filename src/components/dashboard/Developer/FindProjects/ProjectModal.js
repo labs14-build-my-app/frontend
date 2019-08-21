@@ -1,8 +1,5 @@
-import React, { useEffect, useCallback, useState } from "react";
-import ReactDOM from "react-dom";
+import React, { useEffect, useCallback } from "react";
 import styled from "styled-components";
-import { Editor, EditorState } from "draft-js";
-import { NONAME } from "dns";
 import { connect } from "react-redux";
 import { getOwner } from "../../../../redux/actions";
 
@@ -106,7 +103,7 @@ const ProjectModal = props => {
   //   const toggleCloseModal = React.useState(false)
 
   const { name, owner, description, id } = props.location.state;
-  const { getOwner, projectOwner } = props;
+  const { getOwner, projectOwner, fetchingOwner } = props;
   // console.log(editorState);
 
   const back = e => {
@@ -166,8 +163,12 @@ const ProjectModal = props => {
               />
               <div>
                 <h3>{name}</h3>
-                <p> {owner || "entreprenuer"}</p>
-                {console.log(projectOwner)}
+                <p>
+                  {" "}
+                  {!projectOwner
+                    ? "entrepreneur"
+                    : `${projectOwner.firstName} ${projectOwner.lastName}`}
+                </p>
               </div>
             </div>
           </div>
@@ -193,7 +194,7 @@ const ProjectModal = props => {
                 type="text"
                 placeholder="$Negotiable amount put required number validation and other validation on these forms, Ruben"
               />
-              <date type="text" placeholder="date" />
+              {/* <date type="text" placeholder="date" /> */}
             </div>
             <div>{/* send icon */}</div>
           </div>
@@ -205,7 +206,8 @@ const ProjectModal = props => {
 
 const mapStateToProps = state => {
   return {
-    projectOwner: state.projectOwner
+    projectOwner: state.projectOwner,
+    fetchingOwner: state.fetchingOwner
   };
 };
 

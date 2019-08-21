@@ -140,6 +140,6 @@ export const getOwner = id => dispatch => {
       dispatch({ type: GET_OWNER.SUCCESS, payload: res.data });
     })
     .catch(err => {
-      dispatch({ type: GET_OWNER.FAILURE });
+      dispatch({ type: GET_OWNER.FAILURE, payload: err });
     });
 };
