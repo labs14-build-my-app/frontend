@@ -26,22 +26,6 @@ const ProjectListContainer = styled.ul`
 
 const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
   const pathname = useState(history.location.pathname);
-  const getRandomInt = () => {
-    return Math.round(Math.random() * 2);
-  };
-
-  // const getColorForProjectStatus = status => {
-  //   switch (status) {
-  //     case "searching":
-  //       return getRandomInt();
-
-  //     case "review":
-  //       return "#E2E0FF";
-
-  //     default:
-  //       return getRandomInt();
-  //   }
-  // };
 
   console.group("ProjectList -- Rerender");
   // console.log(pathname, pathname.current);
@@ -73,19 +57,12 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
         <div className="dev-proj-projectlist-container">
           {projectList.map(project => {
             console.log(project);
-            return (
-              <DevProject
-                key={project._id}
-                color={getRandomInt()}
-                {...project}
-              />
-            );
+            return <DevProject key={project._id} {...project} />;
           })}
         </div>
       )}
       {validProjectList && pathname[0] === searchProjectPage && (
         <div className="find-new-proj-projectlist-container">
-
           {projectList.map((project, i) => {
             return (
               <NewProjects

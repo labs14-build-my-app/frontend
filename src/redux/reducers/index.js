@@ -6,7 +6,8 @@ import {
   FETCH_SELF_PROJECTS,
   FETCH_ALL_PROJECTS,
   SAVE_PROJECT,
-  GET_OWNER
+  GET_OWNER,
+  SUBMIT_PROPOSAL
 } from "../actions";
 
 const initialState = {
@@ -121,14 +122,37 @@ const rootReducer = (state = initialState, action) => {
 
     case GET_OWNER.START:
       return {
-        ...state
+        ...state,
+        fetchingOwner: true
       };
 
     case GET_OWNER.SUCCESS:
       return {
         ...state,
-        owner: action.payload
+        projectOwner: action.payload,
+        fetchingOwner: false
       };
+
+    case GET_OWNER.FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+        fetchingOwner: false
+      };
+      case SUBMIT_PROPOSAL.START:
+      return{
+        ...state
+      }
+      case SUBMIT_PROPOSAL.SUCCESS:
+      return{
+        ...state
+      }
+      case SUBMIT_PROPOSAL.FAILURE:
+      return{
+        ...state,
+        error: "error fetching proposals"
+      }
+      
     default:
       return {
         ...state

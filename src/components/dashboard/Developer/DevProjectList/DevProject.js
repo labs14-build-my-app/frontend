@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import {
   electricViolet,
@@ -10,7 +10,6 @@ import {
   shamrockText,
   setColorAndOpacity
 } from "../../cssVariables";
-import { connect } from "react-redux";
 // import { NavLink, Link } from "react-router-dom";
 
 // Needs to grab status of project from parents to display on .progress-circle{}
@@ -66,7 +65,7 @@ const DevListProjectStyle = styled.li`
 `;
 
 const searchStatus = (status, returnText, returnTextColor) => {
-  console.log(status);
+  // console.log(status);
   switch (status) {
     case "searching":
       return returnTextColor
@@ -110,15 +109,16 @@ const searchStatus = (status, returnText, returnTextColor) => {
     // ^ this will return black;
   }
 };
+
 const DevProject = props => {
   const endDate = (date, days) => {
     let result = new Date(date);
     result.setDate(result.getDate() + days);
     return result;
   };
+  console.log(props);
 
   const startDate = new Date(props.createdAt);
-  // console.log(props);
   return (
     <ThemeProvider theme={props}>
       <DevListProjectStyle>
@@ -129,8 +129,8 @@ const DevProject = props => {
           alt="Project"
         />
         <div className="project-owner-and-image project-column">
-          <h3>{props.projectName || "Project Name"}</h3>
-          <p>{props.name || "Project Owner"}</p>
+          <h3>{props.name || "Project Name"}</h3>
+          <p>{props.ownerName || "Project Owner"}</p>
         </div>
         <div className="dev-project-start-date project-column">
           <h3>{new Date(props.createdAt).toLocaleDateString()}</h3>
@@ -144,11 +144,11 @@ const DevProject = props => {
           <p>Estimated End Date</p>
         </div>
         <div className="dev-project-cost project-column">
-          <h3>${props.cost || 5000} </h3>
+          <h3>${props.price || 5000} </h3>
           <p>total cost</p>
         </div>
         <div className="dev-project-deposit project-column">
-          <h3>${props.deposit || 1520}</h3>
+          <h3>${props.price * 0.2 || 1520}</h3>
           <p>deposit</p>
         </div>
         <div className="project-status">

@@ -1,10 +1,8 @@
-import React, { useEffect, useCallback, useState } from "react";
-import ReactDOM from "react-dom";
+import React, { useEffect, useCallback,useReducer } from "react";
 import styled from "styled-components";
-import { Editor, EditorState } from "draft-js";
-import { NONAME } from "dns";
 import { connect } from "react-redux";
-import { getOwner } from "../../../../redux/actions";
+import { getOwner,submitProposal } from "../../../../redux/actions";
+import { electricViolet, privilege } from "../../cssVariables";
 
 const ProjectModalModal = styled.div`
   background: white;
@@ -94,6 +92,16 @@ const ProjectModalModal = styled.div`
       border-left: 2px solid purple;
       transition: 0.3s;
     }
+    .submit-proposal{
+      button{
+        padding: 1.5em 2em;
+        color: ${privilege};
+        background: ${electricViolet};
+        margin: 1em 0;
+        border-radius: 5px;
+      }
+
+    }
   }
 `;
 
@@ -103,36 +111,48 @@ var date =
 
 const ProjectModal = props => {
   const [editorState, setEditorState] = React.useState("");
-  //   const toggleCloseModal = React.useState(false)
 
-  const { name, owner, description, id } = props.location.state;
-  console.log(editorState);
+  const { name, ownerName, description, id } = props.location.state;
 
+  console.log(props);
   const back = e => {
     console.log(props);
     props.history.goBack();
   };
   const handleKeyDown = useCallback(e => {
     if (e.keyCode === 27) {
-      console.log("going back");
       props.history.goBack();
     }
   });
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
+
     return () => {
       return window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
-  useEffect(() => {
-    props.getOwner(owner);
-  }, []);
+  const handleSubmit = e =>{
+    e.preventDefault();
+    
+  }
+  
+  const [userInput, setUserInput] = useReducer(
+ (state, newState) => ({...state, ...newState}),
+ {
+   body: "",
+   money:""
+ }
+ );
+ const handleChange = evt => {
+ const name = evt.target.name;
+ const newValue = evt.target.value;
+ setUserInput({[name]: newValue});
+ }
 
   return (
     <ProjectModalModal onKeyUp={handleKeyDown}>
-      {console.log(props.owner)}
       <div>{/* icons */}</div>
       <div className="proposal-container">
         {/* proposal-container */}
@@ -162,9 +182,9 @@ const ProjectModal = props => {
                 className="profile-pic"
                 alt="no error pls"
               />
-              <div>
+              <div className="owner-details">
                 <h3>{name}</h3>
-                <p> {owner || "entreprenuer"}</p>
+                <p>{ownerName}</p>
               </div>
             </div>
           </div>
@@ -178,7 +198,6 @@ const ProjectModal = props => {
           </p>
         </div>
         <div className="developer-section">
-          {/* developer proposal */}
           <p>{date}</p>
           <h2>{name} Proposal</h2>
           <div className="project-proposal-cta">
@@ -190,9 +209,11 @@ const ProjectModal = props => {
                 type="text"
                 placeholder="$Negotiable amount put required number validation and other validation on these forms, Ruben"
               />
-              <date type="text" placeholder="date" />
+              {/* <date type="text" placeholder="date" /> */}
             </div>
-            <div>{/* send icon */}</div>
+            <div className="submit-proposal" onClick={handleSubmit}>
+              <button type="button" >Submit Proposal</button>
+            </div>
           </div>
         </div>
       </div>
@@ -202,11 +223,12 @@ const ProjectModal = props => {
 
 const mapStateToProps = state => {
   return {
-    owner: state.owner
+    projectOwner: state.projectOwner,
+    fetchingOwner: state.fetchingOwner
   };
 };
 
 export default connect(
   mapStateToProps,
-  { getOwner }
-)(ProjectModal);
+  { getOwner, submitProposal }
+)(ProjectModal)

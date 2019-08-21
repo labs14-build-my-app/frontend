@@ -134,14 +134,29 @@ export const GET_OWNER = {
 
 export const getOwner = id => dispatch => {
   dispatch({ type: GET_OWNER.START });
-  axiosWithAuth()
+  return axiosWithAuth()
     .get(`${BACKEND_URL}/users/entrepreneur/${id}`)
     .then(res => {
-      console.log(res);
       dispatch({ type: GET_OWNER.SUCCESS, payload: res.data });
     })
     .catch(err => {
-      console.log(err);
-      dispatch({ type: GET_OWNER.FAILURE });
+      dispatch({ type: GET_OWNER.FAILURE, payload: err });
     });
 };
+
+export const SUBMIT_PROPOSAL = {
+  START: 'SUBMIT_PROPOSAL_START',
+  SUCCESS: 'SUBMIT_PROPOSAL_START',
+  FAILURE: 'SUBMIT_PROPOSAL_FAILURE'
+}
+export const submitProposal = (id, object) => dispatch =>{
+  dispatch({type: SUBMIT_PROPOSAL.START})
+  return axiosWithAuth()
+  .put(`${BACKEND_URL}/projects/${id}`)
+  .then(res=>{
+    console.log(res);
+  })
+  .catch(err=>{
+    console.log(err)
+  })
+}

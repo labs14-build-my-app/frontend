@@ -4,7 +4,7 @@ import EntrepreneurHome from './EntrepreneurHome';
 const EntrepreneurBoard = () => {
         return (
             <>
-            <Redirect to="/entrepreneur/dashboard" />
+            {<Redirect to="/entrepreneur/dashboard" />}
             <Route path="/entrepreneur/dashboard" render= {(props)=>{
               return  <EntrepreneurHome {...props} />
             }}/>
