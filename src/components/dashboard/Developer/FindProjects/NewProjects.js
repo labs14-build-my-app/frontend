@@ -52,6 +52,7 @@ const EntrepreneurProjects = styled.li`
       align-items: center;
       a{
         text-decoration: none;
+        cursor: pointer;
       }
       .cta-moreinfo {
         background: #9519e8 0% 0% no-repeat padding-box;
@@ -108,7 +109,7 @@ const NewProjects = props => {
           ) + "..."}{" "}
         </p>
         <div className="project-bottom">
-          <Link to="/dev/find/projects"> Save For Later </Link>
+          <a onClick={() => saveProject(id)}> Save For Later </a>
 
           <Link to={{
             pathname: `/dev/find/projects/${id}`,

@@ -11,7 +11,7 @@ const HeaderContainer = styled.div`
   background: transparent linear-gradient(270deg, #F2F3FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
   z-index: 15;
   h1 {
-      font-size: 3.5rem;
+    font-size: 3.5rem;
   }
   .header-and-logos-container{
       display: flex;
