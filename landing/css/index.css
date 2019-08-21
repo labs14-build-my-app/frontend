@@ -663,8 +663,6 @@ body .button-secondary svg path {
     height: 200px;
   }
 }
-@media (max-width: 768px) {
-}
 .reviews {
   position: relative;
   height: 104.8rem;
@@ -865,8 +863,6 @@ body .button-secondary svg path {
 .section-5 {
   margin: 0 auto;
   width: 100%;
-}
-@media (max-width: 375px) {
 }
 .section-5 .section-5-cta {
   background: #fff;
