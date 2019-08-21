@@ -1,9 +1,19 @@
+html {
+  overflow-x: hidden;
+}
+
 body {
   box-sizing: border-box;
   margin: 0 auto;
 
   background: white;
   font-family: @fontFamily;
+
+  @media (min-width: 1500px) {
+
+    overflow: hidden;
+    width: 100vw;
+  }
 
   h1 {
     font-size: @fontsize-cta;
@@ -77,6 +87,7 @@ body {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -94,11 +105,62 @@ body {
   flex-direction: column;
   align-items: flex-end;
   margin: 1.56em 1.25em 0 0;
+
   img {
     width: 22px;
     height: 22px;
     padding-bottom: 3.19em;
   }
+
+  div {
+    ul {
+      li {
+        text-align: right;
+        padding-bottom: 1.72em;
+      }
+    }
+  }
+}
+
+//Ruben's jotaroEnergy ? false : <DIO energy={true} />;
+
+.displayNavAnime {
+  animation: displayNavOpacityAnimation 0.4s ease-out;
+}
+
+@keyframes displayNavOpacityAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.hamburger-modal {
+  // filter: blur(3px) brightness(35%);
+}
+
+.modal-nav-elements {
+  //displays on click
+  display: none;
+  z-index: 420;
+  color: white;
+  filter: blur(0px);
+  position: absolute;
+  top: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 1.56em 1.25em 0 0;
+
+  img {
+    width: 22px;
+    height: 22px;
+    padding-bottom: 3.19em;
+  }
+
   div {
     ul {
       li {
@@ -111,7 +173,14 @@ body {
 
 .intro-container {
   padding-bottom: 163px;
-  background: @whiteSmoke;
+  // background: url("../assets/svgs/Blob Header.svg");
+  background: #f2f3ff;
+  font-family: @fontFamily;
+  padding-bottom: 22.2rem;
+
+  @media (max-width: 1250px) {
+    padding-bottom: 22.2rem;
+  }
 
   .header-blobber {
     z-index: 0;
@@ -119,13 +188,11 @@ body {
     top: 0;
     right: 0;
     max-width: 50%;
-    @media (max-width: 1440px) {
-      width: 50%;
-    }
-    @media (max-width: 1250px) {
-      width: 65%;
-    }
+    // @media (max-width: 1250px) {
+    //   width: 65%;
+    // }
   }
+
   .home-header {
     z-index: -2;
     display: flex;
@@ -142,13 +209,23 @@ body {
       font-weight: normal;
     }
 
+
+    // .home-navigation-bar {
+    //   //displays on click
+    //   display: none;
+    //   z-index: 420;
+    //   color: white;
+    //   filter: blur(0px);
+    // }
+
     .hamburger-menu-section {
       display: flex; // remove -- to none
       align-items: center;
       z-index: 2;
 
       .nav-section {
-        display: flex;
+        display: none; //change to edit -- to flex
+
         img {
           width: 22px;
           height: 22px;
@@ -156,10 +233,10 @@ body {
 
         ul {
           display: flex;
+
           li {
             margin-left: 4.87em;
           }
-
         }
 
         color: @white;
@@ -186,10 +263,9 @@ body {
 
     @media (max-width: 1250px) {
 
-      img {
-        width: 45%;
-      }
-
+      // img {
+      //   width: 45%;
+      // }
       section {
         padding-top: 17.3125em;
       }
@@ -213,20 +289,18 @@ body {
     img {
       max-width: 50%;
       z-index: 420;
-
-      @media (max-width: 1450px) {
-        width: 41%;
-      }
-
     }
 
     section {
-      // width: 41%;
+      width: calc(~"100% - 6.25em");
       padding-left: 6.25em;
       padding-right: 3.3125em;
-      @media (max-width: 1450px) {
-        padding-top: 13.3125em;
+      margin-top: 16vh;
+
+      @media (max-width: 1170px) {
+        padding-right: 0;
       }
+
       font-family: @fontFamily;
 
       h2 {
@@ -240,11 +314,13 @@ body {
         color: @font-color;
         line-height: 30px;
       }
+
       a {
         margin: 3.15em 0px;
         cursor: pointer;
         display: inline-block;
       }
+
       a button {
         color: white;
         font-size: 1.8rem;
@@ -252,27 +328,33 @@ body {
         cursor: pointer;
       }
     }
+
     @media @phone {
       //ruben's phone
       flex-direction: column-reverse;
       justify-content: center;
+
       section {
         padding: 0;
         // width: 100%;
         width: 90%;
         // margin: 0 20px;
         padding-top: 10rem;
+
         h2 {
           font-size: 2.3rem;
         }
+
         p {
           font-size: 1;
         }
+
         a,
         button {
           width: 100%;
         }
       }
+
       img {
         padding-top: 3em;
         max-width: 100%;
@@ -284,13 +366,13 @@ body {
 
   //media queries
   @media @phone {
-    .header-blobber {
-      max-width: 150%;
-      width: 150%;
-      top: -198px;
-      right: -40px;
-    }
 
+    // .header-blobber {
+    //   max-width: 150%;
+    //   width: 150%;
+    //   top: -198px;
+    //   right: -40px;
+    // }
     .home-header {
       padding: 20px 20px 0 20px;
       align-items: center;
@@ -300,10 +382,9 @@ body {
         color: #fff;
       }
 
-      img {
-        width: 150%;
-      }
-
+      // img {
+      //   width: 150%;
+      // }
       .hamburger-menu-section {
         h3 {
           display: none;
@@ -312,26 +393,124 @@ body {
 
     }
   }
+
+  @media (max-width: 1400px) {
+    .header-blobber {
+      max-width: 700px;
+    }
+  }
+
+  @media (max-width: 1170px) {
+    .header-blobber {
+      right: -100px;
+    }
+
+  }
+
+  @media (max-width: 1250px) {
+    .header-blobber {}
+  }
+
+  @media(max-width: 1050px) {
+    .header-blobber {
+      max-width: 1500px;
+      width: 1500px;
+      top: -700px;
+    }
+
+    .home-header {
+      h2 {
+        z-index: 2;
+        color: white;
+      }
+    }
+
+    .cta-getstarted-section {
+      flex-direction: column-reverse;
+      margin-top: 4em;
+
+      .header-blobber {}
+
+      section {
+        z-index: 1;
+
+      }
+
+      img {
+        max-width: 90%;
+        width: 90%;
+      }
+    }
+  }
+
+  @media (max-width: 780px) {
+    .header-blobber {
+      top: -800px;
+      right: -300px;
+    }
+
+    .cta-getstarted-section {
+      section {
+        padding-left: 0;
+        // margin-top: 30vh;
+        padding-top: 10rem;
+      }
+    }
+
+  }
+}
+
+@-moz-document url-prefix() { 
+  .cta-getstarted-section{ 
+  img{
+    width: 90000px;
+    }
+  }
 }
 
 .grey-blob {
-  background-image: url("../assets/svgs/Blob\ Getting\ Started.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
+  // background-image: url("../assets/svgs/Blob\ Getting\ Started.svg");
+  // background-size: contain;
+  // background-repeat: no-repeat;
+  // height: 1775px;
+  //   border: 1px solid red;
+
+  position: relative;
+
+  .grey-blobber {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 1920px;
+    @media @chromebook{
+      max-width: 133.5rem;
+    }
+    @media @tablet{
+      max-width: 76.8rem;
+    }
+    @media @phone{
+      max-width: 37.5rem;
+    }
+  }
 }
 
 // section 1 end
 
-// Section 2 - Start (Benjamin) // Optimized for 1920x1080,
+// Section 2 - Start (Benjamin) // Optimized for 1920x1080, 1366x768, 768x1024, 375x667
+
+
 
 .getting-started {
-  padding-top: 11.2rem;
-  width: 131.3rem;
+  width: 100%;
   margin: 0 auto;
-  border: 1px solid red;
+// border: 1px solid red;
+  
 
   @media @phone {
-    width: 37rem;
+    max-width: 37rem;
+  }
+  @media @chromebook{
+    margin-top: -10px;
   }
 
   .gs-header {
@@ -344,16 +523,20 @@ body {
       color: @font-color;
       margin-bottom: 22px;
       text-align: center;
+
     }
 
     p {
       font-size: @fontsize-p;
-      width: 72.4rem;
+      max-width: 72.4rem;
       text-align: center;
       padding: 20px;
       margin-bottom: 81px;
       margin-left: 250px;
       line-height: @font-height;
+      margin: 0 auto 41px auto;
+      text-align: center;
+
       @media @phone {
         margin-left: 6rem;
         width: 20rem;
@@ -364,8 +547,21 @@ body {
   .gs-cards {
     display: flex;
     justify-content: space-evenly;
-    @media @phone {
-      //code needed for carousel
+    flex-wrap: wrap;
+    width: 85%;
+    margin: 0 auto;
+
+    .gs-card {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      max-width: 386px;
+    }
+
+    @media (max-width: 908px) {
+      img {
+        margin-top: 4em;
+      }
     }
 
     h2 {
@@ -380,45 +576,6 @@ body {
       text-align: center;
     }
   }
-
-  .gs-signupcard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
-  .gs-signupimg {
-    width: 25rem;
-    height: 28.383rem;
-  }
-  .gs-signuptxt {
-    p {
-      font-size: @fontsize-p;
-      width: 36.8rem;
-    }
-  }
-
-  .gs-projectprepimg {
-    width: 34.266rem;
-    height: 25rem;
-  }
-  .gs-projectpreptxt {
-    p {
-      font-size: @fontsize-p;
-      width: 36.8rem;
-    }
-  }
-
-  .gs-deliveryimg {
-    width: 33.726rem;
-    height: 25rem;
-  }
-  .gs-deliverytxt {
-    p {
-      font-size: @fontsize-p;
-      width: 36.8rem;
-    }
-  }
 }
 
 // section 2 end
@@ -427,12 +584,13 @@ body {
 
 .safety-first {
   display: flex;
-  width: 143.6rem;
+  width: 100%;
   height: 53.6rem;
   margin: 0 auto;
   align-items: center;
-  justify-content: space-between;
-  margin-top: 28.4rem;
+  justify-content: space-evenly;
+  margin-top: 43.4rem;
+
   margin-bottom: 18.6rem;
   // border: 1px solid red;
 
@@ -440,15 +598,19 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
-    width: 32.3rem;
+    max-width: 32.3rem;
     height: 43.9rem;
     margin-left: 2rem;
     margin-right: 3.2rem;
     margin-top: 8.6rem;
   }
+  @media @tablet{
+    margin-top: 12rem;
+    max-width: 76rem;
+  }
 
   .text-section {
-    width: 72.2rem;
+    max-width: 72.2rem;
     height: 21.4rem;
 
     .short-text {
@@ -495,20 +657,28 @@ body {
   }
 
   .safety-svg {
-    width: 600px;
+    max-width: 600px;
     height: 536px;
     object-fit: cover;
 
     img {
       object-fit: cover;
-      width: 100%;
+      max-width: 100%;
       height: 100%;
+      @media @tablet{
+        // border: 1px solid red; 
+        object-fit: fill;
+      }
     }
 
     @media @phone {
       width: 159px;
       height: 200px;
       // border: 1px solid green;
+    }
+    @media @tablet{
+    //  border: 1px solid red; 
+     
     }
   }
 }
@@ -518,12 +688,31 @@ body {
 // Section 4 - Reviews (Anotoly) // Optimized for 1920x1080,
 
 .reviews {
-  border: 3px solid green;
   position: relative;
   height: 104.8rem;
-  background: url("../assets/svgs/Blob User Reviews.svg") no-repeat;
-  background-size: cover;
-  background-size: contain;
+  // background: url("../assets/svgs/Blob User Reviews.svg") no-repeat;
+  // background-size: cover;
+  // background-size: contain;
+  background: #f2f3ff;
+
+  .purple-blobber{
+    margin-bottom: -1000px;
+    
+    @media @tablet{
+      display: none;
+    }
+  }
+  @media @tablet{
+    background: #f2f3ff;
+  }
+
+  @media @phone {
+    height: 43.1rem;
+    background: url("../assets/svgs/Blob User Reviews (person).svg") no-repeat;
+    background-size: 100%;
+    border-left: 20px solid white;
+    border-right: 20px solid white;
+  }
 
   .user-reviews {
     h2 {
@@ -532,38 +721,102 @@ body {
       font-family: "Source SansPro";
       font-weight: bold;
       text-align: left;
+
+      @media @phone {
+        font-size: 2.3rem;
+      }
     }
+
     p {
       font-family: "Source SansPro";
       text-align: right;
       font-size: 1.8rem;
+
+      @media @phone {
+        font-size: 1.3rem;
+        line-height: 1.3rem;
+        padding-left: 3rem;
+        text-align: center;
+      }
     }
+
     .user-reviews-h {
-      width: 20.6rem;
+      max-width: 20.6rem;
       height: 4.4rem;
       position: absolute;
       top: 23.2rem;
       right: 25.2rem;
+      @media @chromebook{
+        right: 8rem;
+      }
+      @media @tablet{
+        right: 2rem;
+        top: 18rem;
+      }
+
+      @media @phone {
+        max-width: 13.4rem;
+        height: 2.9rem;
+        top: 0rem;
+        right: 3rem;
+      }
+
     }
+
     .user-reviews-p {
-      width: 35.6rem;
+      max-width: 35.6rem;
       height: 5.3rem;
       position: absolute;
       top: 30.1rem;
       right: 25.2rem;
+
+      @media @chromebook{
+        right: 8rem;
+      }
+
+      @media @tablet{
+        right: 2rem;
+        top: 23rem;
+        max-width: 32rem;
+      }
+
+      @media @phone {
+        max-width: 23.6rem;
+        height: 6.7rem;
+        top: 2.3rem;
+        right: 0rem;
+      }
+
     }
   }
+
   .dev-review {
     display: flex;
     position: absolute;
     height: 28.8rem;
-    width: 86rem;
+    max-width: 86rem;
     bottom: 31.6rem;
     left: 53rem;
     background: white;
+    
+    @media @tablet{
+      left: 20rem;
+      bottom: 42.4rem;
+      max-width: 60rem;
+    }
+
+    @media @phone {
+      height: 20.5rem;
+      max-width: 33.4rem;
+      bottom: 11.3rem;
+      left: 0rem;
+    }
+
+
     .dev-review-img {
       margin: 3.5rem;
     }
+
     .dev-review-text {
       margin: 3.5rem 3.5rem 3.5rem 0;
       display: flex;
@@ -572,30 +825,77 @@ body {
       padding-bottom: 3rem;
       border-radius: 6px;
 
+      @media @phone {
+        margin: 1rem 0 0 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
       .dev-review-text-p {
         margin-top: 1rem;
         padding: 1rem;
         background: #f2f2f2;
         border-radius: 6px;
+
+        @media @phone {
+          overflow-y: scroll;
+        }
       }
     }
   }
+
   .img-person {
     height: 684px;
-    width: 918.57px;
+    max-width: 918.57px;
     margin-top: 13.4rem;
     margin-left: 10rem;
     display: inline-block;
+    @media @tablet{
+      margin-left: 0rem;
+    }
   }
 }
 
+@media (max-width: 375px) {
+  .reviews .dev-review .dev-review-img-mob {
+    margin-right: 1rem;
+    max-width: 9rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .mob-block {
+    max-width: 20rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 375.1px) {
+  .hide-desk {
+    display: none;
+  }
+}
+
+@media @tablet{
+  .hide-mobile{
+    max-width: 600px;
+  }
+}
+// section-4-end
+
 // section 4 end
 
-// Section 5 - CTA (Jacob) // Optimized for 1920x1080,
+// Section 5 - CTA (Jacob) // Optimized for 1920x1080, 1366x768, 768x1024, 375x667
 
 .section-5 {
   @media @phone {
-    border: 1px solid red;
+    // border: 1px solid red;
   }
 
   margin: 0 auto;
@@ -604,30 +904,92 @@ body {
   .section-5-cta {
     background: @white;
     text-align: center;
-    padding: 15rem 0 0 0;
 
     .text-section {
+      padding: 14.5rem 0 0 0;
+
       p {
-        padding: 0 0 1rem 0;
         color: @veryLightGrey;
+        padding: 0 0 1.5rem 0;
       }
 
       h1 {
         color: @lightSlateBlue;
       }
+
+      @media @chromebook {
+        padding: 13rem 0 0 0;
+      }
+
+      @media @tablet {
+        padding: 12rem 0 0 0;
+      }
+
+      @media @phone {
+        padding: 10.5rem 0 0 0;
+
+        p {
+          padding: 0 0 1rem 0;
+        }
+      }
     }
 
     .buttons {
-      // this defins the margin between buttons and text, as well as the bottom of the parent container.
-      margin: 5rem 0 10rem 0;
+      margin: 5rem 0 10rem; // this defins the margin between buttons and the text section above, as well as the bottom of the parent container.
+      padding: .5rem 0 0; // fixes visual inconsistency with it not looking centered.
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
 
       .button-primary {
         .button-primary(@height: 8rem, @padding: 0 6rem 0);
+        margin-right: 4rem;
+
+        @media @chromebook {
+          .button-primary(@height: 7rem, @padding: 0 4.5rem 0);
+          margin-right: 4rem;
+        }
+
+        @media @tablet {
+          .button-primary(@height: 7rem, @padding: 0 3.25rem 0);
+          margin-right: 3rem;
+        }
+
+        @media @phone {
+          .button-primary(@height: 6rem, @padding: 0 2.5rem 0);
+          margin-right: 2rem;
+        }
       }
 
       .button-secondary {
         .button-secondary(@height: 8rem, @padding: 0 4rem 0);
+
+        @media @chromebook {
+          .button-secondary(@height: 7rem, @padding: 0 4.5rem 0);
+        }
+
+        @media @tablet {
+          .button-secondary(@height: 7rem, @padding: 0 3.25rem 0)
+        }
+
+        @media @phone {
+          .button-secondary(@height: 6rem, @padding: 0 2.5rem 0);
+        }
       }
+
+      @media @chromebook {
+        margin: 5rem 0 10rem;
+      }
+
+      @media @tablet {
+        margin: 5rem 0 15rem;
+      }
+
+      @media @phone {
+        margin: 3rem 0 12rem;
+      }
+
     }
   }
 
@@ -635,53 +997,114 @@ body {
     display: flex;
     justify-content: space-between;
 
-    // by default the .blobs container will have its own box model, this adds too much spacing at the bottom
+    // by default the .blobs container will have its own box model the height of the biggest blob, this adds too much white spacing at the bottom
     // setting it to border box with 1px height solves this issue, and the images being offset still work as its position relative to its parent container.
     box-sizing: border-box;
     height: 1px;
 
-    // blobs on the left side of the screen
     .left {
-      // blob 1
       img:first-child {
-        .blob-offset(-17.5rem, 16rem);
+        max-width: 22rem;
+        .blob-offset(-16rem, 14rem);
+
+        @media @chromebook {
+          max-width: 16rem;
+          .blob-offset(-12rem, 8rem)
+        }
+
+        @media @tablet {
+          max-width: 14rem;
+          .blob-offset(-10.5rem, 3.1rem)
+        }
 
         @media @phone {
-          height: 7.5rem;
-          .blob-offset(-5rem, 3rem);
+          max-width: 9rem;
+          .blob-offset(-9rem, 3.1rem);
         }
       }
 
-      // blob 2
       img:nth-child(2) {
-        .blob-offset(-55rem, 14.5rem);
+        max-width: 10rem;
+        .blob-offset(-56rem, 15rem);
+
+        @media @chromebook {
+          max-width: 6rem;
+          .blob-offset(-50rem, 1rem)
+        }
+
+        @media @tablet {
+          max-width: 3rem;
+          .blob-offset(-55rem, -13.5rem);
+        }
 
         @media @phone {
-          height: 1.8rem;
-          .blob-offset(-60rem, -6rem);
+          max-width: 2.5rem;
+          .blob-offset(-47rem, -8.5rem);
         }
       }
     }
 
-    // blobs on the right side of the screen
     .right {
-      // blob 1
       img:first-child {
-        .blob-offset(-53rem, -10rem);
+        max-width: 20rem;
+        .blob-offset(-54.5rem, -12rem);
+
+        @media @chromebook {
+          max-width: 18rem;
+          .blob-offset(-51rem, 3rem)
+        }
+
+        @media @tablet {
+          max-width: 11.5rem;
+          .blob-offset(-53.5rem, 2rem)
+        }
 
         @media @phone {
-          height: 7rem;
-          .blob-offset(-63rem, 17rem);
+          max-width: 9rem;
+          .blob-offset(-40.5rem, 5rem);
         }
       }
 
-      //   img:nth-child(2) {
-      //     .blob-offset(-29.5rem, -11rem);
-      //   }
+      img:nth-child(2) {
+        max-width: 9rem;
+        .blob-offset(-22rem, -13rem);
 
-      //   img:nth-child(3) {
-      //     .blob-offset(-44rem, -10.5rem);
-      //   }
+        @media @chromebook {
+          max-width: 5rem;
+          .blob-offset(-17rem, -9rem);
+        }
+
+        @media @tablet {
+          max-height: 3.5rem;
+          .blob-offset(-13rem, -4rem);
+        }
+
+        @media @phone {
+          max-width: 3rem;
+          .blob-offset(-7.5rem, -0.5rem);
+        }
+      }
+
+      img:nth-child(3) {
+        max-width: 6rem;
+        .blob-offset(-45rem, -1rem);
+
+        @media @chromebook {
+          max-width: 5rem;
+          .blob-offset(-34rem, -1rem);
+        }
+
+        @media @tablet {
+          max-width: 2.5rem;
+          .blob-offset(-18.5rem, 0rem);
+        }
+
+        @media @phone {
+          max-width: 2rem;
+          .blob-offset(-12.5rem, 0rem);
+        }
+
+      }
     }
   }
 }
@@ -695,10 +1118,10 @@ footer {
   background: @whiteSmoke;
 
   .lists-of-links {
-    width: 1394px;
+    // width: 1394px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding-bottom: 16.7rem;
 
     ul {
@@ -718,12 +1141,23 @@ footer {
   .copyright {
     font-weight: bold;
     display: flex;
-    width: 308px;
+    max-width: 1750px;
     justify-content: space-between;
     align-items: baseline;
     padding-bottom: 6.2rem;
     padding-left: 10rem;
+    @media @phone{
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 1rem;
+    }
+    @media @tablet{
+      flex-direction: column;
+    }
+    @media @chromebook{
+      max-width: 1150px;
+    }
   }
 }
 
-// section 6 end
+// Section 6 - footer-end
