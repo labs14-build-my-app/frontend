@@ -110,8 +110,6 @@ var date =
   today.getFullYear() + "/" + (today.getMonth() + 1) + "/" + today.getDate();
 
 const ProjectModal = props => {
-  const [editorState, setEditorState] = React.useState("");
-
   const { name, ownerName, description, id } = props.location.state;
 
   console.log(props);
@@ -135,6 +133,7 @@ const ProjectModal = props => {
 
   const handleSubmit = e =>{
     e.preventDefault();
+    props.submitProposal(id, userInput);
     
   }
   
@@ -142,15 +141,17 @@ const ProjectModal = props => {
  (state, newState) => ({...state, ...newState}),
  {
    body: "",
-   money:""
+   price:""
  }
  );
  const handleChange = evt => {
- const name = evt.target.name;
+ const eventName = evt.target.name;
  const newValue = evt.target.value;
- setUserInput({[name]: newValue});
+ setUserInput({[eventName]: newValue});
+ console.log(newValue)
  }
 
+ console.log(userInput)
   return (
     <ProjectModalModal onKeyUp={handleKeyDown}>
       <div>{/* icons */}</div>
@@ -201,13 +202,18 @@ const ProjectModal = props => {
           <p>{date}</p>
           <h2>{name} Proposal</h2>
           <div className="project-proposal-cta">
-            <input type="text" className="dev-draft-input" />
+            <input type="text" className="dev-draft-input" 
+              name="body"
+              onChange={handleChange}
+            />
 
             <div>
               <p>Total Project Bounty</p>
               <input
                 type="text"
                 placeholder="$Negotiable amount put required number validation and other validation on these forms, Ruben"
+                name="price"
+                onChange={handleChange}
               />
               {/* <date type="text" placeholder="date" /> */}
             </div>

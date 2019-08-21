@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { electricVioletLight, electricVioletText } from "../../cssVariables";
+import { electricVioletLight } from "../../cssVariables";
 const FindProjectsSearchBarContainer = styled.div`
   width: 100%;
   display: flex;

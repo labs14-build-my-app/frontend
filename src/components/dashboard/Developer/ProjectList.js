@@ -34,10 +34,10 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
     "/dev/dashboard",
     "/dev/find/projects"
   ];
-  const { projectList } = useSelector(s => s);
+  const { devProjectList, searchProjectList } = useSelector(s => s);
 
-  const validProjectList =
-    projectList.length !== null || projectList.length > 0;
+  const validDevProjectList = devProjectList.length !== null || devProjectList.length > 0;
+  const validSearchProjectList = searchProjectList.length !== null || searchProjectList.length > 0;
 
   useEffect(() => {
     if (pathname[0] === dashboard) {
@@ -53,17 +53,17 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
   console.groupEnd();
   return (
     <ProjectListContainer>
-      {validProjectList && pathname[0] === dashboard && (
+      {validDevProjectList && pathname[0] === dashboard && (
         <div className="dev-proj-projectlist-container">
-          {projectList.map(project => {
+          {devProjectList.map(project => {
             console.log(project);
             return <DevProject key={project._id} {...project} />;
           })}
         </div>
       )}
-      {validProjectList && pathname[0] === searchProjectPage && (
+      {validSearchProjectList && pathname[0] === searchProjectPage && (
         <div className="find-new-proj-projectlist-container">
-          {projectList.map((project, i) => {
+          {searchProjectList.map((project, i) => {
             return (
               <NewProjects
                 {...project}
@@ -82,7 +82,8 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    projectList: state.projectList
+    devProjectList: state.devProjectList,
+    searchProjectList: state.searchProjectList
   };
 };
 export default connect(
