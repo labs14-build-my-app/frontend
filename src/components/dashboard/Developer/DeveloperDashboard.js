@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
 import ProjectIntroduction from "../Developer/DevProjectList/ProjectIntroduction"
+import ProjectsList from "./Dashboard/Projects Loader/ProjectsList";
+
 const DashboardContentContainer = styled.div`
   display: flex;
   justify-content: evenly;
@@ -62,6 +64,7 @@ class DeveloperDashboard extends Component {
         />
 
         <Route path="/dev/find/projects" component={ProjectBoard}/>
+        <Route path="/dev/my/projects"  component={ProjectsList} />
       </DashboardContentContainer>
     );
   }
