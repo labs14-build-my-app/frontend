@@ -105,7 +105,7 @@ const Header = props => {
   }
   const handleLogout = () =>{
       props.logout().then(()=>{
-          props.history.push("/")
+          props.history.push("/login")
       });
   }
 
