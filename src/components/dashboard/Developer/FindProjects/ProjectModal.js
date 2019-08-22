@@ -77,8 +77,7 @@ const ProjectModalModal = styled.div`
     }
   }
   .developer-section {
-    margin-left: 5.625em;
-    width: 100%;
+    margin: 0 auto 0 5.625em;
     .dev-draft-input {
       background: #f2f3ff 0% 0% no-repeat padding-box;
       border: none;
