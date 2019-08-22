@@ -5,7 +5,7 @@ import { renderComponent } from 'recompose';
 
 const ProjectsLoader = (props) => {
 	return (
-		<p> nah </p>
+		<p> {props.name} </p>
 	)
 }
  

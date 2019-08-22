@@ -12,7 +12,7 @@ const [devProjectList, setDevProjectList] = useState(tempstate.devProjectList);
 return(
 	<div>
 		{devProjectList.map(projectData=>{
-			return(<ProjectsLoader data={projectData} />)
+			return(<ProjectsLoader {...projectData} />)
 		})}
 	</div>
 )
