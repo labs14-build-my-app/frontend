@@ -34,7 +34,7 @@ const App = props => {
     <>
       <AppContainer>
         <div className="essential-container">
-          {/* <Route path="/dev" component={LeftNavigation} /> */}
+          <Route path="/dev" component={LeftNavigation} />
           <div className="main-app-container">
             <Route path="/dev" component={Header} />
             <PrivateRoute path="/" component={DevFindr} />
