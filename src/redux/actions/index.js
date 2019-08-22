@@ -169,3 +169,11 @@ export const LOGOUT = {
   SUCCESS: 'LOGOUT_SUCCESS',
   FAILURE: 'LOGOUT_FAILURE'
 }
+export const logout = () => dispatch =>{
+  dispatch({type: LOGOUT.START})
+  return axiosWithAuth()
+  .post(`${BACKEND_URL}/users/logout`)
+  .then(res=>{
+    dispatch({type: LOGOUT.SUCCESS})
+  })
+}

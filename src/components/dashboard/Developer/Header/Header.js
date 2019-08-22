@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { loadApp } from "../../../../redux/actions";
+import { loadApp, logout } from "../../../../redux/actions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 const HeaderContainer = styled.div`
@@ -103,6 +103,11 @@ const Header = props => {
   if (loadingApp) {
     loadApp();
   }
+  const handleLogout = () =>{
+      props.logout().then(()=>{
+          props.history.push("/login")
+      });
+  }
 
   return (
     <HeaderContainer>
@@ -128,7 +133,7 @@ const Header = props => {
               <li>find projects</li>
               <li>stuff 2</li>
               <li>stuff 3</li>
-              <li>settings</li>
+              <li onClick={handleLogout}>Missing SAO button</li>
             </ul>
           </div>
         </nav>
@@ -147,7 +152,7 @@ const Header = props => {
               <li>find projects</li>
               <li>stuff 2</li>
               <li>stuff 3</li>
-              <li>settings</li>
+              
             </ul>
           </div>
 
@@ -168,5 +173,5 @@ const mapStateToProps = state => {
 };
 export default connect(
   mapStateToProps,
-  { loadApp }
+  { loadApp,logout }
 )(Header);

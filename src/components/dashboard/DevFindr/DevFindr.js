@@ -4,7 +4,7 @@ import EntrepreneurBoard from "../Entrepreneur/EntrepreneurBoard";
 import { connect } from "react-redux";
 import { loadApp } from "../../../redux/actions";
 import ProjectModal from "../Developer/FindProjects/ProjectModal";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 const errorHasOccured = <p>An Error has occured please log in again</p>;
 
 const DevFindr = props => {
