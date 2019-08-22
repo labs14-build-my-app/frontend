@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
 
 import styled from 'styled-components';
+import { renderComponent } from 'recompose';
 
-class ProjectsLoader extends Component {
-	render() { 
-		return (
-			<div className="ProjectsLoader">
-				Project1 <br/>
-				Project2 <br/>
-				Project3 <br/>
-
-			</div>
-		);
-	}
+const ProjectsLoader = (props) => {
+	return (
+		<p> nah </p>
+	)
 }
  
 export default ProjectsLoader;
