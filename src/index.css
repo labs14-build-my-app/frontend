@@ -22,6 +22,7 @@ time, mark, audio, video {
     font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -51,11 +52,16 @@ html{
     font-family:'Source Sans Pro';
 
 }
-body{
-    background: url("./components/dashboard background.svg");
+input:focus,button:focus,texarea:focus, select:focus{
+	outline: none;
 }
+
 button{
 	border: none;
 	background: none;
 	cursor: pointer;
 }
+
+html, body, #root, .main-app-container,  .developer-home, .main-app-column{
+	height: 100%
+  }

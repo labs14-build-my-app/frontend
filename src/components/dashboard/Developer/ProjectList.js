@@ -1,69 +1,92 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import DevProject from "./DevProjectList/DevProject";
 import styled from "styled-components";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import NewProjects from "./FindProjects/NewProjects";
+import { fetchSelfProjects, fetchAllProjects } from "../../../redux/actions";
+import { connect } from "react-redux";
 
 const ProjectListContainer = styled.ul`
   .find-new-proj-projectlist-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 5em 0em;
+    /* display: flex;
+    justify-content: space-between; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-auto-rows: minmax(100px, 342px); */
+    grid-gap: 30px;
+    padding: 2.5em 0 0 0;
+  }
+
+  /* dev-project-list styles */
+
+  .dev-proj-projectlist-container {
+    padding: 1.25em 2.5em 6.625em 7.4em;
   }
 `;
-//This component will call to the back end and get a list of projects that are requested by the user.
-//If pathname === /dev/dashboard, list of projects the dev is on.
-//if pathname === /dev/find/projects, return list of projects posted by entreprenuers to be picked up by the dev.
-const ProjectList = props => {
-  const getRandomInt = () => {
-    return Math.round(Math.random() * 2);
-  };
 
-  const [dashboard, searchProjectPage, { pathname }] = [
+const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
+  const pathname = useState(history.location.pathname);
+
+  console.group("ProjectList -- Rerender");
+  // console.log(pathname, pathname.current);
+
+  const [dashboard, searchProjectPage] = [
     "/dev/dashboard",
-    "/dev/find/projects",
-    props.history.location,
-    props
+    "/dev/find/projects"
   ];
-const projectList = [];
-  // const validProjectList = projectList.length || projectList.length > 0;
+  const { devProjectList, searchProjectList } = useSelector(s => s);
+
+  const validDevProjectList = devProjectList.length !== null || devProjectList.length > 0;
+  const validSearchProjectList = searchProjectList.length !== null || searchProjectList.length > 0;
+
+  useEffect(() => {
+    if (pathname[0] === dashboard) {
+      fetchSelfProjects();
+    }
+
+    if (pathname[0] === searchProjectPage) {
+      fetchAllProjects();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname[0]]);
+
+  console.groupEnd();
   return (
     <ProjectListContainer>
-      {pathname === dashboard &&
-        projectList.map(project => {
-          return <DevProject color={getRandomInt()} {...project} />;
-        })}
-      {pathname === searchProjectPage && (
+      {validDevProjectList && pathname[0] === dashboard && (
+        <div className="dev-proj-projectlist-container">
+          {devProjectList.map(project => {
+            console.log(project);
+            return <DevProject key={project._id} {...project} />;
+          })}
+        </div>
+      )}
+      {validSearchProjectList && pathname[0] === searchProjectPage && (
         <div className="find-new-proj-projectlist-container">
-          {
-            projectList.map(project => {
-              return <NewProjects {...project} />;
-            })}
+          {searchProjectList.map((project, i) => {
+            return (
+              <NewProjects
+                {...project}
+                key={project._id}
+                number={i}
+                id={project._id}
+              />
+            );
+          })}
         </div>
       )}
     </ProjectListContainer>
   );
 };
 
-const mapStateToProps = (state, props) => {
-  // const { pathname } = props.history.location;
-  // console.log(state);
-  // // need a pathname mapped to state
-  // if (state.projectList === undefined) {
-  //   return {
-  //     projectList: []
-  //   };
-  // } else if (
-  //   state.projectList.length > 2 &&
-  //   pathname === "/dev/find/projects"
-  // ) {
-  //   return { projectList: state.projectList.splice(0, 2) };
-  // } else {
-  //   return { projectList: state.projectList };
-  // }
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    devProjectList: state.devProjectList,
+    searchProjectList: state.searchProjectList
+  };
 };
-// export default connect(
-//   mapStateToProps,
-//   {}
-// )(ProjectList);
-export default ProjectList;
+export default connect(
+  mapStateToProps,
+  { fetchSelfProjects, fetchAllProjects }
+)(ProjectList);

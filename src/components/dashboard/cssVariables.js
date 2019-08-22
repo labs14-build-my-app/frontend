@@ -27,20 +27,20 @@ export const veryLightBlue = "#F2F3FF";
 
 //sets lighter color than the main above
 export const setColorAndOpacity = (color, opacity) => {
-    switch (color) {
-        case electricViolet:
-            return `rgba(217, 255, 221, ${opacity})`;
-        case shamrock:
-            return `rgba(37, 218, 149, ${opacity})`;
-        case sunglow:
-            return `rgba(255, 249, 217, ${opacity})`;
-        case sunglowLight:
-            return `rgba(255, 249, 217, ${opacity})`;
-        case electricVioletLight:
-            return `rgba(226, 224, 255, ${opacity})`;
-        default:
-            return "";
-    }
+  switch (color) {
+    case electricViolet:
+      return `rgba(217, 255, 221, ${opacity})`;
+    case shamrock:
+      return `rgba(37, 218, 149, ${opacity})`;
+    case sunglow:
+      return `rgba(255, 249, 217, ${opacity})`;
+    case sunglowLight:
+      return `rgba(255, 249, 217, ${opacity})`;
+    case electricVioletLight:
+      return `rgba(226, 224, 255, ${opacity})`;
+    default:
+      return "";
+  }
 };
 
 //MEDIA QUERIES
