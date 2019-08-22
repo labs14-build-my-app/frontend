@@ -13,7 +13,6 @@ const LoginPageContainer = styled.div`
   display: flex;
   display: nowrap;
   font-size: ${headerFontDesktop};
-
   a{
     text-decoration: none;
     color: ${textColor2};
@@ -212,7 +211,15 @@ class Login extends Component {
     e.preventDefault();
     this.props.login({ ...this.state }).then((res)=>{
       console.log('Login.js Says: ' + res)
-      this.props.history.push("/");
+ 
+      if(this.props.user.isDeveloper){
+        this.props.history.push("/dev/dashboard");
+      } 
+      if(!this.props.user.isDeveloper){
+        this.props.history.push("/entrepreneur/dashboard");
+      }
+     
+     
     });
    
   };
@@ -220,7 +227,7 @@ class Login extends Component {
   render() {
    
     return (
-      <LoginPageContainer className="page-container">
+      <LoginPageContainer >
 
         {/* content area for the left side of the page */}
 
