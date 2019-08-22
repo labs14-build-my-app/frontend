@@ -103,11 +103,12 @@ const Header = props => {
   if (loadingApp) {
     loadApp();
   }
-  const handleLogout = () =>{
-      props.logout().then(()=>{
-          props.history.push("/login")
-      });
-  }
+  const handleLogout = () => {
+    props.logout().then(() => {
+      // localStorage.clear();
+      props.history.push("/login");
+    });
+  };
 
   return (
     <HeaderContainer>
@@ -152,7 +153,6 @@ const Header = props => {
               <li>find projects</li>
               <li>stuff 2</li>
               <li>stuff 3</li>
-              
             </ul>
           </div>
 
@@ -173,5 +173,5 @@ const mapStateToProps = state => {
 };
 export default connect(
   mapStateToProps,
-  { loadApp,logout }
+  { loadApp, logout }
 )(Header);

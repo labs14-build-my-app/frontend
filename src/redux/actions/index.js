@@ -145,35 +145,34 @@ export const getOwner = id => dispatch => {
 };
 
 export const SUBMIT_PROPOSAL = {
-  START: 'SUBMIT_PROPOSAL_START',
-  SUCCESS: 'SUBMIT_PROPOSAL_SUCCESS',
-  FAILURE: 'SUBMIT_PROPOSAL_FAILURE'
-}
-export const submitProposal = (id, object) => dispatch =>{
-  console.log(object, `project with id: ${id}`)
-  dispatch({type: SUBMIT_PROPOSAL.START})
+  START: "SUBMIT_PROPOSAL_START",
+  SUCCESS: "SUBMIT_PROPOSAL_SUCCESS",
+  FAILURE: "SUBMIT_PROPOSAL_FAILURE"
+};
+export const submitProposal = (id, object) => dispatch => {
+  console.log(object, `project with id: ${id}`);
+  dispatch({ type: SUBMIT_PROPOSAL.START });
   return axiosWithAuth()
-  .post(`${BACKEND_URL}/projects/${id}/proposal`, object)
-  .then(res=>{
-    console.log(res);
-    dispatch({type: SUBMIT_PROPOSAL.SUCCESS})
-
-  })
-  .catch(err=>{
-    console.log(err)
-    dispatch({type: SUBMIT_PROPOSAL.FAILURE})
-  })
-}
+    .post(`${BACKEND_URL}/projects/${id}/proposal`, object)
+    .then(res => {
+      console.log(res);
+      dispatch({ type: SUBMIT_PROPOSAL.SUCCESS });
+    })
+    .catch(err => {
+      console.log(err);
+      dispatch({ type: SUBMIT_PROPOSAL.FAILURE });
+    });
+};
 export const LOGOUT = {
-  START: 'LOGOUT_START',
-  SUCCESS: 'LOGOUT_SUCCESS',
-  FAILURE: 'LOGOUT_FAILURE'
-}
-export const logout = () => dispatch =>{
-  dispatch({type: LOGOUT.START})
+  START: "LOGOUT_START",
+  SUCCESS: "LOGOUT_SUCCESS",
+  FAILURE: "LOGOUT_FAILURE"
+};
+export const logout = () => dispatch => {
+  dispatch({ type: LOGOUT.START });
   return axiosWithAuth()
-  .post(`${BACKEND_URL}/users/logout`)
-  .then(res=>{
-    dispatch({type: LOGOUT.SUCCESS})
-  })
-}
+    .post(`${BACKEND_URL}/users/logout`)
+    .then(res => {
+      dispatch({ type: LOGOUT.SUCCESS });
+    });
+};

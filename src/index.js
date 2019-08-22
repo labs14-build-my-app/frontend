@@ -9,7 +9,8 @@ import logger from "redux-logger";
 import { applyMiddleware, createStore, compose } from "redux";
 import rootReducer from "./redux/reducers";
 import { BrowserRouter as Router } from "react-router-dom";
-// const createHistory = require("history").createBrowserHistory;
+import { create } from "domain";
+const createHistory = require("history").createBrowserHistory;
 //TODO: DO CONDITIONAL MAGIC TO MAKE THIS ENABLE DURING PRODUCTION AND DEVELOPMENT
 
 //REMOVE DURING PRODUCTION
@@ -24,10 +25,12 @@ const store = createStore(
 //ENABLE DURING PRODUCTION
 // const store = createStore(rootReducer, applyMiddleware(thunk));
 
+const history = createHistory();
+
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <App  />
+      <App   history={history} />
     </Router>
   </Provider>,
   document.getElementById("root")

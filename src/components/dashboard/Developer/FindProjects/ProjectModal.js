@@ -205,6 +205,7 @@ const ProjectModal = props => {
               className="dev-draft-input"
               name="body"
               onChange={handleChange}
+              autocomplete="off"
             />
 
             <div>
@@ -215,7 +216,6 @@ const ProjectModal = props => {
                 name="price"
                 onChange={handleChange}
               />
-              {/* <date type="text" placeholder="date" /> */}
             </div>
             <div className="submit-proposal" onClick={handleSubmit}>
               <button type="button">Submit Proposal</button>
