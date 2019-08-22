@@ -10,17 +10,19 @@ import Header from "./components/dashboard/Developer/Header/Header";
 import styled from "styled-components";
 import LeftNavigation from "./components/dashboard/Navigation/LeftNavigation";
 const AppContainer = styled.div`
+height: 100%;
   .essential-container {
     display: flex;
+    height: 100%;
   }
 
   .main-app-container {
     display: flex;
     flex-direction: column;
     width: 100%;
+ 
     .main-app-column {
-      background: transparent linear-gradient(297deg, #f2f3ff 0%, #ffffff 100%)
-        0% 0% no-repeat padding-box;
+      background: transparent linear-gradient(297deg, #f2f3ff 0%, #ffffff 100%);
       .developer-home {
         padding: 11.5625em 7.125em 7em 6.625em;
       }
@@ -32,7 +34,7 @@ const App = props => {
     <>
       <AppContainer>
         <div className="essential-container">
-          <Route path="/dev" component={LeftNavigation} />
+          {/* <Route path="/dev" component={LeftNavigation} /> */}
           <div className="main-app-container">
             <Route path="/dev" component={Header} />
             <PrivateRoute path="/" component={DevFindr} />

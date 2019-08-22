@@ -62,7 +62,6 @@ button{
 	cursor: pointer;
 }
 
-/* html, body, #root{
+html, body, #root, .main-app-container,  .developer-home, .main-app-column{
 	height: 100%
-	
-  } */
+  }
