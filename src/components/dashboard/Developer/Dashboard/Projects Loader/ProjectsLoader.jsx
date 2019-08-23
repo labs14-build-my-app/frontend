@@ -1,10 +1,11 @@
 import React from 'react';
 
 import styled from 'styled-components';
+import {privilege} from '../../../cssVariables';
 
 const ProjectsLoader = (props) => {
 	return (
-		<div className="project">
+		<ProjectWrapper>
 
 			<FlexWrapper>
 				<Row>
@@ -42,15 +43,21 @@ const ProjectsLoader = (props) => {
 					</div>
 				</Row>
 			</FlexWrapper>
-		</div>
+
+		</ProjectWrapper>
 	)
 }
  
 export default ProjectsLoader;
 
+const ProjectWrapper = styled.div`
+border: 1px solid blue;
+`
+
 const FlexWrapper = styled.div`
 border: 1px solid red;
 display: flex;
+background: ${privilege}
 `
 const Row = styled.div`
 border: 1px solid green;
