@@ -31,12 +31,6 @@ const ProjectsLoader = (props) => {
 					<p className="title-text">End Date</p>
 				</div>
 			</div>
-
-			<p> {props.name} </p>
-			<p> {props.ownerName}</p>
-
-			<p> {props.price} </p>
-			<p> {props.status} </p>
 		</div>
 	)
 }
