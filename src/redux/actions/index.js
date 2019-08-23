@@ -17,7 +17,7 @@ export const login = creds => dispatch => {
       console.log(res.data);
       if (res.data.user) {
         localStorage.setItem("token", res.data.token);
-        localStorage.setItem("user", res.data.user);
+        // localStorage.setItem("user", res.data.user);
       }
       dispatch({ type: LOGIN.SUCCESS, payload: res.data });
     })
@@ -174,5 +174,6 @@ export const logout = () => dispatch => {
     .post(`${BACKEND_URL}/users/logout`)
     .then(res => {
       dispatch({ type: LOGOUT.SUCCESS });
+      // localStorage.clear();
     });
 };

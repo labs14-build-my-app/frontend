@@ -36,8 +36,16 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
   ];
   const { devProjectList, searchProjectList } = useSelector(s => s);
 
-  const validDevProjectList = devProjectList.length !== null || devProjectList.length > 0;
-  const validSearchProjectList = searchProjectList.length !== null || searchProjectList.length > 0;
+  const validDevProjectList = devProjectList ? devProjectList.length : 0;
+
+  // devProjectList.length !== null || devProjectList.length > 0;
+
+  console.log(validDevProjectList);
+
+  const validSearchProjectList = searchProjectList
+    ? searchProjectList.length
+    : 0;
+  // searchProjectList.length !== null || searchProjectList.length > 0;
 
   useEffect(() => {
     if (pathname[0] === dashboard) {
@@ -51,6 +59,7 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
   }, [pathname[0]]);
 
   console.groupEnd();
+
   return (
     <ProjectListContainer>
       {validDevProjectList && pathname[0] === dashboard && (

@@ -105,7 +105,7 @@ const Header = props => {
   }
   const handleLogout = () => {
     props.logout().then(() => {
-      // localStorage.clear();
+      localStorage.clear();
       props.history.push("/login");
     });
   };
