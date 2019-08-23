@@ -1,52 +1,62 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import styled from 'styled-components';
-import { renderComponent } from 'recompose';
-
-const Img = styled.img`
-width: 50px;
-`
 
 const ProjectsLoader = (props) => {
 	return (
 		<div className="project">
 
-			<div className="flex-wrapper">
-				<div className="row">
+			<FlexWrapper>
+				<Row>
 					<Img src={props.ownerProfilePicture} alt={"Profile picture of" + props.ownerName}/>
-				</div>
+				</Row>
 
-				<div className="row">
+				<Row>
 					<p className="main-text">{props.name}</p>
 					<p className="title-text">{props.ownerName}</p>
-				</div>
+				</Row>
 
-				<div className="row">
+				<Row>
 					<p className="main-text">{props.startDate}</p>
 					<p className="title-text">Start Date</p>
-				</div>
+				</Row>
 
-				<div className="row">
+				<Row>
 					<p className="main-text">{props.endDate}</p>
 					<p className="title-text">Estimated End Date</p>
-				</div>
+				</Row>
 
-				<div className="row">
+				<Row>
 					<p className="main-text">{props.price}</p>
 					<p className="title-text">Total Cost</p>
-				</div>
+				</Row>
 
-				<div className="row">
+				<Row>
 					<p className="main-text">{props.price * .25}</p>
 					<p className="title-text">Deposit</p>
-				</div>
+				</Row>
 				
-				<div className="status">
-					<p className="status-text">{props.status}</p>
-				</div>
-			</div>
+				<Row>
+					<div className="status">
+						<p className="status-text">{props.status}</p>
+					</div>
+				</Row>
+			</FlexWrapper>
 		</div>
 	)
 }
  
 export default ProjectsLoader;
+
+const FlexWrapper = styled.div`
+border: 1px solid red;
+display: flex;
+`
+const Row = styled.div`
+border: 1px solid green;
+`
+
+const Img = styled.img`
+width: 54px;
+border-radius: 50%;
+`
