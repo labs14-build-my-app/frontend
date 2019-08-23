@@ -51,17 +51,19 @@ const ProjectsLoader = (props) => {
 export default ProjectsLoader;
 
 const ProjectWrapper = styled.div`
+border: 1px solid blue;
 `
 
 const FlexWrapper = styled.div`
-	background: ${privilege};
-	display: flex;
-	align-items: center;
+border: 1px solid red;
+display: flex;
+background: ${privilege}
 `
 const Row = styled.div`
-padding: 0 4.5rem 0;
+border: 1px solid green;
 `
+
 const Img = styled.img`
-	width: 54px;
-	border-radius: 50%;
+width: 54px;
+border-radius: 50%;
 `

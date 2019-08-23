@@ -49,26 +49,6 @@ export const tempstate = {
 			"endDate": "1/2/2025",
 			"price": 352235,
 			"status": "completed",
-		},
-		{
-			"ownerProfilePicture": "https://thispersondoesnotexist.com/image",
-			"ownerName": "Franco Django",
-			"owner": "5d5dd28cf58b080017a4db57",
-			"name": "Invoice Tracker",
-			"startDate": "6/2/2019",
-			"endDate": "1/2/2019",
-			"price": 22135,
-			"status": "completed",
-		},
-		{
-			"ownerProfilePicture": "https://thispersondoesnotexist.com/image",
-			"ownerName": "Franco Django",
-			"owner": "5d5dd28cf58b080017a4db57",
-			"name": "Invoice Tracker",
-			"startDate": "6/2/2019",
-			"endDate": "1/2/2020",
-			"price": 100,
-			"status": "cancelled",
-		},
+		}
 	]
 }
