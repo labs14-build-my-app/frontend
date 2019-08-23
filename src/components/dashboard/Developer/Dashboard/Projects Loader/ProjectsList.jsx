@@ -10,7 +10,7 @@ const ProjectsList = () =>{
 	const [devProjectList, setDevProjectList] = useState(tempstate.devProjectList);
 	return(
 		<div>
-			{devProjectList.slice(0,5).map(projectData => {
+			{devProjectList.slice(0,1).map(projectData => {
 				return(
 					<ProjectsLoader {...projectData} />
 				)

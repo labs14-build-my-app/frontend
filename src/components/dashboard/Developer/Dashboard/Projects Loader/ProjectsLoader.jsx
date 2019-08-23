@@ -8,40 +8,45 @@ const ProjectsLoader = (props) => {
 		<ProjectWrapper>
 
 			<FlexWrapper>
-				<Row>
-					<Img src={props.ownerProfilePicture} alt={"Profile picture of" + props.ownerName}/>
-				</Row>
+				<Left>
+					<Row>
+						<Img src={props.ownerProfilePicture} alt={"Profile picture of" + props.ownerName}/>
+					</Row>
 
-				<Row>
-					<p className="main-text">{props.name}</p>
-					<p className="title-text">{props.ownerName}</p>
-				</Row>
+					<Row>
+						<p className="main-text">{props.name}</p>
+						<p className="title-text">{props.ownerName}</p>
+					</Row>
+				</Left>
 
-				<Row>
-					<p className="main-text">{props.startDate}</p>
-					<p className="title-text">Start Date</p>
-				</Row>
+				<Right>
+					<Row>
+						<p className="main-text">{props.startDate}</p>
+						<p className="title-text">Start Date</p>
+					</Row>
 
-				<Row>
-					<p className="main-text">{props.endDate}</p>
-					<p className="title-text">Estimated End Date</p>
-				</Row>
+					<Row>
+						<p className="main-text">{props.endDate}</p>
+						<p className="title-text">Estimated End Date</p>
+					</Row>
 
-				<Row>
-					<p className="main-text">{props.price}</p>
-					<p className="title-text">Total Cost</p>
-				</Row>
+					<Row>
+						<p className="main-text">{props.price}</p>
+						<p className="title-text">Total Cost</p>
+					</Row>
 
-				<Row>
-					<p className="main-text">{props.price * .25}</p>
-					<p className="title-text">Deposit</p>
-				</Row>
-				
-				<Row>
-					<div className="status">
-						<p className="status-text">{props.status}</p>
-					</div>
-				</Row>
+					<Row>
+						<p className="main-text">{props.price * .25}</p>
+						<p className="title-text">Deposit</p>
+					</Row>
+
+					<Row>
+						<div className="status">
+							<p className="status-text">{props.status}</p>
+						</div>
+					</Row>
+				</Right>
+
 			</FlexWrapper>
 
 		</ProjectWrapper>
@@ -50,16 +55,27 @@ const ProjectsLoader = (props) => {
  
 export default ProjectsLoader;
 
+// This just aligns things to the center of the row. Its here for improved readibility.
+const FlexAlignItemCenter = " display: flex; align-items: center;"
+
 const ProjectWrapper = styled.div`
 `
 
 const FlexWrapper = styled.div`
 	background: ${privilege};
-	display: flex;
-	align-items: center;
+	${FlexAlignItemCenter}
 `
+const Left = styled.div`
+	${FlexAlignItemCenter}
+	margin: 2.3rem 4rem 2.3rem;
+`
+
+const Right = styled.div`
+	${FlexAlignItemCenter}	
+`
+
 const Row = styled.div`
-padding: 0 4.5rem 0;
+
 `
 const Img = styled.img`
 	width: 54px;
