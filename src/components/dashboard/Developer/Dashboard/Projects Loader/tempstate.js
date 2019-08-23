@@ -18,7 +18,7 @@ export const tempstate = {
 			"startDate": "7/18/2019",
 			"endDate": "",
 			"price": 3000,
-			"status": "completed",
+			"status": "review",
 		},
 		{
 			"ownerProfilePicture": "https://thispersondoesnotexist.com/image",
@@ -38,7 +38,7 @@ export const tempstate = {
 			"startDate": "7/14/2019",
 			"endDate": "1/2/2025",
 			"price": 53423156,
-			"status": "cancelled",
+			"status": "completed",
 		},
 		{
 			"ownerProfilePicture": "https://thispersondoesnotexist.com/image",

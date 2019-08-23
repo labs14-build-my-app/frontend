@@ -7,12 +7,6 @@ const Img = styled.img`
 width: 50px;
 `
 
-const DepositCalculator = (props) => {
-	return(
-		props.price * 0.25
-	 )
-}
-
 const ProjectsLoader = (props) => {
 	return (
 		<div className="project">
