@@ -91,8 +91,7 @@ const rootReducer = (state = initialState, action) => {
     case FETCH_SELF_PROJECTS.SUCCESS:
       return {
         ...state,
-        devProjectList: action.payload,
-        
+        devProjectList: action.payload
       };
     case FETCH_ALL_PROJECTS.START:
       return {

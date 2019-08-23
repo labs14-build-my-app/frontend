@@ -39,9 +39,8 @@ export const signup = creds => dispatch => {
   return axios
     .post(`${BACKEND_URL}/users`, creds)
     .then(res => {
-      console.log(res.data);
-      localStorage.setItem("token", res.data.token);
       dispatch({ type: SIGNUP.SUCCESS, payload: res.data.user });
+      localStorage.setItem("token", res.data.token);
     })
     .catch(err => {
       console.log(err);

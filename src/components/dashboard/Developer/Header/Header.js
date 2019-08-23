@@ -134,7 +134,7 @@ const Header = props => {
               <li>find projects</li>
               <li>stuff 2</li>
               <li>stuff 3</li>
-              <li onClick={handleLogout}>Missing SAO button</li>
+              <li onClick={handleLogout}>Log Out</li>
             </ul>
           </div>
         </nav>
