@@ -6,7 +6,7 @@ export const tempstate = {
 			"owner": "5d5dd28cf58b080017a4db57",
 			"name": "Not DevFindr v2",
 			"price": 50000,
-			"status": "In Progress",
+			"status": "progress",
 		},
 		{
 			"ownerProfilePicture": "https://thispersondoesnotexist.com/image",
@@ -14,7 +14,7 @@ export const tempstate = {
 			"owner": "5d5dd28cf58b080017a4db57",
 			"name": "Social Manager for Influencers",
 			"price": 3000,
-			"status": "Completed",
+			"status": "completed",
 		},
 		{
 			"ownerProfilePicture": "https://thispersondoesnotexist.com/image",
@@ -46,6 +46,30 @@ export const tempstate = {
 			"owner": "5d5dd28cf58b080017a4db57",
 			"name": "The Snack That Smiles Back",
 			"price": 53156,
+			"status": "completed",
+		},
+		{
+			"ownerProfilePicture": "https://thispersondoesnotexist.com/image",
+			"ownerName": "Mikey Fretos",
+			"owner": "5d5dd28cf58b080017a4db57",
+			"name": "Fretos Invitory Management",
+			"price": 21,
+			"status": "review",
+		},
+		{
+			"ownerProfilePicture": "https://thispersondoesnotexist.com/image",
+			"ownerName": "Steve Jubil",
+			"owner": "5d5dd28cf58b080017a4db57",
+			"name": "Freelancing Network",
+			"price": 6358413,
+			"status": "completed",
+		},
+		{
+			"ownerProfilePicture": "https://thispersondoesnotexist.com/image",
+			"ownerName": "Jason Bar",
+			"owner": "5d5dd28cf58b080017a4db57",
+			"name": "Barful Tracking",
+			"price": 94935,
 			"status": "completed",
 		},
 	]
