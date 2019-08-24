@@ -6,7 +6,7 @@ import PrivateRoute from "./components/auth/PrivateRoute";
 import Signup from "./components/dashboard/Login/Signup";
 import Signup2 from "./components/dashboard/Login/Signup2";
 
-import DevFindr from "./components/dashboard/DevFindr/DevFindr";
+import DashboardChooser from "./components/dashboard/AccountTypes/DashboardChooser";
 import ChangePassword from "./components/dashboard/Login/ChangePassword";
 import Header from "./components/dashboard/Developer/Header/Header";
 import styled, { ThemeProvider } from "styled-components";
@@ -54,7 +54,7 @@ const App = props => {
                   <LeftNavigation />
                   <div className="main-app-container">
                     <Route path="/dev" component={Header} />
-                    <PrivateRoute path="/" component={DevFindr} />
+                    <PrivateRoute path="/" component={DashboardChooser} />
                   </div>
                 </div>
               </>
