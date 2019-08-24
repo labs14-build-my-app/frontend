@@ -142,8 +142,8 @@ const Header = props => {
           className="bell-notifications"
           onClick={() => toggleNotif(!notifIsOpen)}
         >
-          {/* <img src={`${process.env.PUBLIC_URL}/images/icon_bell_line.svg`} alt="icon bell" /> 
-            <div className="notification-dot"  /> */}
+          <img src={`${process.env.PUBLIC_URL}/images/icon_bell_line.svg`} alt="icon bell" /> 
+            <div className="notification-dot"  />
           <div
             className="notif-nav-menu-container"
             style={{ display: `${notifIsOpen ? "flex" : "none"}` }}

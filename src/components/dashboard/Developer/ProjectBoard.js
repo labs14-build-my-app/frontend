@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { transparentBackdrop } from "../cssVariables";
 import FindProjects from "./FindProjects/FindProjects";
-import ProjectList from "./ProjectList";
+import ProjectList from "../Developer/Dashboard/Projects Loader/ProjectsList";
 
 export class ProjectBoard extends Component {
   render() {
