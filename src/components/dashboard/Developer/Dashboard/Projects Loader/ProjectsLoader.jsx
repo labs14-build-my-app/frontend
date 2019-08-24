@@ -14,35 +14,35 @@ const ProjectsLoader = (props) => {
 					</Row>
 
 					<Row>
-						<p className="main-text">{props.name}</p>
-						<p className="title-text">{props.ownerName}</p>
+						<p className="main-text">{props.name || "N/A"}</p>
+						<p className="title-text">{props.ownerName || "N/A"}</p>
 					</Row>
 				</Left>
 
 				<Right>
 					<Row>
-						<p className="main-text">{props.startDate}</p>
+						<p className="main-text">{props.startDate || "N/A"}</p>
 						<p className="title-text">Start Date</p>
 					</Row>
 
 					<Row>
-						<p className="main-text">{props.endDate}</p>
+						<p className="main-text">{props.endDate || "N/A"}</p>
 						<p className="title-text">Estimated End Date</p>
 					</Row>
 
 					<Row>
-						<p className="main-text">{props.price}</p>
+						<p className="main-text">{props.price || "N/A"}</p>
 						<p className="title-text">Total Cost</p>
 					</Row>
 
 					<Row>
-						<p className="main-text">{props.price * .25}</p>
+						<p className="main-text">{props.price * .25 || "N/A"}</p>
 						<p className="title-text">Deposit</p>
 					</Row>
 
 					<Row>
-						<div className="status">
-							<p className="status-text">{props.status}</p>
+						<div className="status-wrapper">
+							<p className="status-text">{props.status || "N/A"}</p>
 						</div>
 					</Row>
 				</Right>
@@ -63,6 +63,7 @@ const ProjectWrapper = styled.div`
 	max-height: 10rem;
 	background: ${privilege};
 	border-radius: .5rem;
+	margin-bottom: 2.375rem;
 `
 
 const FlexWrapper = styled.div`
@@ -96,6 +97,18 @@ const Row = styled.div`
 	.title-text{
 		font-size: ${projectFontSubtext};
 		color: ${textColor2};
+	}
+
+	.status-wrapper{
+		border-radius: .5rem;
+		background: #ccc;
+		padding: 1.7rem 0;
+		width: 18rem;
+
+		.status-text{
+			text-align: center;
+			font-size: ${projectFontSubtext};
+		}
 	}
 `
 const Img = styled.img`
