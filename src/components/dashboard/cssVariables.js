@@ -25,6 +25,23 @@ export const textColor1 = "#43425D";
 export const textColor2 = "#9592A8";
 export const veryLightBlue = "#F2F3FF";
 
+// Colors Used for Project Status's On The Dashboard
+export const progressBackground = "#D9FFDD";
+export const progressText = "#3D9E47";
+export const progressGlow = "box-shadow: 5px 5px 8px rgba(217, 255, 221, 0.25);";
+
+export const reviewBackground = "#E2E0FF";
+export const reviewText = "#6C63FF"
+export const reviewGlow = "box-shadow: 5px 5px 8px rgba(226, 224, 255, 0.25);"
+
+export const updateBackground = "#FFF9D9";
+export const updateText = "#C2A721"
+export const updateGlow = "box-shadow: 5px 5px 8px rgba(255, 249, 217, 0.25);";
+
+export const completedBackground = "#F2F3FF";
+export const completedText = "#828CFF";
+export const completedGlow = "box-shadow: 5px 5px 8px rgba(242, 243, 255, 0.25);"
+
 //sets lighter color than the main above
 export const setColorAndOpacity = (color, opacity) => {
   switch (color) {
