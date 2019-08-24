@@ -6,7 +6,6 @@ import {privilege} from '../../../cssVariables';
 const ProjectsLoader = (props) => {
 	return (
 		<ProjectWrapper>
-
 			<FlexWrapper>
 				<Left>
 					<Row>
