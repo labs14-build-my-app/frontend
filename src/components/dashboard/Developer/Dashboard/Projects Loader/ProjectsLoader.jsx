@@ -41,11 +41,11 @@ const ProjectsLoader = (props) => {
 						<p className="title-text">Deposit</p>
 					</Row>
 
-					<Row>
+					<Status>
 						<div className={"status-wrapper " + props.status}>
 							<p className="status-text">{props.status || "N/A"}</p>
 						</div>
-					</Row>
+					</Status>
 				</Right>
 
 			</FlexWrapper>
@@ -57,51 +57,49 @@ const ProjectsLoader = (props) => {
 export default ProjectsLoader;
 
 // This just aligns things to the center of the row. Its here for improved readibility.
-const FlexAlignItemCenter = " display: flex; align-items: center;"
+const FlexAlignItemCenter = "display: flex; align-items: center;"
+const border = "border: 1px solid red;"
 
 const ProjectWrapper = styled.div`
-	max-width: 112.6rem;
-	max-height: 10rem;
+	margin-bottom: 2.3rem;
+	height: 10rem;
+${border}
 	background: ${privilege};
-	border-radius: .5rem;
-	margin-bottom: 2.375rem;
-
 	${projectsGlowColorizer}
 `
 
 const FlexWrapper = styled.div`
-	${FlexAlignItemCenter};
+	${FlexAlignItemCenter}
 	justify-content: space-between;
-	padding: 2.3rem 4rem 2.3rem;
+${border}
 `
 const Left = styled.div`
 	${FlexAlignItemCenter}
-
-	Div:nth-child(2) {
-		margin-left: 3rem;
-	}
 `
 
 const Right = styled.div`
 	${FlexAlignItemCenter}
+	${border}
 
 	Div{
-		margin-left: 4.5rem;
+		${border}
+
 	}
 `
 
 const Row = styled.div`
+
 	.main-text {
 		font-size: ${projectParagraphFont};
 		color: ${textColor1};
-		margin-bottom: .5rem;
 	}
 
 	.title-text{
 		font-size: ${projectFontSubtext};
 		color: ${textColor2};
 	}
-
+`
+const Status = styled.div`
 	.status-wrapper{
 		border-radius: .5rem;
 		padding: 1.7rem 0;
@@ -115,8 +113,8 @@ const Row = styled.div`
 	}
 
 	${projectsButtonColorizer};
-
 `
+
 const Img = styled.img`
 	width: 54px;
 	border-radius: 50%;
