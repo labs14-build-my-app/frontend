@@ -6,7 +6,7 @@ import NewProjects from "./FindProjects/NewProjects";
 import { fetchSelfProjects, fetchAllProjects } from "../../../redux/actions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-
+ 
 const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
   const pathname = useState(history.location.pathname);
 
