@@ -5,10 +5,10 @@ import {progressBackground, reviewBackground, updateBackground, cancelledBackgro
 import {progressText, reviewText, updateText, cancelledText, completedText} from '../../../cssVariables';
 
 // imports Glows
-import {progressGlow, reviewGlow, cancelledText, completedText} from '../../../cssVariables';
+import {progressGlow, reviewGlow, updateGlow, cancelledGlow, completedGlow} from '../../../cssVariables';
 
 // Sets the text & background color
-export const ProjectsButtonColorizer = `
+export const projectsButtonColorizer = `
 .progress {
 	background: ${progressBackground};
 	color: ${progressText};
@@ -38,5 +38,24 @@ export const ProjectsButtonColorizer = `
 
 // Sets the glow color
 
-export const projectGlowColorizer = `
+export const projectsGlowColorizer =`
+.flex-wrapper-progress {
+	${progressGlow}
+}
+
+.flex-wrapper-review {
+	${reviewGlow}
+}
+
+.flex-wrapper-update {
+	${updateGlow}
+}
+
+.flex-wrapper-cancelled {
+	${cancelledGlow}
+}
+
+.flex-wrapper-completed {
+	${completedGlow}
+}
 `

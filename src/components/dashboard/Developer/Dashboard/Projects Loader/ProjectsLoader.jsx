@@ -3,12 +3,12 @@ import React from 'react';
 import styled from 'styled-components';
 import {projectParagraphFont, projectFontSubtext} from '../../../cssVariables'; // Fonts
 import {privilege, textColor1, textColor2} from '../../../cssVariables'; // Colors
-import {ProjectsButtonColorizer} from './ProjectsColorizer';
+import {projectsButtonColorizer, projectsGlowColorizer} from './ProjectsColorizer';
 
 const ProjectsLoader = (props) => {
 	return (
 		<ProjectWrapper>
-			<FlexWrapper>
+			<FlexWrapper className={'flex-wrapper-' + props.status}>
 				<Left>
 					<Row>
 						<Img src={props.ownerProfilePicture} alt={"Profile picture of" + props.ownerName}/>
@@ -65,6 +65,8 @@ const ProjectWrapper = styled.div`
 	background: ${privilege};
 	border-radius: .5rem;
 	margin-bottom: 2.375rem;
+
+	${projectsGlowColorizer}
 `
 
 const FlexWrapper = styled.div`
@@ -112,7 +114,7 @@ const Row = styled.div`
 		}
 	}
 
-	${ProjectsButtonColorizer};
+	${projectsButtonColorizer};
 
 `
 const Img = styled.img`
