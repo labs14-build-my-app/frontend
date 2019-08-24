@@ -42,25 +42,22 @@ const App = props => {
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/signup2" component={Signup2} />
-
       <Route exact path="/changepassword" component={ChangePassword} />
+
       <AppContainer>
-        <Route
-          path="/dev"
-          render={() => {
-            return (
-              <>
-                <div className="essential-container">
-                  <LeftNavigation />
-                  <div className="main-app-container">
-                    <Route path="/dev" component={Header} />
-                    <PrivateRoute path="/" component={DevFindr} />
-                  </div>
+        <Route path="/dev" render={() => {
+          return (
+            <>
+              <div className="essential-container">
+                <LeftNavigation />
+                <div className="main-app-container">
+                  <Route path="/dev" component={Header} />
+                  <PrivateRoute path="/" component={DevFindr} />
                 </div>
-              </>
-            );
-          }}
-        />
+              </div>
+            </>
+          );
+        }} />
       </AppContainer>
       </>
     </ThemeProvider>
