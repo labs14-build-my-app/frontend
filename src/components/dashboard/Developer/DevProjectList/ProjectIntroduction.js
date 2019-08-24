@@ -10,12 +10,18 @@ const ProjectIntroContainer = styled.div`
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
-  padding: 1.4375em 1.4375em;
+  padding: 2.4rem 4rem;
   align-items: center;
   color: rgba(67, 66, 93, 1);
+
   div{
-    text-align: center;
+    text-align: right;
     line-height: 17px;
+
+    p{
+      font-size: 1.3rem;
+      color: #9592A8;
+    }
   }
 `;
 const ProjectIntroduction = props => {
@@ -24,9 +30,8 @@ const ProjectIntroduction = props => {
     <ProjectIntroContainer>
       <h1>Hello {user.firstName}, welcome to your dashboard.</h1>
       <div>
-      <h3>12:07 PM</h3>
-      <p>8/12/2019</p>
-        
+        <h3>12:07 PM</h3>
+        <p>8/12/2019</p>
       </div>
     </ProjectIntroContainer>
   );
