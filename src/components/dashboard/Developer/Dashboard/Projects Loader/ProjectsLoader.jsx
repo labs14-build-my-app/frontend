@@ -102,13 +102,13 @@ const Row = styled.div`
 
 	.status-wrapper{
 		border-radius: .5rem;
-		background: #ccc;
 		padding: 1.7rem 0;
 		width: 18rem;
 
 		.status-text{
 			text-align: center;
 			font-size: ${projectFontSubtext};
+			font-weight: bold;
 		}
 	}
 
