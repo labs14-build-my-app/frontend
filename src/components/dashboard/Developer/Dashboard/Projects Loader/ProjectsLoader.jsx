@@ -59,20 +59,20 @@ export default ProjectsLoader;
 const FlexAlignItemCenter = " display: flex; align-items: center;"
 
 const ProjectWrapper = styled.div`
-max-width: 112.6rem;
-
+	max-width: 112.6rem;
+	max-height: 10rem;
+	background: ${privilege};
+	border-radius: .5rem;
 `
 
 const FlexWrapper = styled.div`
 	${FlexAlignItemCenter};
 	justify-content: space-between;
 	padding: 2.3rem 4rem 2.3rem;
-	background: ${privilege};
-	border: 1px solid pink;
 `
 const Left = styled.div`
 	${FlexAlignItemCenter}
-	border: 1px solid green;
+
 	Div:nth-child(2) {
 		margin-left: 3rem;
 	}
@@ -80,13 +80,17 @@ const Left = styled.div`
 
 const Right = styled.div`
 	${FlexAlignItemCenter}
-	border: 1px solid red;
+
+	Div{
+		margin-left: 4.5rem;
+	}
 `
 
 const Row = styled.div`
 	.main-text {
 		font-size: ${projectParagraphFont};
 		color: ${textColor1};
+		margin-bottom: .5rem;
 	}
 
 	.title-text{
