@@ -65,19 +65,22 @@ max-width: 112.6rem;
 
 const FlexWrapper = styled.div`
 	${FlexAlignItemCenter};
+	justify-content: space-between;
 	padding: 2.3rem 4rem 2.3rem;
 	background: ${privilege};
+	border: 1px solid pink;
 `
 const Left = styled.div`
 	${FlexAlignItemCenter}
-
+	border: 1px solid green;
 	Div:nth-child(2) {
 		margin-left: 3rem;
 	}
 `
 
 const Right = styled.div`
-	${FlexAlignItemCenter}	
+	${FlexAlignItemCenter}
+	border: 1px solid red;
 `
 
 const Row = styled.div`
