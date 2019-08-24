@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { transparentBackdrop } from "../cssVariables";
 import FindProjects from "./FindProjects/FindProjects";
-import ProjectList from "./Dashboard/Projects Loader/ProjectsList";
+import ProjectList from "./ProjectList";
 
 export class ProjectBoard extends Component {
   render() {
@@ -10,6 +10,7 @@ export class ProjectBoard extends Component {
       "/dev/dashboard",
       "/dev/find/projects"
     ];
+    
     const { pathname } = this.props.history.location;
     console.log(pathname === findNewProjects);
     

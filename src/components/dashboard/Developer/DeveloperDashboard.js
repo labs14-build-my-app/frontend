@@ -25,6 +25,7 @@ const DashboardContentContainer = styled.div`
 
 
   }
+
   .project-board-and-notifications{
     display: flex;
   background: transparent linear-gradient(248deg, rgba(242, 243, 255, 1) 0%, rgba(255, 255, 255, 1) 100%) 0% 0% no-repeat padding-box;
@@ -52,12 +53,13 @@ class DeveloperDashboard extends Component {
         <Route
           path="/dev/dashboard"
           render={() => {
-            return (<div className="developer-home">
-              <ProjectIntroduction />
-              <div className="project-board-and-notifications">
-                <ProjectBoard {...this.props} />
-                {this.renderNotificationAndStatement()}
-              </ div>
+            return (
+              <div className="developer-home">
+                <ProjectIntroduction />
+                <div className="project-board-and-notifications">
+                  <ProjectBoard {...this.props} />
+                  {this.renderNotificationAndStatement()}
+                </ div>
               </ div>
             );
           }}

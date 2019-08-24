@@ -6,23 +6,6 @@ import NewProjects from "./FindProjects/NewProjects";
 import { fetchSelfProjects, fetchAllProjects } from "../../../redux/actions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-const ProjectListContainer = styled.ul`
-  .find-new-proj-projectlist-container {
-    /* display: flex;
-    justify-content: space-between; */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* grid-auto-rows: minmax(100px, 342px); */
-    grid-gap: 30px;
-    padding: 2.5em 0 0 0;
-  }
-
-  /* dev-project-list styles */
-
-  .dev-proj-projectlist-container {
-    padding: 1.25em 2.5em 6.625em 7.4em;
-  }
-`;
 
 const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
   const pathname = useState(history.location.pathname);
@@ -111,7 +94,26 @@ const mapStateToProps = state => {
     searchProjectList: state.searchProjectList
   };
 };
+
 export default connect(
   mapStateToProps,
   { fetchSelfProjects, fetchAllProjects }
 )(ProjectList);
+
+const ProjectListContainer = styled.ul`
+  .find-new-proj-projectlist-container {
+    /* display: flex;
+    justify-content: space-between; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-auto-rows: minmax(100px, 342px); */
+    grid-gap: 30px;
+    padding: 2.5em 0 0 0;
+  }
+
+  /* dev-project-list styles */
+
+  .dev-proj-projectlist-container {
+    padding: 1.25em 2.5em 6.625em 7.4em;
+  }
+`;

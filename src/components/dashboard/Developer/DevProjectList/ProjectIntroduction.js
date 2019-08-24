@@ -6,9 +6,8 @@ const ProjectIntroContainer = styled.div`
   font-size: 1.8rem;
   max-width: 1657px;
   background: #f2f3ff 0% 0% no-repeat padding-box;
-  box-shadow: 5px 5px 8px #ffffff;
+  box-shadow: 5px 5px 8px rgba(255, 255, 255, 0.25);
   border-radius: 5px;
-  opacity: 1;
   display: flex;
   justify-content: space-between;
   padding: 1.4375em 1.4375em;
