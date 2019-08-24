@@ -63,6 +63,7 @@ const border = "border: 1px solid red;"
 const ProjectWrapper = styled.div`
 	margin-bottom: 2.3rem;
 	height: 10rem;
+	max-width: 112.6rem;
 ${border}
 	background: ${privilege};
 	${projectsGlowColorizer}
@@ -79,12 +80,13 @@ const Left = styled.div`
 
 const Right = styled.div`
 	${FlexAlignItemCenter}
-	${border}
 
-	Div{
-		${border}
-
+	Div:nth-child(4){
+		background: gray;
+		margin-right: 6rem;
 	}
+
+
 `
 
 const Row = styled.div`
@@ -100,6 +102,8 @@ const Row = styled.div`
 	}
 `
 const Status = styled.div`
+	margin-right: 3.9rem;
+
 	.status-wrapper{
 		border-radius: .5rem;
 		padding: 1.7rem 0;
