@@ -84,8 +84,8 @@ const ProjectModalModal = styled.div`
       font-size: 1.5rem;
       margin: 3em 0;
       padding: 1em 0;
-      ::placeholder{
-        color: ${trout}
+      ::placeholder {
+        color: ${trout};
       }
       :focus {
         transition: 0.5s;
@@ -135,7 +135,9 @@ const ProjectModal = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    props.submitProposal(id, userInput);
+    props
+      .submitProposal(id, userInput)
+      .then(props.history.push("/dev/find/projects"));
   };
 
   const [userInput, setUserInput] = useReducer(
@@ -175,9 +177,7 @@ const ProjectModal = props => {
           <div className="project-top">
             <div className="owner-info">
               <img
-                src={`${
-                  process.env.PUBLIC_URL
-                }/images/Landing Page - Mobile 375x667.png`}
+                src={`${process.env.PUBLIC_URL}/images/Landing Page - Mobile 375x667.png`}
                 className="profile-pic"
                 alt="no error pls"
               />
