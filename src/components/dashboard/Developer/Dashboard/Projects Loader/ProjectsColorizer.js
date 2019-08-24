@@ -13,23 +13,18 @@ export const projectsButtonColorizer = `
 	background: ${progressBackground};
 	color: ${progressText};
 }
-
 .review {
 	background: ${reviewBackground};
 	color: ${reviewText};
-
 }
-
 .update {
 	background: ${updateBackground};
 	color: ${updateText};
 }
-
 .cancelled {
 	background: ${cancelledBackground};
 	color: ${cancelledText};
 }
-
 .completed {
 	background: ${completedBackground};
 	color: ${completedText};
@@ -42,19 +37,15 @@ export const projectsGlowColorizer =`
 .flex-wrapper-progress {
 	${progressGlow}
 }
-
 .flex-wrapper-review {
 	${reviewGlow}
 }
-
 .flex-wrapper-update {
 	${updateGlow}
 }
-
 .flex-wrapper-cancelled {
 	${cancelledGlow}
 }
-
 .flex-wrapper-completed {
 	${completedGlow}
 }

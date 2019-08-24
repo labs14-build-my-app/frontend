@@ -32,20 +32,20 @@ const ProjectsLoader = (props) => {
 					</Row>
 
 					<Row>
-						<p className="main-text">${props.price || " N/A"}</p>
+						<p className="main-text">{props.price || "N/A"}</p>
 						<p className="title-text">Total Cost</p>
 					</Row>
 
 					<Row>
-						<p className="main-text">${props.price * .25 || " N/A"}</p>
+						<p className="main-text">{props.price * .25 || "N/A"}</p>
 						<p className="title-text">Deposit</p>
 					</Row>
 
-					<Status>
+					<Row>
 						<div className={"status-wrapper " + props.status}>
 							<p className="status-text">{props.status || "N/A"}</p>
 						</div>
-					</Status>
+					</Row>
 				</Right>
 
 			</FlexWrapper>
@@ -57,75 +57,59 @@ const ProjectsLoader = (props) => {
 export default ProjectsLoader;
 
 // This just aligns things to the center of the row. Its here for improved readibility.
-const FlexAlignItemCenter = "display: flex; align-items: center;"
-const border = "border: 1px solid red;"
+const FlexAlignItemCenter = " display: flex; align-items: center;"
 
 const ProjectWrapper = styled.div`
-	margin-bottom: 2.3rem;
-	height: 10rem;
 	max-width: 112.6rem;
-${border}
+	max-height: 10rem;
 	background: ${privilege};
+	border-radius: .5rem;
+	margin-bottom: 2.375rem;
 	${projectsGlowColorizer}
 `
 
 const FlexWrapper = styled.div`
-	${FlexAlignItemCenter}
+	${FlexAlignItemCenter};
 	justify-content: space-between;
-${border}
+	padding: 2.3rem 4rem 2.3rem;
 `
 const Left = styled.div`
-	margin-left: 4rem;
 	${FlexAlignItemCenter}
+	Div:nth-child(2) {
+		margin-left: 3rem;
+	}
 `
 
 const Right = styled.div`
 	${FlexAlignItemCenter}
-
 	Div{
-		background: gray;
-		:nth-child(3){
-			margin-right: 4.5rem;
-		}
-		:nth-child(4){
-			margin-right: 4.6rem;
-		}
+		margin-left: 4.5rem;
 	}
 `
 
 const Row = styled.div`
-
 	.main-text {
 		font-size: ${projectParagraphFont};
 		color: ${textColor1};
+		margin-bottom: .5rem;
 	}
-
 	.title-text{
 		font-size: ${projectFontSubtext};
 		color: ${textColor2};
 	}
-`
-
-const Status = styled.div`
-	margin-right: 3.9rem;
-
 	.status-wrapper{
 		border-radius: .5rem;
 		padding: 1.7rem 0;
 		width: 18rem;
-
 		.status-text{
 			text-align: center;
 			font-size: ${projectFontSubtext};
 			font-weight: bold;
 		}
 	}
-
 	${projectsButtonColorizer};
 `
-
 const Img = styled.img`
 	width: 54px;
 	border-radius: 50%;
-	margin-right: 3rem;
 `
