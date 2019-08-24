@@ -66,7 +66,6 @@ class DeveloperDashboard extends Component {
         />
 
         <Route path="/dev/find/projects" component={ProjectBoard}/>
-        <Route path="/dev/my/projects"  component={ProjectsList} />
       </DashboardContentContainer>
     );
   }

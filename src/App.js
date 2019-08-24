@@ -1,13 +1,12 @@
 import React from "react";
 import "./index.css";
 import { Route, Switch } from "react-router-dom";
-import Login from "./components/dashboard/Login/Login";
 import PrivateRoute from "./components/auth/PrivateRoute";
+import Login from "./components/dashboard/Login/Login";
 import Signup from "./components/dashboard/Login/Signup";
 import Signup2 from "./components/dashboard/Login/Signup2";
-
-import DevFindr from "./components/dashboard/DevFindr/DevFindr";
 import ChangePassword from "./components/dashboard/Login/ChangePassword";
+import DevFindr from "./components/dashboard/DevFindr/DevFindr";
 import Header from "./components/dashboard/Developer/Header/Header";
 import styled, { ThemeProvider } from "styled-components";
 import LeftNavigation from "./components/dashboard/Navigation/LeftNavigation";
