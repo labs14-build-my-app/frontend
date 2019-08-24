@@ -32,12 +32,12 @@ const ProjectsLoader = (props) => {
 					</Row>
 
 					<Row>
-						<p className="main-text">{props.price || "N/A"}</p>
+						<p className="main-text">${props.price || " N/A"}</p>
 						<p className="title-text">Total Cost</p>
 					</Row>
 
 					<Row>
-						<p className="main-text">{props.price * .25 || "N/A"}</p>
+						<p className="main-text">${props.price * .25 || " N/A"}</p>
 						<p className="title-text">Deposit</p>
 					</Row>
 
@@ -75,6 +75,7 @@ const FlexWrapper = styled.div`
 ${border}
 `
 const Left = styled.div`
+	margin-left: 4rem;
 	${FlexAlignItemCenter}
 `
 
@@ -83,7 +84,7 @@ const Right = styled.div`
 
 	Div:nth-child(4){
 		background: gray;
-		margin-right: 6rem;
+		margin-right: 4.6rem;
 	}
 
 
@@ -122,4 +123,5 @@ const Status = styled.div`
 const Img = styled.img`
 	width: 54px;
 	border-radius: 50%;
+	margin-right: 3rem;
 `
