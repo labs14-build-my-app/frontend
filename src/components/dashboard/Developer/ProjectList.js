@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import NewProjects from "./FindProjects/NewProjects";
 import { fetchSelfProjects, fetchAllProjects } from "../../../redux/actions";
 import { connect } from "react-redux";
-
+import { Link } from "react-router-dom";
 const ProjectListContainer = styled.ul`
   .find-new-proj-projectlist-container {
     /* display: flex;
@@ -66,7 +66,23 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
         <div className="dev-proj-projectlist-container">
           {devProjectList.map(project => {
             console.log(project);
-            return <DevProject key={project._id} {...project} />;
+            return (
+              <Link
+              // name, ownerName, description, id 
+                to={{
+                  pathname:`/dev/find/projects/${project._id}`,
+                  state: {
+                    name: project.name,
+                    ownerName: project.ownerName,
+                    description: project.description,
+                    id: project._id
+                  }
+                }}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <DevProject key={project._id} {...project} />{" "}
+              </Link>
+            );
           })}
         </div>
       )}
