@@ -1,7 +1,8 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import {privilege} from '../../../cssVariables';
+import {projectParagraphFont, projectFontSubtext} from '../../../cssVariables'; // Fonts
+import {privilege, textColor1, textColor2} from '../../../cssVariables'; // Colors
 
 const ProjectsLoader = (props) => {
 	return (
@@ -80,7 +81,15 @@ const Right = styled.div`
 `
 
 const Row = styled.div`
+	.main-text {
+		font-size: ${projectParagraphFont};
+		color: ${textColor1};
+	}
 
+	.title-text{
+		font-size: ${projectFontSubtext};
+		color: ${textColor2};
+	}
 `
 const Img = styled.img`
 	width: 54px;
