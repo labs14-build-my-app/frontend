@@ -58,15 +58,21 @@ export default ProjectsLoader;
 const FlexAlignItemCenter = " display: flex; align-items: center;"
 
 const ProjectWrapper = styled.div`
+max-width: 112.6rem;
+
 `
 
 const FlexWrapper = styled.div`
+	${FlexAlignItemCenter};
+	padding: 2.3rem 4rem 2.3rem;
 	background: ${privilege};
-	${FlexAlignItemCenter}
 `
 const Left = styled.div`
 	${FlexAlignItemCenter}
-	margin: 2.3rem 4rem 2.3rem;
+
+	Div:nth-child(2) {
+		margin-left: 3rem;
+	}
 `
 
 const Right = styled.div`

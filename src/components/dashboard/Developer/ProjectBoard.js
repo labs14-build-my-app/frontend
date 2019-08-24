@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import ProjectList from "./Dashboard/Projects Loader/ProjectsList";
 import styled from "styled-components";
 import { transparentBackdrop } from "../cssVariables";
 import FindProjects from "./FindProjects/FindProjects";
+import ProjectList from "./Dashboard/Projects Loader/ProjectsList";
 
 export class ProjectBoard extends Component {
   render() {
