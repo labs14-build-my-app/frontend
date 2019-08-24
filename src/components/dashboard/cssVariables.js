@@ -38,6 +38,10 @@ export const updateBackground = "#FFF9D9";
 export const updateText = "#C2A721"
 export const updateGlow = "box-shadow: 5px 5px 8px rgba(255, 249, 217, 0.25);";
 
+export const cancelledBackground = "#FFB3B3";
+export const cancelledText = "#AD7979"
+export const cancelledGlow = "box-shadow: 5px 5px 8px rgba(255, 217, 217, 0.25);";
+
 export const completedBackground = "#F2F3FF";
 export const completedText = "#828CFF";
 export const completedGlow = "box-shadow: 5px 5px 8px rgba(242, 243, 255, 0.25);"

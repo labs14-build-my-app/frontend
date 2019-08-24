@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {projectParagraphFont, projectFontSubtext} from '../../../cssVariables'; // Fonts
 import {privilege, textColor1, textColor2} from '../../../cssVariables'; // Colors
+import {ProjectsButtonColorizer} from './ProjectsColorizer';
 
 const ProjectsLoader = (props) => {
 	return (
@@ -41,7 +42,7 @@ const ProjectsLoader = (props) => {
 					</Row>
 
 					<Row>
-						<div className="status-wrapper">
+						<div className={"status-wrapper " + props.status}>
 							<p className="status-text">{props.status || "N/A"}</p>
 						</div>
 					</Row>
@@ -110,6 +111,9 @@ const Row = styled.div`
 			font-size: ${projectFontSubtext};
 		}
 	}
+
+	${ProjectsButtonColorizer};
+
 `
 const Img = styled.img`
 	width: 54px;
