@@ -82,12 +82,15 @@ const Left = styled.div`
 const Right = styled.div`
 	${FlexAlignItemCenter}
 
-	Div:nth-child(4){
+	Div{
 		background: gray;
-		margin-right: 4.6rem;
+		:nth-child(3){
+			margin-right: 4.5rem;
+		}
+		:nth-child(4){
+			margin-right: 4.6rem;
+		}
 	}
-
-
 `
 
 const Row = styled.div`
@@ -102,6 +105,7 @@ const Row = styled.div`
 		color: ${textColor2};
 	}
 `
+
 const Status = styled.div`
 	margin-right: 3.9rem;
 
