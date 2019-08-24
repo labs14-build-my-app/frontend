@@ -149,12 +149,12 @@ export const SUBMIT_PROPOSAL = {
   FAILURE: "SUBMIT_PROPOSAL_FAILURE"
 };
 export const submitProposal = (id, object) => dispatch => {
-  console.log(object, `project with id: ${id}`);
+  // console.log(object, `project with id: ${id}`);
   dispatch({ type: SUBMIT_PROPOSAL.START });
   return axiosWithAuth()
-    .post(`${BACKEND_URL}/projects/${id}/proposal`, object)
+    .post(`${BACKEND_URL}/projects/proposal/${id}`, object)
     .then(res => {
-      console.log(res);
+      // console.log(res);
       dispatch({ type: SUBMIT_PROPOSAL.SUCCESS });
     })
     .catch(err => {
