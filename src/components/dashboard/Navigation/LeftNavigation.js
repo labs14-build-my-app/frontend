@@ -91,7 +91,7 @@ const LeftNavigationElements = styled.nav`
   z-index: 15;
 
   .LeftNav {
-    max-width: 8rem;
+    width: 8rem;
 
     ul {
       display: flex;
@@ -99,10 +99,10 @@ const LeftNavigationElements = styled.nav`
       align-items: center;
 
       li{
-        background: gray;
         width: 1rem;
         height: 1rem;
       }
+
 
       svg {
         display: block;
@@ -111,6 +111,7 @@ const LeftNavigationElements = styled.nav`
 
       a li svg path {
         fill: #9592a8;
+        height: 2rem;
       }
 
       a :hover {
@@ -124,6 +125,7 @@ const LeftNavigationElements = styled.nav`
 
     }
   }
+  
   .LeftNav li {
     padding: 30px;
   }
