@@ -97,32 +97,22 @@ const LeftNavigationElements = styled.nav`
       display: flex;
       flex-direction: column;
       align-items: center;
-
-      li{
-        width: 1rem;
-        height: 1rem;
+      
       }
 
+    a li svg path {
+      fill: #9592a8;
+      height: 2rem;
+    
+    }
+  
+    a :hover {
+      background: #ffefff;
+      transition: 0.2s;
+    }
 
-      svg {
-        display: block;
-        margin: auto;
-      }
-
-      a li svg path {
-        fill: #9592a8;
-        height: 2rem;
-      }
-
-      a :hover {
-        background: #ffefff;
-        transition: 0.2s;
-      }
-
-      .active svg path {
-        fill: #9519e8;
-      }
-
+    .active svg path {
+      fill: #9519e8;
     }
   }
   
