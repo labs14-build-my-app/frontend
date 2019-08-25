@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { fetchAllProjects, saveProject } from "../../../../redux/actions";
+import { fetchAllProjects, saveProject } from "../../../../../redux/actions";
 import { Link, Route } from "react-router-dom";
 
 const NewProjects = props => {
