@@ -45,8 +45,8 @@ const ProjectBoardContainer = styled.div`
   border-radius: 10px;
   border: none;
   margin-top: 2.5em;
-  background: transparent linear-gradient(248deg, #f2f3ff 0%, #ffffff 100%) 0%
-    0% no-repeat padding-box;
+
+  background: transparent linear-gradient(297deg, rgba(242, 243, 255, 1) 0%, rgba(255, 255, 255, 1) 100%) 0% 0% no-repeat padding-box;
 
   .find-proj-full-container {
     padding: 7.5em 12.6875em 6.125em 8.4375em;

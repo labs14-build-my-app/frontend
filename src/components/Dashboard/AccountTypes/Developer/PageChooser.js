@@ -4,21 +4,12 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 
 import HelloUser from "./Dashboard/Hello User/HelloUser"
-import ProjectsList from "./Dashboard/Projects Loader/ProjectsList";
-import ProjectBoard from "./PageRenderer";
+import PageRenderer from "./PageRenderer";
 
 import NotificationCenter from "../../NotificationCenter/NotificationContainer";
 
 class DeveloperDashboard extends Component {
-  renderNotificationAndStatement = () => {
-    return (
-      <>
-        <div className="side-notif-and-statement-container">
-          <NotificationCenter />
-        </div>
-      </>
-    );
-  };
+
   render() {
     const { pathname } = this.props.history.location
     
@@ -29,11 +20,14 @@ class DeveloperDashboard extends Component {
             return (
               <div className="developer-home">
                 <HelloUser />
+
                 <div className="project-board-and-notifications">
-                  <ProjectBoard {...this.props} />
-                  {this.renderNotificationAndStatement()}
-                </ div>
-              </ div>
+                  <PageRenderer {...this.props} />
+                  <div className="side-notif-and-statement-container">
+                    <NotificationCenter />
+                  </div>
+                </div>
+              </div>
             );
           }}
         />
