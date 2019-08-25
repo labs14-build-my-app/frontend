@@ -14,7 +14,7 @@ import Signup2 from "./components/Dashboard/Authentication/SignUp/Signup2";
 import DashboardChooser from "./components/Dashboard/AccountTypes/DashboardChooser";
 
 
-import Header from "./components/Dashboard/Developer/Header/Header";
+import TopNavigation from "./components/Dashboard/Navigation/TopNavigation";
 import LeftNavigation from "./components/Dashboard/Navigation/LeftNavigation";
 
 const App = props => {
@@ -28,6 +28,7 @@ const App = props => {
       <Route exact path="/signup2" component={Signup2} />
 
       <Route exact path="/changepassword" component={ChangePassword} />
+      
       <AppContainer>
         <Route
           path="/dev"
@@ -37,7 +38,7 @@ const App = props => {
                 <div className="essential-container">
                   <LeftNavigation />
                   <div className="main-app-container">
-                    <Route path="/dev" component={Header} />
+                    <Route path="/dev" component={TopNavigation} />
                     <PrivateRoute path="/" component={DashboardChooser} />
                   </div>
                 </div>
