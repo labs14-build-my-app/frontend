@@ -8,7 +8,7 @@ import NotificationCenter from '../../../NotificationCenter/NotificationContaine
 
 // Get information from state about the users projects, then pass it as props to the projects loader
 
-const Index = ({fetchSelfProjects, history, devProjectList}) => {
+const Home = ({fetchSelfProjects, history, devProjectList}) => {
 
 	const pathname = useState(history.location.pathname)[0];
 
@@ -18,10 +18,14 @@ const Index = ({fetchSelfProjects, history, devProjectList}) => {
 		}
 	}, [pathname])
 
+
+
+	const validDevProjectList = devProjectList && devProjectList.length > 0 ;
+
 	return(
 		<div className="home">
 			<HelloUser />
-			{devProjectList.slice(0,5).map(projectData => {
+			{validDevProjectList && devProjectList.slice(0,5).map(projectData => {
 				return(
 					<ProjectsLoader {...projectData} />
 				)
@@ -38,4 +42,4 @@ const mapStateToProps = (state) => {
 	});
 }
 
-export default connect(mapStateToProps, {fetchSelfProjects})(Index);
+export default connect(mapStateToProps, {fetchSelfProjects})(Home);

@@ -23,42 +23,42 @@ const ProjectsLoader = (props) => {
 			}} 
 			style={{ textDecoration: 'none', color: 'inherit'}}
 			>
-			<FlexWrapper className={'flex-wrapper-' + status}>
+			<FlexWrapper className={'flex-wrapper-' + props.status}>
 				<Left>
 					<Row>
 						<Img src="https://thispersondoesnotexist.com/image" alt={"Profile picture of" + ownerName}/>
 					</Row>
 
 					<Row>
-						<p className="main-text">{name || "N/A"}</p>
-						<p className="title-text">{ownerName || "N/A"}</p>
+						<p className="main-text">{props.name || "N/A"}</p>
+						<p className="title-text">{props.ownerName || "N/A"}</p>
 					</Row>
 				</Left>
 
 				<Right>
 					<Row>
-						<p className="main-text">{startDate || "N/A"}</p>
+						<p className="main-text">{props.startDate || "N/A"}</p>
 						<p className="title-text">Start Date</p>
 					</Row>
 
 					<Row>
-						<p className="main-text">{endDate || "N/A"}</p>
+						<p className="main-text">{props.endDate || "N/A"}</p>
 						<p className="title-text">Estimated End Date</p>
 					</Row>
 
 					<Row>
-						<p className="main-text">{price || "N/A"}</p>
+						<p className="main-text">{props.price || "N/A"}</p>
 						<p className="title-text">Total Cost</p>
 					</Row>
 
 					<Row>
-						<p className="main-text">{price * .25 || "N/A"}</p>
+						<p className="main-text">{props.price * .25 || "N/A"}</p>
 						<p className="title-text">Deposit</p>
 					</Row>
 
 					<Row>
-						<div className={"status-wrapper " + status}>
-							<p className="status-text">{status || "N/A"}</p>
+						<div className={"status-wrapper " + props.status}>
+							<p className="status-text">{props.status || "N/A"}</p>
 						</div>
 					</Row>
 				</Right>
