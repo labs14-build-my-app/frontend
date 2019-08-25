@@ -15,7 +15,7 @@ class DeveloperDashboard extends Component {
     const { pathname } = this.props.history.location
     
     return (
-      <DashboardContentContainer>
+      <PageContentContainer>
         {pathname=== "/" && <Redirect to="/dev/dashboard" />}
         <Route path="/dev/dashboard" render={() => {
             return (
@@ -41,7 +41,7 @@ class DeveloperDashboard extends Component {
           );
         }} />
 
-      </DashboardContentContainer>
+      </PageContentContainer>
     );
   }
 }
@@ -55,7 +55,7 @@ export default connect(
   {}
 )(DeveloperDashboard);
 
-const DashboardContentContainer = styled.div`
+const PageContentContainer = styled.div`
   display: flex;
   justify-content: evenly;
   justify-content: center;
