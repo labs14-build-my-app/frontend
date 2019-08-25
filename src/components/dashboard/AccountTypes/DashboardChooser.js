@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { loadApp } from "../../../redux/actions";
 import { Route, Redirect } from "react-router-dom";
 
-import DeveloperDashboard from "../AccountTypes/Developer/DeveloperDashboard";
+import DeveloperDashboard from "./Developer/PageChooser";
 import EntrepreneurBoard from "../AccountTypes/Entrepreneur/EntrepreneurHome";
 import ProjectModal from "../AccountTypes/Developer/FindProjects/ProjectModal";
 

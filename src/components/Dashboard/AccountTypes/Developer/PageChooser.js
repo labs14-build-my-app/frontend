@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import HelloUser from "./Dashboard/Hello User/HelloUser"
 import ProjectsList from "./Dashboard/Projects Loader/ProjectsList";
-import ProjectBoard from "./ProjectBoard";
+import ProjectBoard from "./PageRenderer";
 
 import NotificationCenter from "../../NotificationCenter/NotificationContainer";
 
