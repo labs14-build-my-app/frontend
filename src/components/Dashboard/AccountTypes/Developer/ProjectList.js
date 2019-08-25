@@ -15,7 +15,7 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
   // console.log(pathname, pathname.current);
 
   const [dashboard, searchProjectPage] = [
-    "/dev/dashboard",
+    "/dev/home",
     "/dev/find/projects"
   ];
   const { devProjectList, searchProjectList } = useSelector(s => s);
@@ -32,7 +32,7 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
   // searchProjectList.length !== null || searchProjectList.length > 0;
 
   useEffect(() => {
-    if (pathname[0] === dashboard) {
+    if (pathname[0] === home) {
       fetchSelfProjects();
     }
 
@@ -46,13 +46,14 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
 
   return (
     <ProjectListContainer>
-      {validDevProjectList && pathname[0] === dashboard && (
+      {validDevProjectList && pathname[0] === home && (
         <div className="dev-proj-projectlist-container">
           {devProjectList.map(project => {
             console.log(project);
             return (
               <Link
               // name, ownerName, description, id 
+              style={{background: "red"}}
                 to={{
                   pathname:`/dev/find/projects/${project._id}`,
                   state: {

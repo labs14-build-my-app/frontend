@@ -13,7 +13,7 @@ const Index = ({fetchSelfProjects, history, devProjectList}) => {
 	const pathname = useState(history.location.pathname)[0];
 
 	useEffect( () => {
-		if (pathname === "/dev/dashboard"){
+		if (pathname === "/dev/home"){
 			fetchSelfProjects();
 		}
 	}, [pathname])
