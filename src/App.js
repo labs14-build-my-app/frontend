@@ -8,8 +8,8 @@ import { useSelector } from "react-redux";
 import Login from "./components/Dashboard/Authentication/Login/Login";
 import ChangePassword from "./components/Dashboard/Authentication/ChangePassword";
 
-import Signup from "./components/Dashboard/Authentication/Signup";
-import Signup2 from "./components/Dashboard/Authentication/Signup2";
+import Signup from "./components/Dashboard/Authentication/SignUp/Signup";
+import Signup2 from "./components/Dashboard/Authentication/SignUp/Signup2";
 
 import DashboardChooser from "./components/Dashboard/AccountTypes/DashboardChooser";
 

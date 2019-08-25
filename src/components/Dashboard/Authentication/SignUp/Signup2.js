@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { signup } from "../../../redux/actions";
+import { signup } from "../../../../redux/actions";
 
 import styled from "styled-components";
 import {
@@ -16,7 +16,7 @@ import {
   losTransitionTime,
   losBackground,
   privilege
-} from "../cssVariables";
+} from "../../cssVariables";
 
 const Signup2PageContainer = styled.div`
   margin: 0 auto;
