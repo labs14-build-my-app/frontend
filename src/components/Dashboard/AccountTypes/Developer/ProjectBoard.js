@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { transparentBackdrop } from "../cssVariables";
 import FindProjects from "./FindProjects/FindProjects";
 import ProjectList from "./ProjectList";
 
@@ -48,6 +47,7 @@ const ProjectBoardContainer = styled.div`
   margin-top: 2.5em;
   background: transparent linear-gradient(248deg, #f2f3ff 0%, #ffffff 100%) 0%
     0% no-repeat padding-box;
+
   .find-proj-full-container {
     padding: 7.5em 12.6875em 6.125em 8.4375em;
   }

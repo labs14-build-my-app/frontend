@@ -1,13 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 import { loadApp } from "../../../redux/actions";
-import ProjectModal from "../Developer/FindProjects/ProjectModal";
 import { Route, Redirect } from "react-router-dom";
 
-import DeveloperDashboard from "../Developer/DeveloperDashboard";
-import EntrepreneurBoard from "./Entrepreneur/EntrepreneurHome";
+import DeveloperDashboard from "../AccountTypes/Developer/DeveloperDashboard";
+import EntrepreneurBoard from "../AccountTypes/Entrepreneur/EntrepreneurHome";
+import ProjectModal from "../AccountTypes/Developer/FindProjects/ProjectModal";
 
-const errorHasOccured = <p>An Error has occured please log in again</p>;
+const errorHasOccured = <p>An Error has occured please log in again!</p>;
 
 const DashboardChooser = props => {
   if (!props.user && !props.loggingIn) {
