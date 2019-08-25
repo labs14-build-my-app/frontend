@@ -19,8 +19,7 @@ const Home = ({fetchSelfProjects, history, devProjectList}) => {
 	}, [pathname])
 
 
-
-	const validDevProjectList = devProjectList && devProjectList.length > 0 ;
+	const validDevProjectList = devProjectList || devProjectList.length > 0 ;
 
 	return(
 		<div className="home">
@@ -30,6 +29,7 @@ const Home = ({fetchSelfProjects, history, devProjectList}) => {
 					<ProjectsLoader {...projectData} />
 				)
 			})}
+			
 		</div>
 	)
 }
@@ -37,9 +37,9 @@ const Home = ({fetchSelfProjects, history, devProjectList}) => {
 const mapStateToProps = (state) => {
 	console.log(state);
 
-	return({
+	return{
 		devProjectList: state.devProjectList,
-	});
+	};
 }
 
 export default connect(mapStateToProps, {fetchSelfProjects})(Home);
