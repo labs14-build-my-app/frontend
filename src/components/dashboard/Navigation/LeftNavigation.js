@@ -9,6 +9,8 @@ export default function LeftNavigation() {
     <LeftNavigationElements>
       <div className="LeftNav">
         <ul>
+
+          {/* Home Icon */}
           <NavLink to="/dev/dashboard">
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="25.721" height="20.001" viewBox="0 0 25.721 20.001" >
@@ -18,6 +20,27 @@ export default function LeftNavigation() {
             </li>
           </NavLink>
 
+          {/* Projects Icon */}
+          <NavLink to="/dev/my/projects">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" viewBox="0 0 15 20" >
+                <defs />
+                <path className="a" d="M15,5.625a3.125,3.125,0,1,0-4,3,2.4,2.4,0,0,1-.43,1.441c-.6.75-1.926.875-3.328,1a9.429,9.429,0,0,0-3.176.66V6.105a3.125,3.125,0,1,0-1.875,0v7.785a3.132,3.132,0,1,0,2.063.07,1.375,1.375,0,0,1,.582-.523,7.859,7.859,0,0,1,2.582-.5c1.648-.152,3.516-.328,4.617-1.7a4.206,4.206,0,0,0,.844-2.652A3.138,3.138,0,0,0,15,5.625Z" transform="translate(0)" />
+              </svg>
+            </li>
+          </NavLink>
+
+          {/* Chat Icon */}
+          <NavLink to="dev/chat">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="25.718" height="20" viewBox="0 0 25.718 20">
+                <defs />
+                <path class="a" d="M23.744,47.813a6.147,6.147,0,0,0,1.964-4.384c0-3.571-3.415-6.522-7.866-7.049C16.436,33.808,13.132,32,9.279,32,4.15,32-.006,35.2-.006,39.143a6.163,6.163,0,0,0,1.964,4.384A11.689,11.689,0,0,1,.275,45.978a1.033,1.033,0,0,0,.75,1.741,10.262,10.262,0,0,0,5.589-1.732,12.724,12.724,0,0,0,1.268.219c1.4,2.563,4.692,4.366,8.54,4.366a11.817,11.817,0,0,0,2.67-.3A10.286,10.286,0,0,0,24.681,52a1.033,1.033,0,0,0,.75-1.741A11.378,11.378,0,0,1,23.744,47.813ZM6.208,43.692l-.763.5a9.084,9.084,0,0,1-1.924.955c.121-.21.241-.433.357-.661l.692-1.388L3.462,42a4.093,4.093,0,0,1-1.326-2.857c0-2.71,3.272-5,7.143-5s7.143,2.29,7.143,5-3.272,5-7.143,5a9.728,9.728,0,0,1-2.187-.25l-.884-.2Zm16.031,2.594-1.1,1.089.692,1.388c.116.228.237.451.357.661a9.084,9.084,0,0,1-1.924-.955l-.763-.5-.888.205a9.728,9.728,0,0,1-2.187.25,8.307,8.307,0,0,1-5.862-2.219c4.522-.482,8-3.455,8-7.067,0-.152-.018-.3-.031-.446,2.875.647,5.031,2.536,5.031,4.732A4.093,4.093,0,0,1,22.239,46.286Z" transform="translate(0.007 -32)"/>
+              </svg>
+            </li>
+          </NavLink>
+
+          {/* Search Icon */}
           <NavLink to="/dev/find/projects">
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="19.996" height="20" viewBox="0 0 19.996 20" >
@@ -27,15 +50,7 @@ export default function LeftNavigation() {
             </li>
           </NavLink>
 
-          <NavLink to="/dev/statements">
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" viewBox="0 0 15 20" >
-                <defs />
-                <path className="a" d="M15,5.625a3.125,3.125,0,1,0-4,3,2.4,2.4,0,0,1-.43,1.441c-.6.75-1.926.875-3.328,1a9.429,9.429,0,0,0-3.176.66V6.105a3.125,3.125,0,1,0-1.875,0v7.785a3.132,3.132,0,1,0,2.063.07,1.375,1.375,0,0,1,.582-.523,7.859,7.859,0,0,1,2.582-.5c1.648-.152,3.516-.328,4.617-1.7a4.206,4.206,0,0,0,.844-2.652A3.138,3.138,0,0,0,15,5.625Z" transform="translate(0)" />
-              </svg>
-            </li>
-          </NavLink>
-
+          {/* Notifications Icon */}
           <NavLink to="/dev/notifications">
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="17.5" height="20" viewBox="0 0 17.5 20" >
@@ -45,6 +60,7 @@ export default function LeftNavigation() {
             </li>
           </NavLink>
 
+          {/* Settings Icon */}
           <NavLink to="/dev/settings">
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="25.72" height="20.578" viewBox="0 0 25.72 20.578" >
@@ -61,30 +77,46 @@ export default function LeftNavigation() {
 }
 
 const LeftNavigationElements = styled.nav`
-  padding-top: 8.125em;
+  padding-top: 18rem;
   z-index: 15;
+
   .LeftNav {
-    max-width: 100px;
+    max-width: 8rem;
+
     ul {
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      li{
+        background: gray;
+        width: 1rem;
+        height: 1rem;
+      }
+
+      svg {
+        display: block;
+        margin: auto;
+      }
+
       a li svg path {
         fill: #9592a8;
       }
+
       a :hover {
         background: #ffefff;
         transition: 0.2s;
       }
+
       .active svg path {
         fill: #9519e8;
       }
+
     }
   }
   .LeftNav li {
     padding: 30px;
   }
-  background: transparent linear-gradient(4deg, #f2f3ff 0%, #ffffff 100%) 0% 0%
-    no-repeat padding-box;
-  opacity: 1;
+
+  background: transparent linear-gradient(4deg, rgba(242, 243, 255, 1) 0%, rgba(255, 255, 255, 1) 100%) 0% 0% no-repeat padding-box;
 `;
