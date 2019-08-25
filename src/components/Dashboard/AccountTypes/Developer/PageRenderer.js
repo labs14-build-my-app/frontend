@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import FindProjects from "./FindProjects/FindProjects";
 import ProjectList from "./Dashboard/Projects Loader/ProjectsList";
+import FindProjects from "./FindProjects/FindProjects";
 
 export class ProjectBoard extends Component {
   render() {
@@ -27,7 +27,6 @@ export class ProjectBoard extends Component {
           pathname === findNewProjects && (
             <div className="find-proj-full-container">
               <FindProjects />
-              <ProjectList {...this.props} pathname={pathname} />
             </div>
           )
         )}

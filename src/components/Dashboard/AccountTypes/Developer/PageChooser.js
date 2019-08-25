@@ -7,6 +7,7 @@ import HelloUser from "./Dashboard/Hello User/HelloUser"
 import PageRenderer from "./PageRenderer";
 
 import NotificationCenter from "../../NotificationCenter/NotificationContainer";
+import FindProjects from "./FindProjects/FindProjects";
 
 class DeveloperDashboard extends Component {
 
@@ -31,6 +32,14 @@ class DeveloperDashboard extends Component {
             );
           }}
         />
+
+        <Route path="/dev/find/projects" render={() => {
+          return (
+            <div className="find-projects">
+              <PageRenderer {...this.props} />
+            </div>
+          );
+        }} />
 
       </DashboardContentContainer>
     );
