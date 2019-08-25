@@ -4,8 +4,8 @@ import { loadApp } from "../../../redux/actions";
 import ProjectModal from "../Developer/FindProjects/ProjectModal";
 import { Route, Redirect } from "react-router-dom";
 
-import DeveloperDashboard from "../Developer/DeveloperDashboard";
-import EntrepreneurBoard from "./Entrepreneur/EntrepreneurHome";
+import DeveloperDashboard from "../AccountTypes/Developer/DeveloperDashboard";
+import EntrepreneurBoard from "../AccountTypesEntrepreneur/EntrepreneurHome";
 
 const errorHasOccured = <p>An Error has occured please log in again</p>;
 

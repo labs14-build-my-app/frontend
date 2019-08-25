@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import ProjectBoard from "./ProjectBoard";
-import NotificationCenter from "../NotificationCenter/NotificationContainer";
-import styled from "styled-components";
-import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import styled from "styled-components";
+
 import HelloUser from "./Dashboard/Hello User/HelloUser"
 import ProjectsList from "./Dashboard/Projects Loader/ProjectsList";
+import NotificationCenter from "../NotificationCenter/NotificationContainer";
+import ProjectBoard from "./ProjectBoard";
 
 const DashboardContentContainer = styled.div`
   display: flex;
