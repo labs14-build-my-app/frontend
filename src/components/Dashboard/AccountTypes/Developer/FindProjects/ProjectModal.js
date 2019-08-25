@@ -1,111 +1,9 @@
 import React, { useEffect, useCallback, useReducer } from "react";
-import styled from "styled-components";
+import { getOwner, submitProposal } from "../../../../../redux/actions";
 import { connect } from "react-redux";
-import { getOwner, submitProposal } from "../../../../redux/actions";
-import { electricViolet, privilege, trout } from "../../cssVariables";
 
-const ProjectModalModal = styled.div`
-  background: white;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5625em;
-  background: #f2f4ff;
-  border-radius: 5px;
-  margin: 0 4.375em;
-  input {
-    background: transparent;
-    border: none;
-    font-size: 1.5rem;
-    width: 100%;
-  }
-  .proposal-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.5);
-    padding: 7.625em 5em 5em 7.625em;
-    position: relative;
-    .invoice-actions {
-      position: absolute;
-      top: 30px;
-      right: 30px;
-      img {
-        display: inline-block;
-        margin-left: 1.5625em;
-        cursor: pointer;
-      }
-    }
-  }
-  .project-top {
-    box-sizing: border-box;
-    margin-bottom: 1.875em;
-    .owner-info {
-      display: flex;
-      justify-content: left;
-      h3,
-      p {
-        margin-left: 1em;
-      }
-      h3 {
-        font-size: 1.5rem;
-      }
-      p {
-        font-size: 1.3rem;
-      }
-      align-items: center;
-      .profile-pic {
-        width: 54px;
-        height: 54px;
-        border-radius: 5px;
-      }
-    }
-  }
-
-  .entreprenuer-section {
-    padding-right: 5em;
-    border-right: 2px solid #f2f2f2;
-    width: 28%;
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1.25em;
-    }
-    p {
-      font-size: 1.5rem;
-      line-height: 19px;
-    }
-  }
-  .developer-section {
-    margin: 0 auto 0 5.625em;
-    .dev-draft-input {
-      background: #f2f3ff 0% 0% no-repeat padding-box;
-      border: none;
-      font-size: 1.5rem;
-      margin: 3em 0;
-      padding: 1em 0;
-      ::placeholder {
-        color: ${trout};
-      }
-      :focus {
-        transition: 0.5s;
-        border-left: none;
-        padding: 4em 1em;
-      }
-      border-left: 2px solid purple;
-      transition: 0.3s;
-    }
-    .submit-proposal {
-      button {
-        padding: 1.5em 2em;
-        color: ${privilege};
-        background: ${electricViolet};
-        margin: 1em 0;
-        border-radius: 5px;
-      }
-    }
-  }
-`;
+import styled from "styled-components";
+import { electricViolet, privilege, trout } from "../../../cssVariables";
 
 var today = new Date();
 var date =
@@ -238,3 +136,106 @@ export default connect(
   mapStateToProps,
   { getOwner, submitProposal }
 )(ProjectModal);
+
+const ProjectModalModal = styled.div`
+  background: white;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5625em;
+  background: #f2f4ff;
+  border-radius: 5px;
+  margin: 0 4.375em;
+  input {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    width: 100%;
+  }
+  .proposal-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 7.625em 5em 5em 7.625em;
+    position: relative;
+    .invoice-actions {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      img {
+        display: inline-block;
+        margin-left: 1.5625em;
+        cursor: pointer;
+      }
+    }
+  }
+  .project-top {
+    box-sizing: border-box;
+    margin-bottom: 1.875em;
+    .owner-info {
+      display: flex;
+      justify-content: left;
+      h3,
+      p {
+        margin-left: 1em;
+      }
+      h3 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1.3rem;
+      }
+      align-items: center;
+      .profile-pic {
+        width: 54px;
+        height: 54px;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  .entreprenuer-section {
+    padding-right: 5em;
+    border-right: 2px solid #f2f2f2;
+    width: 28%;
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.25em;
+    }
+    p {
+      font-size: 1.5rem;
+      line-height: 19px;
+    }
+  }
+  .developer-section {
+    margin: 0 auto 0 5.625em;
+    .dev-draft-input {
+      background: #f2f3ff 0% 0% no-repeat padding-box;
+      border: none;
+      font-size: 1.5rem;
+      margin: 3em 0;
+      padding: 1em 0;
+      ::placeholder {
+        color: ${trout};
+      }
+      :focus {
+        transition: 0.5s;
+        border-left: none;
+        padding: 4em 1em;
+      }
+      border-left: 2px solid purple;
+      transition: 0.3s;
+    }
+    .submit-proposal {
+      button {
+        padding: 1.5em 2em;
+        color: ${privilege};
+        background: ${electricViolet};
+        margin: 1em 0;
+        border-radius: 5px;
+      }
+    }
+  }
+`;
