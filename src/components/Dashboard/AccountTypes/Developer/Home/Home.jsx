@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import ProjectsLoader from './ProjectsLoader';
 import {connect, useSelector} from 'react-redux';
-
-
 import {fetchSelfProjects} from '../../../../../redux/actions';
+
+import HelloUser from '../../Shared/HelloWidget';
+import ProjectsLoader from './ProjectsLoader';
+import NotificationCenter from '../../../NotificationCenter/NotificationContainer';
 
 // Get information from state about the users projects, then pass it as props to the projects loader
 
@@ -18,7 +19,8 @@ const Index = ({fetchSelfProjects, history, devProjectList}) => {
 	}, [pathname])
 
 	return(
-		<div>
+		<div className="home">
+			<HelloUser />
 			{devProjectList.slice(0,5).map(projectData => {
 				return(
 					<ProjectsLoader {...projectData} />

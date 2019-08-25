@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import ProjectList from "./Home/Index";
+import Home from "./Home/Home";
 import FindProjects from "./FindProjects/FindProjects";
 
 export class ProjectBoard extends Component {
   render() {
     const [dashboard, findNewProjects] = [
-      "/dev/dashboard",
+      "/dev/home",
       "/dev/find/projects"
     ];
 
@@ -21,7 +21,7 @@ export class ProjectBoard extends Component {
       <ProjectBoardContainer>
         {pathname === dashboard ? (
           <>
-            <ProjectList {...this.props} pathname={pathname} />
+            <Home {...this.props} pathname={pathname} />
           </>
         ) : (
           pathname === findNewProjects && (

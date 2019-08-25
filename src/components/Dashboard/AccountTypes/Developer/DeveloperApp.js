@@ -7,15 +7,16 @@ import PageRenderer from "./PageRenderer";
 
 import NotificationCenter from "../../NotificationCenter/NotificationContainer";
 
-class DeveloperDashboard extends Component {
+class DeveloperApp extends Component {
 
   render() {
     const { pathname } = this.props.history.location
     
     return (
       <PageContentContainer>
-        {pathname=== "/" && <Redirect to="/dev/dashboard" />}
-        <Route path="/dev/dashboard" render={() => {
+        {pathname=== "/" && <Redirect to="/dev/home" />}
+        
+        <Route path="/dev/home" render={() => {
             return (
               <div className="developer-home">
                 <div className="project-board-and-notifications">
@@ -49,7 +50,7 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   {}
-)(DeveloperDashboard);
+)(DeveloperApp);
 
 const PageContentContainer = styled.div`
   display: flex;

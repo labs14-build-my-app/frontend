@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import { loadApp } from "../../../redux/actions";
 import { Route, Redirect } from "react-router-dom";
 
-import DeveloperDashboard from "./Developer/PageChooser";
-import EntrepreneurBoard from "../AccountTypes/Entrepreneur/EntrepreneurHome";
+import DeveloperApp from "./Developer/DeveloperApp";
+import EntrepreneurSide from "./Entrepreneur/Home/Home";
 import ProjectModal from "../AccountTypes/Developer/FindProjects/ProjectModal";
 
 const errorHasOccured = <p>An Error has occured please log in again!</p>;
@@ -19,9 +19,9 @@ const DashboardChooser = props => {
       <Route path="/dev/find/projects/:id" component={ProjectModal} />
 
       {props.user.isDeveloper ? (
-        <DeveloperDashboard {...props} />
+        <DeveloperApp {...props} />
       ) : !props.user.isDeveloper === true ? (
-        <EntrepreneurBoard {...props} />
+        <EntrepreneurSide {...props} />
       ) : (
         errorHasOccured
       )}
