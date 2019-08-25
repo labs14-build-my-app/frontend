@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import DevProject from "./DevProjectList/DevProject";
+import DevsProjectList from "./Dashboard/Projects Loader/ProjectsList";
 import NewProjects from "./FindProjects/NewProjects";
 
 const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
@@ -61,10 +61,8 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
                     description: project.description,
                     id: project._id
                   }
-                }}
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                <DevProject key={project._id} {...project} />{" "}
+                }} style={{ textDecoration: "none", color: "inherit" }} >
+                <DevsProjectList key={project._id} {...project} />{" "}
               </Link>
             );
           })}

@@ -25,9 +25,7 @@ class DeveloperDashboard extends Component {
     return (
       <DashboardContentContainer>
         {pathname=== "/" && <Redirect to="/dev/dashboard" />}
-        <Route
-          path="/dev/dashboard"
-          render={() => {
+        <Route path="/dev/dashboard" render={() => {
             return (
               <div className="developer-home">
                 <HelloUser />
@@ -40,8 +38,6 @@ class DeveloperDashboard extends Component {
           }}
         />
 
-        <Route path="/dev/find/projects" component={ProjectBoard}/>
-        <Route path="/dev/my/projects"  component={ProjectsList} />
       </DashboardContentContainer>
     );
   }

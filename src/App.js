@@ -13,7 +13,6 @@ import Signup2 from "./components/Dashboard/Authentication/SignUp/Signup2";
 
 import DashboardChooser from "./components/Dashboard/AccountTypes/DashboardChooser";
 
-
 import TopNavigation from "./components/Dashboard/Navigation/TopNavigation";
 import LeftNavigation from "./components/Dashboard/Navigation/LeftNavigation";
 
