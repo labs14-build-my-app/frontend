@@ -1,8 +1,8 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import {projectParagraphFont, projectFontSubtext} from '../../../cssVariables'; // Fonts
-import {privilege, textColor1, textColor2} from '../../../cssVariables'; // Colors
+import {projectParagraphFont, projectFontSubtext} from '../../../../cssVariables'; // Fonts
+import {privilege, textColor1, textColor2} from '../../../../cssVariables'; // Colors
 import {projectsButtonColorizer, projectsGlowColorizer} from './ProjectsColorizer';
 
 const ProjectsLoader = (props) => {

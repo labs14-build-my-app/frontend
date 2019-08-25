@@ -1,11 +1,11 @@
 // Imports Background Colors
-import {progressBackground, reviewBackground, updateBackground, cancelledBackground, completedBackground} from '../../../cssVariables';
+import {progressBackground, reviewBackground, updateBackground, cancelledBackground, completedBackground} from '../../../../cssVariables';
 
 // Imports Text Colors
-import {progressText, reviewText, updateText, cancelledText, completedText} from '../../../cssVariables';
+import {progressText, reviewText, updateText, cancelledText, completedText} from '../../../../cssVariables';
 
 // imports Glows
-import {progressGlow, reviewGlow, updateGlow, cancelledGlow, completedGlow} from '../../../cssVariables';
+import {progressGlow, reviewGlow, updateGlow, cancelledGlow, completedGlow} from '../../../../cssVariables';
 
 // Sets the text & background color
 export const projectsButtonColorizer = `
