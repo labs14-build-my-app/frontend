@@ -87,7 +87,7 @@ export default function LeftNavigation() {
 }
 
 const LeftNavigationElements = styled.nav`
-  padding-top: 18rem;
+  padding-top: 16rem;
   z-index: 15;
 
   .LeftNav {
