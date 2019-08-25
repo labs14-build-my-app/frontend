@@ -7,7 +7,7 @@ import { Route, Redirect } from "react-router-dom";
 import DeveloperDashboard from "../AccountTypes/Developer/DeveloperDashboard";
 import EntrepreneurBoard from "../AccountTypesEntrepreneur/EntrepreneurHome";
 
-const errorHasOccured = <p>An Error has occured please log in again</p>;
+const errorHasOccured = <p>An Error has occured please log in again!</p>;
 
 const DashboardChooser = props => {
   if (!props.user && !props.loggingIn) {
