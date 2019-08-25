@@ -11,11 +11,11 @@ import ChangePassword from "./components/Dashboard/Authentication/ChangePassword
 import Signup from "./components/Dashboard/Authentication/Signup";
 import Signup2 from "./components/Dashboard/Authentication/Signup2";
 
-import DashboardChooser from "./components/dashboard/AccountTypes/DashboardChooser";
+import DashboardChooser from "./components/Dashboard/AccountTypes/DashboardChooser";
 
 
-import Header from "./components/dashboard/Developer/Header/Header";
-import LeftNavigation from "./components/dashboard/Navigation/LeftNavigation";
+import Header from "./components/Dashboard/Developer/Header/Header";
+import LeftNavigation from "./components/Dashboard/Navigation/LeftNavigation";
 
 const App = props => {
   console.log(props);
