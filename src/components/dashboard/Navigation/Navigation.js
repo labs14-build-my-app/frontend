@@ -68,7 +68,7 @@ export default function Navigation() {
       <nav className="alt-menu-nav">
         <ul>
           <li>
-            <NavLink to="/dev/dashboard">Dashboard</NavLink>
+            <NavLink to="/dev/home">Home</NavLink>
           </li>
           <li>
             <NavLink to="/dev/find/projects">Find Projects</NavLink>

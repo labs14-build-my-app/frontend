@@ -11,7 +11,7 @@ export default function LeftNavigation() {
         <ul>
 
           {/* Home Icon */}
-          <NavLink to="/dev/dashboard">
+          <NavLink to="/dev/home">
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="25.721" height="20.001" viewBox="0 0 25.721 20.001" >
                 <defs />
