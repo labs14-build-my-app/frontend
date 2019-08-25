@@ -1,27 +1,27 @@
 import React from "react";
 import { connect } from "react-redux";
 import { loadApp } from "../../../redux/actions";
-import ProjectModal from "../Developer/FindProjects/ProjectModal";
 import { Route, Redirect } from "react-router-dom";
 
-import DeveloperDashboard from "../Developer/DeveloperDashboard";
-import EntrepreneurBoard from "../AccountTypes/Entrepreneur/EntrepreneurHome";
+import DeveloperApp from "./Developer/DeveloperApp";
+import EntrepreneurSide from "./Entrepreneur/Home/Home";
+import ProjectModal from "../AccountTypes/Developer/FindProjects/ProjectModal";
 
-const errorHasOccured = <p>An Error has occured please log in again</p>;
+const errorHasOccured = <p>An Error has occured please log in again!</p>;
 
-const DevFindr = props => {
+const DashboardChooser = props => {
   if (!props.user && !props.loggingIn) {
     props.loadApp();
   }
-  console.log("devfindr loaded");
+  console.log("DashboardChooser loaded");
   return props.user ? (
     <div className="main-app-column">
       <Route path="/dev/find/projects/:id" component={ProjectModal} />
 
       {props.user.isDeveloper ? (
-        <DeveloperDashboard {...props} />
+        <DeveloperApp {...props} />
       ) : !props.user.isDeveloper === true ? (
-        <EntrepreneurBoard {...props} />
+        <EntrepreneurSide {...props} />
       ) : (
         errorHasOccured
       )}
@@ -40,4 +40,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   { loadApp }
-)(DevFindr);
+)(DashboardChooser);

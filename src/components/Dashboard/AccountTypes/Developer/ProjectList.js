@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import DevProject from "./DevProjectList/DevProject";
-import styled from "styled-components";
 import { useSelector } from "react-redux";
-import NewProjects from "./FindProjects/NewProjects";
-import { fetchSelfProjects, fetchAllProjects } from "../../../redux/actions";
+import { fetchSelfProjects, fetchAllProjects } from "../../../../redux/actions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
- 
+import styled from "styled-components";
+
+import DevsProjectList from "./Dashboard/Projects Loader/ProjectsList";
+import NewProjects from "./FindProjects/NewProjects";
+
 const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
   const pathname = useState(history.location.pathname);
 
@@ -14,7 +15,7 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
   // console.log(pathname, pathname.current);
 
   const [dashboard, searchProjectPage] = [
-    "/dev/dashboard",
+    "/dev/home",
     "/dev/find/projects"
   ];
   const { devProjectList, searchProjectList } = useSelector(s => s);
@@ -31,7 +32,7 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
   // searchProjectList.length !== null || searchProjectList.length > 0;
 
   useEffect(() => {
-    if (pathname[0] === dashboard) {
+    if (pathname[0] === home) {
       fetchSelfProjects();
     }
 
@@ -45,13 +46,14 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
 
   return (
     <ProjectListContainer>
-      {validDevProjectList && pathname[0] === dashboard && (
+      {validDevProjectList && pathname[0] === home && (
         <div className="dev-proj-projectlist-container">
           {devProjectList.map(project => {
             console.log(project);
             return (
               <Link
               // name, ownerName, description, id 
+              style={{background: "red"}}
                 to={{
                   pathname:`/dev/find/projects/${project._id}`,
                   state: {
@@ -60,10 +62,8 @@ const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
                     description: project.description,
                     id: project._id
                   }
-                }}
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                <DevProject key={project._id} {...project} />{" "}
+                }} style={{ textDecoration: "none", color: "inherit" }} >
+                <DevsProjectList key={project._id} {...project} />{" "}
               </Link>
             );
           })}

@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import EntrepreneurHome from "./EntrepreneurHome";
+import Home from "./Home";
+
 const EntrepreneurBoard = () => {
   return (
     <>
