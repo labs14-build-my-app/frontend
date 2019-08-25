@@ -3,11 +3,9 @@ import { Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import styled from "styled-components";
 
-import HelloUser from "./Dashboard/Hello User/HelloUser"
 import PageRenderer from "./PageRenderer";
 
 import NotificationCenter from "../../NotificationCenter/NotificationContainer";
-import FindProjects from "./FindProjects/FindProjects";
 
 class DeveloperDashboard extends Component {
 
@@ -20,8 +18,6 @@ class DeveloperDashboard extends Component {
         <Route path="/dev/dashboard" render={() => {
             return (
               <div className="developer-home">
-                <HelloUser />
-
                 <div className="project-board-and-notifications">
                   <PageRenderer {...this.props} />
                   <div className="side-notif-and-statement-container">

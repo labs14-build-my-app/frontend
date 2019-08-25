@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import ProjectList from "./Dashboard/Projects Loader/ProjectsList";
+import ProjectList from "./Home/Index";
 import FindProjects from "./FindProjects/FindProjects";
 
 export class ProjectBoard extends Component {

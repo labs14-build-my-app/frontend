@@ -3,13 +3,11 @@ import ProjectsLoader from './ProjectsLoader';
 import {connect, useSelector} from 'react-redux';
 
 
-import {fetchSelfProjects} from '../../../../../../redux/actions';
+import {fetchSelfProjects} from '../../../../../redux/actions';
 
 // Get information from state about the users projects, then pass it as props to the projects loader
 
-
-
-const ProjectsList = ({fetchSelfProjects, history, devProjectList}) => {
+const Index = ({fetchSelfProjects, history, devProjectList}) => {
 
 	const pathname = useState(history.location.pathname)[0];
 
@@ -38,4 +36,4 @@ const mapStateToProps = (state) => {
 	});
 }
 
-export default connect(mapStateToProps, {fetchSelfProjects})(ProjectsList);
+export default connect(mapStateToProps, {fetchSelfProjects})(Index);
