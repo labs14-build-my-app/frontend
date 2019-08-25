@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import DevProject from "./DevProjectList/DevProject";
-import styled from "styled-components";
 import { useSelector } from "react-redux";
-import NewProjects from "./FindProjects/NewProjects";
-import { fetchSelfProjects, fetchAllProjects } from "../../../redux/actions";
+import { fetchSelfProjects, fetchAllProjects } from "../../../../redux/actions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
- 
+import styled from "styled-components";
+
+import DevProject from "./DevProjectList/DevProject";
+import NewProjects from "./FindProjects/NewProjects";
+
 const ProjectList = ({ fetchSelfProjects, fetchAllProjects, history }) => {
   const pathname = useState(history.location.pathname);
 
