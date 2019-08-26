@@ -14,6 +14,10 @@ border: 1px solid red;
 `;
 
 const Scrollable = styled.div`
+	border: 2px dashed green;
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
 `;
 
 const ProjectsLoader = (props) => {
@@ -23,8 +27,8 @@ const ProjectsLoader = (props) => {
 	return (
 		<ProjectsLoaderWrapper>
 			<Scrollable>
-				{props.searchProjectList.splice(0, 6).map(project => {
-					return <NewProjects name={project.name} owner={project.ownerName} description={project.description} />
+				{props.searchProjectList.map((project, index) => {
+					return <NewProjects index={index} name={project.name} owner={project.ownerName} description={project.description} />
 				})}
 			</Scrollable>
 		</ProjectsLoaderWrapper>
