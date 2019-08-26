@@ -66,7 +66,8 @@ export const setColorAndOpacity = (color, opacity) => {
 
 //MEDIA QUERIES
 export const phone = "(max-width: 375px)";
-export const tablet = "(max-width: 900px)"; //idk what this is i need to google it
+export const macbook = "(max-width: 1680px)";
+export const tablet = "(max-width: 900px)";
 
 //GENERAL FONT SIZES
 export const headerFontDesktop = "1.8rem";

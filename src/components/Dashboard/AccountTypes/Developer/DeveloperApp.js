@@ -7,6 +7,7 @@ import PageRenderer from "./PageRenderer";
 
 const DeveloperAppContainer = styled.div` 
 padding: 4rem 11.2rem 10.6rem 6.9rem;
+
 `;
 
 class DeveloperApp extends Component {

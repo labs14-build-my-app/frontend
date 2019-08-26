@@ -1,13 +1,11 @@
 import React from "react";
-import styled from "styled-components";
+import styled, {ThemeProvider} from "styled-components";
 
 import {hasBeenRead, hasNotBeenRead} from './NotificationsColorizer';
 import {projectFontSubtext, projectParagraphFont} from '../../../cssVariables';
 
 const NotificationsWrapper = styled.div`
   margin-bottom: 2.4rem;
-  min-width: 40.6rem;
-  max-width: 40.6rem;
   ${hasBeenRead}
   ${hasNotBeenRead}
 `;
@@ -28,6 +26,7 @@ const FlexWrapper = styled.div`
 
 const Row = styled.div`
   padding-bottom: 1rem;
+  width: 100%;
 `;
 
 const switcherino = (action, notification) =>{
@@ -45,6 +44,7 @@ const switcherino = (action, notification) =>{
 const NotificationsLoader = (props) => {
   const {notification} = props
   return (
+    <ThemeProvider theme={props}>
     <NotificationsWrapper>
 
       <FlexWrapper className={'read-' + notification.read}>
@@ -57,6 +57,7 @@ const NotificationsLoader = (props) => {
         </Row>
       </FlexWrapper>
     </NotificationsWrapper>
+    </ThemeProvider>
   );
 }
 

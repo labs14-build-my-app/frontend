@@ -78,11 +78,12 @@ export default ProjectsLoader;
 const FlexAlignItemCenter = " display: flex; align-items: center;"
 
 const ProjectWrapper = styled.div`
-	max-width: 112.6rem;
+	min-width: 112.6rem;
 	max-height: 10rem;
 	background: ${privilege};
 	border-radius: .5rem;
 	margin-bottom: 2.375rem;
+	margin-right: 4rem;
 	${projectsGlowColorizer}
 `
 
