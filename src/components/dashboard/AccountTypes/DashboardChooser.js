@@ -27,9 +27,9 @@ const loaderStyles = css`
 `;
 
 const DashboardChooser = props => {
-  if (!props.user) {
-    props.loadApp();
-  }
+  // if (!props.user) {
+  //   props.loadApp();
+  // }
 
   const { user } = useSelector(s => s);
 

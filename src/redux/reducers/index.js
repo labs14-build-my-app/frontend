@@ -78,7 +78,7 @@ const rootReducer = (state = initialState, action) => {
     case LOAD_APP.FAILURE:
       return {
         ...state,
-        error: "please log in again",
+        error: "Please log in again",
         loadingApp: false
       };
     case "LOAD_INITIAL_PROJECTS":

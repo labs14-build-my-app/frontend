@@ -14,11 +14,12 @@ const TopNavigation = props => {
     loadApp();
   }
   const handleLogout = () => {
-    logout()
-    localStorage.clear()
-    props.history.push("/login");
- 
-  
+    logout().then(res => {
+      localStorage.clear()
+      props.history.push("/login");
+      window.location.reload()
+    })
+
   };
 
   return (
@@ -41,8 +42,8 @@ const TopNavigation = props => {
           </div>
         </nav>
         <div className="bell-notifications" onClick={() => toggleNotif(!notifIsOpen)} >
-          <img src={`${process.env.PUBLIC_URL}/images/icon_bell_line.svg`} alt="icon bell" /> 
-            <div className="notification-dot"  />
+          <img src={`${process.env.PUBLIC_URL}/images/icon_bell_line.svg`} alt="icon bell" />
+          <div className="notification-dot" />
           <div className="notif-nav-menu-container" style={{ display: `${notifIsOpen ? "flex" : "none"}` }} >
             <ul className="notif-nav-menu">
               <li>home</li>
