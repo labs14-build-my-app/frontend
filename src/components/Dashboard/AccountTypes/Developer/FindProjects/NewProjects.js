@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import { fetchAllProjects, saveProject } from "../../../../../redux/actions";
 import { Link, Route } from "react-router-dom";
+import { textColor2, headerFontDesktop, projectParagraphFont } from "../../../cssVariables";
 
 const NewProjects = props => {
   const { name, owner, description, saveProject, ownerOccupation, id } = props;
@@ -12,14 +13,14 @@ const NewProjects = props => {
       <div className="project-container">
 
         <div className="project-top">
-          <img src={process.env.PUBLIC_URL + "/images/icon_dots.svg"} alt="menu" className="find-proj-options" />
           <div className="owner-info">
             <img src='https://thispersondoesnotexist.com/image' className="profile-pic" alt="profile-pic" />
             <div>
-              <h3>{name}</h3>
+              <h3>{owner}</h3>
               <p> {ownerOccupation || "entreprenuer"}</p>
             </div>
           </div>
+          <img src={process.env.PUBLIC_URL + "/images/icon_dots.svg"} alt="menu" className="three-dots" />
         </div>
 
         <p className="description">
@@ -53,13 +54,41 @@ export default connect(mapStateToProps,{ fetchAllProjects, saveProject })(NewPro
 
 const EntrepreneurProjects = styled.div`
 border: 1px solid blue;
-margin: 50px;
-display: inline-flex;
-flex-direction: row;
-height: 200px;
-align-content: flex-start;
-img{
-  height: 50px;
 
+.project-container{
+
+  .project-top{
+    display: flex;
+    justify-content: space-between;
+
+    .owner-info{
+      display: flex;
+      align-items: center;
+
+        div{
+          padding-left: 1.6rem;
+
+          h3{
+            font-size: ${headerFontDesktop}
+          }
+
+          p{
+            font-size: ${projectParagraphFont};
+            color: ${textColor2}
+          }
+        }
+
+      img{
+        height: 6rem;
+        width: 6rem;
+        border-radius: .5rem;
+        }
+    }
+
+    .three-dots{
+      height: .5rem;
+    }
+  }
 }
+
 `;

@@ -7,34 +7,13 @@ import { Link } from "react-router-dom";
 import styled from 'styled-components'
 
 const ProjectsLoaderWrapper = styled.div`
-border:1px solid green;
-	position: relative;
-	overflow: hidden;
-	height: 650px;
-	width: 100%;
 
-	&::after{
-		height: 50%;
-		width: 100%;
-		content: '';
-		position: absolute;
-		bottom: 0;
-		background: linear-gradient(180deg,rgba(255,255,255,0) 60%,rgba(242,243,255,1) 100%);
-    	pointer-events: none;
-	}
+border: 1px solid red;
 
 `;
 
 const Scrollable = styled.div`
-border: 1px solid purple;
-overflow-y: scroll;
-height: 100%;
-width: 100%;
-padding-bottom: 50rem;
 
-::-webkit-scrollbar{
-	display: none;
-}
 `
 
 const ProjectsLoader = (props) => {
