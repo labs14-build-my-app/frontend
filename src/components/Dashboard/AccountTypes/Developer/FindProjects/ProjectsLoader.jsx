@@ -29,6 +29,7 @@ const Scrollable = styled.div`
 border: 1px solid purple;
 overflow-y: scroll;
 height: 100%;
+width: 100%;
 padding-bottom: 50rem;
 
 ::-webkit-scrollbar{

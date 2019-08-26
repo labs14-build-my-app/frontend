@@ -51,16 +51,15 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps,{ fetchAllProjects, saveProject })(NewProjects);
 
-const EntrepreneurProjects = styled.li`
+const EntrepreneurProjects = styled.div`
 border: 1px solid blue;
 margin: 50px;
-width: 500px;
 display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
+flex-direction: row;
+height: 200px;
+align-content: flex-start;
 img{
-  height:50px;
-  width: 50px;
-}
+  height: 50px;
 
+}
 `;
