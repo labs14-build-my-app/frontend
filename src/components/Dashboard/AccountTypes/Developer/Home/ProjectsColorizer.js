@@ -31,7 +31,7 @@ export const projectsButtonColorizer = `
 }
 `
 
-// Sets the glow color
+// Sets the shadow color
 
 export const projectsGlowColorizer =`
 .flex-wrapper-progress {

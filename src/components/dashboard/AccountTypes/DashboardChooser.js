@@ -3,14 +3,24 @@ import { connect, useSelector, useDispatch } from "react-redux";
 import { loadApp } from "../../../redux/actions";
 import { Route, Redirect } from "react-router-dom";
 import styled from 'styled-components';
-
+import {ClimbingBoxLoader} from "react-spinners"
+import { css } from '@emotion/core';
 import DeveloperApp from "./Developer/DeveloperApp";
 import EntrepreneurApp from "./Entrepreneur/EntrepreneurApp";
 import ProjectModal from "../AccountTypes/Developer/FindProjects/ProjectModal";
 
-const errorHasOccured = <p>An Error has occured please log in again!</p>;
+const errorHasOccured = <p style={{position: "absolute", top: "50%",left: "50%" }}>An Error has occured please log in again!</p>;
 
 const MainApp = styled.div`
+.loading-circles{
+  background: red
+}
+`
+const loaderStyles = css`
+position: absolute;
+top: 50%;
+left: 50%;
+
 `
 
 const DashboardChooser = props => {
@@ -22,7 +32,8 @@ const DashboardChooser = props => {
   useEffect(()=>{
     props.loadApp()
   },[user.name])
-  
+  console.log(props)
+  const {pathname} = props.history.location;
   console.log("DashboardChooser loaded");
   console.assert(!user.isDeveloper === true, "NOT ENT")
   return props.user ? (
@@ -33,12 +44,12 @@ const DashboardChooser = props => {
         <DeveloperApp {...props} />
       ) : props.user.isDeveloper === false ? (
         <EntrepreneurApp {...props} />
-      ) : (
-        errorHasOccured
-      )}
+      ) : (pathname.startsWith("/dev") || pathname.startsWith("/entrepreneur") ) && <ClimbingBoxLoader css={loaderStyles} /> 
+     
+      }
     </MainApp>
   ) : (
-    errorHasOccured
+    <ClimbingBoxLoader css={loaderStyles}/>
   );
 };
 const mapStateToProps = state => {

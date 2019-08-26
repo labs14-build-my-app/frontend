@@ -1,21 +1,19 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 
-import NotificationList from "./NotificationsLoader";
+import NotificationsLoader from "./NotificationsLoader";
 
-import tempstate from './tempstate';
+import {tempstate} from './tempstate.js';
 
 const ContainerDiv = styled.div``;
 
 const NotificationCenter = () => {
-  const [notifications] = useState(tempstate.notifications)
+  
+  const [notifications] = useState(tempstate.notifications);
+  console.log(notifications)
   return (
     <ContainerDiv>
-      {notifications.map(notificationsData => {
-        return(
-          <NotificationList {...notificationsData} />
-        )
-      })}
+      {notifications.map(notification =>  <NotificationsLoader notification={notification} /> )}
     </ContainerDiv>
   );
 };

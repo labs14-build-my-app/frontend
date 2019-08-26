@@ -1,11 +1,12 @@
-const tempstate = {
+export const tempstate = {
 	notifications: [
 		{
 		  month: "July",
 		  date: "22",
 		  author: "Irene",
 		  action: "updated",
-		  project: "You Neek, Clothing Store"
+		  project: "You Neek, Clothing Store",
+		  read: false,
 		},
 	
 		{
@@ -13,29 +14,33 @@ const tempstate = {
 		  date: "18",
 		  author: "Gerald",
 		  action: "accepted",
-		  project: "Meat Cutters, Employee Tracker"
+		  project: "Meat Cutters, Employee Tracker",
+		  read: false,
 		},
 	
 		{
 		  month: "July",
 		  date: "17",
-		  author: "eSports Event Planner",
+		  project: "ProMatches",
+		  author: "Justin Durk",
 		  action: "completed",
-		  project: "ProMatches"
+		  read: true,
 		},
 		{
 		  month: "July",
 		  date: "17",
 		  author: "eSports Event Planner",
 		  action: "completed",
-		  project: "ProMatches"
+		  project: "ProMatches",
+		  read: true,
 		},
 		{
 		  month: "July",
 		  date: "17",
 		  author: "eSports Event Planner",
 		  action: "completed",
-		  project: "ProMatches"
+		  project: "ProMatches",
+		  read: true,
 		}
 	  ]
 }

@@ -5,8 +5,8 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 const TopNavigation = props => {
-  const { user, loadApp, loadingApp } = props;
-
+  const { user, loadApp, loadingApp, logout } = props;
+  console.log(props)
   const [menuIsOpen, toggleMenu] = useState(false);
   const [notifIsOpen, toggleNotif] = useState(false);
 
@@ -14,10 +14,11 @@ const TopNavigation = props => {
     loadApp();
   }
   const handleLogout = () => {
-    props.logout().then(() => {
-      localStorage.clear();
-      props.history.push("/login");
-    });
+    logout()
+ 
+    props.history.push("/login");
+    localStorage.clear()
+  
   };
 
   return (

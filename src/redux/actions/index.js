@@ -173,6 +173,6 @@ export const logout = () => dispatch => {
     .post(`${BACKEND_URL}/users/logout`)
     .then(res => {
       dispatch({ type: LOGOUT.SUCCESS });
-      // localStorage.clear();
-    });
+    })
+    .catch(err=>console.log(err));
 };
