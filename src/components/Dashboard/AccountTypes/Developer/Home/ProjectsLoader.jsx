@@ -50,12 +50,12 @@ const ProjectsLoader = (props) => {
 					</Row>
 
 					<Row>
-						<p className="main-text">{price || "N/A"}</p>
+						<p className="main-text">${price || "N/A"}</p>
 						<p className="title-text">Total Cost</p>
 					</Row>
 
 					<Row>
-						<p className="main-text">{price * .25 || "N/A"}</p>
+						<p className="main-text">${price * .25 || "N/A"}</p>
 						<p className="title-text">Deposit</p>
 					</Row>
 

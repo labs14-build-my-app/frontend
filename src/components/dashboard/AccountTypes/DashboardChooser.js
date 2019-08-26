@@ -31,7 +31,7 @@ const DashboardChooser = props => {
 
       {props.user.isDeveloper ? (
         <DeveloperApp {...props} />
-      ) : !props.user.isDeveloper === true ? (
+      ) : props.user.isDeveloper === false ? (
         <EntrepreneurApp {...props} />
       ) : (
         errorHasOccured
