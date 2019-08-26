@@ -187,18 +187,18 @@ const RightContainer = styled.div`
   }
 `;
 
-// const showPass = (
-//   <img
-//     src={process.env.PUBLIC_URL + "/images/icons/icon_Eye_slash.svg"}
-//     alt="show password"
-//   />
-// );
-// const hidePass = (
-//   <img
-//     src={process.env.PUBLIC_URL + "/images/icons/icon_Eye_visable.svg"}
-//     alt="hide password"
-//   />
-// );
+const showPass = (
+  <img
+    src={process.env.PUBLIC_URL + "/images/eyev3.svg"}
+    alt="show password"
+  />
+);
+const hidePass = (
+  <img
+    src={process.env.PUBLIC_URL + "/images/icons/icon_Eye_visable.svg"}
+    alt="hide password"
+  />
+);
 
 class Signup extends Component {
   state = {
@@ -250,6 +250,7 @@ class Signup extends Component {
                     onChange={this.handleChanges}
                     value={this.state.value}
                   />
+                  <img className="password-visibility" src={process.env.PUBLIC_URL + "/images/signature.svg"} alt=''/>
                   <span className="input-border"> </span>
                 </div>
 
@@ -263,6 +264,7 @@ class Signup extends Component {
                     onChange={this.handleChanges}
                     value={this.state.value}
                   />
+                  <img className="password-visibility" src={process.env.PUBLIC_URL + "/images/signature.svg"} alt=''/>
                   <span className="input-border"> </span>
                 </div>
 
@@ -276,6 +278,7 @@ class Signup extends Component {
                     onChange={this.handleChanges}
                     value={this.state.value}
                   />
+                  <img className="password-visibility" src={process.env.PUBLIC_URL + "/images/icon_Email.svg"} alt=''/>
                   <span className="input-border"> </span>
                 </div>
 
@@ -285,10 +288,19 @@ class Signup extends Component {
                     className="input-box"
                     type="password"
                     name="password"
-                    placeholder="password"
+                    placeholder="Password"
                     onChange={this.handleChanges}
                     value={this.state.value}
                   />
+                   <button
+                    className="password-visibility"
+                    type="button"
+                    name="password_hidden"
+                    onClick={this.togglePasswordVisibility}
+                  >
+                    {" "}
+                    {this.state.password_hidden ? hidePass : showPass}
+                  </button>
                   <span className="input-border"> </span>
                 </div>
 

@@ -185,7 +185,7 @@ const RightContainer = styled.div`
 
 const showPass = (
   <img
-    src={process.env.PUBLIC_URL + "/images/icons/icon_Eye_slash.svg"}
+    src={process.env.PUBLIC_URL + "/images/eyev3.svg"}
     alt="show password"
   />
 );
