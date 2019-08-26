@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { electricVioletLight } from "../../../cssVariables";
+import { electricVioletLight, headerFontDesktop, textColor1, textColor2 } from "../../../cssVariables";
 
 const FindProjectsSearchBar = () => {
   const { projectList } = useSelector(s => s);
@@ -25,36 +25,6 @@ const FindProjectsSearchBar = () => {
           </svg>
         </div>
       </div>
-
-      <div className="searchfield-results">
-        <p className="result-count">
-          {projectList && projectList.length} Results for "All Projects", no
-          filters.{" "}
-        </p>
-        <ul>
-
-          <Link>
-            <li>All Projects Postings</li>
-          </Link>
-
-          <Link>
-            <li>Finance Software</li>
-          </Link>
-
-          <Link>
-            <li>Marketing Software</li>
-          </Link>
-
-          <Link>
-            <li>Management Software</li>
-          </Link>
-
-          <Link>
-            <li>SEO</li>
-          </Link>
-          
-        </ul>
-      </div>
     </FindProjectsSearchBarContainer>
   );
 };
@@ -65,97 +35,41 @@ const FindProjectsSearchBarContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+
   .searchbar-field {
     display: flex;
     justify-content: space-between;
     max-width: 50%;
-    margin-bottom: 2.1em;
-    .select-to-search {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #f2f3ff 0% 0% no-repeat padding-box;
-      box-shadow: 5px 5px 8px #ffffff;
-      border-radius: 5px;
-      width: 179px;
-      color: #9592a8;
-      margin-left: 1.875em;
-      font-size: 1.3rem;
-      user-select: none;
-      cursor: pointer;
-      svg {
-        transform: rotate(-90deg);
-        margin-left: 1.3125em;
-        width: 9px;
-        height: 9px;
-        path {
-          fill: #9592a8;
-        }
-      }
-    }
+    margin-bottom: 2.1rem;
+
     .input-searchbar {
+      padding: 2.35rem 4rem 2.35rem;
       display: flex;
       width: 100%;
       background: #f2f3ff 0% 0% no-repeat padding-box;
-      box-shadow: 5px 5px 8px #ffffff;
+      box-shadow: 5px 5px 8px rgba(255, 255, 255, 0.25);
       border-radius: 5px;
+
       input {
-        color: #9592a8;
-        padding: 1.5625em 0 1.5625em 2.5em;
+        color: ${textColor1};
         width: 100%;
         background: none;
         border: none;
+        font-size: ${headerFontDesktop};
+
         ::placeholder {
-          font-size: 1.3rem;
+          font-size: ${headerFontDesktop};
+          color: ${textColor2};
         }
+
       }
 
       svg {
-        margin-right: 2.5em;
-        margin: auto 2.5em auto 0;
-        width: 15px;
-        height: 15px;
+        margin-right: 2.5rem;
+        margin: auto 2.5rem auto 0;
+        width: 1.5rem;
+        height: 1.5rem;
       }
     }
   }
-
-  .searchfield-results {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    padding: 1.5625em;
-    background: #f2f3ff 0% 0% no-repeat padding-box;
-    box-shadow: 5px 5px 8px rgba(255, 255, 255, 0.25);
-    border-radius: 4px;
-
-    .result-count {
-      display: block;
-      background: ${electricVioletLight} 0% 0% no-repeat padding-box;
-      width: 301px;
-      padding: 1.125em 0 0.9375em 0;
-      text-align: center;
-      font-size: 1.3rem;
-      border-radius: 4px;
-      letter-spacing: 0;
-      color: #43425d;
-      opacity: 1;
-    }
-
-    ul {
-      display: flex;
-      justify-content: space-evenly;
-
-      a {
-        text-decoration: none;
-        margin-right: 2.3125em;
-        li {
-          background: #ffffff 0% 0% no-repeat padding-box;
-          color: #9592a8;
-          padding: 1.125em 0 0.9375em 0;
-          width: 142px;
-          text-align: center;
-        }
-      }
-    }
-  }
-`;
+`
