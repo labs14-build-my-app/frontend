@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import { fetchAllProjects, saveProject } from "../../../../../redux/actions";
 import { Link, Route } from "react-router-dom";
-import { textColor2, headerFontDesktop, projectParagraphFont } from "../../../cssVariables";
+import { textColor1, textColor2, snowflake, headerFontDesktop, projectParagraphFont } from "../../../cssVariables";
 
 const NewProjects = props => {
   const { name, owner, description, saveProject, ownerOccupation, id } = props;
@@ -22,6 +22,8 @@ const NewProjects = props => {
           </div>
           <img src={process.env.PUBLIC_URL + "/images/icon_dots.svg"} alt="menu" className="three-dots" />
         </div>
+
+        <hr />
 
         <p className="description">
           {description.substr( 0, 200 ) + "..."}{" "}
@@ -57,9 +59,12 @@ border: 1px solid blue;
 
 .project-container{
 
+
+  /* Project Top Start */
   .project-top{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 3rem;
 
     .owner-info{
       display: flex;
@@ -78,17 +83,28 @@ border: 1px solid blue;
           }
         }
 
-      img{
+      .profile-pic{
         height: 6rem;
         width: 6rem;
         border-radius: .5rem;
-        }
+      }
     }
 
     .three-dots{
       height: .5rem;
     }
   }
+
+  /* Project Top End */
+
+  hr{
+    display: inline;
+    border: 1px solid ${snowflake};
+  }
+
+  /* Description Start */
+
+  
 }
 
 `;

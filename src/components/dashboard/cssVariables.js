@@ -25,6 +25,8 @@ export const textColor1 = "#43425D";
 export const textColor2 = "#9592A8";
 export const veryLightBlue = "#F2F3FF";
 
+export const snowflake = "#F6F6F6";
+
 // Colors Used for Project Status's On The Dashboard
 export const progressBackground = "#D9FFDD";
 export const progressText = "#3D9E47";
