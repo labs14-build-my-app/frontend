@@ -9,15 +9,36 @@ import styled from 'styled-components'
 // Gets projects for the Find Projects page
 
 const ProjectsLoaderWrapper = styled.div`
+	position: relative;
+	overflow: hidden;
+	height: 650px;
+	width: 100%;
+
+	&::after{
+		height: 50%;
+		width: 100%;
+		content: '';
+		position: absolute;
+		bottom: 0;
+		background: linear-gradient(180deg,rgba(255,255,255,0) 60%,rgba(242,243,255,1) 100%);
+    	pointer-events: none;
+	}
 `;
 
 const Scrollable = styled.div`
 	width: 105%;
+	height: 100%;
 	display: flex;
 	flex-wrap: wrap;
-	align-content: stretch;
 
 	flex-basis: content;
+
+	overflow-y: scroll;
+	padding-bottom: 50rem;
+
+	::-webkit-scrollbar{
+		display: none;
+	}
 `;
 
 const ProjectsLoader = (props) => {
