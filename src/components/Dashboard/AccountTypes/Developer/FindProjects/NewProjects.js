@@ -72,7 +72,7 @@ const EntrepreneurProjects = styled.div`
   padding: 2rem;
   background: ${completedBackground};
   box-shadow: 0px 5px 8px rgba(226, 224, 255, 0.25);
-  height:100%;
+  height: 59%;
 
 .project-container{
   background: ${privilege};
