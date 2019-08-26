@@ -15,9 +15,9 @@ const TopNavigation = props => {
   }
   const handleLogout = () => {
     logout()
- 
-    props.history.push("/login");
     localStorage.clear()
+    props.history.push("/login");
+ 
   
   };
 

@@ -4,7 +4,7 @@ export const tempstate = {
 		  month: "July",
 		  date: "22",
 		  author: "Irene",
-		  action: "updated",
+		  action: "update",
 		  project: "You Neek, Clothing Store",
 		  read: false,
 		},

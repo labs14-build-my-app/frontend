@@ -29,13 +29,18 @@ const DashboardChooser = props => {
   }
 
   const {user} = useSelector(s=>s);
+
+  
   useEffect(()=>{
     props.loadApp()
-  },[user.name])
+  },[user.firstName])
+
+  if(user.firstName !== "undefined"){
+
+  
   console.log(props)
   const {pathname} = props.history.location;
   console.log("DashboardChooser loaded");
-  console.assert(!user.isDeveloper === true, "NOT ENT")
   return props.user ? (
     <MainApp className="main-app-column">
       <Route path="/dev/find/projects/:id" component={ProjectModal} />
@@ -45,12 +50,16 @@ const DashboardChooser = props => {
       ) : props.user.isDeveloper === false ? (
         <EntrepreneurApp {...props} />
       ) : (pathname.startsWith("/dev") || pathname.startsWith("/entrepreneur") ) && <ClimbingBoxLoader css={loaderStyles} /> 
-     
       }
     </MainApp>
   ) : (
     <ClimbingBoxLoader css={loaderStyles}/>
   );
+  
+  }
+  else{
+    return null
+  }
 };
 const mapStateToProps = state => {
   // console.log(state)

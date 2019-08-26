@@ -13,7 +13,7 @@ import {
 
 const initialState = {
   user: {
-    name: "undefined"
+    firstName: "undefined"
   },
   loggingIn: false,
   isSigningup: false,

@@ -5,6 +5,10 @@ export const hasBeenRead = `
 		background: ${electricVioletLight};
 		${reviewGlow};
 
+		.bubble{
+			display: none;
+		}
+
 		.date{
 			color: ${reviewText};
 		}
@@ -18,6 +22,17 @@ export const hasNotBeenRead = `
 	.read-false{
 		background: ${cancelledBackground};
 		${cancelledGlow};
+
+		.bubble{
+			height: 1.2rem;
+			width: 1.2rem;
+			border-radius: 50%;
+			background: red;
+			position: relative;
+			float: right;
+			top: -2rem;
+			right: -3rem;
+		}
 
 		.date{
 			color: ${cancelledText};

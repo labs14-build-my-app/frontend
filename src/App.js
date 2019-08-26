@@ -34,7 +34,7 @@ const App = props => {
               <FlexWrapper>
                 <LeftNavigation />
                 <EssentialContainer>
-                  <TopNavigation />
+                  <TopNavigation {...props} />
                   <PrivateRoute path="/" component={DashboardChooser} />
                 </EssentialContainer>
               </FlexWrapper>
