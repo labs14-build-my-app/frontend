@@ -1,7 +1,7 @@
 import React from 'react'
 import HelloWidget from "../Shared/HelloWidget";
 import styled from "styled-components"
-import NotificationCenter from "../Shared/NotificationCenter/NotificationCenter"
+import NotificationCenter from "../Shared/NotificationCenter/NotificationCenter.jsx"
 
 const EntrepreneurApp = (props) => {
         return (

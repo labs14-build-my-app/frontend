@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import HelloUser from '../../Shared/HelloWidget';
 import ProjectsLoader from './ProjectsLoader';
-import NotificationCenter from '../../Shared/NotificationCenter/NotificationCenter';
+import NotificationCenter from '../../Shared/NotificationCenter/NotificationCenter.jsx';
 import { defaultProps } from 'recompose';
 
 // Get information from state about the users projects, then pass it as props to the projects loader
