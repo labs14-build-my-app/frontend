@@ -18,16 +18,17 @@ const HelloWidget = props => {
 export default HelloWidget;
 
 const HelloWidgetContainer = styled.div`
-  font-size: 1.8rem;
-  max-width: 1657px;
-  background: #f2f3ff 0% 0% no-repeat padding-box;
-  box-shadow: 5px 5px 8px rgba(255, 255, 255, 0.25);
-  border-radius: 5px;
   display: flex;
   justify-content: space-between;
-  padding: 2.4rem 4rem;
   align-items: center;
+  padding: 1.8rem 4rem 1.8rem;
+  max-width: 1657px;
+  max-height: 7rem;
+  border-radius: 5px;
+  font-size: 1.8rem;
   color: rgba(67, 66, 93, 1);
+  background: #f2f3ff 0% 0% no-repeat padding-box;
+  box-shadow: 5px 5px 8px rgba(255, 255, 255, 0.25);
 
   div{
     text-align: right;
