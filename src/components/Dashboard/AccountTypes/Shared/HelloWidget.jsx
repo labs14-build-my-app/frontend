@@ -29,6 +29,7 @@ const HelloWidgetContainer = styled.div`
   font-size: ${headerFontDesktop};
   color: ${textColor1};
   background: ${veryLightBlue};
+  border-radius: 5px;
 
   div{
     display: flex;
