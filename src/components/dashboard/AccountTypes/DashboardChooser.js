@@ -27,17 +27,17 @@ const loaderStyles = css`
 `;
 
 const DashboardChooser = props => {
-  if (!props.user) {
-    props.loadApp();
-  }
+  // if (!props.user) {
+  //   props.loadApp();
+  // }
 
   const { user } = useSelector(s => s);
 
   useEffect(() => {
     props.loadApp();
-  }, []);
+  }, [user.firstName]);
 
-  if (user.firstName !== "undefined") {
+
     console.log(props);
     const { pathname } = props.history.location;
     console.log("DashboardChooser loaded");
@@ -59,9 +59,7 @@ const DashboardChooser = props => {
     ) : (
         <ClimbingBoxLoader css={loaderStyles} />
       );
-  } else {
-    return null;
-  }
+
 };
 const mapStateToProps = state => {
   // console.log(state)
