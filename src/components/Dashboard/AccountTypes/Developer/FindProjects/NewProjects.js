@@ -65,12 +65,14 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps,{ fetchAllProjects, saveProject })(NewProjects);
 
 const EntrepreneurProjects = styled.div`
-  max-width: 53.3rem;
+  margin: 1rem;
+  max-width: 49rem;
   display: flex;
   flex-direction: row;
   padding: 2rem;
   background: ${completedBackground};
   box-shadow: 0px 5px 8px rgba(226, 224, 255, 0.25);
+  height:100%;
 
 .project-container{
   background: ${privilege};

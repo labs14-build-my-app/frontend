@@ -17,16 +17,7 @@ const Scrollable = styled.div`
 	flex-wrap: wrap;
 	align-content: stretch;
 
-	.tl {
-	}
-
-	.tm{
-
-	}
-
-	.tr{
-
-	}
+	flex-basis: content;
 `;
 
 const ProjectsLoader = (props) => {
