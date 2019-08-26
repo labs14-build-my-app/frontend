@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import styled from 'styled-components'
 
 const ProjectsLoaderWrapper = styled.div`
+border:1px solid green;
 	position: relative;
 	overflow: hidden;
 	height: 650px;
@@ -25,6 +26,7 @@ const ProjectsLoaderWrapper = styled.div`
 `;
 
 const Scrollable = styled.div`
+border: 1px solid purple;
 overflow-y: scroll;
 height: 100%;
 padding-bottom: 50rem;
