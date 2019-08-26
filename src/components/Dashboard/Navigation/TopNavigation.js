@@ -22,7 +22,7 @@ const TopNavigation = props => {
 
   return (
     <TopNavigationContainer>
-      <Link to="/dev/dashboard" style={{ textDecoration: "none", color: "inherit" }} >
+      <Link to="/dev/home" style={{ textDecoration: "none", color: "inherit" }} >
         <h1>DevFindr</h1>
       </Link>
       <div className="header-and-logos-container">

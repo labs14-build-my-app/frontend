@@ -2,12 +2,15 @@ import React, {useEffect} from "react";
 import { connect, useSelector, useDispatch } from "react-redux";
 import { loadApp } from "../../../redux/actions";
 import { Route, Redirect } from "react-router-dom";
+import styled from 'styled-components';
 
 import DeveloperApp from "./Developer/DeveloperApp";
 import EntrepreneurSide from "./Entrepreneur/Home";
 import ProjectModal from "../AccountTypes/Developer/FindProjects/ProjectModal";
 
 const errorHasOccured = <p>An Error has occured please log in again!</p>;
+
+const MainApp = styled.div` `
 
 const DashboardChooser = props => {
   if (!props.user) {
@@ -18,10 +21,11 @@ const DashboardChooser = props => {
   useEffect(()=>{
     props.loadApp()
   },[user.name])
+  
   console.log("DashboardChooser loaded");
   console.assert(!user.isDeveloper === true, "NOT ENT")
   return props.user ? (
-    <div className="main-app-column">
+    <MainApp className="main-app-column">
       <Route path="/dev/find/projects/:id" component={ProjectModal} />
 
       {props.user.isDeveloper ? (
@@ -31,7 +35,7 @@ const DashboardChooser = props => {
       ) : (
         errorHasOccured
       )}
-    </div>
+    </MainApp>
   ) : (
     errorHasOccured
   );

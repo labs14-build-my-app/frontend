@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import PageRenderer from "./PageRenderer";
 
-import NotificationCenter from "../../NotificationCenter/NotificationContainer";
+const DeveloperAppContainer = styled.div` border: 1px solid blue; `;
 
 class DeveloperApp extends Component {
 
@@ -13,17 +13,16 @@ class DeveloperApp extends Component {
     const { pathname } = this.props.history.location
     
     return (
-      <PageContentContainer>
+      <DeveloperAppContainer>
         {pathname=== "/" && <Redirect to="/dev/home" />}
         
         <Route path="/dev/home" render={() => {
-            return (
-              <div className="developer-home">
-               <PageRenderer {...this.props} />
-              </div>
-            );
-          }}
-        />
+          return (
+            <div className="developer-home">
+             <PageRenderer {...this.props} />
+            </div>
+          );
+        }} />
 
         <Route path="/dev/find/projects" render={() => {
           return (
@@ -33,7 +32,7 @@ class DeveloperApp extends Component {
           );
         }} />
 
-      </PageContentContainer>
+      </DeveloperAppContainer>
     );
   }
 }
@@ -41,7 +40,3 @@ class DeveloperApp extends Component {
 const mapStateToProps = state => { return {}; };
 
 export default connect(mapStateToProps, {})(DeveloperApp);
-
-const PageContentContainer = styled.div`
-
-`;
