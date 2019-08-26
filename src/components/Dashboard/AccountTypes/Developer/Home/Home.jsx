@@ -3,7 +3,7 @@ import {connect, useSelector} from 'react-redux';
 import {fetchSelfProjects} from '../../../../../redux/actions';
 import styled from 'styled-components';
 
-import HelloUser from '../../Shared/HelloWidget';
+import HelloWidget from '../../Shared/HelloWidget';
 import ProjectsLoader from './ProjectsLoader';
 import NotificationCenter from '../../Shared/NotificationCenter/NotificationCenter.jsx';
 import { defaultProps } from 'recompose';
@@ -37,7 +37,7 @@ const Home = (props) => {
 
 	return(
 		<div className="home">
-			<HelloUser pathname={props.history.location.pathname}/>
+			<HelloWidget pathname={props.history.location.pathname}/>
 			<HomeContainer>
 				<FlexWrapper>
 					<div className="projects-list">
