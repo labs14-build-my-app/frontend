@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import NotificationList from "./NotificationList";
-import { transparentBackdrop } from "../cssVariables";
+import { transparentBackdrop } from "../../../cssVariables";
 
 const ContainerDiv = styled.div`
   border-radius: 12px;

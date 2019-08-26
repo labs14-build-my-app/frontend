@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { headerFontFamily, projectFontSubtext } from "../cssVariables";
+import { headerFontFamily, projectFontSubtext } from "../../../cssVariables";
 
 const NotificationDiv = styled.div`
   box-sizing: border-box;

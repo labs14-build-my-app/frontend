@@ -61,4 +61,5 @@ const EssentialContainer = styled.div`
   flex-grow: 1;
   justify-content: stretch;
   height: 100%;
+  ${mainAppGradient};
 `
