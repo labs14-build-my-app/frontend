@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import { fetchAllProjects, saveProject } from "../../../../../redux/actions";
 import { Link, Route } from "react-router-dom";
-import { textColor1, textColor2, snowflake, headerFontDesktop, projectParagraphFont, privilege, electricViolet, projectFontSubtext } from "../../../cssVariables";
+import { textColor1, textColor2, snowflake, headerFontDesktop, projectParagraphFont, privilege, electricViolet, projectFontSubtext, completedBackground } from "../../../cssVariables";
 
 const NewProjects = props => {
   const { name, owner, description, saveProject, ownerOccupation, id } = props;
@@ -23,13 +23,9 @@ const NewProjects = props => {
           <img src={process.env.PUBLIC_URL + "/images/icon_dots.svg"} alt="menu" className="three-dots" />
         </div>
 
-        <hr />
-
         <p className="description">
           {description.substr( 0, 200 ) + "..."}{" "}
         </p>
-
-        <hr />
 
         <div className="project-bottom">
           <a onClick={() => saveProject(id)}> Save For Later </a>
@@ -54,22 +50,29 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps,{ fetchAllProjects, saveProject })(NewProjects);
 
 const EntrepreneurProjects = styled.div`
-border: 1px solid blue;
-
+  max-width: 53.3rem;
+  display: flex;
+  flex-direction: row;
+  margin: 3rem;
+  padding: 2rem;
+  background: ${completedBackground};
+  box-shadow: 0px 5px 8px rgba(226, 224, 255, 0.25);
 
 .project-container{
+  background: ${privilege};
 
   /* Project Top Start */
   .project-top{
     display: flex;
     justify-content: space-between;
-
+    padding: 4rem 4rem 3rem 4rem;
+    /* top right bottom left */
+    
     .owner-info{
       display: flex;
       align-items: center;
 
         div{
-          padding-left: 1.6em;
 
           h3{
             font-size: ${headerFontDesktop}
@@ -85,6 +88,7 @@ border: 1px solid blue;
         height: 6rem;
         width: 6rem;
         border-radius: .5rem;
+        padding-right: 1.6rem;
       }
     }
 
@@ -95,25 +99,31 @@ border: 1px solid blue;
 
   /* Project Top End */
 
-  hr{
-    display: inline-flex;
-    width: 100%;
-    /* border: 1px solid ${snowflake}; */
-    border: 1px solid red;
-    margin: 3rem 0 3rem;
-  }
-
   /* Description Start */
 
   .description{
     font-size: ${projectParagraphFont};
     color: ${textColor1};
     line-height: 2.4rem;
+    margin: 0 1rem 0 1rem;
+    /* top right bottom left */
+
+    border-top: 1px solid ${completedBackground};
+
+    padding: 2.8rem 3rem 2.8rem 3rem;
+    /* top right bottom left */
+    
+    border-bottom: 1px solid ${completedBackground};
   }
 
   /* Project Bottom */
 
   .project-bottom{
+    padding-top: 1.3rem;
+
+    padding: 2rem 4rem 2rem 4rem;
+    /* top right bottom left */
+
     display: flex;
     justify-content: space-between;
     font-size: ${projectFontSubtext};
@@ -126,7 +136,8 @@ border: 1px solid blue;
       display: flex;
       align-items: center;
       text-decoration: none;
-      border-radius: .5em;          
+      border-radius: .5em; 
+
       :first-child{
         border: 2px solid ${electricViolet};
         padding: 1.6rem 4.8rem 1.6rem;
@@ -139,9 +150,11 @@ border: 1px solid blue;
       padding: 1.4rem 4rem 1.6rem 3rem;
       background: ${electricViolet};
       box-shadow: 5px 5px 8px rgba(149, 25, 232, 0.15);
-      svg{
-        margin-right: 2.3rem;
-      }
+
+        svg{
+          margin-right: 2.3rem;
+        }
+
       }
   }
 

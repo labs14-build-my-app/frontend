@@ -11,15 +11,9 @@ import styled from 'styled-components'
 const ProjectsLoaderWrapper = styled.div`
 
 border: 1px solid red;
-
 `;
 
 const Scrollable = styled.div`
-  	display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(100px, 342px);
-    grid-gap: 30px;
-    padding: 2.5em 0 0 0;
 `;
 
 const ProjectsLoader = (props) => {
@@ -29,7 +23,7 @@ const ProjectsLoader = (props) => {
 	return (
 		<ProjectsLoaderWrapper>
 			<Scrollable>
-				{props.searchProjectList.map(project => {
+				{props.searchProjectList.splice(0, 6).map(project => {
 					return <NewProjects name={project.name} owner={project.ownerName} description={project.description} />
 				})}
 			</Scrollable>
