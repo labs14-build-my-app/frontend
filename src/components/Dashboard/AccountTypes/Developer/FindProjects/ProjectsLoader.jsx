@@ -9,15 +9,24 @@ import styled from 'styled-components'
 // Gets projects for the Find Projects page
 
 const ProjectsLoaderWrapper = styled.div`
-
-border: 1px solid red;
 `;
 
 const Scrollable = styled.div`
-	border: 2px dashed green;
+	width: 105%;
 	display: flex;
-	align-items: flex-start;
 	flex-wrap: wrap;
+	align-content: stretch;
+
+	.tl {
+	}
+
+	.tm{
+
+	}
+
+	.tr{
+
+	}
 `;
 
 const ProjectsLoader = (props) => {

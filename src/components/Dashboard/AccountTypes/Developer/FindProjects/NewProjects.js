@@ -8,8 +8,23 @@ import { textColor1, textColor2, snowflake, headerFontDesktop, projectParagraphF
 const NewProjects = props => {
   const { name, owner, description, saveProject, ownerOccupation, id, index } = props;
   console.log(props);
+
+  const jtonnasFirstL33tCode = (index) => {
+    if (index == 0){
+      return "tl"
+    }
+
+    if (index == 1){
+      return "tm"
+    }
+
+    if (index == 2){
+      return "tr"
+    }
+  }
+
   return (
-      <EntrepreneurProjects className={`project-${index}`}>
+      <EntrepreneurProjects className={`project ` + jtonnasFirstL33tCode(index)}>
         <div className="project-container">
 
           <div className="project-top">
@@ -50,7 +65,7 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps,{ fetchAllProjects, saveProject })(NewProjects);
 
 const EntrepreneurProjects = styled.div`
-  max-width: 30.8%;
+  max-width: 53.3rem;
   display: flex;
   flex-direction: row;
   padding: 2rem;
@@ -87,7 +102,7 @@ const EntrepreneurProjects = styled.div`
         height: 6rem;
         width: 6rem;
         border-radius: .5rem;
-        padding-right: 1.6rem;
+        margin-right: 1.6rem;
       }
     }
 

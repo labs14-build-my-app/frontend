@@ -34,7 +34,7 @@ const switcherino = (action, notification) =>{
     case "update" : return `${notification.author} has requested an updated project proposal for ${notification.project}.`;
     case "accepted" : return `Your projects proposal for ${notification.project} was accepted by ${notification.author}.`;
     case "completed" : return `The project ${notification.project} was marked as completed, if this is an error please reach out to support.`;
-    case "cancelled" : return `Yor project ${notification.project} was cancelled.`;
+    case "cancelled" : return `Your project ${notification.project} was cancelled.`;
     case "review" : return `The proposal you submitted for ${notification.project} is in review.`
 
     default : return "This project has an un-known status. ";
