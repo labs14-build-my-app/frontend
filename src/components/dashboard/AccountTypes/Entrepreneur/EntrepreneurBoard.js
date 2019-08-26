@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import Home from "./Home";
+import EntrepreneurApp from "./EntrepreneurApp"
 
 const EntrepreneurBoard = (props) => {
   const {pathname} = props.history.location
@@ -10,10 +10,9 @@ const EntrepreneurBoard = (props) => {
       {pathname=== "/" && <Redirect to="/entrepreneur/home" />}
 
       <Route
+      exact
         path="/entrepreneur/home"
-        render={props => {
-          return <Home {...props} />;
-        }}
+        component={EntrepreneurApp}
       />
     </>
   );

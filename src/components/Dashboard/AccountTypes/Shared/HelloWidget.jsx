@@ -6,9 +6,10 @@ import {textColor1, textColor2, veryLightBlue, headerFontDesktop, projectFontSub
 
 const HelloWidget = props => {
   const { user } = useSelector(s => s);
+  console.log(props)
   return (
     <HelloWidgetContainer>
-      <h1>Hello {user.firstName}, welcome to your dashboard.</h1>
+      <h1>Hello {user.firstName}, {props.pathname.startsWith("/entrepreneur") ? "review a project or post a new project" : props.pathname.startsWith("/dev")  && "Welcome to your dashboard" }</h1>
       <div>
         <h3>12:07 PM</h3>
         <p>8/12/2019</p>
@@ -20,15 +21,14 @@ const HelloWidget = props => {
 export default HelloWidget;
 
 const HelloWidgetContainer = styled.div`
-  width: 100%;
-  max-height: 7rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: ${textColor1};
-  font-size: ${headerFontDesktop};
-  background: ${veryLightBlue};
+  margin-top: 7.5rem;
   padding: 1.95rem 4rem 1.95rem;
+  font-size: ${headerFontDesktop};
+  color: ${textColor1};
+  background: ${veryLightBlue};
 
   div{
     display: flex;

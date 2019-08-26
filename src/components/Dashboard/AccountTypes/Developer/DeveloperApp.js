@@ -5,7 +5,9 @@ import styled from "styled-components";
 
 import PageRenderer from "./PageRenderer";
 
-const DeveloperAppContainer = styled.div` border: 1px solid blue; `;
+const DeveloperAppContainer = styled.div` 
+padding: 4rem 11.2rem 10.6rem 6.9rem;
+`;
 
 class DeveloperApp extends Component {
 

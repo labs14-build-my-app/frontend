@@ -117,7 +117,7 @@ const LeftNavigationElements = styled.nav`
   }
   
   .LeftNav li {
-    padding: 30px;
+    padding: 3rem;
   }
 
   background: transparent linear-gradient(4deg, rgba(242, 243, 255, 1) 0%, rgba(255, 255, 255, 1) 100%) 0% 0% no-repeat padding-box;

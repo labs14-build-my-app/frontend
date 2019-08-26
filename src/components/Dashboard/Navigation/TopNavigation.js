@@ -78,6 +78,7 @@ const TopNavigationContainer = styled.div`
   padding: 3.125em 6.25em 2.25em 6.25em;
   background: transparent linear-gradient(270deg, rgba(242, 243, 255, 1) 0%, rgba(255, 255, 255, 1) 100%) 0% 0% no-repeat padding-box;
   z-index: 15;
+  
   h1 {
     font-size: 3.5rem;
   }

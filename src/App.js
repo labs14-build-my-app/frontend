@@ -15,12 +15,12 @@ import DashboardChooser from "./components/Dashboard/AccountTypes/DashboardChoos
 
 import TopNavigation from "./components/Dashboard/Navigation/TopNavigation";
 import LeftNavigation from "./components/Dashboard/Navigation/LeftNavigation";
+import { mainAppGradient } from "./components/Dashboard/cssVariables";
 
 const App = props => {
   console.log(props);
 
   return (
-    <ThemeProvider theme={props}>
     <>
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
@@ -28,47 +28,37 @@ const App = props => {
       <Route exact path="/changepassword" component={ChangePassword} />
       
       <AppContainer>
-        <Route
-          path="/"
-          render={() => {
-            return (
-              <>
-                <div className="essential-container">
-                  <LeftNavigation />
-                  <div className="main-app-container">
-                    <Route path="/dev" component={TopNavigation} />
-                    <PrivateRoute path="/" component={DashboardChooser} />
-                  </div>
-                </div>
+        <Route path="/" render={() => {
+          return (
+            <>
+              <FlexWrapper>
+                <LeftNavigation />
+                <EssentialContainer>
+                  <TopNavigation />
+                  <PrivateRoute path="/" component={DashboardChooser} />
+                </EssentialContainer>
+              </FlexWrapper>
             </>
           );
         }} />
+
       </AppContainer>
       </>
-    </ThemeProvider>
   );
 };
 
 export default App;
 
 const AppContainer = styled.div`
-  ${props =>
-    props.theme.history.location.pathname.startsWith("/dev") || props.theme.history.location.pathname.startsWith("/entrepreneur") && "height: 100%"};
-  .essential-container {
-    display: flex;
-    height: 100%;
-  }
-
-  .main-app-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-
-    .main-app-column {
-      background: transparent linear-gradient(297deg, #f2f3ff 0%, #ffffff 100%);
-      .developer-home {
-        padding: 11.5625em 7.125em 7em 6.625em;
-      }
-    }
-  }
+  height: 100%;
 `;
+
+const FlexWrapper = styled.div`
+  display: flex;
+  height: 100%;
+`
+const EssentialContainer = styled.div`
+  flex-grow: 1;
+  justify-content: stretch;
+  height: 100%;
+`

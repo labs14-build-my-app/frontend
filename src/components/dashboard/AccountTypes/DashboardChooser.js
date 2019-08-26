@@ -5,12 +5,13 @@ import { Route, Redirect } from "react-router-dom";
 import styled from 'styled-components';
 
 import DeveloperApp from "./Developer/DeveloperApp";
-import EntrepreneurSide from "./Entrepreneur/Home";
+import EntrepreneurApp from "./Entrepreneur/EntrepreneurApp";
 import ProjectModal from "../AccountTypes/Developer/FindProjects/ProjectModal";
 
 const errorHasOccured = <p>An Error has occured please log in again!</p>;
 
-const MainApp = styled.div` `
+const MainApp = styled.div`
+`
 
 const DashboardChooser = props => {
   if (!props.user) {
@@ -31,7 +32,7 @@ const DashboardChooser = props => {
       {props.user.isDeveloper ? (
         <DeveloperApp {...props} />
       ) : !props.user.isDeveloper === true ? (
-        <EntrepreneurSide {...props} />
+        <EntrepreneurApp {...props} />
       ) : (
         errorHasOccured
       )}
@@ -47,7 +48,4 @@ const mapStateToProps = state => {
     loggingIn: state.loggingIn
   };
 };
-export default connect(
-  mapStateToProps,
-  { loadApp }
-)(DashboardChooser);
+export default connect(mapStateToProps, { loadApp })(DashboardChooser);

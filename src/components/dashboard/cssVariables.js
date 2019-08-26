@@ -107,3 +107,9 @@ export const losBackground = `
 	background-repeat: no-repeat;
 	background-size: cover;
 `
+// LeftNav, TopNav, MainApp gradients.
+export const leftNavGradient = ``;
+export const topNavGradient = ``;
+export const mainAppGradient = `
+  background: transparent linear-gradient(297deg, rgba(242, 243, 255, 1) 0%, rgba(255, 255, 255, 1) 100%) 0% 0% no-repeat padding-box;
+`;

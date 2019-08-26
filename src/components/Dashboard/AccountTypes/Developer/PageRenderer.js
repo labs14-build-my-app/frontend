@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Home from "./Home/Home";
 import FindProjects from "./FindProjects/FindProjects";
 
-const PageRendererContainer = styled.div` border: 1px solid red; `
+const PageRendererContainer = styled.div` `
 
 export class PageRenderer extends Component {
   render() {
