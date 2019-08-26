@@ -12,7 +12,9 @@ import {
 } from "../actions";
 
 const initialState = {
-  user: null,
+  user: {
+    name: "undefined"
+  },
   loggingIn: false,
   isSigningup: false,
   loadingApp: false,

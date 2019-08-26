@@ -29,7 +29,7 @@ const App = props => {
       
       <AppContainer>
         <Route
-          path="/dev"
+          path="/"
           render={() => {
             return (
               <>
@@ -53,7 +53,7 @@ export default App;
 
 const AppContainer = styled.div`
   ${props =>
-    props.theme.history.location.pathname.startsWith("/dev") && "height: 100%"};
+    props.theme.history.location.pathname.startsWith("/dev") || props.theme.history.location.pathname.startsWith("/entrepreneur") && "height: 100%"};
   .essential-container {
     display: flex;
     height: 100%;

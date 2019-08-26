@@ -2,14 +2,17 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import Home from "./Home";
 
-const EntrepreneurBoard = () => {
+const EntrepreneurBoard = (props) => {
+  const {pathname} = props.history.location
   return (
     <>
-      {<Redirect to="/entrepreneur/dashboard" />}
+    <h2> viajfiadjfiadjfi</h2>
+      {pathname=== "/" && <Redirect to="/entrepreneur/home" />}
+
       <Route
-        path="/entrepreneur/dashboard"
+        path="/entrepreneur/home"
         render={props => {
-          return <EntrepreneurHome {...props} />;
+          return <Home {...props} />;
         }}
       />
     </>

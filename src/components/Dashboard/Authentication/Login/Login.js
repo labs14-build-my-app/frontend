@@ -222,10 +222,10 @@ class Login extends Component {
       console.log("Login.js Says: " + res);
 
       if (this.props.user.isDeveloper) {
-        this.props.history.push("/dev/dashboard");
+        this.props.history.push("/dev/home");
       }
       if (!this.props.user.isDeveloper) {
-        this.props.history.push("/entrepreneur/dashboard");
+        this.props.history.push("/entrepreneur/home");
       }
     });
   };

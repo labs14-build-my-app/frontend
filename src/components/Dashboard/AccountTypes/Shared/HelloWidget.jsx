@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 
+import {textColor1, textColor2, veryLightBlue, headerFontDesktop, projectFontSubtext } from '../../cssVariables';
+
 const HelloWidget = props => {
   const { user } = useSelector(s => s);
   return (
@@ -18,25 +20,25 @@ const HelloWidget = props => {
 export default HelloWidget;
 
 const HelloWidgetContainer = styled.div`
+  width: 100%;
+  max-height: 7rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.8rem 4rem 1.8rem;
-  max-width: 1657px;
-  max-height: 7rem;
-  border-radius: 5px;
-  font-size: 1.8rem;
-  color: rgba(67, 66, 93, 1);
-  background: #f2f3ff 0% 0% no-repeat padding-box;
-  box-shadow: 5px 5px 8px rgba(255, 255, 255, 0.25);
+  color: ${textColor1};
+  font-size: ${headerFontDesktop};
+  background: ${veryLightBlue};
+  padding: 1.95rem 4rem 1.95rem;
 
   div{
-    text-align: right;
-    line-height: 17px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
 
     p{
-      font-size: 1.3rem;
-      color: #9592A8;
+      color: ${textColor2};
+      font-size: ${projectFontSubtext}
+      
     }
   }
 `;
