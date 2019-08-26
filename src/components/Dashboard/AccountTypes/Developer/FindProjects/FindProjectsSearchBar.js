@@ -2,14 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { electricVioletLight, headerFontDesktop, textColor1, textColor2 } from "../../../cssVariables";
+import { electricVioletLight, headerFontDesktop, textColor1, textColor2, privilege, veryLightBlue } from "../../../cssVariables";
 
 const FindProjectsSearchBar = () => {
   const { projectList } = useSelector(s => s);
   return (
     <FindProjectsSearchBarContainer>
       <div className="searchbar-field">
-
         <div className="input-searchbar">
           <input placeholder="Search for projects by industry or keyword..." />
           <svg xmlns="http://www.w3.org/2000/svg" width="19.996" height="20" viewBox="0 0 19.996 20" >
@@ -18,13 +17,13 @@ const FindProjectsSearchBar = () => {
           </svg>
         </div>
 
-        <div className="select-to-search">
-          Filter Results
-          <svg xmlns="http://www.w3.org/2000/svg" width="8.814" height="5" viewBox="0 0 8.814 5">
-            <path d="M11.888,192h7.628a.592.592,0,0,1,.418,1.011l-3.813,3.816a.594.594,0,0,1-.839,0l-3.813-3.816A.592.592,0,0,1,11.888,192Z" transform="translate(-11.296 -192)" />
-          </svg>
+        <div className="filter-results">
+            <p> Filter Results </p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="8.814" height="5" viewBox="0 0 8.814 5">
+              <path d="M11.888,192h7.628a.592.592,0,0,1,.418,1.011l-3.813,3.816a.594.594,0,0,1-.839,0l-3.813-3.816A.592.592,0,0,1,11.888,192Z" transform="translate(-11.296 -192)" />
+            </svg>
         </div>
-      </div>
+    </div>
     </FindProjectsSearchBarContainer>
   );
 };
@@ -42,6 +41,7 @@ const FindProjectsSearchBarContainer = styled.div`
     max-width: 50%;
     margin-bottom: 2.1rem;
 
+    /* Search Bar */
     .input-searchbar {
       padding: 2.35rem 4rem 2.35rem;
       display: flex;
@@ -61,7 +61,6 @@ const FindProjectsSearchBarContainer = styled.div`
           font-size: ${headerFontDesktop};
           color: ${textColor2};
         }
-
       }
 
       svg {
@@ -71,5 +70,31 @@ const FindProjectsSearchBarContainer = styled.div`
         height: 1.5rem;
       }
     }
+
+    .filter-results{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: ${veryLightBlue};
+      box-shadow: 5px 5px 8px #ffffff;
+      border-radius: 5px;
+      width: 40%;
+      color: ${textColor2};
+      margin-left: 1.875em;
+      font-size: ${headerFontDesktop};
+      user-select: none;
+      cursor: pointer;
+
+      svg {
+        transform: rotate(-90deg);
+        margin-left: 1.3125em;
+        width: 9px;
+        height: 9px;
+        path {
+          fill: #9592a8;
+        }
+      }
+    }
   }
+
 `

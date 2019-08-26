@@ -34,7 +34,7 @@ const HelloWidgetContainer = styled.div`
   div{
     display: flex;
     flex-direction: column;
-    text-align: left;
+    text-align: right;
 
     p{
       color: ${textColor2};
