@@ -54,7 +54,7 @@ export default connect(mapStateToProps,{ fetchAllProjects, saveProject })(NewPro
 const EntrepreneurProjects = styled.div`
 border: 1px solid blue;
 margin: 50px;
-display: flex;
+display: inline-flex;
 flex-direction: row;
 height: 200px;
 align-content: flex-start;
