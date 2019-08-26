@@ -27,9 +27,9 @@ const loaderStyles = css`
 `;
 
 const DashboardChooser = props => {
-  if (!props.user) {
-    props.loadApp();
-  }
+  // if (!props.user) {
+  //   props.loadApp();
+  // }
 
   const { user } = useSelector(s => s);
 
@@ -37,31 +37,27 @@ const DashboardChooser = props => {
     props.loadApp();
   }, []);
 
-  if (user.firstName !== "undefined") {
-    console.log(props);
-    const { pathname } = props.history.location;
-    console.log("DashboardChooser loaded");
-    return props.user ? (
-      <MainApp className="main-app-column">
-        <Route path="/dev/find/projects/:id" component={ProjectModal} />
+  const { pathname } = props.history.location;
 
-        {props.user.isDeveloper ? (
-          <DeveloperApp {...props} />
-        ) : props.user.isDeveloper === false ? (
-          <EntrepreneurApp {...props} />
-        ) : (
-              (pathname.startsWith("/dev") ||
-                pathname.startsWith("/entrepreneur")) && (
-                <ClimbingBoxLoader css={loaderStyles} />
-              )
-            )}
-      </MainApp>
-    ) : (
-        <ClimbingBoxLoader css={loaderStyles} />
-      );
-  } else {
-    return null;
-  }
+  console.log("DashboardChooser loaded");
+  return props.user ? (
+    <MainApp className="main-app-column">
+      <Route path="/dev/find/projects/:id" component={ProjectModal} />
+
+      {props.user.isDeveloper ? (
+        <DeveloperApp {...props} />
+      ) : props.user.isDeveloper === false ? (
+        <EntrepreneurApp {...props} />
+      ) : (
+            (pathname.startsWith("/dev") ||
+              pathname.startsWith("/entrepreneur")) && (
+              <ClimbingBoxLoader css={loaderStyles} />
+            )
+          )}
+    </MainApp>
+  ) : (
+      <ClimbingBoxLoader css={loaderStyles} />
+    );
 };
 const mapStateToProps = state => {
   // console.log(state)
