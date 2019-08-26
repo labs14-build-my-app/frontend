@@ -4,10 +4,10 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 
 import PageRenderer from "./PageRenderer";
+import ProjectsLoader from "../Developer/FindProjects/ProjectsLoader";
 
 const DeveloperAppContainer = styled.div` 
 padding: 4rem 11.2rem 10.6rem 6.9rem;
-
 `;
 
 class DeveloperApp extends Component {
@@ -33,6 +33,14 @@ class DeveloperApp extends Component {
               <PageRenderer {...this.props} />
             </div>
           );
+        }} />
+
+        <Route path="/spaghet" render={()=>{
+          return(
+            <div className="projects">
+              <ProjectsLoader {...this.props} />
+            </div>
+          )
         }} />
 
       </DeveloperAppContainer>
