@@ -20,8 +20,9 @@ const NewProjects = props => {
             <img
               src={`${
                 process.env.PUBLIC_URL
-              }/images/Landing Page - Mobile 375x667.png`}
+                }/images/Landing Page - Mobile 375x667.png`}
               className="profile-pic"
+              alt="profile-pic"
             />
             <div>
               <h3>{name}</h3>
