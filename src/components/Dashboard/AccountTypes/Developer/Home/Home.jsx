@@ -10,7 +10,11 @@ import { defaultProps } from 'recompose';
 
 // Get information from state about the users projects, then pass it as props to the projects loader
 const HomeContainer = styled.div`
-	background: red;
+	height: 100%;
+	margin-top: 4rem;
+	padding: 2.5rem 4.5rem 2.5rem;
+	background: transparent linear-gradient(248deg, rgba(242, 243, 255, 1) 0%, rgba(255, 255, 255, 1) 100%) 0% 0% no-repeat padding-box;
+	box-shadow: 5px 5px 8px rgba(255, 255, 255, 0.25);
 `
 const Home = (props) => {
 	const {fetchSelfProjects, history, devProjectList} = props;
