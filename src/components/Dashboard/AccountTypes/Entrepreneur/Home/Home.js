@@ -4,7 +4,7 @@ import { fetchEntProjects } from '../../../../../redux/actions';
 import styled from 'styled-components';
 
 import HelloWidget from '../../Shared/HelloWidget';
-import ProjectsLoader from '../../Developer/FindProjects/ProjectsLoader';
+import ProjectsLoader from '../../Developer/Home/ProjectsLoader';
 import NotificationCenter from '../../Shared/NotificationCenter/NotificationCenter.jsx';
 
 // Get information from state about the users projects, then pass it as props to the projects loader

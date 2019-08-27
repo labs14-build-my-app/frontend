@@ -45,7 +45,7 @@ const LeftNavigation = (props) => {
           </NavLink>
 
           {/* Search Icon */}
-          <NavLink to="/dev/find/projects">
+          <NavLink to={user.isDeveloper ? "/dev/find/projects" : "/ent/projects/new"}>
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="19.996" height="20" viewBox="0 0 19.996 20" >
                 <defs />
