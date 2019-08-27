@@ -9,6 +9,7 @@ import {
   SAVE_PROJECT,
   GET_OWNER,
   SUBMIT_PROPOSAL,
+  SUBMIT_PROJECT,
   LOGOUT
 } from "../actions";
 
@@ -182,6 +183,21 @@ const rootReducer = (state = initialState, action) => {
         user: null
       };
     case LOGOUT.FAILURE:
+      return {
+        ...state
+      };
+
+    case SUBMIT_PROJECT.START:
+      return {
+        ...state
+      };
+
+    case SUBMIT_PROJECT.SUCCESS:
+      return {
+        ...state
+      };
+
+    case SUBMIT_PROJECT.FAILURE:
       return {
         ...state
       };

@@ -35,6 +35,14 @@ const EntrepreneurApp = (props) => {
 					</div>
 				)
 			}} />
+
+			<Route path="/ent/projects/new" render={() => {
+				return (
+					<div className="entrepreneur-projects-new">
+						<PageRenderer {...props} />
+					</div>
+				)
+			}} />
 		</EntAppContainer>
 	)
 }
