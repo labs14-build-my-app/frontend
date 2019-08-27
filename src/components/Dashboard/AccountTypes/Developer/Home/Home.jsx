@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import {connect, useSelector} from 'react-redux';
-import {fetchSelfProjects} from '../../../../../redux/actions';
+import { connect } from 'react-redux';
+import { fetchSelfProjects } from '../../../../../redux/actions';
 import styled from 'styled-components';
 
 import HelloWidget from '../../Shared/HelloWidget';
 import ProjectsLoader from './ProjectsLoader';
 import NotificationCenter from '../../Shared/NotificationCenter/NotificationCenter.jsx';
-import { defaultProps } from 'recompose';
 
 // Get information from state about the users projects, then pass it as props to the projects loader
 const HomeContainer = styled.div`
@@ -22,27 +21,27 @@ const FlexWrapper = styled.div`
 `
 
 const Home = (props) => {
-	const {fetchSelfProjects, history, devProjectList} = props;
+	const { fetchSelfProjects, history, devProjectList } = props;
 
 	const pathname = useState(history.location.pathname)[0];
 
-	useEffect( () => {
-		if (pathname === "/dev/home"){
+	useEffect(() => {
+		if (pathname === "/dev/home") {
 			fetchSelfProjects();
 		}
 	}, [pathname])
 
 
-	const validDevProjectList = devProjectList || devProjectList.length > 0 ;
+	const validDevProjectList = devProjectList || devProjectList.length > 0;
 
-	return(
+	return (
 		<div className="home">
-			<HelloWidget pathname={props.history.location.pathname}/>
+			<HelloWidget pathname={props.history.location.pathname} />
 			<HomeContainer>
 				<FlexWrapper>
 					<div className="projects-list">
-						{validDevProjectList && devProjectList.slice(0,5).map(projectData => {
-							return(
+						{validDevProjectList && devProjectList.slice(0, 5).map(projectData => {
+							return (
 								<ProjectsLoader {...projectData} />
 							)
 						})}
@@ -52,7 +51,7 @@ const Home = (props) => {
 					</div>
 				</FlexWrapper>
 			</HomeContainer>
-			
+
 		</div>
 	)
 }
@@ -60,9 +59,9 @@ const Home = (props) => {
 const mapStateToProps = (state) => {
 	console.log(state);
 
-	return{
+	return {
 		devProjectList: state.devProjectList,
 	};
 }
 
-export default connect(mapStateToProps, {fetchSelfProjects})(Home);
+export default connect(mapStateToProps, { fetchSelfProjects })(Home);

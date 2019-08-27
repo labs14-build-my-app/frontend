@@ -1,77 +1,79 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
-import {projectParagraphFont, projectFontSubtext} from '../../../cssVariables'; // Fonts
-import {privilege, textColor1, textColor2} from '../../../cssVariables'; // Colors
-import {projectsButtonColorizer, projectsGlowColorizer} from './ProjectsColorizer';
+import { projectParagraphFont, projectFontSubtext } from '../../../cssVariables'; // Fonts
+import { privilege, textColor1, textColor2 } from '../../../cssVariables'; // Colors
+import { projectsButtonColorizer, projectsGlowColorizer } from './ProjectsColorizer';
 
 const ProjectsLoader = (props) => {
-	const { name, ownerName, description, _id, status,createdAt, price } = props
-	console.log(props)
+	const { name, ownerName, description, _id, status, createdAt, price } = props
+
 	const startDate = new Date(createdAt);
+
 	const endDate = (date, days) => {
 		let result = new Date(date);
 		result.setDate(result.getDate() + days);
-		return result; 
-	  };
+		return result;
+	};
 
 	return (
 		<ProjectWrapper>
 			<Link to={{
-				pathname: `/dev/find/projects/${_id}`, 
-				state : {
+				pathname: `/dev/find/projects/${_id}`,
+				state: {
 					name: name,
-                    ownerName: ownerName,
-                    description: description,
-                    id: _id
-				}}} style={{ textDecoration: 'none', color: 'inherit'}} >
-			<FlexWrapper className={'flex-wrapper-' + props.status}>
-				<Left>
-					<Row>
-						<Img src="https://thispersondoesnotexist.com/image" alt={"Profile picture of" + ownerName}/>
-					</Row>
+					ownerName: ownerName,
+					description: description,
+					id: _id
+				}
+			}} style={{ textDecoration: 'none', color: 'inherit' }} >
+				<FlexWrapper className={'flex-wrapper-' + props.status}>
+					<Left>
+						<Row>
+							<Img src="https://thispersondoesnotexist.com/image" alt={"Profile picture of" + ownerName} />
+						</Row>
 
-					<Row>
-						<p className="main-text">{name || "N/A"}</p>
-						<p className="title-text">{ownerName || "N/A"}</p>
-					</Row>
-				</Left>
+						<Row>
+							<p className="main-text">{name || "N/A"}</p>
+							<p className="title-text">{ownerName || "N/A"}</p>
+						</Row>
+					</Left>
 
-				<Right>
-					<Row>
-						<p className="main-text">{endDate(startDate, 30).toLocaleDateString() || "N/A"}</p>
-						<p className="title-text">Start Date</p>
-					</Row>
+					<Right>
+						<Row>
+							<p className="main-text">{endDate(startDate, 30).toLocaleDateString() || "N/A"}</p>
+							<p className="title-text">Start Date</p>
+						</Row>
 
-					<Row>
-						<p className="main-text">{"N/A"}</p>
-						<p className="title-text">Estimated End Date</p>
-					</Row>
+						<Row>
+							<p className="main-text">{"N/A"}</p>
+							<p className="title-text">Estimated End Date</p>
+						</Row>
 
-					<Row>
-						<p className="main-text">${price || "N/A"}</p>
-						<p className="title-text">Total Cost</p>
-					</Row>
+						<Row>
+							<p className="main-text">${price || "N/A"}</p>
+							<p className="title-text">Total Cost</p>
+						</Row>
 
-					<Row>
-						<p className="main-text">${price * .25 || "N/A"}</p>
-						<p className="title-text">Deposit</p>
-					</Row>
+						<Row>
+							<p className="main-text">${price * .25 || "N/A"}</p>
+							<p className="title-text">Deposit</p>
+						</Row>
 
-					<Row>
-						<div className={"status-wrapper " + status}>
-							<p className="status-text">{status || "N/A"}</p>
-						</div>
-					</Row>
-				</Right>
-				
-			</FlexWrapper>
+						<Row>
+							<div className={"status-wrapper " + status}>
+								<p className="status-text">{status || "N/A"}</p>
+							</div>
+						</Row>
+					</Right>
+
+				</FlexWrapper>
 			</Link>
 		</ProjectWrapper>
 	)
 }
- 
+
 export default ProjectsLoader;
 
 // This just aligns things to the center of the row. Its here for improved readibility.

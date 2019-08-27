@@ -225,7 +225,7 @@ class Login extends Component {
         this.props.history.push("/dev/home");
       }
       if (!this.props.user.isDeveloper) {
-        this.props.history.push("/entrepreneur/home");
+        this.props.history.push("/ent/home");
       }
     });
   };

@@ -2,14 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 
-import {textColor1, textColor2, veryLightBlue, headerFontDesktop, projectFontSubtext } from '../../cssVariables';
+import { textColor1, textColor2, veryLightBlue, headerFontDesktop, projectFontSubtext } from '../../cssVariables';
 
 const HelloWidget = props => {
   const { user } = useSelector(s => s);
   console.log(props)
   return (
     <HelloWidgetContainer>
-      <h1>Hello {user.firstName}, {props.pathname.startsWith("/entrepreneur") ? "review a project or post a new project" : props.pathname.startsWith("/dev")  && "Welcome to your dashboard" }</h1>
+      <h1>Hello {user.firstName}, {props.pathname.startsWith("/ent") ? "review a project or post a new project" : props.pathname.startsWith("/dev") && "Welcome to your dashboard"}</h1>
       <div>
         <h3>12:07 PM</h3>
         <p>8/12/2019</p>

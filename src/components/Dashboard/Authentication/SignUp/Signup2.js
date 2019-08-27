@@ -173,7 +173,7 @@ class Signup2 extends Component {
     this.props
       .signup({ ...this.props.location.state, isDeveloper: false })
       .then(res => {
-        this.props.history.push("/");
+        this.props.history.push("/ent/home");
       });
   };
 
