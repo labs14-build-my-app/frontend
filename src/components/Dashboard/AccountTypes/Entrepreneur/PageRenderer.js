@@ -8,10 +8,7 @@ const PageRendererContainer = styled.div``;
 
 export class PageRenderer extends Component {
   render() {
-    const [home, createNewProject] = [
-      "/ent/home",
-      "/ent/projects/new"
-    ];
+    const [home, createNewProject] = ["/ent/home", "/ent/projects/new"];
 
     const { pathname } = this.props.history.location;
 
