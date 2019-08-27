@@ -6,11 +6,12 @@ const EntrepreneurBoard = (props) => {
   const {pathname} = props.history.location
   return (
     <>
-      {pathname=== "/" && <Redirect to="/ent/home" />}
+    <h2> viajfiadjfiadjfi</h2>
+      {pathname=== "/" && <Redirect to="/entrepreneur/home" />}
 
       <Route
       exact
-        path="/ent/home"
+        path="/entrepreneur/home"
         component={EntrepreneurApp}
       />
     </>
