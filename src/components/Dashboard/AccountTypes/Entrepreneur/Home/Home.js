@@ -40,7 +40,7 @@ const Home = (props) => {
             <HomeContainer>
                 <FlexWrapper>
                     <div className="projects-list">
-                        {validEntProjectList && entProjectList.map(projectData => {
+                        {validEntProjectList && entProjectList.slice(0, 5).map(projectData => {
                             return (
                                 <ProjectsLoader {...projectData} />
                             )

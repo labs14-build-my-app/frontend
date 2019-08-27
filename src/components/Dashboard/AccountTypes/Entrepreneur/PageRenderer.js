@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 import Home from "./Home/Home";
-import CreateProjectForm from './CreateProject/CreateProjectForm'
 
-const PageRendererContainer = styled.div``;
+const PageRendererContainer = styled.div``
 
 export class PageRenderer extends Component {
   render() {
@@ -27,9 +26,7 @@ export class PageRenderer extends Component {
           </>
         ) : (
             pathname === createNewProject && (
-              <>
-                <CreateProjectForm />
-              </>
+              null
             )
           )}
       </PageRendererContainer>
