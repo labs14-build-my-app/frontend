@@ -77,7 +77,7 @@ export const fetchSelfProjects = () => dispatch => {
   return axiosWithAuth()
     .get(`${BACKEND_URL}/projects/dev`)
     .then(res => {
-      console.log(res);
+      // console.log(res);
       dispatch({ type: FETCH_SELF_PROJECTS.SUCCESS, payload: res.data });
     })
     .catch(err => {
@@ -85,6 +85,24 @@ export const fetchSelfProjects = () => dispatch => {
       dispatch({ type: FETCH_SELF_PROJECTS.FAILURE });
     });
 };
+
+export const FETCH_ENT_PROJECTS = {
+  START: "FETCH_ENT_PROJECTS_START",
+  SUCCESS: "FETCH_ENT_PROJECTS_SUCCESS",
+  FAILURE: "FETCH_ENT_PROJECTS_FAILURE"
+}
+export const fetchEntProjects = () => dispatch => {
+  dispatch({ type: FETCH_ENT_PROJECTS.START });
+  return axiosWithAuth()
+    .get(`${BACKEND_URL}/projects`)
+    .then(res => {
+      dispatch({ type: FETCH_ENT_PROJECTS.SUCCESS, payload: res.data })
+    })
+    .catch(err => {
+      console.log(err)
+      dispatch({ type: FETCH_ENT_PROJECTS.FAILURE })
+    })
+}
 
 export const FETCH_ALL_PROJECTS = {
   START: "FETCH_ALL_START",
@@ -174,5 +192,5 @@ export const logout = () => dispatch => {
     .then(res => {
       dispatch({ type: LOGOUT.SUCCESS });
     })
-    .catch(err=>console.log(err));
+    .catch(err => console.log(err));
 };

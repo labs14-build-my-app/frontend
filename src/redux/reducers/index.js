@@ -5,6 +5,7 @@ import {
   LOAD_APP,
   FETCH_SELF_PROJECTS,
   FETCH_ALL_PROJECTS,
+  FETCH_ENT_PROJECTS,
   SAVE_PROJECT,
   GET_OWNER,
   SUBMIT_PROPOSAL,
@@ -19,6 +20,7 @@ const initialState = {
   isSigningup: false,
   loadingApp: false,
   devProjectList: [],
+  entProjectList: [],
   searchProjectList: []
 };
 
@@ -106,6 +108,22 @@ const rootReducer = (state = initialState, action) => {
           project => project.status === "searching"
         )
       };
+
+    case FETCH_ENT_PROJECTS.START:
+      return {
+        ...state
+      }
+
+    case FETCH_ENT_PROJECTS.SUCCESS:
+      return {
+        ...state,
+        entProjectList: action.payload
+      }
+
+    case FETCH_ENT_PROJECTS.FAILURE:
+      return {
+        ...state
+      }
 
     case SAVE_PROJECT.START:
       return {

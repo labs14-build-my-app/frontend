@@ -1,9 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import HelloWidget from "../Shared/HelloWidget";
 import styled from "styled-components"
 import NotificationCenter from "../Shared/NotificationCenter/NotificationCenter.jsx"
 // import ProjectsLoader from './ProjectsLoader';
-import {connect} from "react-redux"
+import { connect } from "react-redux"
+import { fetchEntProjects } from '../../../../redux/actions'
+
 const EntAppContainer = styled.div`
     display: flex;
 `
@@ -19,32 +21,32 @@ const FlexWrapper = styled.div`
 	justify-content: space-between;
 `
 const EntrepreneurApp = (props) => {
-	const {fetchSelfProjects, history, devProjectList} = props;
+	const { fetchEntProjects, history, entProjectList } = props;
 
-    //devProjectList to entrepreneurProjectList 
-    //change pathname === "/dev/home" to "/entrepreneur/home"
-    //change fetchSelfProjects to fetchOwnerProjects or something
-    
+	//devProjectList to entrepreneurProjectList 
+	//change pathname === "/dev/home" to "/entrepreneur/home"
+	//change fetchSelfProjects to fetchOwnerProjects or something
+
 	const pathname = useState(history.location.pathname)[0];
 
-	useEffect( () => {
-		if (pathname === "/dev/home"){
-			fetchSelfProjects();
+	useEffect(() => {
+		if (pathname === "/dev/home") {
+			fetchEntProjects();
 		}
 	}, [pathname])
 
 
-	const validDevProjectList = devProjectList || devProjectList.length > 0 ;
+	const validEntProjectList = entProjectList || entProjectList.length > 0;
 
-	return(
+	return (
 		<div className="home">
-			<HelloWidget pathname={props.history.location.pathname}/>
+			<HelloWidget pathname={props.history.location.pathname} />
 			<HomeContainer>
 				<FlexWrapper>
 					<div className="projects-list">
-						{validDevProjectList && devProjectList.slice(0,5).map(projectData => {
-							return(
-                                <li> this is a project</li>
+						{validEntProjectList && entProjectList.slice(0, 5).map(projectData => {
+							return (
+								<li> this is a project</li>
 							)
 						})}
 					</div>
@@ -53,7 +55,7 @@ const EntrepreneurApp = (props) => {
 					</div>
 				</FlexWrapper>
 			</HomeContainer>
-			
+
 		</div>
 	)
 }
@@ -61,8 +63,8 @@ const EntrepreneurApp = (props) => {
 const mapStateToProps = (state) => {
 	console.log(state);
 
-	return{
-		devProjectList: state.devProjectList,
+	return {
+		entProjectList: state.entProjectList,
 	};
 }
-export default connect(mapStateToProps, {})(EntrepreneurApp)
+export default connect(mapStateToProps, { fetchEntProjects })(EntrepreneurApp)
