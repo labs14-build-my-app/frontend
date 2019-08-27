@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux'
-import useInputState from '../../../../../hooks/useInputState'
+import { connect } from 'react-redux';
+import { submitProject } from '../../../../../redux/actions';
+import useInputState from '../../../../../hooks/useInputState';
 
-const CreateProjectForm = () => {
+const CreateProjectForm = props => {
+
+    const { submitProject } = props;
+
     const [name, setName, resetName] = useInputState("");
 
     const [description, setDescription, resetDescription] = useInputState("");
@@ -13,32 +17,30 @@ const CreateProjectForm = () => {
 
     const [tags, setTags] = useState("");
 
-    const [project, setProject] = useState({ name: "", description: "", price: "", category: "", tags: "" });
-
     const reset = () => {
         resetName();
         resetDescription();
         resetPrice();
         setCategory("other");
         setTags("");
-        setProject({ name: "", description: "", price: "", category: "", tags: "" })
     }
 
-    const submitProject = (e) => {
+    const createProjectObject = (e) => {
         e.preventDefault();
-        setProject({
+        const newProject = {
             name,
             description,
-            price,
+            price: Number(price),
             category,
             tags: tags.split(" ")
-        });
-        console.log(project.tags)
+        }
+
+        submitProject(newProject)
         reset();
     }
 
     return (
-        <form onSubmit={submitProject}>
+        <form onSubmit={createProjectObject}>
             <label>
                 Project Name:
             </label>
@@ -70,9 +72,11 @@ const CreateProjectForm = () => {
             </label>
             <input type="text" value={tags} onChange={(e) => {
                 setTags(e.target.value);
+                console.log(tags)
             }} />
+            <button type="submit">submit</button>
         </form>
     )
 }
 
-export default CreateProjectForm;
+export default connect(null, { submitProject })(CreateProjectForm);
