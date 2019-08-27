@@ -1,11 +1,11 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom';
 import styled from "styled-components"
-import { Route  } from "react-router-dom";
 import { connect } from "react-redux"
 // Reverted
 
 import PageRenderer from './PageRenderer'
+import CreateProjectFrom from './CreateProject/CreateProjectForm'
 
 const EntAppContainer = styled.div`
     padding: 4rem 11.2rem 10.6rem 6.9rem;
@@ -32,6 +32,14 @@ const EntrepreneurApp = (props) => {
 				return (
 					<div className="entrepreneur-home">
 						<PageRenderer {...props} />
+					</div>
+				)
+			}} />
+
+			<Route path="/ent/projects/new" render={() => {
+				return (
+					<div className="entrepreneur-project-create">
+						<CreateProjectFrom />
 					</div>
 				)
 			}} />
