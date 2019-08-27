@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom';
 import styled from "styled-components"
+import { Route  } from "react-router-dom";
 import { connect } from "react-redux"
 // Reverted
 
@@ -30,14 +31,6 @@ const EntrepreneurApp = (props) => {
 			<Route path="/ent/home" render={() => {
 				return (
 					<div className="entrepreneur-home">
-						<PageRenderer {...props} />
-					</div>
-				)
-			}} />
-
-			<Route path="/ent/projects/new" render={() => {
-				return (
-					<div className="entrepreneur-projects-new">
 						<PageRenderer {...props} />
 					</div>
 				)
