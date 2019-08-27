@@ -2,15 +2,13 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 import Home from "./Home/Home";
+import EntForm from "./EntForm";
 
-const PageRendererContainer = styled.div``
+const PageRendererContainer = styled.div``;
 
 export class PageRenderer extends Component {
   render() {
-    const [home, createNewProject] = [
-      "/ent/home",
-      "/ent/projects/new"
-    ];
+    const [home, createNewProject] = ["/ent/home", "/ent/projects/new"];
 
     const { pathname } = this.props.history.location;
 
@@ -25,10 +23,14 @@ export class PageRenderer extends Component {
             <Home {...this.props} pathname={pathname} />
           </>
         ) : (
-            pathname === createNewProject && (
-              null
-            )
-          )}
+          pathname === createNewProject && null
+        )}
+        
+        {pathname === createNewProject && (
+          <>
+            <EntForm {...this.props} />
+          </>
+        )}
       </PageRendererContainer>
     );
   }
