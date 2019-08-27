@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 import Home from "./Home/Home";
-import EntForm from "./EntForm";
+import CreateProjectForm from './CreateProject/CreateProjectForm'
 
 const PageRendererContainer = styled.div``;
 
@@ -23,14 +23,12 @@ export class PageRenderer extends Component {
             <Home {...this.props} pathname={pathname} />
           </>
         ) : (
-          pathname === createNewProject && null
-        )}
-        
-        {pathname === createNewProject && (
-          <>
-            <EntForm {...this.props} />
-          </>
-        )}
+            pathname === createNewProject && (
+              <>
+                <CreateProjectForm />
+              </>
+            )
+          )}
       </PageRendererContainer>
     );
   }

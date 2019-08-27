@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import HelloWidget from "../Shared/HelloWidget";
 import styled from "styled-components"
 import NotificationCenter from "../Shared/NotificationCenter/NotificationCenter.jsx"
-import { Route } from "react-router-dom";
+import { Route  } from "react-router-dom";
 import {connect} from "react-redux"
 import EntForm from './EntForm';
 const EntAppContainer = styled.div`

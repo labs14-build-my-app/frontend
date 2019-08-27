@@ -149,6 +149,26 @@ export const GET_OWNER = {
   FAILURE: "GET_OWNER_FAILURE"
 };
 
+export const SUBMIT_PROJECT = {
+  START: "SUBMIT_PROJECT_START",
+  SUCCESS: "SUBMIT_PROJECT_SUCCESS",
+  FAILURE: "SUBMIT_PROJECT_FAILURE"
+}
+
+export const submitProject = object => dispatch => {
+  dispatch({ type: SUBMIT_PROJECT.START });
+  return axiosWithAuth()
+    .post(`${BACKEND_URL}/projects`, object)
+    .then(res => {
+      console.log(res);
+      dispatch({ type: SUBMIT_PROJECT.SUCCESS })
+    })
+    .catch(err => {
+      console.log(err)
+      dispatch({ type: SUBMIT_PROJECT.FAILURE })
+    })
+}
+
 export const getOwner = id => dispatch => {
   dispatch({ type: GET_OWNER.START });
   return axiosWithAuth()
