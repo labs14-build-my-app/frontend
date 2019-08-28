@@ -18,12 +18,21 @@ export const login = creds => dispatch => {
       if (res.data.user) {
         localStorage.setItem("token", res.data.token);
         // localStorage.setItem("user", res.data.user);
+        dispatch({ type: LOGIN.SUCCESS, payload: res.data });
+        return {
+          result: true
+        }
+      } else {
+        dispatch({ type: LOGIN.FAILED, payload: res.data });
+        throw new Error("invalid credentials");
       }
-      dispatch({ type: LOGIN.SUCCESS, payload: res.data });
     })
     .catch(err => {
       console.log(err);
       dispatch({ type: LOGIN.FAILED, payload: err });
+      return {
+        result: false
+      };
     });
 };
 
@@ -90,19 +99,19 @@ export const FETCH_ENT_PROJECTS = {
   START: "FETCH_ENT_PROJECTS_START",
   SUCCESS: "FETCH_ENT_PROJECTS_SUCCESS",
   FAILURE: "FETCH_ENT_PROJECTS_FAILURE"
-}
+};
 export const fetchEntProjects = () => dispatch => {
   dispatch({ type: FETCH_ENT_PROJECTS.START });
   return axiosWithAuth()
     .get(`${BACKEND_URL}/projects`)
     .then(res => {
-      dispatch({ type: FETCH_ENT_PROJECTS.SUCCESS, payload: res.data })
+      dispatch({ type: FETCH_ENT_PROJECTS.SUCCESS, payload: res.data });
     })
     .catch(err => {
-      console.log(err)
-      dispatch({ type: FETCH_ENT_PROJECTS.FAILURE })
-    })
-}
+      console.log(err);
+      dispatch({ type: FETCH_ENT_PROJECTS.FAILURE });
+    });
+};
 
 export const FETCH_ALL_PROJECTS = {
   START: "FETCH_ALL_START",
@@ -153,7 +162,7 @@ export const SUBMIT_PROJECT = {
   START: "SUBMIT_PROJECT_START",
   SUCCESS: "SUBMIT_PROJECT_SUCCESS",
   FAILURE: "SUBMIT_PROJECT_FAILURE"
-}
+};
 
 export const submitProject = object => dispatch => {
   dispatch({ type: SUBMIT_PROJECT.START });
@@ -161,13 +170,13 @@ export const submitProject = object => dispatch => {
     .post(`${BACKEND_URL}/projects`, object)
     .then(res => {
       console.log(res);
-      dispatch({ type: SUBMIT_PROJECT.SUCCESS })
+      dispatch({ type: SUBMIT_PROJECT.SUCCESS });
     })
     .catch(err => {
-      console.log(err)
-      dispatch({ type: SUBMIT_PROJECT.FAILURE })
-    })
-}
+      console.log(err);
+      dispatch({ type: SUBMIT_PROJECT.FAILURE });
+    });
+};
 
 export const getOwner = id => dispatch => {
   dispatch({ type: GET_OWNER.START });
