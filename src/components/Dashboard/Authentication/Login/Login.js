@@ -46,7 +46,7 @@ const LeftContainer = styled.div`
 
   .l-container {
     width: calc(100% - 144px);
-    margin: 0 auto;
+    margin: 4em auto 0 auto;
     height: 100%;
 
     nav {
@@ -200,7 +200,8 @@ class Login extends Component {
   state = {
     email: "",
     password: "",
-    password_hidden: true
+    password_hidden: true,
+    error: false,
   };
 
   togglePasswordVisibility = e => {
@@ -213,24 +214,32 @@ class Login extends Component {
   handleChanges = e => {
     this.setState({
       [e.target.name]: e.target.value
+      ,
+      error: false,
     });
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.login({ ...this.state }).then(res => {
-      console.log("Login.js Says: " + res);
-
+    this.props.login({ email: this.state.email,password: this.state.password }).then(res => {    
+      if(!res.result){
+        this.setState({
+          error: true
+        })
+        return
+      }
+      
       if (this.props.user.isDeveloper) {
         this.props.history.push("/dev/home");
       }
       if (!this.props.user.isDeveloper) {
         this.props.history.push("/ent/home");
       }
-    });
+    })
   };
 
   render() {
+    console.log(this.props)
     return (
       <LoginPageContainer>
         {/* content area for the left side of the page */}
@@ -284,9 +293,9 @@ class Login extends Component {
                     {this.state.password_hidden ? hidePass : showPass}
                   </button>
                 </div>
-
+              {this.state.error && <p style={{color: "red", fontSize: "1.5rem"}}>Invalid Credentials</p>}
                 <button type="submit" className="submit-button">
-                  {this.props.isLoggingIn ? <BeatLoader /> : "Login"}
+                  {this.props.loggingIn ? <BeatLoader /> : "Login"}
                 </button>
               </form>
 

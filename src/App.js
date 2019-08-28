@@ -6,7 +6,7 @@ import styled, { ThemeProvider } from "styled-components";
 import { useSelector } from "react-redux";
 
 import Login from "./components/Dashboard/Authentication/Login/Login";
-import ChangePassword from "./components/Dashboard/Authentication/ChangePassword";
+import ChangePassword from "./components/Dashboard/Authentication/ChangePassword.js";
 
 import Signup from "./components/Dashboard/Authentication/SignUp/Signup";
 import Signup2 from "./components/Dashboard/Authentication/SignUp/Signup2";
