@@ -1,0 +1,11 @@
+<svg id="Blob_User_Reviews" data-name="Blob User Reviews" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1161" height="1018.106" viewBox="0 0 1161 1018.106">
+  <defs>
+    <linearGradient id="linear-gradient" x2="0.572" y2="0.589" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#16075e"/>
+      <stop offset="1" stop-color="#7313b3"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_4" data-name="Layer 4" transform="translate(0 0)">
+    <path id="Path_1058" data-name="Path 1058" d="M826.146,0H1161a151.781,151.781,0,0,1-2.319,25.123c-8.192,46.126-38.217,87.878-79.337,110.295-60.021,32.777-143.289,28.46-183.608,83.7-25.773,35.323-23.822,82.768-29.289,126.151C849.11,482.724,738.457,603.322,603.04,632.442c-53.243,11.435-110.54,10.37-158.438,36.3-47.6,25.735-77.97,73.709-111.454,116.206C248.05,892.964,130.478,974.9,0,1018.106V0Z" fill="url(#linear-gradient)"/>
+  </g>
+</svg>
