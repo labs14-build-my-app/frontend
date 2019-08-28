@@ -273,7 +273,7 @@ body .button-secondary svg path {
 }
 .intro-container {
   padding-bottom: 163px;
-  background: #f2f2f2;
+  background: #f2f3ff;
   font-family: "Source Sans Pro";
   padding-bottom: 22.2rem;
 }
@@ -488,11 +488,6 @@ body .button-secondary svg path {
   z-index: -1;
   width: 1920px;
 }
-@media (max-width: 1366px) {
-  .grey-blob .grey-blobber {
-    max-width: 133.5rem;
-  }
-}
 @media (max-width: 768px) {
   .grey-blob .grey-blobber {
     max-width: 76.8rem;
@@ -663,18 +658,22 @@ body .button-secondary svg path {
     height: 200px;
   }
 }
-@media (max-width: 768px) {
-}
 .reviews {
   position: relative;
   height: 104.8rem;
-  background: url("../assets/svgs/Blob User Reviews.svg") no-repeat;
-  background-size: cover;
-  background-size: contain;
+  background: #f2f3ff;
+}
+.reviews .purple-blobber {
+  margin-bottom: -1000px;
+}
+@media (max-width: 768px) {
+  .reviews .purple-blobber {
+    display: none;
+  }
 }
 @media (max-width: 768px) {
   .reviews {
-    background: none;
+    background: #f2f3ff;
   }
 }
 @media (max-width: 375px) {
@@ -726,7 +725,7 @@ body .button-secondary svg path {
 @media (max-width: 768px) {
   .reviews .user-reviews .user-reviews-h {
     right: 2rem;
-    top: 20rem;
+    top: 18rem;
   }
 }
 @media (max-width: 375px) {
@@ -752,7 +751,7 @@ body .button-secondary svg path {
 @media (max-width: 768px) {
   .reviews .user-reviews .user-reviews-p {
     right: 2rem;
-    top: 25rem;
+    top: 23rem;
     max-width: 32rem;
   }
 }
@@ -859,8 +858,6 @@ body .button-secondary svg path {
 .section-5 {
   margin: 0 auto;
   width: 100%;
-}
-@media (max-width: 375px) {
 }
 .section-5 .section-5-cta {
   background: #fff;

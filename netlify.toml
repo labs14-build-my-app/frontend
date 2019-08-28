@@ -1,5 +1,0 @@
-
-[build]
-  command = ""
-  publish="landing/"
-  base = "landing"
