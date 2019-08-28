@@ -46,7 +46,7 @@ const LeftContainer = styled.div`
 
   .l-container {
     width: calc(100% - 144px);
-    margin: 0 auto;
+    margin: 4em auto 0 auto;
     height: 100%;
 
     nav {
