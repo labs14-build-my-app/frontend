@@ -239,6 +239,7 @@ class Login extends Component {
   };
 
   render() {
+    console.log(this.props)
     return (
       <LoginPageContainer>
         {/* content area for the left side of the page */}
@@ -294,7 +295,7 @@ class Login extends Component {
                 </div>
               {this.state.error && <p style={{color: "red", fontSize: "1.5rem"}}>Invalid Credentials</p>}
                 <button type="submit" className="submit-button">
-                  {this.props.isLoggingIn ? <BeatLoader /> : "Login"}
+                  {this.props.loggingIn ? <BeatLoader /> : "Login"}
                 </button>
               </form>
 
