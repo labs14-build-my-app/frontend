@@ -21,7 +21,7 @@ export const login = creds => dispatch => {
         dispatch({ type: LOGIN.SUCCESS, payload: res.data });
         return {
           result: true
-        }
+        };
       } else {
         dispatch({ type: LOGIN.FAILED, payload: res.data });
         throw new Error("invalid credentials");
@@ -55,6 +55,21 @@ export const signup = creds => dispatch => {
       console.log(err);
       dispatch({ type: SIGNUP.FAILURE, payload: err });
     });
+};
+
+export const SET_DEVELOPER = {
+  TRUE: "SET_DEVELOPER_TRUE",
+  FALSE: "SET_DEVELOPER_FALSE"
+};
+
+export const setDeveloper = value => dispatch => {
+  if (value === true) {
+    return dispatch({ type: SET_DEVELOPER.TRUE });
+  }
+
+  if (value === false) {
+    return dispatch({ type: SET_DEVELOPER.FALSE });
+  }
 };
 
 export const LOAD_APP = {

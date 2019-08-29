@@ -10,13 +10,15 @@ import {
   GET_OWNER,
   SUBMIT_PROPOSAL,
   SUBMIT_PROJECT,
-  LOGOUT
+  LOGOUT,
+  SET_DEVELOPER
 } from "../actions";
 
 const initialState = {
   user: {
     firstName: "undefined"
   },
+  isDeveloper: null,
   loggingIn: false,
   isSigningup: false,
   loadingApp: false,
@@ -66,6 +68,18 @@ const rootReducer = (state = initialState, action) => {
         isSigningup: false
       };
 
+    case SET_DEVELOPER.TRUE:
+      return {
+        ...state,
+        isDeveloper: true
+      };
+
+    case SET_DEVELOPER.FALSE:
+      return {
+        ...state,
+        isDeveloper: false
+      };
+
     case LOAD_APP.START:
       return {
         ...state,
@@ -113,18 +127,18 @@ const rootReducer = (state = initialState, action) => {
     case FETCH_ENT_PROJECTS.START:
       return {
         ...state
-      }
+      };
 
     case FETCH_ENT_PROJECTS.SUCCESS:
       return {
         ...state,
         entProjectList: action.payload
-      }
+      };
 
     case FETCH_ENT_PROJECTS.FAILURE:
       return {
         ...state
-      }
+      };
 
     case SAVE_PROJECT.START:
       return {
