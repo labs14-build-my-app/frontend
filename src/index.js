@@ -5,11 +5,11 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
-import logger from "redux-logger";
+// import logger from "redux-logger";
 import { applyMiddleware, createStore, compose } from "redux";
 import rootReducer from "./redux/reducers";
 import { BrowserRouter as Router } from "react-router-dom";
-import { create } from "domain";
+// import { create } from "domain";
 const createHistory = require("history").createBrowserHistory;
 //TODO: DO CONDITIONAL MAGIC TO MAKE THIS ENABLE DURING PRODUCTION AND DEVELOPMENT
 
@@ -24,7 +24,6 @@ const createHistory = require("history").createBrowserHistory;
 
 //ENABLE DURING PRODUCTION
 const store = createStore(rootReducer, applyMiddleware(thunk));
-
 
 const history = createHistory();
 
