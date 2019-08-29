@@ -25,6 +25,7 @@ const createHistory = require("history").createBrowserHistory;
 //ENABLE DURING PRODUCTION
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
+
 const history = createHistory();
 
 ReactDOM.render(
