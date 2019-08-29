@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { signup } from "../../../../redux/actions";
+import { signup, setDeveloper } from "../../../../redux/actions";
 
 import styled from "styled-components";
 import {
@@ -161,15 +161,17 @@ const RightContainer = styled.div`
 class Signup2 extends Component {
   handleDev = e => {
     e.preventDefault();
+    this.props.setDeveloper(true);
     this.props
       .signup({ ...this.props.location.state, isDeveloper: true })
       .then(res => {
-        this.props.history.push("/dev/dashboard");
+        this.props.history.push("/dev/home");
       });
   };
 
   handleEnt = e => {
     e.preventDefault();
+    this.props.setDeveloper(false);
     this.props
       .signup({ ...this.props.location.state, isDeveloper: false })
       .then(res => {
@@ -246,5 +248,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { signup }
+  { signup, setDeveloper }
 )(Signup2);
