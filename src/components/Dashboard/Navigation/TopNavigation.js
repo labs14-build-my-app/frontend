@@ -46,10 +46,10 @@ const TopNavigation = props => {
           <div className="notification-dot" />
           <div className="notif-nav-menu-container" style={{ display: `${notifIsOpen ? "flex" : "none"}` }} >
             <ul className="notif-nav-menu">
-              <li>home</li>
-              <li>find projects</li>
-              <li>stuff 2</li>
-              <li>stuff 3</li>
+              <li>Redux is an open-source JavaScript library for managing application state. It is most commonly used with libraries such as React or Angular for building user interfaces.</li>
+              <li>Similar to Facebook's Flux architecture, it was created by Dan Abramov and Andrew Clark.</li>
+              <li>Redux is an open-source JavaScript library for managing application state.</li>
+              <li>Redux is an open-source JavaScript library for managing application state. It is most commonly used with libraries such as React or Angular for building user interfaces.</li>
             </ul>
           </div>
 
@@ -110,9 +110,14 @@ const TopNavigationContainer = styled.div`
           z-index: 10;
           right: 1px;
           box-sizing: border-box;
+          background: #43425D 0% 0% no-repeat padding-box;
+          border-radius: 0px 0px 5px 5px;
+          opacity: 1;
+          color: white;
+          width: 13rem;
           li {
-            margin-top: 1.6rem;
-            padding: 1.2rem 2rem;
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
             color: white;
             :hover {
               background: #bb75f0;
@@ -140,6 +145,11 @@ const TopNavigationContainer = styled.div`
           z-index: 10;
           right: 1px;
           box-sizing: border-box;
+          background: #43425D 0% 0% no-repeat padding-box;
+          border-radius: 0px 0px 5px 5px;
+          opacity: 1;
+          color: white;
+          width: 22rem;
           li {
             margin-top: 1.6rem;
             padding: 1.2rem 2rem;
