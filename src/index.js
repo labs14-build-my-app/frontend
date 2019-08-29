@@ -5,25 +5,25 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
-import logger from "redux-logger";
+// import logger from "redux-logger";
 import { applyMiddleware, createStore, compose } from "redux";
 import rootReducer from "./redux/reducers";
 import { BrowserRouter as Router } from "react-router-dom";
-import { create } from "domain";
+// import { create } from "domain";
 const createHistory = require("history").createBrowserHistory;
 //TODO: DO CONDITIONAL MAGIC TO MAKE THIS ENABLE DURING PRODUCTION AND DEVELOPMENT
 
 //REMOVE DURING PRODUCTION
-const store = createStore(
-  rootReducer,
-  compose(
-    applyMiddleware(thunk, logger),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
-);
+// const store = createStore(
+//   rootReducer,
+//   compose(
+//     applyMiddleware(thunk, logger),
+//     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+//   )
+// );
 
 //ENABLE DURING PRODUCTION
-// const store = createStore(rootReducer, applyMiddleware(thunk));
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 const history = createHistory();
 
