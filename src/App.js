@@ -16,6 +16,7 @@ import DashboardChooser from "./components/Dashboard/AccountTypes/DashboardChoos
 import TopNavigation from "./components/Dashboard/Navigation/TopNavigation";
 import LeftNavigation from "./components/Dashboard/Navigation/LeftNavigation";
 import { mainAppGradient } from "./components/Dashboard/cssVariables";
+import aboutUs from "./components/LandingStatic/aboutUs";
 
 const App = props => {
   console.log(props);
@@ -26,6 +27,7 @@ const App = props => {
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/signup2" component={Signup2} />
       <Route exact path="/changepassword" component={ChangePassword} />
+      <Route exact path="/about" component={aboutUs} />
       
       <AppContainer>
         <Route path="/" render={() => {

@@ -4,7 +4,7 @@ class ChangePassword extends Component {
 	render() { 
 		return (
 			<div>
-				changes your god damn password. Youre gonna have to back arrow because i havent setup the page properly yet
+				<h1 style={{"font-size" : "3rem"}}> Error, the change password system is having technical difficulties. Please try again later.</h1>
 			</div>
 		);
 	}
